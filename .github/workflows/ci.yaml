@@ -72,11 +72,18 @@ jobs:
         uses: test-summary/action@v1.0
         if: always()
         with:
-          paths: ./cypress/reports/junit/*.xml
+          paths: reports/*.xml
 
       - name: Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
-          files: "./cypress/reports/junit/*.xml"
+          files: "reports/*.xml"
+
+      - name: Artifacts
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
  
