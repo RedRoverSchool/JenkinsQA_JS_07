@@ -1,5 +1,5 @@
 const { defineConfig } = require("cypress");
-const { beforeRunHook, afterRunHook } = require("cypress/lib");
+const { beforeRunHook, afterRunHook } = require("cypress");
 
 module.exports = defineConfig({
   viewportWidth: 1920,
