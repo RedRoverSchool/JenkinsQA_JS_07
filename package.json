@@ -1,0 +1,14 @@
+{
+  "name": "jenkinsqa_js_07",
+  "version": "1.0.0",
+  "description": "**How to start working in our project?**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.11.0"
+  }
+}
