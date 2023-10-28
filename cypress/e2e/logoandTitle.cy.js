@@ -7,6 +7,5 @@ describe('Logo and Title', () => {
     })
     it('verify if Icon “Jenkins” is an image', function () {
       cy.get('img[src="/static/0d56e664/images/title.svg"]').should('be.visible');
-    
-    })
+     })
 })
