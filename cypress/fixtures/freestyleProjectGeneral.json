@@ -1,4 +1,5 @@
 {
     "sectionName" : "General",
-    "statusDisabled" : "Disabled"
+    "statusDisabled" : "Disabled",
+    "statusEnabled" : "DisabledEnabled"
 }

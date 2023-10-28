@@ -27,5 +27,20 @@ describe('Freestyle Project > General', () => {
         cy.get('form label[class*=toggle-switch]').click().should('not.be.enabled');
         cy.get('form span[class*=unchecked-title]').should('have.text', freestyleProjectGeneral.statusDisabled).and('be.visible');
         
-      });
+    });
+
+    it('TC_04.01.004 | Verify the user is able to enable the project', function() {
+
+        cy.get('#side-panel a[href$=newJob]').click();
+        cy.get('form input#name').type('FreestyleProject1');
+        cy.get('form #items li[class$=FreeStyleProject]').click();
+        cy.get('form button[type=submit]').click();
+        
+        cy.get('form label[class*=toggle-switch]').click().should('not.be.enabled');
+        
+        cy.get('form label[class*=toggle-switch]').click();
+        cy.get('form input[class*=toggle-switch]').should('be.enabled');
+        cy.get('form span[class*=checked-title]').should('have.text', freestyleProjectGeneral.statusEnabled).and('be.visible');
+        
+    });       
 });
