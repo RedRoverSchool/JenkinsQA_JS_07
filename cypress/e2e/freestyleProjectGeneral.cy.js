@@ -42,5 +42,18 @@ describe('Freestyle Project > General', () => {
         cy.get('form input[class*=toggle-switch]').should('be.enabled');
         cy.get('form span[class*=checked-title]').should('have.text', freestyleProjectGeneral.statusEnabled).and('be.visible');
         
-    });       
+    });
+
+    it('TC_04.01.005 | Verify the user is able to enter a description in the text box', function() {
+
+        const description = 'This is a project description';
+
+        cy.get('#side-panel a[href$=newJob]').click();
+        cy.get('form input#name').type('FreestyleProject1');
+        cy.get('#items li[class$=FreeStyleProject]').click();
+        cy.get('button[type=submit]').click();
+
+        cy.get('form [name=description]').type(description).should('have.value', description);
+
+    });
 });
