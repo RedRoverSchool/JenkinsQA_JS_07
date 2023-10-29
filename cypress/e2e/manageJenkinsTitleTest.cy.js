@@ -11,4 +11,19 @@ describe("Manage Jenkins > Title", () => {
             .and("have.text", manageJenkinsTitle.mainHeaderPage)
             .and("have.prop", "tagName", "H1");
     });
+
+    it("TC_09.01.0021 | Manage Jenkins > Title > 5 sub-headers displays verification", () => {
+        const objOfSubHeadersFromJSON = JSON.parse(JSON.stringify(manageJenkinsTitle.subHeadersPage));
+        const arrOfSubHeadersFromObj = Object.values(objOfSubHeadersFromJSON);
+
+        cy.get(".task-link-wrapper > a[href='/manage']").click();
+
+        cy.get(".jenkins-section > h2").should("be.visible")
+            .and("have.prop", "tagName", "H2")
+            .then(($els) => {
+                return Cypress.$.makeArray($els).map($el => $el.innerText);
+            })
+            .and("deep.equal", arrOfSubHeadersFromObj)
+            .and("have.length", 5);
+    });
 }); 
