@@ -2,7 +2,6 @@
 
 import manageJenkinsTitle from "../fixtures/manageJenkinsTitle.json";
 
-
 describe("Manage Jenkins > Title", () => {
 
     it("TC_09.01.001 | Manage Jenkins > Title > Main header displays verification", () => {
