@@ -6,5 +6,5 @@ describe ('iconJenkins', () =>{
 cy.get('#jenkins-head-icon').click().should('be.visible');
 cy.get('#jenkins-name-icon').click().should('be.visible');
 
-    })
+    });
 })
