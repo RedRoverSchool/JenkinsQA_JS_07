@@ -9,6 +9,7 @@ describe("Manage Jenkins > Title", () => {
         cy.get(".task-link-wrapper > a[href='/manage']").click();
 
         cy.get(".jenkins-app-bar__content > h1").should("be.visible")
-            .and("have.text", manageJenkinsTitle.mainHeaderPage);
+            .and("have.text", manageJenkinsTitle.mainHeaderPage)
+            .and("have.prop", "tagName", "H1");
     });
 }); 
