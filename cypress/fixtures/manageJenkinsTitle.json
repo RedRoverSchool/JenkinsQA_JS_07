@@ -1,3 +1,10 @@
 {
-    "mainHeaderPage": "Manage Jenkins"
+    "mainHeaderPage": "Manage Jenkins",
+    "subHeadersPage": {
+        "0": "System Configuration",
+        "1": "Security",
+        "2": "Status Information",
+        "3": "Troubleshooting",
+        "4": "Tools and Actions"
+    }
 }
