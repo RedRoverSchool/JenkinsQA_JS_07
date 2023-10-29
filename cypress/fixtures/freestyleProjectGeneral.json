@@ -1,5 +1,12 @@
 {
     "sectionName" : "General",
     "statusDisabled" : "Disabled",
-    "statusEnabled" : "DisabledEnabled"
+    "statusEnabled" : "DisabledEnabled",
+    "checkBoxOptions" : [
+        "Discard old builds",
+        "GitHub project",
+        "This project is parameterized",
+        "Throttle builds"
+    ],
+    "checkBoxOption" : "Execute concurrent builds if necessary"
 }
