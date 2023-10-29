@@ -12,7 +12,7 @@ describe("Manage Jenkins > Title", () => {
             .and("have.prop", "tagName", "H1");
     });
 
-    it("TC_09.01.0021 | Manage Jenkins > Title > 5 sub-headers displays verification", () => {
+    it("TC_09.01.002 | Manage Jenkins > Title > 5 section-headers displays verification", () => {
         const objOfSubHeadersFromJSON = JSON.parse(JSON.stringify(manageJenkinsTitle.subHeadersPage));
         const arrOfSubHeadersFromObj = Object.values(objOfSubHeadersFromJSON);
 
