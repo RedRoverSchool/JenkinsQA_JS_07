@@ -71,4 +71,17 @@ describe('Freestyle Project > General', () => {
         cy.get('.config-table > :nth-child(6) label').should('have.text', freestyleProjectGeneral.checkBoxOption).and('be.visible');
 
     });
+
+    it('TC_04.01.007 | Verify the user is able to check all the check boxes', function() {
+
+        cy.get('#side-panel a[href$=newJob]').click();
+        cy.get('form input#name').type('FreestyleProject1');
+        cy.get('form #items li[class$=FreeStyleProject]').click();
+        cy.get('form button[type=submit]').click();
+
+        cy.get('[nameref=rowSetStart30] div.help-sibling div input[type=checkbox]').check({ force: true }).should('be.checked');
+
+        cy.get('.config-table > :nth-child(6) input[type=checkbox]').check({ force: true }).should('be.checked');
+
+    });
 });
