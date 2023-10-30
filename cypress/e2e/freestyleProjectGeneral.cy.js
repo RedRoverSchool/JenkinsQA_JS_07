@@ -84,4 +84,20 @@ describe('Freestyle Project > General', () => {
         cy.get('.config-table > :nth-child(6) input[type=checkbox]').check({ force: true }).should('be.checked');
 
     });
+
+    it('TC_04.01.008 | Verify the user is able to uncheck all the check boxes', function() {
+
+        cy.get('#side-panel a[href$=newJob]').click();
+        cy.get('form input#name').type('FreestyleProject1');
+        cy.get('form #items li[class$=FreeStyleProject]').click();
+        cy.get('form button[type=submit]').click();
+
+        cy.get('[nameref=rowSetStart30] div.help-sibling div input[type=checkbox]').check({ force: true }).should('be.checked');
+        cy.get('.config-table > :nth-child(6) input[type=checkbox]').check({ force: true }).should('be.checked');
+
+        cy.get('[nameref=rowSetStart30] div.help-sibling div input[type=checkbox]').uncheck({ force: true }).should('not.be.checked');
+
+        cy.get('.config-table > :nth-child(6) input[type=checkbox]').uncheck({ force: true }).should('not.be.checked');
+
+    });
 });
