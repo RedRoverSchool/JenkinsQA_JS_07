@@ -1,5 +1,4 @@
 {
-    "homePage": "http://localhost:8080/",
     "newItemPage": "http://localhost:8080/view/all/newJob",
     "firstProjectName": "project1"
 }

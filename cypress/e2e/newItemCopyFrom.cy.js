@@ -8,7 +8,7 @@ describe('New item > Copy from', () => {
         cy.get('input#name').type(data.firstProjectName);
         cy.get('.hudson_model_FreeStyleProject').click();
         cy.get('#ok-button').click();
-        cy.visit(data.homePage);
+        cy.get('#jenkins-head-icon').click();
     });
 
     it('TC_03.08.001 | New item > Copy from > Open "New job" page', () => {
@@ -16,5 +16,3 @@ describe('New item > Copy from', () => {
         cy.url().should('be.equal', data.newItemPage)
     });
 });
-
-
