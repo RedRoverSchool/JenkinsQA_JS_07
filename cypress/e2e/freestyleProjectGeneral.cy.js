@@ -56,4 +56,19 @@ describe('Freestyle Project > General', () => {
         cy.get('form [name=description]').type(description).should('have.value', description);
 
     });
+
+    it('TC_04.01.006 | Verify the user is able to see all options with check boxes', function() {
+
+        cy.get('#side-panel a[href$=newJob]').click();
+        cy.get('form input#name').type('FreestyleProject1');
+        cy.get('#items li[class$=FreeStyleProject]').click();
+        cy.get('button[type=submit]').click();
+
+        cy.get('[nameref=rowSetStart30] div.help-sibling div label').each(($el, i) => {
+            cy.wrap($el).should('have.text', freestyleProjectGeneral.checkBoxOptions[i]).and('be.visible');
+        });
+
+        cy.get('.config-table > :nth-child(6) label').should('have.text', freestyleProjectGeneral.checkBoxOption).and('be.visible');
+
+    });
 });
