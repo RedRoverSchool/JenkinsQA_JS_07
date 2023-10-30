@@ -1,4 +1,11 @@
 {
     "freestyleProjectName" : "New Freestyle Project",
-    "statusDisabled": "Disabled"
+    "statusDisabled": "Disabled",
+    "generalCheckboxes": [
+        "Discard old builds",
+        "GitHub project",
+        "This project is parameterized",
+        "Throttle builds",
+        "Allow user triggered builds to skip the rate limit"
+    ]
 }    
