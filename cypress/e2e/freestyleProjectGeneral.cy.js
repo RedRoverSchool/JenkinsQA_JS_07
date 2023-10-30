@@ -100,4 +100,17 @@ describe('Freestyle Project > General', () => {
         cy.get('.config-table > :nth-child(6) input[type=checkbox]').uncheck({ force: true }).should('not.be.checked');
 
     });
+
+    it('TC_04.01.009 | Verify the user is able to extend more options by clicking on the “Advanced” button', function() {
+
+        cy.get('#side-panel a[href$=newJob]').click();
+        cy.get('form input#name').type('FreestyleProject1');
+        cy.get('form #items li[class$=FreeStyleProject]').click();
+        cy.get('form button[type=submit]').click();
+
+        cy.get('form :nth-child(7) button.advancedButton').click();
+
+        cy.get('form > div > :nth-child(8)').should('have.attr', 'style', 'display: block;').and('be.visible');
+
+    });
 });
