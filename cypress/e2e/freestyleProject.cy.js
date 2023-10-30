@@ -4,7 +4,7 @@ import freestyleProject from "../fixtures/freestyleProject.json"
 
 describe('freestyleProject', () => {
 
-    beforeEach(() => {
+    beforeEach('create freestyle project', () => {
         cy.get('a[href="newJob"]').click()
         cy.get('input#name').type(freestyleProject.freestyleProjectName)
         cy.get('.hudson_model_FreeStyleProject').click()
