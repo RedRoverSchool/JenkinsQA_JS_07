@@ -1,6 +1,7 @@
 /// <reference types="cypress"/>
 
 describe('US_02.02 | Header > Jenkins Logo and Title', () => {
+    
     it('TC_02.02.005.1 | Header > Check Jenkins Icon Presence', () => {
         cy.get('img#jenkins-name-icon').should('be.visible')
     })
