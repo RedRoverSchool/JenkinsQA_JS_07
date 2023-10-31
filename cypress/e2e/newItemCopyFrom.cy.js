@@ -20,4 +20,10 @@ describe('New item > Copy from', () => {
         cy.get('a[href="/view/all/newJob"]').click();
         cy.get('div.item-copy').should('be.exist').and('be.visible');
     });
+
+    it('TC_03.08.003 | New Item > Copy from > Error message', () => {
+        cy.get('a[href="/view/all/newJob"]').click();
+        cy.get('#from').type(data.firstProjectName);
+        cy.get('#itemname-required').should('be.visible').and('have.text', data.errorMessage);
+    });
 });
