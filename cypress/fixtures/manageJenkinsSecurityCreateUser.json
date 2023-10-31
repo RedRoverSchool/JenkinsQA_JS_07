@@ -3,5 +3,6 @@
   "password": "password",
   "fullName": "John Kennedy",
   "email": "email@gmail.com",
-  "expectedUserId": ["admin", "JohnKennedy"]
+  "expectedUserId": ["admin", "JohnKennedy"],
+  "errorUsername": "is prohibited as a username for security reasons."
 }
