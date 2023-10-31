@@ -1,0 +1,7 @@
+{
+  "username": "JohnKennedy",
+  "password": "password",
+  "fullName": "John Kennedy",
+  "email": "email@gmail.com",
+  "expectedUserId": ["admin", "JohnKennedy"]
+}
