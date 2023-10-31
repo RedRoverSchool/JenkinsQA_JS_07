@@ -28,7 +28,7 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
     );
   });
 
-  it.only('Manage Jenkins > Security > Create user > Verify error message displayed when creating user without username', () => {
+  it('Manage Jenkins > Security > Create user > Verify error message displayed when creating user without username', () => {
     cy.get('a[href="/manage"]').click();
     cy.title().should('include', 'Manage Jenkins');
     cy.get('a[href="securityRealm/"]').click();
