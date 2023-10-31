@@ -1,12 +1,13 @@
 const USER_NAME = Cypress.env('local.admin.username');
 const PASSWORD = Cypress.env('local.admin.password');
-const PORT = Cypress.env('local.port')
+const PORT = Cypress.env('local.port');
+const HOST = Cypress.env('local.host');
 
 Cypress.Commands.add('cleanData', () => { 
   var sessionId;
 
     function getUrl() {
-      return `http://localhost:${PORT}/`
+      return `http://${HOST}:${PORT}/`
     }
 
     function getUserName() {
