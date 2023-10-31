@@ -11,4 +11,11 @@ describe("dashboardCommandPanel", () => {
       .and("deep.equal", dashboardCommandPanelData.allTasks);
   });
   
+  it("TC_02.04.09 | Dashboard > Command panel on the left side > Verify the number of icons in the left side bar menu", () => {
+    cy.get("div.task svg")
+        .then(($els) => {
+        return Cypress.$.makeArray($els);
+        })
+        .should("have.length", "5");
+    });
 });
