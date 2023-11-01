@@ -26,4 +26,11 @@ describe('New item > Copy from', () => {
         cy.get('#from').type(data.firstProjectName);
         cy.get('#itemname-required').should('be.visible').and('have.text', data.errorMessage);
     });
+
+    it('TC_03.08.004 | New Item > Copy from > Verify a drop-down with existing jobs names', () => {
+        cy.get('a[href="/view/all/newJob"]').click();
+        cy.get('input#name').type(data.secondProjectName);
+        cy.get('#from').type(data.firstProjectName[0]);
+        cy.get('.item-copy .yui-ac-content').should('be.visible').and('contain.text', data.firstProjectName);
+    });
 });
