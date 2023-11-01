@@ -1,13 +1,7 @@
 /// <reference types="cypress"/>
-import {links} from "../fixtures/commandPanel.json" 
+import {namesData, links} from "../fixtures/commandPanel.json" 
 
-const expectedNames = [
-    'New Item',
-    'People',
-    'Build History',
-    'Manage Jenkins',
-    'My Views',
-]
+
 
 describe('commandPanel', () => {
 
@@ -17,7 +11,7 @@ describe('commandPanel', () => {
         cy.get('div.task').should('have.length', 5).then(($els) => {
             return Cypress.$.makeArray($els).map(($el) => $el.innerText)
         })
-        .should('deep.eql', expectedNames)
+        .should('deep.eql', namesData)
     })
 
 
