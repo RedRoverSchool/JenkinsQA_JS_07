@@ -2,9 +2,9 @@
 
 let nameProject= "firstProject"
 
-describe('createPiPelineProjectNewItem', () => {
+describe('createPipelineProjectNewItem', () => {
 
-    it('TC_03.04.005 | Create Pipeline project > Not unique name', () => {
+    it('TC_03.04.005 | Create Pipeline project > Not unique name > Inactive button', () => {
         cy.visit('http://localhost:8080/')
         cy.get("a[href='/view/all/newJob']").click()
         cy.get('input#name').type(nameProject)
