@@ -18,4 +18,13 @@ describe('New Item > Create Freestyle Project', () => {
         cy.get('@emptyFieldWarning').should('not.have.class', 'input-message-disabled').and('have.text', newItemFreestyleProject.emptyFieldWarning).and('be.visible');
 
     });
+
+    it('TC_03.02.004 | New item > Create Freestyle Project > Verify the user is able to see an empty field warning after choosing the "Freestyle Project" from the option list', () => {
+
+        cy.get('form div#itemname-required').as('emptyFieldWarning').should('have.class', 'input-message-disabled').and('not.be.visible');
+        cy.get('form li[class$=FreeStyleProject]').click();
+
+        cy.get('@emptyFieldWarning').should('not.have.class', 'input-message-disabled').and('have.text', newItemFreestyleProject.emptyFieldWarning).and('be.visible');
+
+    });
 });
