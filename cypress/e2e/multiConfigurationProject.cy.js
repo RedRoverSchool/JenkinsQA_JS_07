@@ -12,4 +12,16 @@ describe('multiConfigurationProject', () => {
 
         cy.get('#description > div:nth-child(1)').should('have.text', 'Description')
        })
+
+    it('TC_03.07.003 | New Item > Create Multiconfiguration project > Disable project', function() {
+        cy.get('#tasks > div:nth-child(1) a.task-link').click()
+        cy.get('input#name').type('MultiConfiguration project')
+        cy.get('li[tabindex="0"] span').contains('Multi-configuration project').click()
+        cy.get('#ok-button').click()
+        cy.get('#toggle-switch-enable-disable-project > label').click()
+        cy.get('#toggle-switch-enable-disable-project span.jenkins-toggle-switch__label__unchecked-title').should('have.text', 'Disabled')
+        cy.get('button[name="Submit"]').click()
+
+        cy.get('#enable-project').should('contain.text', 'This project is currently disabled')
+    })
 })
