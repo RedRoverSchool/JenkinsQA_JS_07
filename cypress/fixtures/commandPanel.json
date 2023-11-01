@@ -1,5 +1,4 @@
 {
-"taskNames": ["New Item", "People", "Build History", "Manage Jenkins", "My Views"],
 "links": {
     "NewItem": "http://localhost:8080/view/all/newJob",
     "People": "http://localhost:8080/asynchPeople/",
