@@ -35,4 +35,15 @@ describe('New Item > Create Freestyle Project', () => {
         cy.get('@freestyleProjectOption').should('have.class', 'active').and('have.attr', 'aria-checked', 'true');
 
     });
+
+    it('TC_03.02.006 | Verify the user is redirected to "Configuration" page after clicking "OK" button', () => {
+
+        cy.get('form input[name=name]').type(newItemFreestyleProject.itemName);
+        cy.get('form li[class*=FreeStyleProject]').click();
+        cy.get('form button[type=submit]').click();
+
+        cy.get('#page-body h1').should('have.text', newItemFreestyleProject.configPageName).and('be.visible');
+        cy.url().should('be.eql', newItemFreestyleProject.configPageURL);
+
+    });
 });
