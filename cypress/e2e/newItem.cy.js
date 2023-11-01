@@ -30,8 +30,8 @@ describe('newItem', () => {
         cy.get('#ok-button').should('have.class', 'disabled');
     });
 
-    it.only('TC_03.01.005| + New Item> Verify +New Item functionality', () => {
+    it('TC_03.01.005| + New Item> Verify +New Item functionality', () => {
         cy.get('[href*="/view/all/newJob"]').click();
-         cy.url().should('eql', newItem.newItemPage);
+        cy.url().should('eql', newItem.newItemPage);
     });
 });
