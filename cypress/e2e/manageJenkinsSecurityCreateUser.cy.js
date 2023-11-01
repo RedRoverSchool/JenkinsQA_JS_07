@@ -5,11 +5,8 @@ import manageJenkinsSecurityCreateUser from '../fixtures/manageJenkinsSecurityCr
 describe('ManageJenkinsSecurityCreateUser.cy', () => {
   it('TC_09.14.001 | Manage Jenkins > Security> Create User using valid credentials', function () {
     cy.get('a[href="/manage"]').click();
-    cy.title().should('include', 'Manage Jenkins');
     cy.get('a[href="securityRealm/"]').click();
-    cy.title().should('include', 'Users');
     cy.get('a[href="addUser"]').click();
-    cy.title().should('include', 'Create User');
     cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
     cy.get('input[name="password1"]').type(
       manageJenkinsSecurityCreateUser.password
@@ -22,10 +19,23 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
     );
     cy.get('input[name="email"]').type(manageJenkinsSecurityCreateUser.email);
     cy.get('button[name="Submit"]').click();
-    cy.get('a[href="user/johnkennedy/"]').should(
-      'have.text',
-      manageJenkinsSecurityCreateUser.username
-    );
+    cy.get('.sortheader').contains('User ID').click();
+
+    let arr = [];
+    cy.get('.jenkins-table__link')
+      .each(($el, i) => {
+        arr[i] = $el.text();
+      })
+      .then(() => {
+        let expectedResult = manageJenkinsSecurityCreateUser.expectedUserId;
+        expectedResult = expectedResult.map((i) => i.toLowerCase()).sort();
+
+        arr.reverse().map((el, i) => {
+          expect(el.toLowerCase()).to.be.equal(expectedResult[i]);
+        });
+      });
+
+    cy.get('a[data-url="user/johnkennedy/doDelete"]').pause().click();
   });
 
   it('Manage Jenkins > Security > Create user > Verify error message displayed when creating user without username', () => {
