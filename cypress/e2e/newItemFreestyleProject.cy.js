@@ -10,12 +10,12 @@ describe('New Item > Create Freestyle Project', () => {
 
     });
 
-    it('TC_03.02.003 | Verify the user is able to see a red tip after pointing a cursor out of the Item Name input field', () => {
+    it('TC_03.02.003 | Verify the user is able to see an empty field warning after pointing a cursor out of the Item Name input field', () => {
 
-        cy.get('form div#itemname-required').as('emptyFieldErrorMessage').should('have.class', 'input-message-disabled').and('not.be.visible');
+        cy.get('form div#itemname-required').as('emptyFieldWarning').should('have.class', 'input-message-disabled').and('not.be.visible');
         cy.get('form label.h3').click();
 
-        cy.get('@emptyFieldErrorMessage').should('not.have.class', 'input-message-disabled').and('have.text', newItemFreestyleProject.emptyFieldErrorMessage).and('be.visible');
+        cy.get('@emptyFieldWarning').should('not.have.class', 'input-message-disabled').and('have.text', newItemFreestyleProject.emptyFieldWarning).and('be.visible');
 
     });
 });
