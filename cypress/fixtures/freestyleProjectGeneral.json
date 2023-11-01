@@ -8,5 +8,6 @@
         "This project is parameterized",
         "Throttle builds"
     ],
-    "checkBoxOption" : "Execute concurrent builds if necessary"
+    "checkBoxOption" : "Execute concurrent builds if necessary",
+    "description" : "This is a project description"
 }
