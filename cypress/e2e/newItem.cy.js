@@ -1,6 +1,7 @@
 /// <reference types="cypress"/>
 
 import newJobPage from "../fixtures/newJobPage.json"
+import newItem from '../fixtures/newItem.json'
 
 describe('newItem', () => {
 
@@ -27,5 +28,10 @@ describe('newItem', () => {
         cy.get('#name').should('have.value', newJobPage.itemNameFieldValue);
 
         cy.get('#ok-button').should('have.class', 'disabled');
+    });
+
+    it.only('TC_03.01.005| + New Item> Verify +New Item functionality', () => {
+        cy.get('[href*="/view/all/newJob"]').click();
+         cy.url().should('eql', newItem.newItemPage);
     });
 });
