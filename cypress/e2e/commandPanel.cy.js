@@ -32,4 +32,10 @@ describe('commandPanel', () => {
         cy.get('a[href="/me/my-views"]').click()
         cy.url().should('eq', links.MyViews).go(-1)
     })
+
+    it('TC_02.04.012 | Dashboard > Check number of icons on command panel on the left side', () => {
+        cy.get('div.task svg').then(($els) => {
+            return Cypress.$.makeArray($els)
+        }).should('have.length', '5')
+    })
 })
