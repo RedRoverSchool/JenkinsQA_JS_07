@@ -42,4 +42,14 @@ describe('New item > Copy from', () => {
         cy.get('#ok-button').click();
         cy.url().should('be.equal', `http://localhost:8080/job/${data.secondProjectName}/configure`)
     });
+
+    it('TC_03.08.006 | +New Item > Copy from > Error message when copy from non-existent job', () => {
+        cy.get('a[href="/view/all/newJob"]').click();
+        cy.get('input#name').type(data.secondProjectName);
+        cy.get('.hudson_model_FreeStyleProject').click();
+        cy.get('#from').type(data.nonExistenProjectName);
+        cy.get('#ok-button').click();
+        cy.get('#main-panel > h1').should('have.text', 'Error');
+        cy.get('#main-panel > p').should('have.text', `No such job: ${data.nonExistenProjectName}`);
+    });
 });
