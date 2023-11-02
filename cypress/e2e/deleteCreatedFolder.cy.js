@@ -18,7 +18,7 @@ describe('deleteCreatedFolder', () => {
   it('TC_07.05.001 | deleteCreatedFolder ', () => {
     cy.get('@folderNameInTable').click();
     cy.url().should('include', `job/${createFolder.newFolderName}`);
-    cy.get('.confirmation-link').click(); // Delete Folder button 
+    cy.get('.icon-edit-delete').click(); // Delete Folder button 
     cy.on('window:confirm', () => true); // clicking "Ok" on alert window
     cy.url().should('equal', `http://${HOST}:${PORT}/`);
     cy.get('@folderNameInTable').should('not.exist');
