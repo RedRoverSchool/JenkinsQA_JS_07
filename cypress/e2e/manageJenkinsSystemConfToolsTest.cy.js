@@ -14,7 +14,7 @@ describe("manageJenkinsSystemConfToolsTest", () => {
             .and("have.text", sectionMainHeader);
     });
 
-    it("TC_09.06.005 | Visibility of title and icon Tools section item verification", () => {
+    it("TC_09.06.005 | Visibility of title and icon 'Tools' section item verification", () => {
         cy.get("a[href='configureTools'] dl dt").should("be.visible")
             .then(($el) => {
                 expect(sysConfSubHeaders).to.include($el.text());
