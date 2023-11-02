@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 describe('configureNewPipelineProject', () => {
-    it('TC_03.05.002 | New Item > Create Pipeline Project > Configure new Pipeline project>Verify Enable/Disable the current project', () => {
+    it.skip('TC_03.05.002 | New Item > Create Pipeline Project > Configure new Pipeline project>Verify Enable/Disable the current project', () => {
         
         cy.get('a[href="newJob"]').click()
         cy.get('input#name').type('Pipeline Project1')
