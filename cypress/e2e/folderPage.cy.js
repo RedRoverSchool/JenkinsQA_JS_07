@@ -14,4 +14,10 @@ describe('Folder page', () => {
     it('TC_07.01.001 | Folder page > Verify a folder link', () => {
         cy.url().should('be.equal', `http://localhost:8080/job/${data.folderName}/`)
     });
+
+    it('TC_07.01.002 | Folder page > Verify left-side menu', () => {
+        cy.get('#tasks .task').each(($el, ind) => {
+            expect($el.text().trim()).to.be.equal(data.menuItems[ind]);
+        })
+    });
 });

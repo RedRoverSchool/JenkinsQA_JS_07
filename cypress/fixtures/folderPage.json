@@ -1,3 +1,13 @@
 {
-    "folderName": "Folder1"
+    "folderName": "Folder1",
+    "menuItems": [
+        "Status", 
+        "Configure", 
+        "New Item", 
+        "Delete Folder",
+        "People",
+        "Build History",
+        "Rename",
+        "Credentials"
+    ]
 }
