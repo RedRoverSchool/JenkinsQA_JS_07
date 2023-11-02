@@ -74,4 +74,28 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
       .should('contain', '""')
       .and('contain', manageJenkinsSecurityCreateUser.errorUsername);
   });
+  it('TC_09.14.003 | Manage Jenkins > Security> Verify error message displayed when user entered passwords that did not match', function () {
+    cy.get('a[href="/manage"]').click();
+    cy.get('a[href="securityRealm/"]').click();
+    cy.get('a[href="addUser"]').click();
+    cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
+    cy.get('input[name="password1"]').type(
+      manageJenkinsSecurityCreateUser.password
+    );
+    cy.get('input[name="password2"]').type(
+      manageJenkinsSecurityCreateUser.invalidPassword
+    );
+    cy.get('input[name="fullname"]').type(
+      manageJenkinsSecurityCreateUser.fullName
+    );
+    cy.get('input[name="email"]').type(manageJenkinsSecurityCreateUser.email);
+    cy.get('button[name="Submit"]').click();
+    cy.get('div.error')
+      .should('have.length', 2)
+      .each(($el) => {
+        expect($el.text()).to.include(
+          manageJenkinsSecurityCreateUser.errorPasword
+        );
+      });
+  });
 });
