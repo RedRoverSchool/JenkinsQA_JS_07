@@ -2,5 +2,6 @@
     "newItemPage": "http://localhost:8080/view/all/newJob",
     "firstProjectName": "project1",
     "secondProjectName": "project2",
-    "errorMessage": "» This field cannot be empty, please enter a valid name"
+    "errorMessage": "» This field cannot be empty, please enter a valid name",
+    "nonExistenProjectName": "qwerty"
 }
