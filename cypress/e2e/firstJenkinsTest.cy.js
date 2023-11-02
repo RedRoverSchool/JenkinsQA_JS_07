@@ -6,6 +6,12 @@ describe('first Jenkins test', () => {
       cy.get('.empty-state-block h1').should('be.visible').and('have.text', 'Welcome to Jenkins!')
     })
 
+    it('another test', function () {
+      cy.get('.jenkins-breadcrumbs__list-item > .model-link').should('have.text', 'Dashboard').realHover();
+      cy.get('li.jenkins-breadcrumbs__list-item button.jenkins-menu-dropdown-chevron').should('be.visible').click();
+      cy.get('.jenkins-dropdown a').should('be.visible').and('have.length', 5);
+    })
+
     it('verify dropdown menu Dashboard', function () {
       cy.get('.jenkins-breadcrumbs__list-item > .model-link').should('have.text', 'Dashboard').realHover();
       cy.get('li.jenkins-breadcrumbs__list-item button.jenkins-menu-dropdown-chevron').should('be.visible').click();
