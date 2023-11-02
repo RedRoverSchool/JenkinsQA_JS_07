@@ -19,7 +19,8 @@ describe('deleteCreatedFolder', () => {
     cy.get('@folderNameInTable').click();
     cy.url().should('include', `job/${createFolder.newFolderName}`);
     cy.get('.icon-edit-delete').click(); // Delete Folder button 
-    cy.on('window:confirm', () => true); // clicking "Ok" on alert window
+    cy.get('button[name="Submit"]').click(); // somehow on ci tests new page is opened instead of alert window
+    //cy.on('window:confirm', () => true); // clicking "Ok" on alert window; this actual for local tests
     cy.url().should('equal', `http://${HOST}:${PORT}/`);
     cy.get('@folderNameInTable').should('not.exist');
   });
