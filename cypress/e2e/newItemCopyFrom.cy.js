@@ -40,7 +40,8 @@ describe('New item > Copy from', () => {
         cy.get('.hudson_model_FreeStyleProject').click();
         cy.get('#from').type(data.firstProjectName);
         cy.get('#ok-button').click();
-        cy.url().should('be.equal', `http://localhost:8080/job/${data.secondProjectName}/configure`)
+        cy.url().should('include', `job/${data.secondProjectName}/configure`);
+        cy.get('#side-panel .jenkins-app-bar__content').should('have.text', data.pageName);
     });
 
     it('TC_03.08.006 | +New Item > Copy from > Error message when copy from non-existent job', () => {
