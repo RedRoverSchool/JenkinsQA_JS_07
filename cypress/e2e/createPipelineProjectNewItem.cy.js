@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+
 let nameProject= "firstPipelineProject"
 
 describe('createPipelineProjectNewItem', () => {
