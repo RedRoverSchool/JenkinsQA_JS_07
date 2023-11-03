@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-let nameProject = "firstPipelineProject"
+const nameProject = "firstPipelineProject"
 
 describe('createPipelineProjectNewItem', () => {
 
@@ -14,8 +14,7 @@ describe('createPipelineProjectNewItem', () => {
         cy.get("a[href='/view/all/newJob']").click()
         cy.get('input#name').type(nameProject)
         cy.get('li[tabindex="0"] span').contains('Pipeline').click()
-
-
         cy.get('#ok-button').should('be.disabled')
     })
+    
 })
