@@ -10,5 +10,7 @@ describe('multiconfigProjectNew', () => {
         cy.get('.jenkins-button--primary').click()
         cy.get('.matrix-project-headline').should('be.visible', 'Project Project1')
         cy.visit('http://localhost:8080/')
+
+        cy.get('.jenkins-table__link').should('have.text', 'Project 1')
    })
 })
