@@ -11,6 +11,6 @@ describe ('Freestyle Project', () => {
         cy.get('.hudson_model_FreeStyleProject').click();
         cy.get('#ok-button').click();
 
-        cy.get('[data-section-id="general"]').should('exist');
+        cy.get('[data-section-id="general"]').should('be.visible');
     })
 })
