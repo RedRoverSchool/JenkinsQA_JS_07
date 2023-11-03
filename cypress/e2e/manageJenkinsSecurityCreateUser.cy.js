@@ -98,4 +98,25 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
         );
       });
   });
+  it('TC_09.14.004 |Manage Jenkins > Security> Create User > Verify Auto-Fill "Full Name" field with Username If the user leaves "Full name" field empty', function () {
+    cy.get('a[href="/manage"]').click();
+    cy.get('a[href="securityRealm/"]').click();
+    cy.get('a[href="addUser"]').click();
+    cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
+    cy.get('input[name="password1"]').type(
+      manageJenkinsSecurityCreateUser.password
+    );
+    cy.get('input[name="password2"]').type(
+      manageJenkinsSecurityCreateUser.password
+    );
+    cy.get('input[name="fullname"]').should('not.have.value');
+    cy.get('input[name="email"]').type(manageJenkinsSecurityCreateUser.email);
+    cy.get('button[name="Submit"]').click();
+    cy.get('tbody > :nth-child(2) > :nth-child(3)').should(
+      'have.text',
+      manageJenkinsSecurityCreateUser.username
+    );
+    cy.wait(2000);
+    cy.get('a[data-url="user/johnkennedy/doDelete"]').click();
+  });
 });
