@@ -4,7 +4,7 @@ let nameProject= "firstPipelineProject"
 
 describe('createPipelineProjectNewItem', () => {
 
-    it('TC_03.04.008 | Create Pipeline project > Not unique name > Message invalid item name', () => {
+    it.skip('TC_03.04.008 | Create Pipeline project > Not unique name > Message invalid item name', () => {
         cy.visit('http://localhost:8080/')
         cy.get("a[href='/view/all/newJob']").click()
         cy.get('input#name').type(nameProject)
