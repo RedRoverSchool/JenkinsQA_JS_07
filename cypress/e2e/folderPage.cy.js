@@ -20,4 +20,10 @@ describe('Folder page', () => {
             expect($el.text().trim()).to.be.equal(data.menuItems[ind]);
         })
     });
+
+    it('TC_07.01.003 | Folder page > Check the default active menu item', () => {
+        cy.get('#tasks .task .task-link:first-child')
+            .should('contain', 'Status')
+            .and('have.class', 'task-link--active');
+    });
 });
