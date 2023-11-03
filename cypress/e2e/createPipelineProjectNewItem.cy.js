@@ -13,7 +13,7 @@ describe('createPipelineProjectNewItem', () => {
         cy.get('a[href="/"].model-link').click()
         cy.get("a[href='/view/all/newJob']").click()
         cy.get('input#name').type(nameProject)
+        cy.get('div#itemname-invalid.input-validation-message').should('be.visible').and('have.text',`» A job already exists with the name ‘${nameProject}’`)
+    })
+})
 
-        cy.get('#itemname-invalid').should('be.visible').and('have.text',`» A job already exists with the name ‘${nameProject}’`)
-    })
-    })
