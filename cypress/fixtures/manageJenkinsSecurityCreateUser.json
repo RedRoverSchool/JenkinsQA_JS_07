@@ -1,0 +1,10 @@
+{
+  "username": "JohnKennedy",
+  "password": "password",
+  "invalidPassword": "pas",
+  "fullName": "John Kennedy",
+  "email": "email@gmail.com",
+  "expectedUserId": ["admin", "JohnKennedy"],
+  "errorUsername": "is prohibited as a username for security reasons.",
+  "errorPasword": "Password didn't match"
+}

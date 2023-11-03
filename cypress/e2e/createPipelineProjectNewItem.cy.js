@@ -14,4 +14,4 @@ describe('createPipelineProjectNewItem', () => {
         cy.get('input#name').type(nameProject)
         cy.get('div#itemname-invalid.input-validation-message').should('be.visible').and('have.text',`» A job already exists with the name ‘${nameProject}’`)
     })
-    })
+})
