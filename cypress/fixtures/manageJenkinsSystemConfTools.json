@@ -1,11 +1,12 @@
 {
     "sectionMainHeader" : "System Configuration",
-    "sysConfSubHeaders": [
+    "sysConfHeaders": [
         "System",
         "Tools",
         "Plugins",
         "Nodes",
         "Install as Windows Service",
         "Clouds"
-    ]
+    ],
+    "configureToolsUrl": "http://localhost:8080/manage/configureTools/"
 }
