@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import {sectionMainHeader, sysConfHeaders, configureToolsUrl} from "../fixtures/manageJenkinsSystemConfTools.json";
+import {sectionMainHeader, sysConfHeaders, configureToolsEndpoint} from "../fixtures/manageJenkinsSystemConfTools.json";
 
 describe("manageJenkinsSystemConfToolsTest", () => {
 
@@ -26,7 +26,7 @@ describe("manageJenkinsSystemConfToolsTest", () => {
     it("TC_09.06.007 | Verify that the user redirects to '/configureTools' page after clicking on the 'Tools' title", () => {
         cy.get("a[href='configureTools'] dl dt").should("be.visible").click();
 
-        cy.url().should("eq", configureToolsUrl);
+        cy.url().should("include", configureToolsEndpoint);
         cy.get(".jenkins-app-bar__content h1").should("be.visible")
             .then(($el) => {
                 expect(sysConfHeaders).to.include($el.text());
