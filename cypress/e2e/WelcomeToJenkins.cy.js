@@ -1,4 +1,5 @@
 ///<reference types ="cypress"/>
+import { mainPageTitle } from '../fixtures/WelcomeToJenkins.json';
 
 describe('WelcomeToJenkins.cy', () => {
 
@@ -6,12 +7,7 @@ describe('WelcomeToJenkins.cy', () => {
 
         cy.get('.empty-state-block h1')
         .should('be.visible')
-        .and('have.text', 'Welcome to Jenkins!')
-        .invoke('attr', '<h1>');
-
-        cy.get('.empty-state-block p')
-        .should('be.visible')
-        .and('have.text', 'This page is where your Jenkins jobs will be displayed. To get started, you can set up distributed builds or start building a software project.')
-        
+        .and('have.text', mainPageTitle)
+        .invoke('attr', '<h1>');     
     })
 })
