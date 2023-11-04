@@ -10,6 +10,5 @@ describe('multiConfigProjectA', () => {
         cy.get('.jenkins-breadcrumbs__list-item:nth-child(1)').click()
 
         cy.get('td a[href*="job"].jenkins-table__link').should('have.text', 'Project073')
-
     });
 })
