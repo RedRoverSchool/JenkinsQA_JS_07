@@ -1,0 +1,10 @@
+{
+    "pageTitle": "General",
+    "sections": [
+        "Source Code Management",
+        "Build Triggers",
+        "Build Environment",
+        "Build Steps",
+        "Post-build Actions"
+    ]
+}
