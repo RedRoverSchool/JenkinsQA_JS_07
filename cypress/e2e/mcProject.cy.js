@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('multiconfigProjectNew', () => {
+describe('mcProject', () => {
 
     it('Create Multiconfiguration project', function() {
         cy.get('a[href="newJob"]').click()
