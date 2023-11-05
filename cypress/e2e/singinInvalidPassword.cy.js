@@ -13,6 +13,12 @@ describe('singinInvalidPassword', () => {
 
         cy.get('.app-sign-in-register__error').should('be.visible').and('have.text', 'Invalid username or password');
     })
+
+    it("TC_01.01.002 | Validate after leaving empty fields and clicking 'Sign in' button an error mesagge appeares", () => {
+        cy.get("a[href='/logout']").click();
+        cy.get(".jenkins-button.jenkins-button--primary").click();
+        cy.get(".app-sign-in-register__error").should('have.text', 'Invalid username or password');
+    })
   })
   
 
