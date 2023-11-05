@@ -1,0 +1,6 @@
+{
+    "emptyFieldWarning" : "» This field cannot be empty, please enter a valid name",
+    "itemName" : "Project1",
+    "configPageName" : "Configure",
+    "configPageURL" : "http://localhost:8080/job/Project1/configure"
+}

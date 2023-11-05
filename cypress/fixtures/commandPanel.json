@@ -1,0 +1,10 @@
+{
+"namesData": ["New Item", "People", "Build History", "Manage Jenkins", "My Views"],
+"links": {
+    "NewItem": "http://localhost:8080/view/all/newJob",
+    "People": "http://localhost:8080/asynchPeople/",
+    "BuildHistory": "http://localhost:8080/view/all/builds",
+    "ManageJenkins": "http://localhost:8080/manage/",
+    "MyViews": "http://localhost:8080/me/my-views/view/all/"
+}
+}

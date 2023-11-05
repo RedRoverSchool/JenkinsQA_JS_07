@@ -1,0 +1,14 @@
+{
+    "projectName": "MulticonfigProject",
+    "expectedSideMenuItems": 
+    [
+        "General",
+        "Advanced Project Options",
+        "Source Code Management",
+        "Build Triggers",
+        "Configuration Matrix",
+        "Build Environment",
+        "Build Steps",
+        "Post-build Actions"
+    ]
+}
