@@ -1,0 +1,11 @@
+{
+    "testCase": "TC_03.03.004",
+    "pageTitle": "General",
+    "sections": [
+        "Source Code Management",
+        "Build Triggers",
+        "Build Environment",
+        "Build Steps",
+        "Post-build Actions"
+    ]
+}
