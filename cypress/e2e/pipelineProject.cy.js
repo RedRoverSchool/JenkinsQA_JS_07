@@ -2,7 +2,6 @@
 
 import pipelineProject from '../fixtures/pipelineProject.json'
 
-
 describe('New Item > Create Pipeline Project > Configure new Pipeline project', () => {
 
     it('TC_03.05.004 | New Item > Create Pipeline Project > Configure new Pipeline project > Verify quantity of elements of Configure menu', function () {
