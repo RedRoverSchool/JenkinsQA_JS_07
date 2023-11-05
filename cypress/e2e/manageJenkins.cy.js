@@ -3,7 +3,7 @@
 import { randomUsername, randomPassword, randomFullName, randomEmail } from '../fixtures/manageJenkinsCreatUserRandom';
 
 describe('creatNewUser', () => {
-  it('TC_09.14 | Manage Jenkins > Security> Create User', () => {
+  it('TC_09.14.003 | Manage Jenkins > Security> Create User', () => {
 
     cy.get('a[href="/manage"]').click()
     cy.get('a[href="securityRealm/"]').click()
