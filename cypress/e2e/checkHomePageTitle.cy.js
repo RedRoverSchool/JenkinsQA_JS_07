@@ -5,3 +5,4 @@ describe('displaying Title', () =>{
         cy.get('#jenkins-name-icon').should('be.visible').and('include.text', "Jenkins")
     }
 })
+  
