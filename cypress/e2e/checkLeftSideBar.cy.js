@@ -1,14 +1,14 @@
 /// <reference types="cypress"/>
 
-describe('Check left side bar', () =>{
-    it('TC_02.04.018 | Dashboard > Verify Command panel on the left side', () =>{
-    cy.get('#tasks').each(($element) =>{
+import { namesData } from "../fixtures/commandPanel.json";
 
-        const elementText = $element.text();
-
-        const expectedText = '\n            \n            New Item\n            \n            People\n            \n            Build History\n            \n            \n\n    \n        \n            \n        \n    \nManage Jenkins\n            \n            \nMy Views';
-        expect(elementText).to.equal(expectedText);
+describe("Check left side bar", () => {
+  it("TC_02.04.018 | Dashboard > Verify Command panel on the left side", () => {
+    cy.get("#tasks").then(($element) => {
+      const elementText = $element.text().replace(/\n/g, '').trim().split(/\s{2,}/);
+      console.log(elementText);
+      expect(elementText).to.deep.equal(namesData);
 
     });
-    });
+  });
 });
