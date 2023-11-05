@@ -2,7 +2,7 @@
 
 import createFreestyleProject from "../fixtures/createFreestyleProject.json"
 import configureFreestyleProject from "../fixtures/configureFreestyleProject.json"
-import {pageTitle, sections} from '../fixtures/freestyleProjectConfigure.json'
+import {testCase, pageTitle, sections} from '../fixtures/freestyleProjectConfigure.json'
 
 describe('createFreestyleProject', () => {
 
@@ -27,7 +27,6 @@ describe('createFreestyleProject', () => {
     });
 
     it('TC_03.03.004 | Verify that Freestyle Project is created and verify elements on /configure page', function () {
-        const testCase = 'TC_03.03.004';
         cy.get('[href*="/view/all/newJob"]').click();
         cy.get('input#name').type(testCase);
         cy.get('li.hudson_model_FreeStyleProject')
