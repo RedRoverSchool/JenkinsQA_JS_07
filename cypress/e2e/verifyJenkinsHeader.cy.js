@@ -1,16 +1,17 @@
 /// <reference types="cypress"/>
 
-describe('verifyHeaderLogoClickable', () => {
-    it('TC_02.02.002 | Header > Verify Jenkins Logo (image) and Jenkins Icon (image with text Jenkins) are visible, clickable and after click redirect to Homepage', () => {
-       
-        cy.get('#jenkins-head-icon').should('exist').and('be.visible').click()
-        cy.url().should('eq', 'http://localhost:8080/')
-        cy.get('#jenkins-name-icon').should('exist').and('be.visible').click()
-        cy.url().should('eq', 'http://localhost:8080/')
-        cy.get('a[id="jenkins-home-link"]').should('exist').and('be.visible').click()
-        cy.url().should('eq', 'http://localhost:8080/')
-       
-    });
+import homepageTitle from "../fixtures/titlePage.json"
+describe('verifyHeaderLogoClickable', function() {
+
+    it('TC_02.02.002 | Header > Verify Jenkins Logo (image) visible, after click redirect to Homepage', function ()  {
+        cy.get('#jenkins-head-icon').should('be.visible').click()
+        cy.title().should('eq', homepageTitle.homepageTitle);
+    })
+
+    it('TC_02.02.007 | Header >Verify Jenkins Icon (image with text Jenkins) is visible after click redirect to Homepage', function()  {
+        cy.get('#jenkins-name-icon').should('be.visible').click()
+        cy.get('title').should('include.text',  homepageTitle.homepageTitle);
+    })
 
     it('TC_02.02.006 | Header > Jenkins Logo is visible and after click redirect to Homepage', () => {
         cy.get('#jenkins-head-icon').should('be.visible').click();

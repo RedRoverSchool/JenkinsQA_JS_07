@@ -1,4 +1,5 @@
 {
+    "manageJenkinsEndpoint": "/manage",
     "mainHeaderPage": "Manage Jenkins",
     "subHeadersPage": {
         "0": "System Configuration",
