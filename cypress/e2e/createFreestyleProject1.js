@@ -2,7 +2,7 @@
 
 import createFreestyleProject from "../fixtures/createFreestyleProject.json";
 
-describe("createFirstFreestyleProject", () => {
+describe("createFreestyleProject1", () => {
   it("TC_03.02.007 | Verify that the Freestyle project created", () => {
     cy.get('a[href="/view/all/newJob"]').click();
     cy.get("#name.jenkins-input").type(createFreestyleProject.newProjectName);
