@@ -18,5 +18,5 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
         return Cypress.$.makeArray($els);
     })
       .should("have.length", "3")
-    })
-})
+    });
+});
