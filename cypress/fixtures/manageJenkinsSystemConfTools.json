@@ -1,11 +1,12 @@
 {
     "sectionMainHeader" : "System Configuration",
-    "sysConfSubHeaders": [
+    "sysConfHeaders": [
         "System",
         "Tools",
         "Plugins",
         "Nodes",
         "Install as Windows Service",
         "Clouds"
-    ]
+    ],
+    "configureToolsEndpoint": "/configureTools"
 }

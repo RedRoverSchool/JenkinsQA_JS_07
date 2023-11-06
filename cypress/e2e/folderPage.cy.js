@@ -26,4 +26,12 @@ describe('Folder page', () => {
             .should('contain', 'Status')
             .and('have.class', 'task-link--active');
     });
+
+    it('TC_07.01.004 | Folder page > Verify breadcrumbs contain the folder name', () => {
+        cy.get('#breadcrumbs li.jenkins-breadcrumbs__list-item')
+            .then($els => {
+                const breadcrumbs = Cypress.$.makeArray($els).map($el => $el.innerText);
+                expect(breadcrumbs[breadcrumbs.length - 1]).to.be.equal(data.folderName)
+            })  
+    });
 });
