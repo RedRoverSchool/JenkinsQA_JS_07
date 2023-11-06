@@ -21,4 +21,16 @@ describe('Pipeline > Delete Pipeline', () => {
         cy.get('a[href*="job/"]').should('not.exist');
         cy.get('.dashboard .jenkins-table').should('not.exist');
         });
+
+    it('TC_05.05.002 | | Pipeline > Delete cancellation Pipeline on Dashboard Page', () => {
+        cy.get('#jenkins-home-link').click();
+        cy.get('a[href*="job/"]').realHover();
+        cy.get('#projectstatus .jenkins-menu-dropdown-chevron').click();
+        cy.get('.icon-edit-delete').click();
+        cy.on('window:confirm', (str) => {
+            expect(str).to.eql('Delete Pipeline: are you sure?');
+        });
+        cy.on('window:confirm', () => false);
+        cy.get('.dashboard .jenkins-table').should('exist').and('contain', randomName)
+        });
 });
