@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import { randomUsername, randomPassword, randomFullName, randomEmail } from '../fixtures/manageJenkinsCreatUserRandom';
+import { randomUserName, randomPassword, randomFullName, randomEmail } from '../fixtures/manageJenkinsCreatUserRandom';
 
 describe('creatNewUser', () => {
   it('TC_09.14.003 | Manage Jenkins > Security> Create User', () => {
@@ -9,7 +9,7 @@ describe('creatNewUser', () => {
     cy.get('a[href="securityRealm/"]').click()
     cy.get('.jenkins-button.jenkins-button--primary').click()
 
-    cy.get('#username').type(randomUsername);
+    cy.get('#username').type(randomUserName);
     cy.get('input[name="password1"]').type(randomPassword);
     cy.get('input[name="password2"]').type(randomPassword);
     cy.get("input[name='fullname']").type(randomFullName);
