@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('Check icons near links', ()=>{
+describe('Command panel on the left side', ()=>{
     it('TC_02.04.019 | Item > Check icons near the link', ()=>{
         cy.get('a.task-link').each(($link)=>{
             const $parent = $link.parent();
