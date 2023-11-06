@@ -1,5 +1,13 @@
 {
     "pipelineName" : "FirstPipelineProject",
-    "descriptionPipeLine" : "First Pipeline Description"
+    "descriptionPipeLine" : "First Pipeline Description",
+    "pipelineConfigurePageHeader" : "Configure",
+    "configureMenuLength" : "3",
+    "expectedConfigureMenuItems" : 
+    [
+        "General",
+        "Advanced Project Options",
+        "Pipeline"
+    ]
     
 }    
