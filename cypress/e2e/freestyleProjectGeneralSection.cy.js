@@ -10,9 +10,8 @@ describe ('Freestyle Project', () => {
         cy.get('input#name').type(freestyleProject.freestyleProjectName);
         cy.get('.hudson_model_FreeStyleProject').click();
         cy.get('#ok-button').click()
-        cy.get('[data-section-id="general"]').should('have.class', 'active')
-
-
+     
+        cy.get('[data-section-id="general"]').should('have.class', 'task-link--active')
         cy.get('#general').should('be.visible');
     })
 })
