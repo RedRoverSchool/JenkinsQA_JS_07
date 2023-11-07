@@ -18,7 +18,7 @@ describe('Pipeline > Delete Pipeline', () => {
         cy.get('tbody tr td a.jenkins-table__link').click();
         cy.get('.icon-edit-delete').click();
 
-        cy.get('#main-panel h1').should('be.visible').should('have.text', 'Welcome to Jenkins!');
+        cy.get('#main-panel h1').should('be.visible').and('have.text', 'Welcome to Jenkins!');
         cy.get('#search-box').type(`${pipelineName}`+ '{enter}');
         cy.get('.error').should('have.text', messages.searchForErroeMessage);  
     });      
