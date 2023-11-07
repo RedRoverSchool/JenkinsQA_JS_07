@@ -6,5 +6,6 @@
   "email": "email@gmail.com",
   "expectedUserId": ["admin", "JohnKennedy"],
   "errorUsername": "is prohibited as a username for security reasons.",
-  "errorPasword": "Password didn't match"
+  "errorPasword": "Password didn't match",
+  "errorEmail": "Invalid e-mail address"
 }
