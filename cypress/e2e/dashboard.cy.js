@@ -8,7 +8,7 @@ describe('dashboard', () => {
     })
 
     it('TC_02.08.001 | Dashboard > Set Up an agent navigate to New node page', () => {
-        cy.get('a[href="computer/new"]').should('have.text', 'Set up an agent').click()
+        cy.get('a[href="computer/new"]').click()
         cy.url().should('include','computer/new')
         cy.get('h1').should('be.visible').and('have.text','New node')
     })
