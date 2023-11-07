@@ -34,4 +34,8 @@ describe('Folder page', () => {
                 expect(breadcrumbs[breadcrumbs.length - 1]).to.be.equal(data.folderName)
             })  
     });
+
+    it('TC_07.01.005 | Folder page > Verify info message if the folder is empty', () => {
+        cy.get('#main-panel').should('contain', data.emptyFolderMessage);
+    });
 });
