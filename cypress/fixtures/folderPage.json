@@ -9,5 +9,6 @@
         "Build History",
         "Rename",
         "Credentials"
-    ]
+    ],
+    "emptyFolderMessage": "This folder is empty"
 }
