@@ -9,8 +9,10 @@ describe ('Freestyle Project', () => {
         cy.get('a[href= "/view/all/newJob"]').click();
         cy.get('input#name').type(freestyleProject.freestyleProjectName);
         cy.get('.hudson_model_FreeStyleProject').click();
-        cy.get('#ok-button').click();
+        cy.get('#ok-button').click()
+        cy.get('[data-section-id="general"]').should('have.class', 'active')
 
-        cy.get('[data-section-id="general"]').should('be.visible');
+
+        cy.get('#general').should('be.visible');
     })
 })
