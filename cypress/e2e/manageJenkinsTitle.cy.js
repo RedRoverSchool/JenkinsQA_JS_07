@@ -15,15 +15,11 @@ describe("manageJenkinsTitle", () => {
     });
 
     it("TC_09.01.002 | Manage Jenkins > Title > 5 section-headers displays verification", () => {
-        const objOfSubHeadersFromJSON = JSON.parse(JSON.stringify(manageJenkinsTitleData.subHeadersPage));
-        const arrOfSubHeadersFromObj = Object.values(objOfSubHeadersFromJSON);
-
         cy.get(".jenkins-section > h2").should("be.visible")
-            .and("have.prop", "tagName", "H2")
             .then(($els) => {
                 return Cypress.$.makeArray($els).map($el => $el.innerText);
             })
-            .and("deep.equal", arrOfSubHeadersFromObj)
-            .and("have.length", 5);
+            .and("have.length", 5)
+            .and("deep.equal", manageJenkinsTitleData.subHeadersMainJenkinsHeaders);
     });
 }); 
