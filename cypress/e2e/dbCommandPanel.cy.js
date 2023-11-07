@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-import {links} from "../dbCommandPanel.json"
+import {links} from "../fixtures/dbCommandPanel.json"
 
 
 describe('Verify Dashboard links redirected to the corresponding page', () => {
