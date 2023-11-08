@@ -11,7 +11,7 @@ describe('startBuildingYourSoftwareProjectTest',() => {
         cy.get('.h3').should('be.visible').and('have.text','Enter an item name')
     });
 
-    it.only('TC_02.06.006 | Block "Start building your software project" > "Arrow" icon is visible and clickable',() => {
+    it('TC_02.06.006 | Block "Start building your software project" > "Arrow" icon is visible and clickable',() => {
         cy.get('a[href="newJob"] svg').should('be.visible')
         cy.get('a[href="newJob"] svg').click()
         cy.url().should('include','/newJob')
