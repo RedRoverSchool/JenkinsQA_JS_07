@@ -1,12 +1,12 @@
 /// <reference types="cypress"/>
 
-import managaJenkinsCreateUserData from "../fixtures/managaJenkinsCreateUser.json"
+import manageJenkinsCreateUserData from "../fixtures/manageJenkinsCreateUser.json"
 
 describe(" Manage Jenkins > Security> Create User", () => {
     
     beforeEach(() => {
         cy.get("#tasks div.task")
-          .contains(managaJenkinsCreateUserData.manageJenkinsLinkText)
+          .contains(manageJenkinsCreateUserData.manageJenkinsLinkText)
           .click();
         cy.get("div.jenkins-section__item a[href='securityRealm/']").click();
         cy.get("a[href='addUser']").click();
@@ -20,7 +20,7 @@ describe(" Manage Jenkins > Security> Create User", () => {
               ($els) => $els.innerText
             );
                expect(errorMessages).to.be.deep.equal(
-              managaJenkinsCreateUserData.errorMessagesExpected
+              manageJenkinsCreateUserData.errorMessagesExpected
             );
         })
     });
