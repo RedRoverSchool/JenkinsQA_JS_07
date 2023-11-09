@@ -1,3 +1,11 @@
+/// <reference types="cypress"/>
+
+const USERNAME = Cypress.env('local.admin.username');
+const PASSWORD = Cypress.env('local.admin.password');
+
+
+
+SignInToJenkinsWithValidCredentials.cy.js
 describe('Sign in to Jenkins', () => {
 
     it('Sign in to Jenkins with valid credentials', function() {
