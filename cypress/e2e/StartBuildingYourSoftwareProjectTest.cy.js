@@ -12,6 +12,6 @@ cy.get('h2.h4').should('be.visible');
 
         cy.get('a[href="newJob"]').click();
         cy.url().should('be.eql',`http://localhost:${PORT}/newJob`);
-        cy.get('.h3').should('be.visible').and('have.text',name.fieldName)
+        cy.get('.h3').should('be.visible').and('have.text',name.fieldName) 
         });
 });
