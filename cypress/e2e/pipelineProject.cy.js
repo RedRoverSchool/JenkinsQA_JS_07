@@ -36,4 +36,34 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
             expect($el.get(0).innerText).to.eq(pipelineProject.discardOldBuildsHelpText);
          });
    });
-});
+
+   it('TC_03.05.006 | New Item > Create Pipeline Project > Configure new Pipeline project > Сheck adding a Display name', () => {
+      cy.get('#advanced-project-options')
+        .parents('.jenkins-section')
+        .find('button')
+        .click()         
+      
+      cy.get('#advanced-project-options')
+        .parents('.jenkins-section')
+        .find('div.jenkins-form-label.help-sibling')
+        .should('be.visible')
+        .and('have.text', 'Display Name?');      
+      
+      cy.get('#advanced-project-options')
+        .parents('.jenkins-section')
+        .find('.dropdownList-container')
+        .should('be.visible')
+        .find('input')
+        .type(pipelineProject.DisplayName);
+
+      cy.get('.jenkins-button.jenkins-button--primary')
+        .click();
+
+      cy.url()
+        .should('include', `/job/${pipelineProject.pipelineName}`);
+
+      cy.get('.job-index-headline.page-headline')
+        .should('be.visible')
+        .and('contain', pipelineProject.DisplayName);           
+  });
+})
