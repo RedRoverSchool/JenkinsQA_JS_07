@@ -1,3 +1,4 @@
 {
-    "homepageTitle" : "Dashboard [Jenkins]"
+    "homepageTitle" : "Dashboard [Jenkins]",
+    "newProjectCreationTitle" : "New Item [Jenkins]"
 }
