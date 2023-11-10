@@ -38,4 +38,8 @@ describe('Folder page', () => {
     it('TC_07.01.005 | Folder page > Verify info message if the folder is empty', () => {
         cy.get('#main-panel').should('contain', data.emptyFolderMessage);
     });
+
+    it('TC_07.01.006 | Folder page > Verify the link "Create a job" exist', () => {
+        cy.get('#main-panel a[href="newJob"]').should('be.visible');
+    });
 });
