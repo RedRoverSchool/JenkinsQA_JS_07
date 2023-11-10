@@ -1,9 +1,10 @@
 /// <reference types="cypress"/>
 
 import manageJenkinsSystemConfToolsData from "../fixtures/manageJenkinsSystemConfTools.json";
+import { manageJenkinsPageEndpoint } from "../fixtures/manageJenkinsTitle.json";
+import cypressEnvData from "../../cypress.env.json";
 
 describe("manageJenkinsSystemConfTools", () => {
-
     beforeEach(() => {
         cy.get(".task-link-wrapper > a[href='/manage']").click();
     });
@@ -24,9 +25,13 @@ describe("manageJenkinsSystemConfTools", () => {
     });
 
     it("TC_09.06.007 | Verify that the user redirects to '/configureTools' page after clicking on the 'Tools' title", () => {
+        const baseUrl = `http://${cypressEnvData["local.host"]}:${cypressEnvData["local.port"]}` + "/";
+        const confToolsPageUrl = `${baseUrl}${manageJenkinsPageEndpoint}${manageJenkinsSystemConfToolsData.configureToolsPageEndpoint}`;
+
         cy.get("a[href='configureTools'] dl dt").should("be.visible").click();
 
-        cy.url().should("include", manageJenkinsSystemConfToolsData.configureToolsPageEndpoint);
+        cy.url().should("be.eql", confToolsPageUrl);
+
         cy.get(".jenkins-app-bar__content h1").should("be.visible")
             .then(($el) => {
                 expect(manageJenkinsSystemConfToolsData.sysConfSubHeaders).to.include($el.text());
