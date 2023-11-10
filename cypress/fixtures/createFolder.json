@@ -1,4 +1,5 @@
 {
     "newFolderName": "BusinessFolder",
-    "folderLabel" : "Folder"
+    "folderLabel" : "Folder",
+    "testfolderName": "TestFolder"
 }

@@ -1,0 +1,6 @@
+{
+    
+    "sideMenu" :["new Item","People", "Build History", "Manage Jenkins", "My Views"],
+    "headerPage":["Enter an item name", "People", "Build History of Jenkins", "Manage Jenkins", "This folder is empty"]
+
+}

@@ -11,7 +11,7 @@ describe('multiConfigurationProject', () => {
         cy.get('button[name="Submit"]').click()
 
         cy.get('#description > div:nth-child(1)').should('have.text', 'Description')
-       })
+    })
 
     it('TC_03.07.003 | New Item > Create Multiconfiguration project > Disable project', function() {
         cy.get('#tasks > div:nth-child(1) a.task-link').click()
@@ -23,5 +23,16 @@ describe('multiConfigurationProject', () => {
         cy.get('button[name="Submit"]').click()
 
         cy.get('#enable-project').should('contain.text', 'This project is currently disabled')
+    })
+
+    it('TC_03.07.002 | Check the formatting in the text area "Description" by clicking on "Preview"', function() {
+        cy.get('#tasks > div:nth-child(1) a.task-link').click()
+        cy.get('input#name').type('MultiConfiguration project')
+        cy.get('li[tabindex="0"] span').contains('Multi-configuration project').click()
+        cy.get('#ok-button').click()
+        cy.get('div.jenkins-section textarea.jenkins-input').type('description')
+        cy.get('a.textarea-show-preview').click()
+
+        cy.get('div.textarea-preview').should('have.text', 'description')
     })
 })

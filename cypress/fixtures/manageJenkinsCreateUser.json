@@ -1,0 +1,10 @@
+{
+    "errorMessagesExpected" : [
+      "\"\" is prohibited as a username for security reasons.",
+      "Password is required",
+      "Password is required",
+      "\"\" is prohibited as a full name for security reasons.",
+      "Invalid e-mail address"
+    ],
+    "manageJenkinsLinkText" : "Manage Jenkins"
+}

@@ -18,4 +18,13 @@ describe("dashboardCommandPanel", () => {
         })
         .should("have.length", "5");
     });
+
+    it("TC_02.04.020 | Dashboard > Check all items in the left command panel", () => {
+      cy.get('#tasks')
+        .should('be.visible')      
+        .children('.task')
+        .should('have.length', 5)
+        .then($els => Cypress.$.makeArray($els).map($el => $el.innerText))
+        .should('deep.equal', dashboardCommandPanelData.allTasks); 
+    })
 });

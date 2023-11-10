@@ -115,15 +115,15 @@ Cypress.Commands.add('cleanData', () => {
         getCrumbFromPage(mainPage));
 
       let viewPage = getPage('me/my-views/view/all/');
-      deleteByLink('user/admin/my-views/view/{name}/doDelete',
-        getSubstringsFromPage(viewPage, 'href="/user/admin/my-views/view/', '/"'),
+      deleteByLink(`user/${getUserName().toLowerCase()}/my-views/view/{name}/doDelete`,
+        getSubstringsFromPage(viewPage, `href="/user/${getUserName().toLowerCase()}/my-views/view/`, '/"'),
         getCrumbFromPage(viewPage));
     }
 
     function deleteUsers() {
       let userPage = getPage('manage/securityRealm/');
-      let users = getSubstringsFromPage(userPage, 'href="user', '/delete"');
-      users.delete(getUserName());
+      let users = getSubstringsFromPage(userPage, 'href="user/', '/"');
+      users.delete(getUserName().toLowerCase());
       deleteByLink('manage/securityRealm/user/{name}/doDelete',
         users,
         getCrumbFromPage(userPage));
