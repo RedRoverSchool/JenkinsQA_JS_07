@@ -8,7 +8,7 @@ describe("manageJenkinsTitle", () => {
     })
 
     it("TC_09.01.001 | Manage Jenkins > Title > Main header displays verification", () => {
-        cy.url().should("include", manageJenkinsTitleData.manageJenkinsEndpoint);
+        cy.url().should("include", manageJenkinsTitleData.manageJenkinsPageEndpoint);
 
         cy.get(".jenkins-app-bar__content > h1").should("be.visible")
             .and("have.text", manageJenkinsTitleData.mainHeaderPage);

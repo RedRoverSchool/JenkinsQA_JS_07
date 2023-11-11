@@ -1,6 +1,6 @@
 {
     "sectionMainHeader" : "System Configuration",
-    "sysConfHeaders": [
+    "sysConfSubHeaders": [
         "System",
         "Tools",
         "Plugins",
@@ -8,5 +8,5 @@
         "Install as Windows Service",
         "Clouds"
     ],
-    "configureToolsEndpoint": "/configureTools"
+    "configureToolsPageEndpoint": "configureTools/"
 }
