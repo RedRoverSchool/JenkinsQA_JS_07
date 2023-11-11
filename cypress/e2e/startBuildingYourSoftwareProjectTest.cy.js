@@ -1,5 +1,7 @@
 /// <reference types="cypress"/>
 
+const PORT = Cypress.env("local.port");
+const HOST = Cypress.env('local.host');
 import { expectedProjectLabels } from "../fixtures/newJobPage.json";
 import name from '../fixtures/newJobPage.json'
 describe("startBuildingYourSoftwareProjectTest", () => {
@@ -16,7 +18,7 @@ describe("startBuildingYourSoftwareProjectTest", () => {
   it('TC_02.06.004 |Block “Start building your software project” >Check redirect to the page "New Job"', ()=>{
 
     cy.get('a[href="newJob"]').click();
-    cy.url().should('be.eql',`http://localhost:${PORT}/newJob`);
+    cy.url().should('be.eql',`http://${HOST}:${PORT}/newJob`);
     cy.get('.h3').should('be.visible').and('have.text',name.fieldName) 
     });
 
