@@ -8,5 +8,5 @@
         "Install as Windows Service",
         "Clouds"
     ],
-    "configureToolsPageEndpoint": "/configureTools"
+    "configureToolsPageEndpoint": "configureTools/"
 }
