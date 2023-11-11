@@ -12,5 +12,5 @@ it('TC_02.02.010 |Header > Jenkins Logo and Title>Verify logo and title', () => 
     }
     cy.url().should('be.eql', `http://${HOST}:${PORT}/`)
 
-})
+});
 });
