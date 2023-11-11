@@ -47,14 +47,14 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
         .parents('.jenkins-section')
         .find('div.jenkins-form-label.help-sibling')
         .should('be.visible')
-        .and('have.text', 'Display Name?');      
+        .and('have.text', pipelineProject.displayNameTitle);      
       
       cy.get('#advanced-project-options')
         .parents('.jenkins-section')
         .find('.dropdownList-container')
         .should('be.visible')
         .find('input')
-        .type(pipelineProject.DisplayName);
+        .type(pipelineProject.displayName);
 
       cy.get('.jenkins-button.jenkins-button--primary')
         .click();
@@ -64,6 +64,6 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
 
       cy.get('.job-index-headline.page-headline')
         .should('be.visible')
-        .and('contain', pipelineProject.DisplayName);           
+        .and('contain', pipelineProject.displayName);           
   });
 })
