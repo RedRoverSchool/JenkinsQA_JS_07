@@ -4,7 +4,7 @@ import createPipelineProject4 from"../fixtures/createPipelineProject4.json";
 import newJobPage from"../fixtures/newJobPage.json";
 
 describe('configureNewPipelineProject', () => {
-    
+
     beforeEach(() => {
         cy.get('a[href="newJob"]').click();
         cy.get('input#name').type(createPipelineProject4.newProjectName);
@@ -18,5 +18,6 @@ describe('configureNewPipelineProject', () => {
         cy.get('button[formnovalidate = "formNoValidate"]').click();
 
         cy.get('#enable-project').should('contain','This project is currently disabled'); 
-    });      
+    });
+          
 });
