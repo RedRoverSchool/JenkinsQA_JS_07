@@ -1,4 +1,5 @@
 {
+    "configureToolsPageEndpoint": "configureTools/",
     "sectionMainHeader" : "System Configuration",
     "sysConfSubHeaders": [
         "System",
@@ -7,6 +8,5 @@
         "Nodes",
         "Install as Windows Service",
         "Clouds"
-    ],
-    "configureToolsPageEndpoint": "configureTools/"
+    ]
 }
