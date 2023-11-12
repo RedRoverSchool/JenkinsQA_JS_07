@@ -6,7 +6,7 @@ import cypressEnvData from "../../cypress.env.json";
 
 describe("manageJenkinsSystemConfTools", () => {
     beforeEach(() => {
-        cy.get(".task-link-wrapper > a[href='/manage']").click();
+        cy.get("a[href='/manage']").click();
     });
 
     it("TC_09.06.003 | Visibility of section 'System Configuration' verification", () => {
