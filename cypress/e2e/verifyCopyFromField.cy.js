@@ -1,7 +1,7 @@
 ///<reference types ="cypress"/>
-import { jobName } from "../fixtures/createNewJob.json";
+import { jobName, rendomJob } from "../fixtures/createNewJob.json";
 
-describe('Verify Copy from field', () => {
+describe('Verify "Copy from" field', () => {
     beforeEach('Create new job', () => {
         cy.get("a[href='/view/all/newJob']").click()
         cy.get('label[for=name]').should('have.text', 'Enter an item name')
@@ -11,9 +11,14 @@ describe('Verify Copy from field', () => {
         cy.get('.jenkins-app-bar__content > h1').should('have.text','Configuration')
         cy.get('.jenkins-button--primary ').click()
     })
-
-    it("TC__03.08.09 | New Item > Verify 'Copy from' field >can't create new item from none existing item", () => {
-        cy.get('.jenkins-input  auto-complete  yui-ac-input').click()
+    it("TC__03.08.09 | New Item > Verify 'Copy from' field >can't create a new item from none existing item", () => {
+        cy.get("#jenkins-name-icon").click()
+        cy.get("a[href='/view/all/newJob']").click()
+        cy.get('#name.jenkins-input').type('j')
+        cy.get('div.item-copy').click()
+     
+        // cy.get('#OK-button').click()
+        // cy.get('h1').should('contain', 'Error')
         
      })
 })
