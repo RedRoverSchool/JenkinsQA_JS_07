@@ -2,7 +2,7 @@
 
 describe('pipelineProject', () => {
 
-    it('TC_03.04.012 | New Item > Create Pipeline project', function () {
+    it('TC_03.04.012 | New Item > Create Pipeline project', () => {
         cy.get('a[href = "/view/all/newJob"]').click()
         cy.get('input#name').type('firstProject')
         cy.get('li[tabindex="0"]').contains('Pipeline').click()
