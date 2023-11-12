@@ -20,6 +20,14 @@ describe('check_ARROW_Dd_Set_up_a_distributed_build.cy', () => {
           .should('have.attr', 'd', arrow.d)
     });
 
+    it('TC_02.08.006>Dd>“Set up a distributed build”>Near "Configure a cloud" is an arrow ', () => {
+      cy.get('a[href="cloud/"]').contains('Configure a cloud').should('be.visible')
+      cy.get('a[href="cloud/"] svg').should('be.visible')
+      cy.get('a[href="cloud/"] path')
+        .should('have.attr', 'd', arrow.d)
+   });   
+
+
    
 });
 
