@@ -42,4 +42,17 @@ describe('Folder page', () => {
     it('TC_07.01.006 | Folder page > Verify the link "Create a job" exist', () => {
         cy.get('#main-panel a[href="newJob"]').should('be.visible');
     });
+
+    it('TC_07.01.007 | Folder page > Verify that there is a table on folder page if folder is not empty', () => {
+        cy.get('#main-panel a[href="newJob"]').click();
+        cy.get('input#name').type(data.jobName);
+        cy.get('.hudson_model_FreeStyleProject').click();
+        cy.get('#ok-button').click();
+        cy.get('button[name="Submit"]').click();
+        cy.get('#breadcrumbs a').contains(data.folderName).click();
+        cy.get('#projectstatus').should('be.visible');
+        cy.get(`#job_${data.jobName}`).should('be.visible').and($ => {
+            expect($.text()).to.include(data.jobName)
+        });
+    });
 });
