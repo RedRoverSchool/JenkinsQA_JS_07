@@ -10,6 +10,6 @@ describe('pipelineProject', () => {
         cy.get('a[href="/"]').contains('Dashboard').click()
         cy.get('a[href="job/firstProject/"]').contains('firstProject').should('be.visible')
         cy.get('a[href="job/firstProject/"]').contains('firstProject').should('have.text', 'firstProject')
-
+        
     })
 })
