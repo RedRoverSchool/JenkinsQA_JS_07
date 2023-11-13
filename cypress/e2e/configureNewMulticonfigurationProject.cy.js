@@ -8,7 +8,7 @@ describe("configureNewMulticonfigurationProject", () => {
 
     const multiConfProjName = confNewMultiConfProjData.newMultiConfProjName + Date.now()
     const baseUrl = `http://${cypressEnvData["local.host"]}:${cypressEnvData["local.port"]}`;
-    const confProjPageUrl = `${baseUrl}/${confNewMultiConfProjData.jobEndpoint}/${multiConfProjName}/${confNewMultiConfProjData.confProjPageEndpoint}`;
+    const confProjPageUrl = `${baseUrl}/${confNewMultiConfProjData.jobPath}/${multiConfProjName}/${confNewMultiConfProjData.confProjPageEndpoint}`;
 
     beforeEach(() => {
         cy.get("a[href='/view/all/newJob']").click();

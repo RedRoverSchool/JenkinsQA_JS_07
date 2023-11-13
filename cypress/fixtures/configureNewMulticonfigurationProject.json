@@ -1,5 +1,5 @@
 {
     "confProjPageEndpoint": "configure",
-    "jobEndpoint": "job",
+    "jobPath": "job",
     "newMultiConfProjName": "Project"
 }
