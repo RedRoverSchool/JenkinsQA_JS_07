@@ -37,4 +37,12 @@ describe("folderConfigure", () => {
     cy.get('h1').should('be.visible').and('contain',folderName.displayName)
     cy.get('#view-message').should('be.visible').and('have.text',folderName.displayDescription)
   });
+
+  it("TC_07.03.005 | Folder > Configure > Verify 'Apply' button functionality and confirmation message", () => {
+    const baseUrl = `http://${HOST}:${PORT}`;
+    cy.get("#tasks .task").contains(sideMenu.sidePanelFolderPage).click();
+    cy.get(".jenkins-button.apply-button").click();
+    cy.url().should("eql",`${baseUrl}/job/${folderName.testfolderName}/configure`);
+    cy.get("#notification-bar").should("be.visible").and("have.text", sideMenu.applyButtonNotification);
+  });
 });

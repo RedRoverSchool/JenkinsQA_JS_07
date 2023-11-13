@@ -1,5 +1,6 @@
 {
     "sidePanelHomePage": "New Item",
     "sidePanelFolderPage": "Configure",
-    "breadcrumbsConfigurationPage": "Configuration"
+    "breadcrumbsConfigurationPage": "Configuration",
+    "applyButtonNotification": "Saved"
 }
