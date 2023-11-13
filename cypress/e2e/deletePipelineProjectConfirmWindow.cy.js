@@ -20,5 +20,14 @@ describe('delete pipeline project confirm window', () => {
     cy.on('window:confirm', (str) => {
       expect(str).to.eql(deletePipelineProjectConfirmWindow.windowMessage);
     });
-  })
+  });
+
+  it('TC_05.05.005 | Verify canceling Delete Pipeline Project', () => {
+    cy.get(`td a[href*="job/${deletePipelineProjectConfirmWindow.pipelineProjectName}/"]`).realHover();
+    cy.get(`[data-href*="/job/${deletePipelineProjectConfirmWindow.pipelineProjectName}/"]`).click();
+    cy.get(`button[href="/job/${deletePipelineProjectConfirmWindow.pipelineProjectName}/doDelete"]`).click();
+
+    cy.on('window:confirm', () => false);
+    cy.get('p.jenkins-jobs-list__item__label').should('have.text', deletePipelineProjectConfirmWindow.pipelineProjectName);
+  });
 }) 
