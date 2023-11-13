@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import confNewMultiConfProjData from "../fixtures/configureNewMulticonfigurationProject.json"
+import confNewMultiConfProjData from "../fixtures/configureNewMulticonfigurationProject.json";
 import { configPageName } from "../fixtures/newItemFreestyleProject.json";
 import cypressEnvData from "../../cypress.env.json";
 
