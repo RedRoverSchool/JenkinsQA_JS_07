@@ -6,8 +6,8 @@ const PORT = Cypress.env("local.port");
 import folderName from "../fixtures/createFolder.json";
 import sideMenu from "../fixtures/folderConfigure.json";
 
-describe("folderConfigure",() => {
-  beforeEach("createNewFolder",() => {
+describe("folderConfigure", () => {
+  beforeEach("createNewFolder", () => {
     cy.get("#tasks .task").contains(sideMenu.sidePanelHomePage).click();
     cy.get("#name").type(folderName.testfolderName);
     cy.get(".com_cloudbees_hudson_plugins_folder_Folder").click();
@@ -15,7 +15,7 @@ describe("folderConfigure",() => {
     cy.get('button[name="Submit"]').click();
   });
 
-  it("TC_07.03.001 | Folder > Configure > Verify link “Configure” on the folder page",() => {
+  it("TC_07.03.001 | Folder > Configure > Verify link “Configure” on the folder page", () => {
     cy.get("#tasks .task").contains(sideMenu.sidePanelFolderPage).click();
     cy.url().should(
       "equal",
@@ -27,7 +27,7 @@ describe("folderConfigure",() => {
       .and("have.text",sideMenu.breadcrumbsConfigurationPage);
   });
 
-  it("TC_07.03.002 | Folder > Configure > The 'Display Name' and 'Description' fields in the General section are text input fields ",() => {
+  it("TC_07.03.002 | Folder > Configure > The 'Display Name' and 'Description' fields in the General section are text input fields ", () => {
     cy.get('#tasks .task').contains(sideMenu.sidePanelFolderPage).click();
     cy.get('input.validated').type(folderName.displayName)
     cy.get('textarea.jenkins-input').type(folderName.displayDescription)
