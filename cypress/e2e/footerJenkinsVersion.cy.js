@@ -2,7 +2,7 @@
 import footerJenkinsData from "../fixtures/footerJenkinsData.json";
 
 describe("Footer-Jenkins Version", () => {
-  it("US_15.03.001 | Verify Jenkins version in Footer and color", () => {
+  it("TC_15.03.001 | Verify Jenkins version in Footer and color", () => {
     cy.get(".jenkins_ver")
 
       .should("be.visible")
