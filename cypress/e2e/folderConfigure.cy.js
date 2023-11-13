@@ -24,7 +24,7 @@ describe("folderConfigure", () => {
     cy.get(".jenkins-breadcrumbs__list-item")
       .contains(sideMenu.breadcrumbsConfigurationPage)
       .should("be.visible")
-      .and("have.text",sideMenu.breadcrumbsConfigurationPage);
+      .and("have.text", sideMenu.breadcrumbsConfigurationPage);
   });
 
   it("TC_07.03.002 | Folder > Configure > The 'Display Name' and 'Description' fields in the General section are text input fields ", () => {
