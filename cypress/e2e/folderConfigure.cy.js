@@ -26,4 +26,15 @@ describe("folderConfigure", () => {
       .should("be.visible")
       .and("have.text", sideMenu.breadcrumbsConfigurationPage);
   });
+
+  it("TC_07.03.002 | Folder > Configure > The 'Display Name' and 'Description' fields in the General section are text input fields ", () => {
+    cy.get('#tasks .task').contains(sideMenu.sidePanelFolderPage).click();
+    cy.get('input.validated').type(folderName.displayName)
+    cy.get('textarea.jenkins-input').type(folderName.displayDescription)
+    cy.get('button[name="Submit"]').click()
+
+    cy.url().should('eql',`http://${HOST}:${PORT}/job/${folderName.testfolderName}/`)
+    cy.get('h1').should('be.visible').and('contain',folderName.displayName)
+    cy.get('#view-message').should('be.visible').and('have.text',folderName.displayDescription)
+  });
 });
