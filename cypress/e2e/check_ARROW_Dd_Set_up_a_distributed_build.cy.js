@@ -2,6 +2,7 @@
 
 import { arrow, link } from "../fixtures/svgPaths.json";
 import { linkDb } from "../fixtures/linkDistributedBuilds.json";
+import item from "../fixtures/setUpAdistributedBuildMenu.json";
 
 describe("check_ARROW_Dd_Set_up_a_distributed_build.cy", () => {
   beforeEach(function () {
@@ -36,4 +37,17 @@ describe("check_ARROW_Dd_Set_up_a_distributed_build.cy", () => {
     cy.get(`a[href="${linkDb}"] svg`).should("be.visible");
     cy.get(`a[href="${linkDb}"] path`).should("have.attr", "d", link.d);
   });
+
+  item.name.forEach((textName, ind) => {
+    it(`TC_02.08.Dd>“Set up a distributed build”>Near "${textName}" is a sign" ${item.icon[ind].name}" `, () => {
+      cy.get(item.link[ind]).contains(textName).should("be.visible");
+      cy.get(`${item.link[ind]} svg`).should("be.visible");
+      cy.get(`${item.link[ind]} path`).should(
+        "have.attr",
+        "d",
+        item.icon[ind].d
+      );
+    });
+  });
 });
+
