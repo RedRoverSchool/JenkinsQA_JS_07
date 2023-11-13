@@ -1,4 +1,5 @@
 {
+    "newItemPage": "http://localhost:8080/view/all/newJob",
     "firstProjectName": "project1",
     "description": "If you want to create a new item from other existing, you can use this option:",
     "secondProjectName": "project2",
