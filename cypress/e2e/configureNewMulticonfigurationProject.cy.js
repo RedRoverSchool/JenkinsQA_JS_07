@@ -2,12 +2,11 @@
 
 import confNewMultiConfProjData from "../fixtures/configureNewMulticonfigurationProject.json";
 import { configPageName } from "../fixtures/newItemFreestyleProject.json";
-import cypressEnvData from "../../cypress.env.json";
 
 describe("configureNewMulticonfigurationProject", () => {
 
     const multiConfProjName = confNewMultiConfProjData.newMultiConfProjName + Date.now();
-    const baseUrl = `http://${cypressEnvData["local.host"]}:${cypressEnvData["local.port"]}`;
+    const baseUrl = `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`;
     const confProjPageUrl = `${baseUrl}/${confNewMultiConfProjData.jobPath}/${multiConfProjName}/${confNewMultiConfProjData.confProjPageEndpoint}`;
 
     beforeEach(() => {
