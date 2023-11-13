@@ -2,6 +2,7 @@
     "newFolderName": "BusinessFolder",
     "folderLabel" : "Folder",
     "testfolderName": "TestFolder",
+    "folderName": "JenkinsFolder",
     "displayName": "Test display name",
     "displayDescription": "Some text description"
 }
