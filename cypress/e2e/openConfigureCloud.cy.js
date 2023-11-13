@@ -1,17 +1,16 @@
 /// <reference types="cypress"/>
 
+import cloud from '../fixtures/dashboardDistributedBuild.json'
+
 describe('open Configure a Cloud', () => {
-    it('US_02.08.004 | Dashboard -> Block “Set up a distributed build” -> "Configure a cloud" opens', () => {
+    it('TC_02.08.004 | Dashboard > verify "Configure a cloud" Link', () => {
         cy.get('#main-panel > div:nth-child(3) > div > section:nth-child(4) > h2')
-            .should('have.text', 'Set up a distributed build');
+            .should('have.text', cloud.Title);
   
-        cy.get('a[href="computer/new"]').should('be.visible');
         cy.get('a[href="cloud/"]').should('be.visible');
-        cy.get('a[href="https://www.jenkins.io/redirect/distributed-builds"]').should('be.visible');
 
         cy.get('a[href="cloud/"]').click();
 
-        cy.get('.jenkins-app-bar__content').should('have.text', 'Clouds');
-        
+        cy.get('.jenkins-app-bar__content').should('have.text', cloud.Clouds);
     });
 });
