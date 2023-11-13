@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import freestyleProject from "../fixtures/freestyleProject.json"
+import freestyleProject from "../fixtures/freestyleProjectGeneralSection.json" 
 
 describe ('Freestyle Project', () => {
 
@@ -21,10 +21,10 @@ describe ('Freestyle Project', () => {
 
     it('TC_04.01.012 | Freestyle project > Verify that user is able to disable the project', function(){
 
-        cy.get('.jenkins-toggle-switch__label__checked-title').should('have.text', 'Enabled');
+        cy.get('.jenkins-toggle-switch__label__checked-title').should('have.text', freestyleProject.statusEnabled).and('be.visible');
         cy.get('#toggle-switch-enable-disable-project').click();
 
-        cy.get('.jenkins-toggle-switch__label__unchecked-title').should('have.text', 'Disabled');
+        cy.get('.jenkins-toggle-switch__label__unchecked-title').should('have.text', freestyleProject.statusDisabled).and('be.visible')
 })
 
 })
