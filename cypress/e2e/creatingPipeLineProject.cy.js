@@ -14,6 +14,7 @@ describe('createPipelineProject', () => {
         cy.get('#ok-button').click()
         cy.get('a[href="/"]').contains('Dashboard').click()
         cy.get('.jenkins-table__link').should('be.visible').and('have.text', this.projectInfo.projectName)
+        
 
     })
 })
