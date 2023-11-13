@@ -6,7 +6,7 @@ import cypressEnvData from "../../cypress.env.json";
 
 describe("configureNewMulticonfigurationProject", () => {
 
-    const multiConfProjName = confNewMultiConfProjData.newMultiConfProjName + Date.now()
+    const multiConfProjName = confNewMultiConfProjData.newMultiConfProjName + Date.now();
     const baseUrl = `http://${cypressEnvData["local.host"]}:${cypressEnvData["local.port"]}`;
     const confProjPageUrl = `${baseUrl}/${confNewMultiConfProjData.jobPath}/${multiConfProjName}/${confNewMultiConfProjData.confProjPageEndpoint}`;
 
