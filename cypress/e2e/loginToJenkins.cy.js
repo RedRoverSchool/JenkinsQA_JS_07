@@ -1,6 +1,5 @@
 /// <reference types="cypress"/>
 
-import { it } from "mocha";
 import { loginErrorMessage } from "../fixtures/loginToJenkins.json"
 
 const port = Cypress.env('local.port');
