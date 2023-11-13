@@ -1,4 +1,8 @@
 {
     "jobName":"Job1",
-    "rendomJob":"new"
+    "rendomJob":"new",
+    "projectName":"Freestyle project",
+    "text":"Configuration",
+    "type":"j",
+    "message":"Error"
 }
