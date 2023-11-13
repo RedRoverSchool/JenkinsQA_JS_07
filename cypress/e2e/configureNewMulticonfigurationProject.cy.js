@@ -12,7 +12,7 @@ describe("configureNewMulticonfigurationProject", () => {
 
     beforeEach(() => {
         cy.get("a[href='/view/all/newJob']").click();
-        cy.get("input#name").type(multiConfProjName);
+        cy.get("#name").type(multiConfProjName);
         cy.get(".hudson_matrix_MatrixProject").click().should("have.attr", "aria-checked", "true");
         cy.get("#ok-button").click();
         cy.url().should("be.eql", confProjPageUrl);
@@ -23,6 +23,6 @@ describe("configureNewMulticonfigurationProject", () => {
             expect($el.text()).to.be.eql(configPageName);
         });
 
-        cy.get("div#tasks").should("be.visible");
+        cy.get("#tasks").should("be.visible");
     });
 });
