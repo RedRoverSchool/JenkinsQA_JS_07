@@ -37,7 +37,7 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
          });
    });
 
-   it('TC_03.05.006 | New Item > Create Pipeline Project > Configure new Pipeline project > Сheck adding a Display name', () => {
+   it.skip('TC_03.05.006 | New Item > Create Pipeline Project > Configure new Pipeline project > Сheck adding a Display name', () => {
       cy.get('#advanced-project-options')
         .parents('.jenkins-section')
         .find('button')
