@@ -5,9 +5,8 @@ let additionalInfo = 'This page is where your Jenkins jobs will be displayed. To
 
 describe('welcomeMessageDashboard', () => {
     it('TC_02.03.020 | Dashboard > Welcomed message', function () {
-        cy.get('.empty-state-block').should('be.visible').contains(welcomeMessage)
-        cy.get('h1').should('have.text', welcomeMessage)
-        cy.get('.empty-state-block').contains(additionalInfo).should('have.text', additionalInfo)
+        cy.get('h1').should('be.visible').and('have.text', welcomeMessage)
+        cy.get('p').should('have.text', additionalInfo)
 
     })
 })
