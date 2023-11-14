@@ -4,9 +4,9 @@ import createNewJob from "../fixtures/createNewJob.json";
 describe('Verify "Copy from" field', () => {
     beforeEach('Create new job', () => {
         cy.get("a[href='/view/all/newJob']").click()
-        cy.get('label[for=name]').should('have.text', 'Enter an item name')
+        cy.get('label[for=name]').should('have.text', createNewJob.fieldName)
         cy.get('input#name.jenkins-input').type(createNewJob.jobName)
-        cy.get('li[tabindex="0"] span').should('contain', createNewJob.projectName).click({ multiple: true })
+        cy.get('.hudson_model_FreeStyleProject span').should('contain', createNewJob.projectName).click()
         cy.get('#ok-button').click()
         cy.get('.jenkins-app-bar__content > h1').should('have.text', createNewJob.text)
         cy.get('.jenkins-button--primary ').click()
