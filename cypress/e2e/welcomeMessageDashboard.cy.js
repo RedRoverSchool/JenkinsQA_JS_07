@@ -6,6 +6,7 @@ describe('welcomeMessageDashboard', () => {
             this.messageInfo = messageInfo;
         }) 
     })
+    
     it('TC_02.03.020 | Dashboard > Welcomed message', function () {
         cy.get('h1').should('be.visible').and('have.text', this.messageInfo.welcomeMessage)
         cy.get('p').should('have.text', this.messageInfo.additionalInfo)
