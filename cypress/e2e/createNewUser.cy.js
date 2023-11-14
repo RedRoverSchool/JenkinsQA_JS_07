@@ -1,15 +1,13 @@
 /// <reference types="cypress"/>
 
-import user from '../fixtures/newUser.json'
+import {user, url} from '../fixtures/newUser.json'
 
 describe('CreateNewUser', () => {
-    beforeEach(() => {
-            const baseUrl = `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`
-
-    });
+    
+    const baseUrl = `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}/${url.securityRealm}`
 
     it('TC_09.14.008 | Manage Jenkins > Security> Create User with valid input', () => {
-        cy.visit('http://localhost:8080/securityRealm/addUser')
+        cy.visit(`${baseUrl}/${url.addUser}`)
         cy.get('#username').type(user.name)
         cy.get('input[name="password1"]').type(user.password)
         cy.get('input[name="password2"]').type(user.password)
@@ -17,7 +15,11 @@ describe('CreateNewUser', () => {
         cy.get('input[name="email"]').type(user.email)
         cy.get('button[name="Submit"]').click()
 
-        cy.get('#main-panel h1').should('have.text', 'Users')
-        cy.get('#people').contains(user.name).and('is.visible')
+        cy.url().should('contain', baseUrl)
+        cy.get('#main-panel h1').should('have.text', 'Users') 
+        cy.get('#people .inside').then(($els)=>{
+            const users = Cypress.$.makeArray($els).map(($el) => $el.innerText)
+            expect(users).includes(user.name)
+        })
     });
 });
