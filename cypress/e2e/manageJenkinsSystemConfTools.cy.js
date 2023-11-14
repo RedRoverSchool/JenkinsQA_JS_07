@@ -2,6 +2,7 @@
 
 import manageJenkinsSystemConfToolsData from "../fixtures/manageJenkinsSystemConfTools.json";
 import { manageJenkinsPageEndpoint } from "../fixtures/manageJenkinsTitle.json";
+import { sectionItemsHeaders } from "../fixtures/manageJenkinsTools.json";
 import cypressEnvData from "../../cypress.env.json";
 
 describe("manageJenkinsSystemConfTools", () => {
@@ -36,5 +37,15 @@ describe("manageJenkinsSystemConfTools", () => {
             .then(($el) => {
                 expect(manageJenkinsSystemConfToolsData.sysConfSubHeaders).to.include($el.text());
             });
+    });
+
+    it("TC_09.06.009 | Checking the visibility of the title and icon 'Tools'", () => {
+        cy.get('.jenkins-section.jenkins-section--bottom-padding')
+          .contains(manageJenkinsSystemConfToolsData.sectionMainHeader)
+          .next()
+          .contains(sectionItemsHeaders.tools)
+          .should('be.visible')
+        cy.get('a[href="configureTools"] .jenkins-section__item__icon svg.icon')
+          .should('be.visible')       
     });
 });
