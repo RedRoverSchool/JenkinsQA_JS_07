@@ -12,3 +12,4 @@ describe('first Jenkins test', () => {
       cy.get('.jenkins-dropdown a').should('be.visible').and('have.length', 5);
     })
 })
+
