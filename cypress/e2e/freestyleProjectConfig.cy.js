@@ -22,4 +22,8 @@ describe('US_04.02 | Freestyle > Source Code Management section', () => {
             expect($el.text()).to.be.eql(data.radioButtonNames[index])
         });
     });
+
+    it('TC_04.02.003 | Freestyle > Source Code Management > “None” option is selected by default', () => {
+        cy.get('#radio-block-0').should('be.checked');
+    });
 });
