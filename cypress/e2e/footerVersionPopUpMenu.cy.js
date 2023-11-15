@@ -7,7 +7,7 @@ describe("verifyFooterVersionMenu.cy", () => {
     cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)")
       .invoke("removeAttr", "target")
       .click();
-    cy.url().should("be.equal", "https://www.jenkins.io/participate/");
+    cy.url().should("be.equal", footerJenkinsData.participatePage);
     cy.get("h1")
       .should("be.visible")
       .then(($el) => {
