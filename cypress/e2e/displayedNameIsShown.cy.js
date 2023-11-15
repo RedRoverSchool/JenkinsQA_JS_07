@@ -14,6 +14,6 @@ describe('verifyDisplayedNameisShown', () => {
         cy.get('input[name="_.displayNameOrNull"]').type(displayedNameOfMulticonfigProject.displayedName)
         cy.get('[name="Submit"]').click()
         
-        cy.get('h1.page-headline').should('have.text', 'Project ' + displayedNameOfMulticonfigProject.displayedName)
+        cy.get('h1.page-headline').should('have.text', displayedNameOfMulticonfigProject.expectedDisplayedName)
     })  
 })
