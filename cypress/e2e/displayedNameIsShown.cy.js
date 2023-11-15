@@ -2,9 +2,9 @@
 
 import multiconfigProject from "../fixtures/multiconfigProject.json";
 
-describe('displayedNameisShown', () => {
+describe('verifyDisplayedNameisShown', () => {
 
-    it('Verify displayed name is shown', () => {
+    it("TC_03.07.06 | New Item > Verify displayed name is shown", () => {
         cy.get('a[href="newJob"]').click()
         cy.get('input#name').type(multiconfigProject.projetcName)
         cy.get('li[tabindex="0"] span').contains('Multi-configuration project').click()
