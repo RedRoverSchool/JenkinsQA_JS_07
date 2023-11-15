@@ -1,6 +1,6 @@
 /// <reference types = "cypress"/>
 
-import sideItem from "../fixtures/leftSideItems.json"
+import sideItem from "../fixtures/commandPanel.json"
 
 describe('Verify all items on left side panel', () =>{
     it('TC_02.04.022 | Dashboard > Verify all items on left side panel', () =>{
