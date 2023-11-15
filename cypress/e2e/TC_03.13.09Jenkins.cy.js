@@ -1,9 +1,8 @@
 /// <reference types = 'cypress' />
 
+describe('TC_03.13.09 I Verify Clickable links of Jenkins', () => {
 
-describe('Verify clickable links of Jenkins', () => {
-
-    it('TC_03.13.09 I Verify logo and Clickable links of Jenkins', () => {
+    it('logo and Clickable links of Jenkins', () => {
         cy.get('.task-link-wrapper').contains('New Item').click()
         cy.get('.add-item-name').contains('Enter an item name').should('be.visible')
         cy.get('input#name').type('Start a new project')
