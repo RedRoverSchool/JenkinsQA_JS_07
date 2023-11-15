@@ -10,4 +10,3 @@ describe('verifyLogoTitleJenkins', () => {
         cy.get('.empty-state-block p').should('be.visible').and('have.text', welcomedMessage.belowTitle); 
     })
 })
-
