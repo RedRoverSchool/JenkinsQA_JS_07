@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-import welcomeMessage from "../fixtures/homePageWelcomeMessage.json"
+import welcomeMessage from "../fixtures/WelcomeToJenkins.json"
 const USERNAME = Cypress.env('local.admin.username');
 const PASSWORD = Cypress.env('local.admin.password');
 const LOCAL_PORT = Cypress.env('local.port');
@@ -14,6 +14,6 @@ describe('Sign in to Jenkins', () => {
        cy.get('#j_password').type(PASSWORD)
        cy.get('button[type = "submit"]').click()
        cy.url().should('eq', `http://${LOCAL_HOST}:${LOCAL_PORT}/`)
-       cy.get('h1').should('have.text', welcomeMessage.greeting)
+       cy.get('h1').should('have.text', welcomeMessage.mainPageTitle)
     })
 })
