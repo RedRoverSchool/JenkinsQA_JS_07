@@ -31,4 +31,11 @@ describe('US_04.02 | Freestyle > Source Code Management section', () => {
         cy.get('a[tooltip="Help for feature: Git"]').trigger('focus');
         cy.get('div.tippy-box').should('be.visible').and('have.text', data.gitToolTipText);
     });
+
+    it('TC_04.02.005 | Freestyle > Source Code Management > Displaying a help area', () => {
+        cy.get('a[tooltip="Help for feature: Git"]').click();
+        cy.get('[ref="radio-block-1"] + div.help-area > div.help')
+            .should('be.visible')
+            .and('contain', data.peaceOfHelpText);
+    }); 
 });
