@@ -26,4 +26,9 @@ describe('US_04.02 | Freestyle > Source Code Management section', () => {
     it('TC_04.02.003 | Freestyle > Source Code Management > “None” option is selected by default', () => {
         cy.get('#radio-block-0').should('be.checked');
     });
+
+    it('TC_04.02.004 | Freestyle > Source Code Management > Git option has a tooltip', () => {
+        cy.get('a[tooltip="Help for feature: Git"]').trigger('focus');
+        cy.get('div.tippy-box').should('be.visible').and('have.text', data.gitToolTipText);
+    });
 });
