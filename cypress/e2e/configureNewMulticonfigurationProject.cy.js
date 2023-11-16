@@ -18,7 +18,7 @@ describe("configureNewMulticonfigurationProject", () => {
         cy.url().should("be.eql", confProjPageUrl);
     });
 
-    it("TC_03.07.008 | Configure new Multiconfiguration project > Verify that every 'Configure' menu items are displayed on the page", () => {
+    it("TC_03.07.007 | Configure new Multiconfiguration project > Verify that the left side 'Configure' menu with items is displayed", () => {
         cy.get(".jenkins-app-bar__content h1").should("be.visible").then($el => {
             expect($el.text()).to.be.eql(configPageName);
         });
@@ -26,7 +26,7 @@ describe("configureNewMulticonfigurationProject", () => {
         cy.get("#tasks").should("be.visible");
     });
 
-    it("TC_03.07.008 | Configure new Multiconfiguration project > Verify that the every 'Configure' menu items are displayed on the page", () => {
+    it("TC_03.07.008 | Configure new Multiconfiguration project > Verify that every 'Configure' menu items are displayed on the page", () => {
         cy.get("div.task").should("be.visible")
             .and("have.length", expectedSideMenuItemsLength)
             .then($el => {
