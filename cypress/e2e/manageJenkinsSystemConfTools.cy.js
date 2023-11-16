@@ -3,7 +3,6 @@
 import manageJenkinsSystemConfToolsData from "../fixtures/manageJenkinsSystemConfTools.json";
 import { manageJenkinsPageEndpoint } from "../fixtures/manageJenkinsTitle.json";
 import { sectionItemsHeaders } from "../fixtures/manageJenkinsTools.json";
-import cypressEnvData from "../../cypress.env.json";
 
 describe("manageJenkinsSystemConfTools", () => {
     beforeEach(() => {
@@ -26,8 +25,8 @@ describe("manageJenkinsSystemConfTools", () => {
     });
 
     it("TC_09.06.007 | Verify that the user redirects to '/configureTools' page after clicking on the 'Tools' title", () => {
-        const baseUrl = `http://${cypressEnvData["local.host"]}:${cypressEnvData["local.port"]}` + "/";
-        const confToolsPageUrl = `${baseUrl}${manageJenkinsPageEndpoint}${manageJenkinsSystemConfToolsData.configureToolsPageEndpoint}`;
+        const baseUrl = `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`;
+        const confToolsPageUrl = `${baseUrl}/${manageJenkinsPageEndpoint}/${manageJenkinsSystemConfToolsData.configureToolsPageEndpoint}/`;
 
         cy.get("a[href='configureTools'] dl dt").should("be.visible").click();
 
@@ -41,11 +40,11 @@ describe("manageJenkinsSystemConfTools", () => {
 
     it("TC_09.06.009 | Checking the visibility of the title and icon 'Tools'", () => {
         cy.get('.jenkins-section.jenkins-section--bottom-padding')
-          .contains(manageJenkinsSystemConfToolsData.sectionMainHeader)
-          .next()
-          .contains(sectionItemsHeaders.tools)
-          .should('be.visible')
+            .contains(manageJenkinsSystemConfToolsData.sectionMainHeader)
+            .next()
+            .contains(sectionItemsHeaders.tools)
+            .should('be.visible')
         cy.get('a[href="configureTools"] .jenkins-section__item__icon svg.icon')
-          .should('be.visible')       
+            .should('be.visible')
     });
 });

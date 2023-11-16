@@ -1,5 +1,5 @@
 {
-    "configureToolsPageEndpoint": "configureTools/",
+    "configureToolsPageEndpoint": "configureTools",
     "sectionMainHeader" : "System Configuration",
     "sysConfSubHeaders": [
         "System",
