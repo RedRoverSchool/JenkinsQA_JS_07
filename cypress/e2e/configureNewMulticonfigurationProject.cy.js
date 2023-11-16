@@ -2,6 +2,7 @@
 
 import confNewMultiConfProjData from "../fixtures/configureNewMulticonfigurationProject.json";
 import { configPageName } from "../fixtures/newItemFreestyleProject.json";
+import { expectedSideMenuItems, expectedSideMenuItemsLength } from "../fixtures/configureMulticonfigProject.json";
 
 describe("configureNewMulticonfigurationProject", () => {
 
@@ -23,5 +24,14 @@ describe("configureNewMulticonfigurationProject", () => {
         });
 
         cy.get("#tasks").should("be.visible");
+    });
+
+    it("TC_03.07.008 | Configure new Multiconfiguration project > Verify that every 'Configure' menu items are displayed with correct title", () => {
+        cy.get("div.task").should("be.visible")
+            .and("have.length", expectedSideMenuItemsLength)
+            .then($el => {
+                const menuItemsNameArr = $el.text().trim().replace(/\n/g, '').split(/\s{2,}/);
+                expect(menuItemsNameArr).to.deep.equal(expectedSideMenuItems);
+            });
     });
 });

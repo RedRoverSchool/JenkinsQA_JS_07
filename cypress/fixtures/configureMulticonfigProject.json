@@ -10,5 +10,6 @@
         "Build Environment",
         "Build Steps",
         "Post-build Actions"
-    ]
+    ],
+    "expectedSideMenuItemsLength": 8
 }
