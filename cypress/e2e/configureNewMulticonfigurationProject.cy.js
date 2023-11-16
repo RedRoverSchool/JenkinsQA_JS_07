@@ -26,7 +26,7 @@ describe("configureNewMulticonfigurationProject", () => {
         cy.get("#tasks").should("be.visible");
     });
 
-    it("TC_03.07.008 | Configure new Multiconfiguration project > Verify that every 'Configure' menu items are displayed on the page", () => {
+    it("TC_03.07.008 | Configure new Multiconfiguration project > Verify that every 'Configure' menu items are displayed on the page with correct title", () => {
         cy.get("div.task").should("be.visible")
             .and("have.length", expectedSideMenuItemsLength)
             .then($el => {
