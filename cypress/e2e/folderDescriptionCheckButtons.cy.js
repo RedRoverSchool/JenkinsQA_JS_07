@@ -8,17 +8,19 @@ describe('Folder Description', () => {
         cy.get('input#name').type(folderCreation.folderName);
         cy.get('.com_cloudbees_hudson_plugins_folder_Folder').click();
         cy.get('#ok-button').click();
-        cy.visit(`http://localhost:8080/job/${folderCreation.folderName}/`)
+        cy.get('#jenkins-name-icon').click();
+        cy.get('.jenkins-table__link.model-link.inside').click();
+        //cy.visit(`http://localhost:8080/job/${folderCreation.folderName}/`)
 
 
     })
 
     it('TC_07.02.003 | Verify that an empty input for text field appears when hit on “Add description” button', () => {
 
-        cy.url().should('be.equal', `http://localhost:8080/job/${folderCreation.folderName}/`)
+        cy.url().should('include', `/job/${folderCreation.folderName}/`);
         cy.get('#description-link').click();
 
-        cy.get('.jenkins-input').should('exist')
+        cy.get('.jenkins-input').should('be.visible')
     })
 
 })
