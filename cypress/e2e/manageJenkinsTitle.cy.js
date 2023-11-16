@@ -23,7 +23,7 @@ describe("manageJenkinsTitle", () => {
             .then(($els) => {
                 return Cypress.$.makeArray($els).map($el => $el.innerText);
             })
-            .and("have.length", 5)
+            .and("have.length", manageJenkinsTitleData.subHeadersMainJenkinsPageLength)
             .and("deep.equal", manageJenkinsTitleData.subHeadersMainJenkinsPage);
     });
 }); 
