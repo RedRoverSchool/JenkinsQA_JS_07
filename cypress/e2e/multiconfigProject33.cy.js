@@ -7,7 +7,7 @@ describe('multiconfigProject33', () => {
     it('TC_03.06.012 | Create Multiconfiguration project', () => {
         cy.get('a[href="/view/all/newJob"]').click();
         cy.get('input#name').type(multiconfigProject33.projectName);
-        cy.get('li[tabindex="0"] span').contains('Multi-configuration project').click();
+        cy.get('li[tabindex="0"] span').contains(multiconfigProject33.typeOfProject).click();
         cy.get('#ok-button').click();
         cy.get('.jenkins-button--primary').click();
         cy.get('#jenkins-home-link').click();
