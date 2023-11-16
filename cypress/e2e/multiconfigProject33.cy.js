@@ -13,5 +13,5 @@ describe('multiconfigProject33', () => {
         cy.get('#jenkins-home-link').click();
         cy.get('td a[href*="job"].jenkins-table__link').should('have.text', multiconfigProject33.projectName);
     });
-    
+        
 });
