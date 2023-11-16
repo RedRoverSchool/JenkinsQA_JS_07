@@ -10,9 +10,6 @@ describe('Folder Description', () => {
         cy.get('#ok-button').click();
         cy.get('#jenkins-name-icon').click();
         cy.get('.jenkins-table__link.model-link.inside').click();
-        //cy.visit(`http://localhost:8080/job/${folderCreation.folderName}/`)
-
-
     })
 
     it('TC_07.02.003 | Verify that an empty input for text field appears when hit on “Add description” button', () => {
