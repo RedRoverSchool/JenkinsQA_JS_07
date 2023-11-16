@@ -7,5 +7,6 @@
     "Status Information",
     "Troubleshooting",
     "Tools and Actions"
-  ]
+  ],
+  "subHeadersMainJenkinsPageLength": 5
 }
