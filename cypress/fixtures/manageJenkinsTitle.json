@@ -1,6 +1,6 @@
 {
   "mainHeaderPage": "Manage Jenkins",
-  "manageJenkinsPageEndpoint": "manage/",
+  "manageJenkinsPageEndpoint": "manage",
   "subHeadersMainJenkinsPage": [
     "System Configuration",
     "Security",

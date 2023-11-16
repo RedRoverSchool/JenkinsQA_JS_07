@@ -1,7 +1,6 @@
 /// <reference types="cypress"/>
 
 import manageJenkinsTitleData from "../fixtures/manageJenkinsTitle.json";
-import cypressEnvData from "../../cypress.env.json";
 
 describe("manageJenkinsTitle", () => {
     beforeEach(() => {
@@ -9,8 +8,8 @@ describe("manageJenkinsTitle", () => {
     })
 
     it("TC_09.01.001 | Manage Jenkins > Title > Main header displays verification", () => {
-        const baseUrl = `http://${cypressEnvData["local.host"]}:${cypressEnvData["local.port"]}` + "/";
-        const manageJenkinsPageUrl = `${baseUrl}${manageJenkinsTitleData.manageJenkinsPageEndpoint}`;
+        const baseUrl = `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`;
+        const manageJenkinsPageUrl = `${baseUrl}/${manageJenkinsTitleData.manageJenkinsPageEndpoint}/`;
 
         cy.url().should("be.eql", manageJenkinsPageUrl);
 
