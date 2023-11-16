@@ -38,4 +38,15 @@ describe('US_04.02 | Freestyle > Source Code Management section', () => {
             .should('be.visible')
             .and('contain', data.peaceOfHelpText);
     }); 
+
+    it('TC_04.02.006 | Freestyle > Source Code Management > Displaying additional options for Git', () => {
+        cy.get('[ref="radio-block-1"] + div.help-area + div.form-container').as('form-container')
+        cy.get('#radio-block-1').check({force: true});
+        cy.get('@form-container').should('be.visible');
+        cy.get('[ref="radio-block-1"] + div.help-area + div.form-container > .jenkins-form-item > .jenkins-form-label').as('labels');
+        cy.get('@labels').should('have.length', 4);
+        cy.get('@labels').each(($el, ind) => {
+            expect($el.text()).include(data.titles[ind]);
+        })
+    });
 });
