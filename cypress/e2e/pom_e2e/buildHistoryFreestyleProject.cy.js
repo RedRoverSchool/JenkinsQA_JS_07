@@ -21,7 +21,6 @@ describe('Build History of FreestyleProject',function(){
                 .and('have.text', freestyleProjectData.projectName)
 
          buildHistoryPage.clickCreateBuld()
-         cy.get('#jenkins-home-link').click()
          homePage.clickDashboardBreadcrumbsLink()  
          homePage.clickBuildHistoryLink()
          buildHistoryPage.clickCreateHistoryBuild()

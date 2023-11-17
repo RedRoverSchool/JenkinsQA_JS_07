@@ -21,7 +21,7 @@ class NewJobPage {
     }
 
     clickOKButton() {
-        this.getOKButton().lick();
+        this.getOKButton().сlick();
 
         return new MultiConfigProjectConfigurePage();
     }
