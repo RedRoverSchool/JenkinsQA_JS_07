@@ -8,7 +8,7 @@ describe("redirectionToRESTAPIPage", () => {
   const restApi = new RestApiPage();
 
   it("Verify redirection to REST API page", () => {
-    homePage.clickgetRestApilink();
+    homePage.clickRestApilink();
 
     restApi
         .getUrl()

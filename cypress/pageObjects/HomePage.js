@@ -30,7 +30,7 @@ class HomePage {
     }
 
 
-    clickgetRestApilink(){
+    clickRestApilink(){
         this.getRestApilink().click();
 
         return new RestApiPage();
