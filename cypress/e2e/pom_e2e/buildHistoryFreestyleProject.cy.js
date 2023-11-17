@@ -20,7 +20,7 @@ describe('Build History of FreestyleProject',function(){
                 .should('be.visible')
                 .and('have.text', freestyleProjectData.projectName)
 
-         buildHistoryPage.clickCreateBuld()
+         buildHistoryPage.clickCreateBuild()
          homePage.clickDashboardBreadcrumbsLink()  
          homePage.clickBuildHistoryLink()
          buildHistoryPage.clickCreateHistoryBuild()
