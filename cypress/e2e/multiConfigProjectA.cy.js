@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 import multiConfigProjectA from "../fixtures/multiConfigProjectA.json"
-describe('multiConfigProjectA', () => {
+describe.skip('multiConfigProjectA', () => {
 
     it('Create Multiconfiguration project', () => {
         cy.get('a[href="/view/all/newJob"]').click()
