@@ -10,7 +10,7 @@ describe('multiconfigProject', () => {
         homePage.clickNewItemLink()
                 .fillInputNameField(multiconfigProjectData.projectName)
                 .clickMultiConfigTypeOfProjectBtn()
-                .clickOKButton();
+                .clickOKButtonFreestyle();
 
         homePage.clickDashboardBreadcrumbsLink()
                 .getProjectNameLink()
