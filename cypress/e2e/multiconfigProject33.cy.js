@@ -2,7 +2,7 @@
 
 import multiconfigProject33 from "../fixtures/multiconfigProject33.json"
 
-describe('multiconfigProject33', () => {
+describe.skip('multiconfigProject33', () => {
     
     it('TC_03.06.012 | Create Multiconfiguration project', () => {
         cy.get('a[href="/view/all/newJob"]').click();

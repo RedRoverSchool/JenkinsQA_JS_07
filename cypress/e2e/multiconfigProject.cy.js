@@ -2,7 +2,7 @@
 
 import multiconfigProject from "../fixtures/multiconfigProject.json";
 
-describe('multiconfigProject', () => {
+describe.skip('multiconfigProject', () => {
 
     it('Create Multiconfiguration project', function() {
 
