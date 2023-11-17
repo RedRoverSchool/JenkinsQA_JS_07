@@ -7,7 +7,7 @@ class HomePage {
     getDashboardBreadcrumbsLink = () => cy.get('li.jenkins-breadcrumbs__list-item a[href="/"]');
     getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
     getBuildHistoryLink = () => cy.get('td:last-child [tooltip]'); 
-    getRestApilink = () =>cy.get('.rest-api');
+    getRestApilink = () => cy.get('.rest-api');
 
 
     
