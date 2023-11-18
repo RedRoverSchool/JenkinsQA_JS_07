@@ -7,10 +7,10 @@ describe("redirectionToRESTAPIPage", () => {
   const homePage = new HomePage();
   const restApi = new RestApiPage();
 
-  it("Verify redirection to REST API page", () => {
-    homePage.clickRestApilink();
+  it("TC_15.01.002 Verify redirection to REST API page", () => {
+    homePage.clickRestApilink()
 
-    restApi
+    
         .getUrl()
         .should("include", api.link);
     restApi
