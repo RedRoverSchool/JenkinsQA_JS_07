@@ -1,0 +1,13 @@
+{
+  "username": "JohnKennedy",
+  "invalidUsername": "@",
+  "password": "password",
+  "invalidPassword": "pas",
+  "fullName": "John Kennedy",
+  "email": "email@gmail.com",
+  "expectedUserId": ["admin", "JohnKennedy"],
+  "errorUsername": "is prohibited as a username for security reasons.",
+  "errorUsernameSC": "User name must only contain alphanumeric characters, underscore and dash",
+  "errorPasword": "Password didn't match",
+  "errorEmail": "Invalid e-mail address"
+}
