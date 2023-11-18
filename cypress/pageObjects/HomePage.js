@@ -10,6 +10,10 @@ class HomePage {
     
 
     
+    
+    
+    
+    
     clickNewItemLink() {
         this.getNewItemLink().click();
 
