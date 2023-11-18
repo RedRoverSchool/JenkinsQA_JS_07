@@ -2,7 +2,7 @@
 
 import HomePage from "../../pageObjects/HomePage";
 import PeoplePage from "../../pageObjects/PeoplePage";
-import wellcomeData from "../../fixtures/pom_fixtures/wellcomeTitleData.json"
+import homePageData from "../../fixtures/pom_fixtures/homePageData.json"
 
 describe('verifyLogoAndTitle',() => {
     const homePage = new HomePage();
@@ -12,7 +12,7 @@ describe('verifyLogoAndTitle',() => {
 
         homePage.getJenkinsLogo()
             .should('be.visible')
-
+            
         homePage.getJenkinsTitle()
             .should('be.visible')
 
@@ -24,7 +24,7 @@ describe('verifyLogoAndTitle',() => {
 
         homePage.getWellcomeTitle()
             .should('be.visible')
-            .and('have.text',wellcomeData.greeting)
+            .and('have.text', homePageData.greeting)
 
         homePage.getJenkinsLogo()
             .should('be.visible')
