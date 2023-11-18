@@ -1,12 +1,14 @@
 import MultiConfigProjectConfigurePage from "../pageObjects/MultiConfigProjectConfigurePage";
-import FreestyleProjectConfigurePage from "../pageObjects/FreestyleProjectConfigurePage"
+import FreestyleProjectConfigurePage from "../pageObjects/FreestyleProjectConfigurePage";
+
 class NewJobPage {
     getInputNameField = () => cy.get('input#name');
     getMultiConfigTypeOfProjectBtn = () => cy.get('li.hudson_matrix_MatrixProject');
     getOKButton = () => cy.get('#ok-button');
     getFreestyleTypeOfProjectBtn = () => cy.get('.hudson_model_FreeStyleProject');
-    
-
+    getCopyField =() => cy.get('div.item-copy')
+    getCopyFieldInput =() => cy.get('#from.jenkins-input.auto-complete');
+    getCopyFieldOKButton =() => cy.get('.jenkins-button--primary');
 
     fillInputNameField(nameProject) {
         this.getInputNameField().should('be.visible').type(nameProject);
@@ -37,6 +39,20 @@ class NewJobPage {
 
         return new FreestyleProjectConfigurePage();
     }
- 
+    clickCopyField(){
+        this.getCopyField().click()
+
+        return this;
+    }
+    fillCopyFromField(name){
+        this.getCopyFieldInput().type(name);
+
+        return this;
+  }
+    clickCopyFieldOKButton() {
+    this.getCopyFieldOKButton().click();
+
+    return this;
+}
 }
 export default NewJobPage;
