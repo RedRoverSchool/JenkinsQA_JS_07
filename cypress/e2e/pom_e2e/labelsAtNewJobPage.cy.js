@@ -8,7 +8,7 @@ describe("labelsAtNewJobPage", () => {
 
   beforeEach(function () {
     homePage.clickNewItemLink() 
-            .collectTypeOfProjectLabels("value"); 
+            .collectTypeOfProjectLabels(); 
   });
   newJobPageData.typeOfProjectLabelNames.forEach((name, index) => {
     it(`TC_03.01.11 | + New Item > Verify label name ${name} on /newJob page`, function () {
