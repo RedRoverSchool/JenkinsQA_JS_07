@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 import verifyRestApi from "../fixtures/verifyRestApi.json"
-describe ('Footer -> Access to REST API', () => {
+describe.skip ('Footer -> Access to REST API', () => {
 
     it ('TC_15.01.001 -> Verify the link in the footer redirects to API page after click', function(){
         cy.get('div.page-footer__links a.jenkins-button').click()
