@@ -1,8 +1,8 @@
 /// <reference types="cypress"/>
 
 import { JenkinsHome } from "../fixtures/logoAndTitle.json"
-describe('logoAndTitleOnDashboadPage',() => {
-    it.skip('TC_02.02.003 | Verify visibility of Jenkins logo and title on Dashboard page',() => {
+describe.skip('logoAndTitleOnDashboadPage',() => {
+    it('TC_02.02.003 | Verify visibility of Jenkins logo and title on Dashboard page',() => {
         cy.get('#jenkins-head-icon').should('be.visible')
         cy.get('#jenkins-name-icon').should('be.visible')
         cy.get('a[href="/asynchPeople/"]').click()
