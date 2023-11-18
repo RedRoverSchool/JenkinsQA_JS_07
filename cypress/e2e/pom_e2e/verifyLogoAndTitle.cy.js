@@ -4,7 +4,7 @@ import HomePage from "../../pageObjects/HomePage";
 import PeoplePage from "../../pageObjects/PeoplePage";
 import wellcomeData from "../../fixtures/pom_fixtures/wellcomeTitleData.json"
 
-describe('logoAndTitleOnDashboadPage',() => {
+describe('verifyLogoAndTitle',() => {
     const homePage = new HomePage();
     const peoplePage = new PeoplePage();
 
