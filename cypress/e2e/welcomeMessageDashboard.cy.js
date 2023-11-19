@@ -2,7 +2,7 @@
 
 describe('welcomeMessageDashboard', () => {
     beforeEach(function() {
-        cy.fixture('welcomeMsgDashboardfixtures').then((messageInfo) => {
+        cy.fixture('welcomeMsgDashboardFixtures').then((messageInfo) => {
             this.messageInfo = messageInfo;
         }) 
     })
