@@ -1,3 +1,8 @@
 {
-    "projectName": "Project1"
+    "projectName": "Project1",
+    "configure": {
+        "sourceCodeManagement": {
+            "sectionName": "Source Code Management"
+        }
+    }
 }
