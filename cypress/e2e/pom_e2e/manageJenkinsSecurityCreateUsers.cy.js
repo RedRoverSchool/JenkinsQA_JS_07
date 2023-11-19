@@ -13,9 +13,7 @@ describe('ManageJenkinsSecurityCreateUsers.cy', () => {
   const addUserPage = new AddUserPage();
 
   beforeEach(function () {
-    homePage.clickManageJenkinsLink();
-    manageJenkinsPage.clickUsersLink();
-    userPage.clickCreateUserLink();
+    homePage.clickManageJenkinsLink().clickUsersLink().clickCreateUserLink();
   });
 
   it('TC_09.14.001 | Manage Jenkins > Security> Create User using valid credentials', function () {
