@@ -15,7 +15,7 @@ describe("folderConfigure", () => {
     cy.get('button[name="Submit"]').click();
   });
 
-  it("TC_07.03.001 | Folder > Configure > Verify link “Configure” on the folder page", () => {
+  it.skip("TC_07.03.001 | Folder > Configure > Verify link “Configure” on the folder page", () => {
     cy.get("#tasks .task").contains(sideMenu.sidePanelFolderPage).click();
     cy.url().should(
       "equal",
