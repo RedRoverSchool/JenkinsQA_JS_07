@@ -9,6 +9,7 @@ class HomePage {
     getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
     getBuildHistoryLink = () => cy.get('td:last-child [tooltip]'); 
     getRestApilink = () => cy.get('.rest-api');
+    getManageJenkinsLink = () => cy.get('a[href="/manage"]');
 
   clickNewItemLink() {
     this.getNewItemLink().click();
