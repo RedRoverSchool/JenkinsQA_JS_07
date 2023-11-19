@@ -1,6 +1,12 @@
+import UserPage from '../pageObjects/UserPage';
 class ManageJenkinsPage {
-    getHeaderManageJenkins =() => cy.get('.jenkins-app-bar h1')
-    getManageJenkinsURL = () => cy.url()
-}
+  getUsersLink = () => cy.get('a[href="securityRealm/"]');
+  getHeaderManageJenkins = () => cy.get('.jenkins-app-bar h1');
+  getManageJenkinsURL = () => cy.url();
 
-export default ManageJenkinsPage
+  clickUsersLink() {
+    this.getUsersLink().click();
+    return new UserPage();
+  }
+}
+export default ManageJenkinsPage;

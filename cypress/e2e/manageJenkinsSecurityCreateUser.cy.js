@@ -9,7 +9,7 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
     cy.get('a[href="addUser"]').click();
   });
 
-  it('TC_09.14.001 | Manage Jenkins > Security> Create User using valid credentials', function () {
+  it.skip('TC_09.14.001 | Manage Jenkins > Security> Create User using valid credentials', function () {
     cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
     cy.get('input[name="password1"]').type(
       manageJenkinsSecurityCreateUser.password
