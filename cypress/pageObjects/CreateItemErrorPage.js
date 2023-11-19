@@ -1,7 +1,7 @@
 import newProject from "../fixtures/pom_fixtures/newProject.json"
-class ErrorMessagePage{
+class CreateItemErrorPage{
  getMessage = ()=> cy.get('h1')
                      .should('have.text', newProject.message)
  }
 
-export default ErrorMessagePage
+export default CreateItemErrorPage
