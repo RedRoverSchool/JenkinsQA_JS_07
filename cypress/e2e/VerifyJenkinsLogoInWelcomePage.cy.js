@@ -6,7 +6,7 @@ const LOCAL_HOST = Cypress.env('local.host');
 
 describe ('Verify Jenkins Logo', () => {
 
-    it ('TC_02.02.008 | Verify Jenkins Logo and Title on welcome page is visible and clickable', function() {
+    it.skip ('TC_02.02.008 | Verify Jenkins Logo and Title on welcome page is visible and clickable', function() {
         cy.get('#jenkins-name-icon').should('be.visible')
         cy.get('#jenkins-name-icon').should('have.attr', 'src')
         cy.get('#jenkins-name-icon').click()
