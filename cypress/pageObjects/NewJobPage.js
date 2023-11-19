@@ -6,7 +6,8 @@ class NewJobPage {
     getMultiConfigTypeOfProjectBtn = () => cy.get('li.hudson_matrix_MatrixProject');
     getOKButton = () => cy.get('#ok-button');
     getFreestyleTypeOfProjectBtn = () => cy.get('.hudson_model_FreeStyleProject');
-    getCopyField =() => cy.get('div.item-copy')
+    getTypeOfProjectLabels = () => cy.get(".label");
+    getCopyField =() => cy.get('div.item-copy');
     getCopyFieldInput =() => cy.get('#from.jenkins-input.auto-complete');
     getCopyFieldOKButton =() => cy.get('.jenkins-button--primary');
 
@@ -39,20 +40,29 @@ class NewJobPage {
 
         return new FreestyleProjectConfigurePage();
     }
+    
+    collectTypeOfProjectLabels(){
+        this.getTypeOfProjectLabels().as("labelName");
+
+        return this;
+    }
+
     clickCopyField(){
         this.getCopyField().click()
 
         return this;
     }
+
     fillCopyFromField(name){
         this.getCopyFieldInput().type(name);
 
         return this;
-  }
-    clickCopyFieldOKButton() {
-    this.getCopyFieldOKButton().click();
+    }
 
-    return this;
-}
+    clickCopyFieldOKButton() {
+        this.getCopyFieldOKButton().click();
+
+        return this;
+    }
 }
 export default NewJobPage;
