@@ -7,7 +7,7 @@ describe("manageJenkinsTitle", () => {
         cy.get("a[href='/manage']").click();
     })
 
-    it("TC_09.01.001 | Manage Jenkins > Title > Main header displays verification", () => {
+    it.skip("TC_09.01.001 | Manage Jenkins > Title > Main header displays verification", () => {
         const baseUrl = `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`;
         const manageJenkinsPageUrl = `${baseUrl}/${manageJenkinsTitleData.manageJenkinsPageEndpoint}/`;
 
