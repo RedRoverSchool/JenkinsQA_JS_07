@@ -1,0 +1,14 @@
+{
+   "jenkinsVersion" : "Jenkins 2.414.2",
+    "dropdownGetInv" :  "Get involved",
+    "website" : "jenkins.io",
+    "websiteTitle" : "Jenkins",
+    "participatePage": "https://www.jenkins.io/participate/",
+    "participatePageHeader" : "Participate and Contribute",
+    "popUpMenu" : [
+        "About Jenkins",
+        "Get involved",
+        "Website"
+    ]        
+    
+}

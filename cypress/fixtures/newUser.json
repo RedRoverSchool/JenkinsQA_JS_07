@@ -1,0 +1,12 @@
+{
+  "user": {
+    "name": "Username",
+    "password": "Password",
+    "fullName": "FirstName LastName",
+    "email": "email@email.com"
+  },
+  "url": {
+    "securityRealm": "securityRealm",
+    "addUser": "addUser"
+  }
+}

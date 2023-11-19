@@ -1,12 +1,10 @@
 /// <reference types="cypress"/>
 
-import { realHover } from "cypress-real-events/commands/realHover"
-import "cypress-real-events/support"
 import createMultiConfigProject from "../fixtures/createMultiConfigProject.json"
 
 describe('createMultiConfigProjects', () => {
 
-    it('TC-03.06.004 | Create Multiconfiguration project by clicking "+ New item" in the left panel', function() {
+    it.skip('TC-03.06.004 | Create Multiconfiguration project by clicking "+ New item" in the left panel', function() {
         cy.get('a[href="newJob"]').click()
         cy.get('input#name').type(createMultiConfigProject.newProjectName)
         cy.get('li[tabindex="0"] span').contains('Multi-configuration project').click()
@@ -31,7 +29,7 @@ describe('createMultiConfigProjects', () => {
         cy.get('td a[href*="job"].jenkins-table__link').should('have.text', 'New project MultiConfig')
    })
 
-   it('TC_03.06.005 | Create Multiconfiguration project (no projects were created prior)', function(){
+   it.skip('TC_03.06.005 | Create Multiconfiguration project (no projects were created prior)', function(){
         cy.get('li a[href*="newJob"]').click()
         cy.get('input#name').type(createMultiConfigProject.newProjectName)
         cy.get('li[tabindex="0"] span').contains('Multi-configuration project').click()

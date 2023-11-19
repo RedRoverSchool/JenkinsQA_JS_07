@@ -6,5 +6,12 @@
       "\"\" is prohibited as a full name for security reasons.",
       "Invalid e-mail address"
     ],
-    "manageJenkinsLinkText" : "Manage Jenkins"
+    "manageJenkinsLinkText" : "Manage Jenkins",
+    "userCredentials" : {
+      "Username": "FirstUser",
+      "Password": "qwerty",
+      "ConfirmPassword":"qwerty",
+      "FullName": "FirstUser FullName",
+      "E-mailAddress": "firstuser@mail.com"
+  }
 }
