@@ -1,6 +1,7 @@
 import NewJobPage from "../pageObjects/NewJobPage";
 import BuildHistoryPage from "../pageObjects/BuildHistoryPage"
 import RestApiPage from "../pageObjects/RestApiPage"
+import ManageJenkinsPage from "../pageObjects/ManageJenkinsPage";
 import PeoplePage from "../pageObjects/PeoplePage"
 
 
@@ -10,6 +11,7 @@ class HomePage {
     getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
     getBuildHistoryLink = () => cy.get('td:last-child [tooltip]'); 
     getRestApilink = () => cy.get('.rest-api');
+    getManageJenkinsLink = () => cy.get('a[href="/manage"]')
     getJenkinsLogo = () => cy.get('#jenkins-head-icon');
     getJenkinsTitle = () =>  cy.get('#jenkins-name-icon');
     getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
@@ -39,6 +41,12 @@ class HomePage {
         return new RestApiPage();
     }
     
+    clickManageJenkinsLink(){
+        this.getManageJenkinsLink().click()
+
+        return new ManageJenkinsPage()
+    }
+
     clickPeopleLink() {
         this.getPeopleLink().click()
 
