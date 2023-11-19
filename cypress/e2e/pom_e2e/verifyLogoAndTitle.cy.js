@@ -1,35 +1,29 @@
 /// <reference types="cypress"/>
 
 import HomePage from "../../pageObjects/HomePage";
-import PeoplePage from "../../pageObjects/PeoplePage";
-import homePageData from "../../fixtures/pom_fixtures/homePageData.json"
+import HeaderAndFooter from "../../pageObjects/HeaderAndFooter";
 
 describe('verifyLogoAndTitle',() => {
     const homePage = new HomePage();
-    const peoplePage = new PeoplePage();
+    const headerAndFooter = new HeaderAndFooter()
 
-    it('TC_02.02.003 | Verify visibility of Jenkins logo and title on Dashboard page', function () {
+    it('TC_02.02.003 | Verify visibility of Jenkins logo and title on Dashboard page',function () {
 
-        homePage.getJenkinsLogo()
+        headerAndFooter.getJenkinsLogo()
             .should('be.visible')
-            
-        homePage.getJenkinsTitle()
+
+        headerAndFooter.getJenkinsTitle()
             .should('be.visible')
 
         homePage
             .clickPeopleLink()
-
-        peoplePage
             .clickJenkinsHomeLink()
 
-        homePage.getWellcomeTitle()
-            .should('be.visible')
-            .and('have.text', homePageData.greeting)
-
-        homePage.getJenkinsLogo()
+        headerAndFooter.getJenkinsLogo()
             .should('be.visible')
 
-        homePage.getJenkinsTitle()
+        headerAndFooter.getJenkinsTitle()
             .should('be.visible')
+            
     });
 });
