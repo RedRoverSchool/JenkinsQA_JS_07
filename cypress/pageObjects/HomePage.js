@@ -38,7 +38,7 @@ class HomePage {
         return new RestApiPage();
     }
 
-    clickgetManageJenkinsLink(){
+    clickManageJenkinsLink(){
         this.getManageJenkinsLink().click()
 
         return new ManageJenkinsPage()

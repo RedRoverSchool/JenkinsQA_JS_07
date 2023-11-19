@@ -9,7 +9,7 @@ describe('Manage Jenkins > Title', () => {
     const manageJenkinsPage = new ManageJenkinsPage()
 
     beforeEach(() => {
-        homePage.clickgetManageJenkinsLink()
+        homePage.clickManageJenkinsLink()
     })
 
     it('RF | POM > TC_09.01.005 | Manage Jenkins > UI Verification of Header', () =>{
