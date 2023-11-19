@@ -4,7 +4,8 @@ class HeaderAndFooter {
 
   getUserMenuArrow = () => cy.get('div.login a[href*="user"] button');
   getUserDropdownMenuLinkBuilds = () => cy.get('.jenkins-dropdown a[href*="/builds"]');
-
+  getJenkinsLogo = () => cy.get('#jenkins-head-icon');
+  getJenkinsTitle = () =>  cy.get('#jenkins-name-icon');
 
 
   clickUserMenuArrow() {
