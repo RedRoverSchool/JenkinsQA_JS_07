@@ -8,6 +8,8 @@ class HomePage {
     getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
     getBuildHistoryLink = () => cy.get('td:last-child [tooltip]'); 
     getRestApilink = () => cy.get('.rest-api');
+    getJenkinsVersionBtn = () => cy.get('button.jenkins-button--tertiary.jenkins_ver')
+    getPopUpMenuJenkinsVersion = () => cy.get('.tippy-content')
 
 
     
@@ -36,5 +38,10 @@ class HomePage {
         return new RestApiPage();
     }
 
+    clickJenkinsVersionBtn() {
+        this.getJenkinsVersionBtn().click();
+
+        return this;
+    }
 }
 export default HomePage;
