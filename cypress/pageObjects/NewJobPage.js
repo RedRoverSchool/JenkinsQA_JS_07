@@ -1,5 +1,6 @@
 import MultiConfigProjectConfigurePage from "../pageObjects/MultiConfigProjectConfigurePage";
 import FreestyleProjectConfigurePage from "../pageObjects/FreestyleProjectConfigurePage";
+import FolderConfigurePage from "../pageObjects/FolderConfigurePage";
 
 class NewJobPage {
     getInputNameField = () => cy.get('input#name');
@@ -10,6 +11,7 @@ class NewJobPage {
     getCopyField =() => cy.get('div.item-copy');
     getCopyFieldInput =() => cy.get('#from.jenkins-input.auto-complete');
     getCopyFieldOKButton =() => cy.get('.jenkins-button--primary');
+    getFolderBtn = () => cy.get(".com_cloudbees_hudson_plugins_folder_Folder");
 
     fillInputNameField(nameProject) {
         this.getInputNameField().should('be.visible').type(nameProject);
@@ -45,6 +47,18 @@ class NewJobPage {
         this.getTypeOfProjectLabels().as("labelName");
 
         return this;
+    }
+
+    clickFolderBtn(){
+        this.getFolderBtn().click();
+
+        return this;
+    }
+
+    clickOKButtonFolder(){
+        this.getOKButton().click();
+
+        return new FolderConfigurePage();
     }
 
     clickCopyField(){

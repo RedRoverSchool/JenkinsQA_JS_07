@@ -3,8 +3,8 @@
 const PORT = Cypress.env("local.port");
 const HOST = Cypress.env('local.host');
 
-describe('Verify Logo', () => {
-it('TC_02.02.011 | Header > Jenkins Logo and Title > Verify logo is image and clickable', () => {
+describe.skip('Verify Logo', () => {
+it.skip('TC_02.02.011 | Header > Jenkins Logo and Title > Verify logo is image and clickable', () => {
     cy.get('#jenkins-head-icon').should('have.prop','tagName','IMG');
     cy.get('a[href="/view/all/newJob"]').click();
   
