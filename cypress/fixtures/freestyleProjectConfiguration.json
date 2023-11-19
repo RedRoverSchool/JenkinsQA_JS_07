@@ -1,0 +1,8 @@
+{
+    "projectName": "project1",
+    "sectionName": "Source Code Management",
+    "radioButtonNames": ["None", "Git"],
+    "gitToolTipText": "Help for feature: Git",
+    "peaceOfHelpText": "It can poll, fetch, checkout, and merge contents of git repositories.",
+    "titles": ["Repositories", "Branches to build", "Repository browser", "Additional Behaviours"]
+}

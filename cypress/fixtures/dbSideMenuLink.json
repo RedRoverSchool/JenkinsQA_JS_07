@@ -1,0 +1,5 @@
+{
+    "sidePanelName":["New Item", "People", "Build History", "ManageJenkins", "MyViews"],
+    "sidePanelLink":["/view/all/newJob","/asynchPeople/","/view/all/builds", "/manage/","/me/my-views/view/all/"],
+     "pageHeaderName": ["Enter an item name", "People", "Build History of Jenkins ", "Manage Jenkins", "This folder is empty"] 
+}
