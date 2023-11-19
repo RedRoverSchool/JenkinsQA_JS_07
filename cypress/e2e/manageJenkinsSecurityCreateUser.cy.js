@@ -2,13 +2,13 @@
 
 import manageJenkinsSecurityCreateUser from '../fixtures/manageJenkinsSecurityCreateUser.json';
 
-beforeEach(function () {
-  cy.get('a[href="/manage"]').click();
-  cy.get('a[href="securityRealm/"]').click();
-  cy.get('a[href="addUser"]').click();
-});
-
 describe('ManageJenkinsSecurityCreateUser.cy', () => {
+  beforeEach(function () {
+    cy.get('a[href="/manage"]').click();
+    cy.get('a[href="securityRealm/"]').click();
+    cy.get('a[href="addUser"]').click();
+  });
+
   it('TC_09.14.001 | Manage Jenkins > Security> Create User using valid credentials', function () {
     cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
     cy.get('input[name="password1"]').type(
@@ -102,6 +102,26 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
     cy.get('div.error').should(
       'have.text',
       manageJenkinsSecurityCreateUser.errorEmail
+    );
+  });
+  it('TC_09.14.010 | Manage Jenkins > Security> Create User > Verify error message displayed when user enter invalid Username by using special characters', function () {
+    cy.get('#username').type(
+      JSON.stringify(manageJenkinsSecurityCreateUser.invalidUsername)
+    );
+    cy.get('input[name="password1"]').type(
+      manageJenkinsSecurityCreateUser.password
+    );
+    cy.get('input[name="password2"]').type(
+      manageJenkinsSecurityCreateUser.password
+    );
+    cy.get('input[name="fullname"]').type(
+      manageJenkinsSecurityCreateUser.fullName
+    );
+    cy.get('input[name="email"]').type(manageJenkinsSecurityCreateUser.email);
+    cy.get('button[name="Submit"]').click();
+    cy.get('div.error').should(
+      'have.text',
+      manageJenkinsSecurityCreateUser.errorUsernameSC
     );
   });
 });

@@ -1,0 +1,24 @@
+{
+    "fields": [
+        {"selector": "input#username",
+            "name": "Username", 
+            "error_message": "\"\" is prohibited as a username for security reasons.",
+            "child": 2},
+        {"selector": "[name=\"password1\"]",
+            "name": "Password", 
+            "error_message": "Password is required",
+            "child": 4},
+        {"selector": "[name=\"password2\"]",
+            "name": "Confirm password", 
+            "error_message": "Password is required",
+            "child": 6},
+        {"selector": "[name=\"fullname\"]",
+            "name":"Full name",
+            "error_message": "\"\" is prohibited as a full name for security reasons.",
+            "child": 8},
+        {"selector": "[name=\"email\"]",
+            "name": "E-mail address",
+            "error_message": "Invalid e-mail address",
+            "child": 10}
+    ]
+}

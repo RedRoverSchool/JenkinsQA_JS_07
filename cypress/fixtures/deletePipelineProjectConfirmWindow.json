@@ -1,0 +1,7 @@
+{
+  "pipelineProjectName" : "StarsOfCypress",
+  "windowMessage" : "Delete Pipeline: are you sure?",
+  "jobsType" : "Pipeline",
+  "deletePipeline" : "Delete Pipeline" 
+
+}

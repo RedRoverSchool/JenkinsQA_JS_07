@@ -10,5 +10,6 @@
         "Rename",
         "Credentials"
     ],
-    "emptyFolderMessage": "This folder is empty"
+    "emptyFolderMessage": "This folder is empty",
+    "jobName": "Job1"
 }
