@@ -1,0 +1,44 @@
+{
+  "link": [
+    "a[href='computer/new']",
+    "a[href='cloud/']",
+    "a[href='https://www.jenkins.io/redirect/distributed-builds']"
+  ],
+
+  "name": [
+    "Set up an agent",
+    "Configure a cloud",
+    "Learn more about distributed builds"
+  ],
+
+  "icon": [
+    {
+      "name": "arrow",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "stroke-width": "32",
+      "d": "M268 112l144 144-144 144M392 256H100"
+    },
+    {
+      "name": "arrow",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "stroke-width": "32",
+      "d": "M268 112l144 144-144 144M392 256H100"
+    },
+
+    {
+      "name": "link",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "stroke-width": "36",
+      "d": "M208 352h-64a96 96 0 010-192h64M304 160h64a96 96 0 010 192h-64M163.29 256h187.42"
+    }
+  ]
+}
