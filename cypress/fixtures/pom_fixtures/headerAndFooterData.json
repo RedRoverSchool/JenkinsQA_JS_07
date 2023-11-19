@@ -1,0 +1,14 @@
+{
+  "userMenuEndPoints": {
+    "builds": "/builds",
+    "configure": "/configure",
+    "my-views": "/my-views",
+    "credentials": "/credentials"
+  },  
+  "userMenuPageHeaders": {
+    "builds": "Builds for",
+    "email": "Extended Email Job Watching",
+    "thisfolder": "This folder is empty",
+    "credentials": "Credentials"
+  }
+}

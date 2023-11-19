@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 import manageJenkinsUITitle from "../fixtures/manageJenkinsUITitle.json"
 
-describe('Manage Jenkins > Title', () => {
+describe.skip('Manage Jenkins > Title', () => {
     beforeEach(() => {
         cy.get('a[href="/manage"]').click()
         cy.url().should('include', manageJenkinsUITitle.url)

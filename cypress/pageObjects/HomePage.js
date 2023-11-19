@@ -1,6 +1,8 @@
-import NewJobPage from "../pageObjects/NewJobPage";
-import BuildHistoryPage from "../pageObjects/BuildHistoryPage"
-import RestApiPage from "../pageObjects/RestApiPage"
+import NewJobPage from '../pageObjects/NewJobPage';
+import BuildHistoryPage from '../pageObjects/BuildHistoryPage';
+import RestApiPage from '../pageObjects/RestApiPage';
+import ManageJenkinsPage from '../pageObjects/ManageJenkinsPage';
+import PeoplePage from '../pageObjects/PeoplePage';
 
 class HomePage {
     getNewItemLink = () => cy.get('a[href="newJob"]');
@@ -8,40 +10,51 @@ class HomePage {
     getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
     getBuildHistoryLink = () => cy.get('td:last-child [tooltip]'); 
     getRestApilink = () => cy.get('.rest-api');
-    getJenkinsVersionBtn = () => cy.get('button.jenkins-button--tertiary.jenkins_ver')
-    getPopUpMenuJenkinsVersion = () => cy.get('.tippy-content')
+    getManageJenkinsLink = () => cy.get('a[href="/manage"]');
+    getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
+    getJenkinsVersionBtn = () => cy.get('button.jenkins-button--tertiary.jenkins_ver');
+    getPopUpMenuJenkinsVersion = () => cy.get('.tippy-content');
 
+  clickNewItemLink() {
+    this.getNewItemLink().click();
 
-    
-    clickNewItemLink() {
-        this.getNewItemLink().click();
+    return new NewJobPage();
+  }
 
-        return new NewJobPage();
-    }
+  clickDashboardBreadcrumbsLink() {
+    this.getDashboardBreadcrumbsLink().click();
 
-    clickDashboardBreadcrumbsLink() {
-        this.getDashboardBreadcrumbsLink().click();
+    return this;
+  }
 
-        return this;
-    }
+  clickBuildHistoryLink() {
+    this.getBuildHistoryLink().click();
 
-    clickBuildHistoryLink() {
-        this.getBuildHistoryLink().click()
+    return new BuildHistoryPage();
+  }
 
-        return new BuildHistoryPage();
-    }
+  clickRestApilink() {
+    this.getRestApilink().click();
 
+    return new RestApiPage();
+  }
 
-    clickRestApilink(){
-        this.getRestApilink().click();
+  clickManageJenkinsLink() {
+    this.getManageJenkinsLink().click();
 
-        return new RestApiPage();
-    }
+    return new ManageJenkinsPage();
+  }
+  
+  clickPeopleLink() {
+    this.getPeopleLink().click();
 
-    clickJenkinsVersionBtn() {
-        this.getJenkinsVersionBtn().click();
+    return new PeoplePage();
+  }
 
-        return this;
-    }
+  clickJenkinsVersionBtn() {
+    this.getJenkinsVersionBtn().click();
+
+    return this;
+  }
 }
 export default HomePage;
