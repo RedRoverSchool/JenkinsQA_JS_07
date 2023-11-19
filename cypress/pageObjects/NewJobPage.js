@@ -5,9 +5,8 @@ class NewJobPage {
     getMultiConfigTypeOfProjectBtn = () => cy.get('li.hudson_matrix_MatrixProject');
     getOKButton = () => cy.get('#ok-button');
     getFreestyleTypeOfProjectBtn = () => cy.get('.hudson_model_FreeStyleProject');
+    getTypeOfProjectLabels = () => cy.get(".label");
     
-
-
     fillInputNameField(nameProject) {
         this.getInputNameField().should('be.visible').type(nameProject);
 
@@ -36,6 +35,12 @@ class NewJobPage {
         this.getOKButton().click();
 
         return new FreestyleProjectConfigurePage();
+    }
+    
+    collectTypeOfProjectLabels(){
+        this.getTypeOfProjectLabels().as("labelName");
+
+        return this;
     }
  
 }
