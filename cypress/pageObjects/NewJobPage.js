@@ -73,8 +73,8 @@ class NewJobPage {
         return this;
     }
 
-    clickCopyFieldOKButton() {
-        this.getCopyFieldOKButton().click();
+    clickOKButton() {
+        this.getOKButton().click();
 
         return this;
     }

@@ -1,11 +1,11 @@
 import HomePage from "../../pageObjects/HomePage";
 import newProject from "../../fixtures/pom_fixtures/newProject.json"
-import ErrorMessagePage from "../../pageObjects/CreateItemErrorPage";
+import CreateItemErrorPage from "../../pageObjects/CreateItemErrorPage";
 
 
 describe('Verify "Copy from" field', () => {
     const homePage = new HomePage();
-    const errorMessagePage = new ErrorMessagePage
+    const createItemErrorPage = new CreateItemErrorPage
     beforeEach('Create new job', () => {
     homePage.clickNewItemLink()
              .fillInputNameField(newProject.jobName)
@@ -19,7 +19,7 @@ describe('Verify "Copy from" field', () => {
                 .fillInputNameField(newProject.rendomJob)
                 .clickCopyField()
                 .fillCopyFromField(newProject.type)
-                .clickCopyFieldOKButton()
-        errorMessagePage.getMessage()
+                .clickOKButton()
+        createItemErrorPage.getMessage()
     })
 })
