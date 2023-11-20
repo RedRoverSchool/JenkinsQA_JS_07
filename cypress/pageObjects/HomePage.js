@@ -13,6 +13,8 @@ class HomePage {
   getRestApilink = () => cy.get('.rest-api');
   getManageJenkinsLink = () => cy.get('a[href="/manage"]');
   getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
+  getNewItemLinkSidePanel = () => cy.get("a[href='/view/all/newJob']");
+  
 
   clickNewItemLink() {
     this.getNewItemLink().click();
@@ -49,5 +51,13 @@ class HomePage {
 
     return new PeoplePage();
   }
+
+  clickgetNewItemLinkSidePanel(){
+    this.getNewItemLinkSidePanel().click();
+
+    return new NewJobPage();
+  }
+
+  
 }
 export default HomePage;
