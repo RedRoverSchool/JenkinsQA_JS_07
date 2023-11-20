@@ -12,9 +12,9 @@ class HomePage {
     getRestApilink = () => cy.get('.rest-api');
     getManageJenkinsLink = () => cy.get('a[href="/manage"]');
     getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
-  getScheduleBuildBtn = () => cy.get('td:last-child [tooltip]')
-  getCreateHistoryBuild = () => cy.get('a[href="/view/all/builds"]') 
-      getJenkinsVersionBtn = () => cy.get('button.jenkins-button--tertiary.jenkins_ver');
+    getScheduleBuildBtn = () => cy.get('td:last-child [tooltip]')
+    getCreateHistoryBuild = () => cy.get('a[href="/view/all/builds"]') 
+    getJenkinsVersionBtn = () => cy.get('button.jenkins-button--tertiary.jenkins_ver');
     getPopUpMenuJenkinsVersion = () => cy.get('.tippy-content');
 
   clickNewItemLink() {
