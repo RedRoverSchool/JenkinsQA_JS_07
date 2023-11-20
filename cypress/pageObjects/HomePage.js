@@ -3,7 +3,7 @@ import BuildHistoryPage from '../pageObjects/BuildHistoryPage';
 import RestApiPage from '../pageObjects/RestApiPage';
 import ManageJenkinsPage from '../pageObjects/ManageJenkinsPage';
 import PeoplePage from '../pageObjects/PeoplePage';
-
+const dayjs = require('dayjs');
 class HomePage {
   getNewItemLink = () => cy.get('a[href="newJob"]');
   getDashboardBreadcrumbsLink = () =>
@@ -13,7 +13,9 @@ class HomePage {
   getRestApilink = () => cy.get('.rest-api');
   getManageJenkinsLink = () => cy.get('a[href="/manage"]');
   getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
-
+  getScheduleBuildBtn = () => cy.get('td:last-child [tooltip]')
+  getCreateHistoryBuild = () => cy.get('a[href="/view/all/builds"]') 
+  
   clickNewItemLink() {
     this.getNewItemLink().click();
 
@@ -48,6 +50,22 @@ class HomePage {
     this.getPeopleLink().click();
 
     return new PeoplePage();
+  }
+
+  clickScheduleBuildBtn(){
+    this.getScheduleBuildBtn().click()
+    return this 
+  } 
+ 
+  expData1() {
+    let expData1;
+    return (expData1 = dayjs().format("ddd, DD MMM YYYY HH:mm"));
+  }
+
+  clickCreateHistoryBuild() {
+    this.getCreateHistoryBuild().click();
+
+    return new BuildHistoryPage();
   }
 }
 export default HomePage;
