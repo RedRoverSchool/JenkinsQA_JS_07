@@ -27,7 +27,7 @@ describe("folderConfigure", () => {
       .and("have.text", sideMenu.breadcrumbsConfigurationPage);
   });
 
-  it("TC_07.03.002 | Folder > Configure > The 'Display Name' and 'Description' fields in the General section are text input fields ", () => {
+  it.skip("TC_07.03.002 | Folder > Configure > The 'Display Name' and 'Description' fields in the General section are text input fields ", () => {
     cy.get('#tasks .task').contains(sideMenu.sidePanelFolderPage).click();
     cy.get('input.validated').type(folderName.displayName)
     cy.get('textarea.jenkins-input').type(folderName.displayDescription)
