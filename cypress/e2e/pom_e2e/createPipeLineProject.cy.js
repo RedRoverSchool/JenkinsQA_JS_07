@@ -7,7 +7,7 @@ describe("multiconfigProject", () => {
 
   it("RF | POM > TC_03.04.004 | Create Pipeline project", function () {
     homePage
-      .clickgetNewItemLinkSidePanel()
+      .clickNewItemLink()
       .fillInputNameField(multiconfigProjectData.projectName)
       .clickMultiConfigTypeOfProjectBtn()
       .clickOKButtonFreestyle();

@@ -5,7 +5,7 @@ import ManageJenkinsPage from "../pageObjects/ManageJenkinsPage";
 import PeoplePage from "../pageObjects/PeoplePage";
 const dayjs = require("dayjs");
 class HomePage {
-  getNewItemLink = () => cy.get('a[href="newJob"]');
+  getNewItemLink = () => cy.get('a[href*="/newJob"]');
   getDashboardBreadcrumbsLink = () =>
     cy.get('li.jenkins-breadcrumbs__list-item a[href="/"]');
   getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
@@ -18,7 +18,6 @@ class HomePage {
   getJenkinsVersionBtn = () =>
     cy.get("button.jenkins-button--tertiary.jenkins_ver");
   getPopUpMenuJenkinsVersion = () => cy.get(".tippy-content");
-  getNewItemLinkSidePanel = () => cy.get("a[href='/view/all/newJob']");
   getWelcomedMessageHeader = () => cy.get(".empty-state-block h1");
 
   clickNewItemLink() {
@@ -79,10 +78,5 @@ class HomePage {
     return this;
   }
 
-  clickgetNewItemLinkSidePanel() {
-    this.getNewItemLinkSidePanel().click();
-
-    return new NewJobPage();
-  }
 }
 export default HomePage;
