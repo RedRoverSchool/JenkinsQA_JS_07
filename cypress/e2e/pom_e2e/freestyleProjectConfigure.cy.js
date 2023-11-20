@@ -7,7 +7,7 @@ import data from "../../fixtures/pom_fixtures/freestyleProjectData.json"
 describe('freestyleProjectConfigure', () => {
     const homePage = new HomePage();
     const freestyleProjectConfigurePage = new FreestyleProjectConfigurePage();
-    const { sectionName } = data.configure.sourceCodeManagement;
+    const { sectionName, radioButtonNames } = data.configure.sourceCodeManagement;
     
     beforeEach(() => {
         homePage.clickNewItemLink()
@@ -21,5 +21,14 @@ describe('freestyleProjectConfigure', () => {
         freestyleProjectConfigurePage.getSourceCodeManagementSection()
                                      .should('be.visible')
                                      .and('contain', sectionName);
+    });
+
+    it('TC_04.02.002 | Freestyle > Source Code Management > Verify there are two radio buttons', () => {
+        freestyleProjectConfigurePage.getSourceCodeManagementSectionBtns()
+                                     .should('have.length', 2);
+        freestyleProjectConfigurePage.getSourceCodeManagementSectionLbls()     
+                                     .each(($el, index) => {
+                                        expect($el.text()).to.be.eql(radioButtonNames[index])
+                                     });    
     });
 });
