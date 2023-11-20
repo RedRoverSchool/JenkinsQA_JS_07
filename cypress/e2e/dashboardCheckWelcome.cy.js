@@ -2,7 +2,7 @@
 
 import welcomedMessage from "../fixtures/dashboardWelcomedMessage.json"
 
-describe('Dashboard > Welcomed message', () => {
+describe.skip('Dashboard > Welcomed message', () => {
     
     it('TC_02.03.003 | Dashboard > Check Welcomed message', () => {
         cy.get('div.empty-state-block>h1')

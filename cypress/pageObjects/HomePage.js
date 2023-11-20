@@ -19,6 +19,7 @@ class HomePage {
     cy.get("button.jenkins-button--tertiary.jenkins_ver");
   getPopUpMenuJenkinsVersion = () => cy.get(".tippy-content");
   getNewItemLinkSidePanel = () => cy.get("a[href='/view/all/newJob']");
+  getWelcomedMessageHeader = () => cy.get(".empty-state-block h1");
 
   clickNewItemLink() {
     this.getNewItemLink().click();
