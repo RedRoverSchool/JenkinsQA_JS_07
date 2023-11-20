@@ -5,17 +5,18 @@ import ManageJenkinsPage from '../pageObjects/ManageJenkinsPage';
 import PeoplePage from '../pageObjects/PeoplePage';
 const dayjs = require('dayjs');
 class HomePage {
-  getNewItemLink = () => cy.get('a[href="newJob"]');
-  getDashboardBreadcrumbsLink = () =>
-    cy.get('li.jenkins-breadcrumbs__list-item a[href="/"]');
-  getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
-  getBuildHistoryLink = () => cy.get('td:last-child [tooltip]');
-  getRestApilink = () => cy.get('.rest-api');
-  getManageJenkinsLink = () => cy.get('a[href="/manage"]');
-  getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
+    getNewItemLink = () => cy.get('a[href="newJob"]');
+    getDashboardBreadcrumbsLink = () => cy.get('li.jenkins-breadcrumbs__list-item a[href="/"]');
+    getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
+    getBuildHistoryLink = () => cy.get('td:last-child [tooltip]'); 
+    getRestApilink = () => cy.get('.rest-api');
+    getManageJenkinsLink = () => cy.get('a[href="/manage"]');
+    getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
   getScheduleBuildBtn = () => cy.get('td:last-child [tooltip]')
   getCreateHistoryBuild = () => cy.get('a[href="/view/all/builds"]') 
-  
+      getJenkinsVersionBtn = () => cy.get('button.jenkins-button--tertiary.jenkins_ver');
+    getPopUpMenuJenkinsVersion = () => cy.get('.tippy-content');
+
   clickNewItemLink() {
     this.getNewItemLink().click();
 
@@ -45,7 +46,7 @@ class HomePage {
 
     return new ManageJenkinsPage();
   }
-
+  
   clickPeopleLink() {
     this.getPeopleLink().click();
 
@@ -66,6 +67,12 @@ class HomePage {
     this.getCreateHistoryBuild().click();
 
     return new BuildHistoryPage();
+  }
+
+  clickJenkinsVersionBtn() {
+    this.getJenkinsVersionBtn().click();
+
+    return this;
   }
 }
 export default HomePage;
