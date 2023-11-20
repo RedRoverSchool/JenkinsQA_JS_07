@@ -10,7 +10,7 @@ describe('freestyleProjectConfigure', () => {
     const { sectionName } = data.configure.sourceCodeManagement;
     
     beforeEach(() => {
-        homePage.clickNewItemLink()
+        homePage.clickCreateAJobLink()
                 .fillInputNameField(data.projectName)
                 .clickFreestyleTypeOfProjectBtn()
                 .clickOKButtonFreestyle()

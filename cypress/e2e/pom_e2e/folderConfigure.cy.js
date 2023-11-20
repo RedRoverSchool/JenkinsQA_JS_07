@@ -9,7 +9,7 @@ describe("folderConfigure", () => {
 
   beforeEach("createNewFolder", () => {
     homePage
-      .clickNewItemLink()
+      .clickCreateAJobLink()
       .fillInputNameField(folderConfigureData.folderName)
       .clickFolderBtn()
       .clickOKButtonFolder()

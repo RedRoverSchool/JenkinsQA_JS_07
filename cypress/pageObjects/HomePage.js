@@ -5,7 +5,7 @@ import ManageJenkinsPage from "../pageObjects/ManageJenkinsPage";
 import PeoplePage from "../pageObjects/PeoplePage";
 const dayjs = require("dayjs");
 class HomePage {
-  getNewItemLink = () => cy.get('a[href="newJob"]');
+  getCreateAJobLink = () => cy.get('a[href="newJob"]');
   getDashboardBreadcrumbsLink = () =>
     cy.get('li.jenkins-breadcrumbs__list-item a[href="/"]');
   getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
@@ -21,8 +21,8 @@ class HomePage {
   getNewItemLinkSidePanel = () => cy.get("a[href='/view/all/newJob']");
   getWelcomedMessageHeader = () => cy.get(".empty-state-block h1");
 
-  clickNewItemLink() {
-    this.getNewItemLink().click();
+  clickCreateAJobLink() {
+    this.getCreateAJobLink().click();
 
     return new NewJobPage();
   }

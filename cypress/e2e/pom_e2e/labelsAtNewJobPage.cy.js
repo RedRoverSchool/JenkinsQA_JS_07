@@ -7,7 +7,7 @@ describe("labelsAtNewJobPage", () => {
   const homePage = new HomePage();
 
   beforeEach(function () {
-    homePage.clickNewItemLink() 
+    homePage.clickCreateAJobLink() 
             .collectTypeOfProjectLabels(); 
   });
   newJobPageData.typeOfProjectLabelNames.forEach((name, index) => {

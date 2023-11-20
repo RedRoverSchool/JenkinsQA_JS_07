@@ -7,7 +7,7 @@ import BuildHistoryPage from "../../pageObjects/BuildHistoryPage";
 
 describe('Build History of FreestyleProject',function(){
     beforeEach(function(){
-        homePage.clickNewItemLink()
+        homePage.clickCreateAJobLink()
         .fillInputNameField(freestyleProjectData.projectName)
         .clickFreestyleTypeOfProjectBtn()
         .clickOKButtonFreestyle();

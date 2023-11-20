@@ -7,7 +7,7 @@ describe('multiconfigProject', () => {
     const homePage = new HomePage();
    
     it('Create Multiconfiguration project', function() {
-        homePage.clickNewItemLink()
+        homePage.clickCreateAJobLink()
                 .fillInputNameField(multiconfigProjectData.projectName)
                 .clickMultiConfigTypeOfProjectBtn()
                 .clickOKButtonFreestyle();
