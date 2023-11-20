@@ -1,4 +1,6 @@
 {
   "folderName": "Folder",
-  "ConfigureBreadcrumbsItem": "Configuration"
+  "configureBreadcrumbsItem": "Configuration",
+  "inputDisplayName": "TestDisplayName",
+  "inputDescription": "TestDescription"
 }
