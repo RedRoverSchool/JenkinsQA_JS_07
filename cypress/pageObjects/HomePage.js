@@ -19,6 +19,10 @@ class HomePage {
     cy.get("button.jenkins-button--tertiary.jenkins_ver");
   getPopUpMenuJenkinsVersion = () => cy.get(".tippy-content");
   getWelcomedMessageHeader = () => cy.get(".empty-state-block h1");
+  getNameProjectArrow =()=>cy.get('td .jenkins-menu-dropdown-chevron');
+  getDeleteBtn =()=>cy.get('.jenkins-dropdown__item[href$="/doDelete"]')
+  getProjectTable =() =>cy.get('table#projectstatus')
+  getJenkinsStartWorkTitle = () => cy.get('.empty-state-block p')
 
   clickNewItemLink() {
     this.getNewItemLink().click();
@@ -77,6 +81,35 @@ class HomePage {
 
     return this;
   }
+
+  clickNameProjectArrow(){
+    this.getNameProjectArrow().realHover().click()
+    return this
+  }
+
+  clickDeletePipelineBtn(){
+    this.getDeleteBtn().click()
+    return this
+  }
+
+  clickWindowConfirm(windowConfirmText) {
+    cy.on('window:confirm', (str) => {
+        expect(str).to.eq(windowConfirmText)
+        return false
+    })
+
+    
+}
+
+clickWindowConfirmOK(windowConfirmText) {
+  cy.on('window:confirm', (str) => {
+      expect(str).to.eq(windowConfirmText)
+      
+  })
+
+  
+}
+
 
 }
 export default HomePage;
