@@ -6,7 +6,7 @@ const PORT = Cypress.env("local.port");
 class FolderConfigurePage {
   getSaveBtn = () => cy.get('button[name="Submit"]');
   getFolderConfigurePageUrl = () => cy.url();
-  getConfigureBreadcrumbsItem = () => cy.get("#breadcrumbs > li:nth-child(5)");
+  getConfigureBreadcrumbsItem = () => cy.get("li[aria-current='page'].jenkins-breadcrumbs__list-item");
   getInputDisplayName = () => cy.get('input.validated');
   getInputDescription = () => cy.get('textarea.jenkins-input');
 

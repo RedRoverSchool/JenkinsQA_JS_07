@@ -22,6 +22,7 @@ class HomePage {
   getNameProjectArrow =()=>cy.get('td .jenkins-menu-dropdown-chevron');
   getDeleteBtn =()=>cy.get('.jenkins-dropdown__item[href$="/doDelete"]')
   getProjectTable =() =>cy.get('table#projectstatus')
+  getJenkinsStartWorkTitle = () => cy.get('.empty-state-block p')
 
   clickNewItemLink() {
     this.getNewItemLink().click();
