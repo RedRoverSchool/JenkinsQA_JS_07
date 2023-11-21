@@ -7,7 +7,7 @@ describe('welcomeText', () => {
     it.skip('TC_02.03.019 Welcome to Jenkins massage verification', function () {
         cy.get('.empty-state-block h1').should('be.visible').and('have.text', welcomeMessage);
     }) 
-    it,skip('TC_02.03.021 Dashboard Explanation text message', function () {
+    it.skip('TC_02.03.021 Dashboard Explanation text message', function () {
         cy.get('.empty-state-block p').should('be.visible').and('have.text', explanationText);
     }) 
 })
