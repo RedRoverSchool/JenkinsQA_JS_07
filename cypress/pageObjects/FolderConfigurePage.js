@@ -7,6 +7,8 @@ class FolderConfigurePage {
   getSaveBtn = () => cy.get('button[name="Submit"]');
   getFolderConfigurePageUrl = () => cy.url();
   getConfigureBreadcrumbsItem = () => cy.get("#breadcrumbs > li:nth-child(5)");
+  getInputDisplayName = () => cy.get('input.validated');
+  getInputDescription = () => cy.get('textarea.jenkins-input');
 
   clickSaveBtn() {
     this.getSaveBtn().click();
@@ -19,6 +21,18 @@ class FolderConfigurePage {
       "equal",
       `http://${HOST}:${PORT}/job/${folderConfigureData.folderName}/configure`
     );
+
+    return this;
+  }
+
+  fillInputDisplayName(displayName) {
+    this.getInputDisplayName().should('be.visible').type(displayName);
+
+    return this;
+  }
+
+  fillInputDescription(description) {
+    this.getInputDescription().should('be.visible').type(description);
 
     return this;
   }

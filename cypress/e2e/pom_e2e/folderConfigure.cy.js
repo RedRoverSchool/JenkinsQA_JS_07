@@ -22,6 +22,25 @@ describe("folderConfigure", () => {
       .checkFolderConfigurePageUrl()
       .getConfigureBreadcrumbsItem()
       .should("be.visible")
-      .and("have.text", folderConfigureData.ConfigureBreadcrumbsItem);
+      .and("have.text", folderConfigureData.configureBreadcrumbsItem);
+  });
+
+  it('TC_07.03.002 | Folder > Configure > The "Display Name" and "Description" fields in the General section are text input fields',() => {
+    folderPage
+      .clickConfigureLink()
+      .fillInputDisplayName(folderConfigureData.inputDisplayName)
+      .fillInputDescription(folderConfigureData.inputDescription)
+      .clickSaveBtn()
+
+    folderPage
+      .getDisplayFolderName()
+      .should('be.visible')
+      .and('contain',folderConfigureData.inputDisplayName)
+
+    folderPage
+      .getDiscriptionFolderMessage()
+      .should('be.visible')
+      .and('have.text',folderConfigureData.inputDescription)
   });
 });
+

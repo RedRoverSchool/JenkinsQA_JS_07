@@ -2,7 +2,8 @@
     "projectName": "Project1",
     "configure": {
         "sourceCodeManagement": {
-            "sectionName": "Source Code Management"
+            "sectionName": "Source Code Management",
+            "radioButtonNames": ["None", "Git"]
         }
     }
 }

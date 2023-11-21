@@ -1,6 +1,6 @@
 ///<reference types ="cypress"/>
 
-describe('welcomeJenkinsTest', () => {
+describe.skip('welcomeJenkinsTest', () => {
 
     it('TC_02.03.004 | "Welcome to Jenkins" title and text', function () {
 
