@@ -1,7 +1,6 @@
 import MultiConfigProjectConfigurePage from "../pageObjects/MultiConfigProjectConfigurePage";
 import FreestyleProjectConfigurePage from "../pageObjects/FreestyleProjectConfigurePage";
-import FolderConfigurePage from "../pageObjects/FolderConfigurePage";
-
+import FolderConfigurePage from "../pageObjects/FolderConfigurePage"
 class NewJobPage {
     getInputNameField = () => cy.get('input#name');
     getMultiConfigTypeOfProjectBtn = () => cy.get('li.hudson_matrix_MatrixProject');
@@ -13,7 +12,7 @@ class NewJobPage {
     getCopyFieldOKButton =() => cy.get('.jenkins-button--primary');
     getFolderBtn = () => cy.get(".com_cloudbees_hudson_plugins_folder_Folder");
     getPipelineProjectNameLink = () => cy.get('.label');
-
+    
     fillInputNameField(nameProject) {
         this.getInputNameField().should('be.visible').type(nameProject);
 
@@ -66,6 +65,20 @@ class NewJobPage {
         this.getPipelineProjectNameLink().click
         
         return this
+      }
+
+      clickPipelineTypeOfProjectBtn(){
+        this.getPipelineTypeOfProjectBtn().click()
+        return this
+      }
+
+      clickOKButtonPipelineProject(){
+        this.getOKButton().click()
+
+        return new PipelineConfigurePage()
+      }
+      checkNewJobPageUrl() {
+        this.getNewJobPageUrl().should('be.eql',`http://${HOST}:${PORT}/view/all/newJob`)
       }
 
     clickCopyField(){

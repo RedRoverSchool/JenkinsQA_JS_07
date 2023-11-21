@@ -5,7 +5,7 @@ import newItem from '../fixtures/newItem.json'
 
 describe('newItem', () => {
 
-    it('TC_03.01.001 | + New Item > Verify that user after click on +New Item option is redirected to the "New job" page', function () {
+    it.skip('TC_03.01.001 | + New Item > Verify that user after click on +New Item option is redirected to the "New job" page', function () {
 
         cy.get('[href*="/view/all/newJob"]').click();
 

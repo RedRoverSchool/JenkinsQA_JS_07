@@ -18,11 +18,22 @@ describe("folderDescription", () => {
       .clickSaveBtn();
   });
 
-  it("TC_07.02.006 | Verify that an empty input for text field appears when hit on “Add description” button", function () {
+  it(`TC_07.02.006 | Verify ${folderPageData.previewLinkName} link appears when hit on ${folderPageData.addDescriptionButtonName} button`, () => {
     folderPage
       .clickAddDescriptionLink()
       .getPreviewLink()
       .should("be.visible")
       .and("have.text", folderPageData.previewLinkName);
+  });
+
+ 
+  it(`TC_07.02.007 | Verify ${folderPageData.saveButtonName} button appears when hit on ${folderPageData.addDescriptionButtonName}`, () => {
+    folderPage
+      .clickAddDescriptionLink()
+      .getSaveButton()
+      .should("be.visible")
+      .and("have.prop", "tagName", "BUTTON")
+      .and("have.prop", "innerText", folderPageData.saveButtonName);
+
   });
 });
