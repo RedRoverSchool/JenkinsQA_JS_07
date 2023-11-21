@@ -3,7 +3,7 @@
 import HomePage from "../../pageObjects/HomePage";
 import HeaderAndFooter from "../../pageObjects/HeaderAndFooter";
 
-describe('verifyLogoAndTitle',() => {
+describe('jenkinsLogoAndTitle',() => {
     const homePage = new HomePage();
     const headerAndFooter = new HeaderAndFooter()
 

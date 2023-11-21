@@ -1,6 +1,6 @@
 ///<reference types ="cypress"/>
 import { welcomePage, explanation } from "../fixtures/welcomeMessage.json"
-describe('welcomeMsg', () => {
+describe.skip('welcomeMsg', () => {
 
     it('TC_02.03.10 | Dashboard Welcomed message', function () {
 

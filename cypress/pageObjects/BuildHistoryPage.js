@@ -4,6 +4,7 @@ class BuildHistoryPage {
     getCreateHistoryBuild = () => cy.get('a[href="/view/all/builds"]');
     getWindowBuildHistory = () => cy.get('#icon-tl-0-1-e1')
     getTitleBuild = () => cy.get('div.timeline-event-bubble-title a')
+    getTimeFromBuildLabel = () => cy.get('.timeline-event-bubble-time')
   
 
     clickCreateBuild() {
@@ -22,6 +23,6 @@ class BuildHistoryPage {
         this.getWindowBuildHistory().click();
 
         return this;
-    }
+    }      
 }
 export default BuildHistoryPage;

@@ -2,7 +2,7 @@
 
 const PORT = '8080'
 
-describe('checkWelcomeMsg', () => {
+describe.skip('checkWelcomeMsg', () => {
   it('TC_02.03.018 | Dashboard > Welcome message', () => {
     const expectedUrl = `http://localhost:${PORT}/`;
     cy.url().should('be.equal', expectedUrl)

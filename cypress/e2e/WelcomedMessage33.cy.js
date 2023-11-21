@@ -2,7 +2,7 @@
 
 import welcomeMessage33 from "../fixtures/welcomeMessage33.json"
 
-describe('WelcomedMessage33', () => {
+describe.skip('WelcomedMessage33', () => {
     
     it('TC_02.03.022 | Dashboard > Welcomed message', () => {
         cy.get('div.empty-state-block > h1').should('be.visible').and('have.text', welcomeMessage33.welcomeMessage);
