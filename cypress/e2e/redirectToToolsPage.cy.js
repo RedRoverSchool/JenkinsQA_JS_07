@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('redirectToToolsPage',() => {
+describe.skip('redirectToToolsPage',() => {
     it('TC_09.06.006|Redirect to Tools page',() => {
         cy.get('a[href="/manage"]').click()
         

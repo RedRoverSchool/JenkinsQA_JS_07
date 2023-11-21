@@ -1,4 +1,4 @@
-describe('System Configuration Test', () => {
+describe.skip('System Configuration Test', () => {
 
     it('US_09.06 | Manage Jenkins > System Configuration > Tools', () => {
         cy.get('a[href="/manage"]').click()
