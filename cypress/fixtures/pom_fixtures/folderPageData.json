@@ -1,3 +1,5 @@
 {
-    "previewLinkName": "Preview"
+    "previewLinkName": "Preview",
+    "saveButtonName" : "Save",
+    "addDescriptionButtonName" : "Add description"
 }
