@@ -13,6 +13,8 @@ describe('Delete Pipeline',()=>{
            .clickOKButtonPipelineProject()
         homePage   
            .clickDashboardBreadcrumbsLink()
+        homePage
+            .getProjectTable().should('exist')
     
             })
       
@@ -21,7 +23,16 @@ describe('Delete Pipeline',()=>{
     it('POM>TC_05.05.004|PipelineDelete> Verify popup confirm window has message',()=>{
         homePage.clickNameProjectArrow()
                 .clickDeletePipelineBtn()
-                .clickWindowConfirmCancel(pipelineDropDown.messages.windowConfirm)
+                .clickWindowConfirm(pipelineDropDown.messages.windowConfirm)
                 
+    })
+
+    it('POM>TC_05.05.005 | Pipeline > Delete cancellation Pipeline on Dashboard Page',()=>{
+                
+        homePage.clickNameProjectArrow()
+                .clickDeletePipelineBtn()
+                .clickWindowConfirmOK(pipelineDropDown.messages.windowConfirm)
+        homePage.getProjectTable().should('not.exist')
+
     })
 })
