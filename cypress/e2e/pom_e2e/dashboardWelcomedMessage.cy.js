@@ -11,4 +11,11 @@ describe("dashboardWelcomedMessage", () => {
       .should("be.visible")
       .and("have.text", dashboardWelcomedMessageData.welcomedMessageHeader);
   });
+
+  it("TC_02.03.014 |Dashboard > Welcomed message> Verify the title explaining how to start working in Jenkins", () => {
+    homePage
+      .getJenkinsStartWorkTitle()
+      .should("be.visible")
+      .and("have.text", dashboardWelcomedMessageData.jenkinsStartWorkTitleText);
+  });
 });
