@@ -1,4 +1,5 @@
 {
     "typeOfProjectLabelNames": ["Freestyle project", "Pipeline", "Multi-configuration project", "Folder", "Multibranch Pipeline", "Organization Folder"],
-    "url": "/newJob"
+    "url": "/newJob",
+    "title": "Enter an item name"
 }
