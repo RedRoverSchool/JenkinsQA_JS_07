@@ -25,22 +25,36 @@ describe("folderConfigure", () => {
       .and("have.text", folderConfigureData.configureBreadcrumbsItem);
   });
 
-  it('TC_07.03.002 | Folder > Configure > The "Display Name" and "Description" fields in the General section are text input fields',() => {
+  it('TC_07.03.002 | Folder > Configure > The "Display Name" and "Description" fields in the General section are text input fields', () => {
     folderPage
       .clickConfigureLink()
       .fillInputDisplayName(folderConfigureData.inputDisplayName)
       .fillInputDescription(folderConfigureData.inputDescription)
-      .clickSaveBtn()
+      .clickSaveBtn();
 
     folderPage
       .getDisplayFolderName()
-      .should('be.visible')
-      .and('contain',folderConfigureData.inputDisplayName)
+      .should("be.visible")
+      .and("contain", folderConfigureData.inputDisplayName);
 
     folderPage
       .getDiscriptionFolderMessage()
-      .should('be.visible')
-      .and('have.text',folderConfigureData.inputDescription)
+      .should("be.visible")
+      .and("have.text", folderConfigureData.inputDescription);
+  });
+
+  it.only("TC_07.03.006 | Folder > Configure>check side panel has clickable links", () => {
+    folderPage
+      .clickConfigureLink();
+    folderPage
+      .clickHealthMetricsBtn()
+      .clickPropertiesAddBtn()
+      .getSidePanelLinks()
+      .each(($link) => {
+        cy.wrap($link)
+          .click()
+          .should("be.visible")
+          .and("have.class", "task-link--active");
+      });
   });
 });
-

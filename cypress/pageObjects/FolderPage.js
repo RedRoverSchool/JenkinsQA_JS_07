@@ -7,7 +7,11 @@ class FolderPage {
   getDisplayFolderName = () => cy.get('h1')
   getDiscriptionFolderMessage = () => cy.get('#view-message');
   getInputField  =() => cy.get('.jenkins-input');
-  getSaveButton = () =>cy.get('button.jenkins-button.jenkins-button--primary ')
+  getSaveButton = () =>cy.get('button.jenkins-button.jenkins-button--primary ');
+  getHealthMetricsBtn = () => cy.get('button.advancedButton');
+  getPropertiesAddBtn = () => cy.get('button[class="jenkins-button repeatable-add"]');
+  getSidePanelLinks = () => cy.get('div.task>.task-link-wrapper>.task-link');
+  
   
   clickConfigureLink() {
     this.getConfigureLink().click();
@@ -20,9 +24,23 @@ class FolderPage {
 
     return this;
   }
+  clickHealthMetricsBtn() {
+    this.getHealthMetricsBtn().click();
+    return this;
+  }
 
-  
+clickPropertiesAddBtn() {
+  this.getPropertiesAddBtn().click();
+  return this;
 }
+// clickSidePanelLinks() {
+//   this.getSidePanelLinks().each(($link) => {
+//     cy.wrap($link).click();
+// });
+// return this;
+  
+// }
 
+}
 export default FolderPage;
 
