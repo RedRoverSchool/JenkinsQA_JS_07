@@ -36,4 +36,18 @@ describe("folderDescription", () => {
       .and("have.prop", "innerText", folderPageData.saveButtonName);
 
   });
+
+  it("TC_07.02.009 | Verify text input field appears when hit on “Add description” button", () => {
+    folderPage
+      .clickAddDescriptionLink()
+      .getInputField()
+      .should("be.visible")
+      .should("have.value", "");
+
+    folderPage
+      .typeInputField(folderPageData.fDText)
+      .getInputField()
+      .should("have.value", folderPageData.fDText);
+  });
+
 });

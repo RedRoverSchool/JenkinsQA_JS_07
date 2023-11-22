@@ -21,7 +21,12 @@ class FolderPage {
     return this;
   }
 
-  
+  typeInputField(text){
+    this.getInputField().type(text);
+    
+    return this;
+  }
+ 
 }
 
 export default FolderPage;
