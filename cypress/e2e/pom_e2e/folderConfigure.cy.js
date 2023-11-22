@@ -2,10 +2,12 @@
 import HomePage from "../../pageObjects/HomePage";
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderPage from "../../pageObjects/FolderPage";
+import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
 
 describe("folderConfigure", () => {
   const homePage = new HomePage();
   const folderPage = new FolderPage();
+  const folderConfigurePage = new FolderConfigurePage();
 
   beforeEach("createNewFolder", () => {
     homePage
@@ -56,5 +58,21 @@ describe("folderConfigure", () => {
           .should("be.visible")
           .and("have.class", "task-link--active");
       });
+  });
+
+  it('TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable', () => {
+    folderPage
+      .clickConfigureLink()
+      .getSaveBtn()
+      .should('be.visible');
+
+    folderConfigurePage
+      .clickSaveBtn()
+      .getFolderPageUrl()
+      .should('include', folderConfigureData.folderName);
+    
+    folderPage
+      .getDisplayFolderName()
+      .should('contain', folderConfigureData.folderName);
   });
 });
