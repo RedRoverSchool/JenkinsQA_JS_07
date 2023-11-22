@@ -9,9 +9,9 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
 
     beforeEach("createPipelineProject", () => {
     homePage.clickNewItemLink()
-            .fillInputNameField(pipelineProjectData.pipelineName)
-            .clickPipelineTypeOfProjectBtn()
-            .clickOKButtonPipeline()          
+            .fillInputNameField(pipelineProjectData.projectName)
+            .clickPipelineBtn()
+            .clickOKButtonPipelineProject()
     });
    
     it('TC_03.05.005 | New Item > Create Pipeline Project > Configure new Pipeline project > Check the help button Discard old builds', () => {
