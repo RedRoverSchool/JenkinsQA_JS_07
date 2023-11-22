@@ -44,6 +44,21 @@ describe("folderConfigure", () => {
       .and("have.text", folderConfigureData.inputDescription);
   });
 
+  it("TC_07.03.006 | Folder > Configure>check side panel has clickable links", () => {
+    folderPage
+      .clickConfigureLink();
+    folderPage
+      .clickHealthMetricsBtn()
+      .clickPropertiesAddBtn()
+      .getSidePanelLinks()
+      .each(($link) => {
+        cy.wrap($link)
+          .click()
+          .should("be.visible")
+          .and("have.class", "task-link--active");
+      });
+  });
+
   it("TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable", () => {
     folderConfigurePage.getSaveBtn().should("be.visible");
 
