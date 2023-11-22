@@ -2,7 +2,7 @@
 import HomePage from "../../pageObjects/HomePage";
 import configureToolsTitle from "../../fixtures/pom_fixtures/configureToolsTitle.json"
 
-describe('System Configuration', () => {
+describe('System Configuration > redirection to Tools Page', () => {
   const homePage = new HomePage();
 
   it('TC__09.06.02 | Verify redirection to Tools Page', () => {
