@@ -45,7 +45,7 @@ describe("folderConfigure", () => {
       .and("have.text", folderConfigureData.inputDescription);
   });
 
-  it.only("TC_07.03.006 | Folder > Configure>check side panel has clickable links", () => {
+  it("TC_07.03.006 | Folder > Configure>check side panel has clickable links", () => {
     folderPage
       .clickConfigureLink();
     folderPage
