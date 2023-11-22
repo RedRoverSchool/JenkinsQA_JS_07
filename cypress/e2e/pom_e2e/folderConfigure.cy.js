@@ -45,6 +45,22 @@ describe("folderConfigure", () => {
       .and("have.text", folderConfigureData.inputDescription);
   });
 
+  it('TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable', () => {
+    folderPage
+      .clickConfigureLink()
+      .getSaveBtn()
+      .should('be.visible');
+
+    folderConfigurePage
+      .clickSaveBtn()
+      .getFolderPageUrl()
+      .should('include', folderConfigureData.folderName);
+    
+    folderPage
+      .getDisplayFolderName()
+      .should('contain', folderConfigureData.folderName);
+  });
+
   it.only("TC_07.03.003 | Folder > Configure > Left menu content check", () => {
     folderPage.clickConfigureLink().getSideMenu().should("be.visible")
 

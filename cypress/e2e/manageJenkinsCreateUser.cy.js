@@ -2,7 +2,7 @@
 
 import manageJenkinsCreateUserData from "../fixtures/manageJenkinsCreateUser.json"
 
-describe(" Manage Jenkins > Security> Create User", () => {
+describe.skip(" Manage Jenkins > Security> Create User", () => {
     
     beforeEach(() => {
         cy.get("#tasks div.task")

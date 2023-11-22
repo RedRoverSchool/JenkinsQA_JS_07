@@ -1,14 +1,5 @@
 {
-  "userMenuEndPoints": {
-    "builds": "/builds",
-    "configure": "/configure",
-    "my-views": "/my-views",
-    "credentials": "/credentials"
-  },  
-  "userMenuPageHeaders": {
-    "builds": "Builds for",
-    "email": "Extended Email Job Watching",
-    "thisfolder": "This folder is empty",
-    "credentials": "Credentials"
-  }
+  "userMenuLinks" : ["Builds", "Configure", "My Views", "Credentials"],
+  "userMenuEndPoints" : ["/builds","/configure", "/my-views","/credentials"],
+  "userMenuPageHeaders" : ["Builds for", "Extended Email Job Watching", "This folder is empty", "Credentials"]
 }
