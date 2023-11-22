@@ -8,7 +8,7 @@ const PORT = Cypress.env('local.port');
 class NewJobPage {
     getInputNameField = () => cy.get('input#name');
     getFreestyleProjectBtn = () => cy.get('li.hudson_model_FreeStyleProject');
-    getPipelineBtn = () => cy.get('li.org_jenkinsci_plugins_workflow_job_WorkflowJob');
+    getPipelineTypeOfProjectBtn = () => cy.get('li.org_jenkinsci_plugins_workflow_job_WorkflowJob');
     getMultiConfigTypeOfProjectBtn = () => cy.get('li.hudson_matrix_MatrixProject');
     getOKButton = () => cy.get('#ok-button');
     getFolderBtn =() => cy.get('li.com_cloudbees_hudson_plugins_folder_Folder')
@@ -20,6 +20,7 @@ class NewJobPage {
     getPipelineProjectNameLink = () => cy.get('.label');
     getNewJobPageUrl = () => cy.url();
     getNewJobPageTitle = () => cy.get('label[for="name"]');
+
 
     fillInputNameField(nameProject) {
         this.getInputNameField().should('be.visible').type(nameProject);
@@ -75,8 +76,8 @@ class NewJobPage {
         return this
       }
  
-    clickPipelineBtn() {
-        this.getPipelineBtn().click();
+      clickPipelineTypeOfProjectBtn() {
+        this.getPipelineTypeOfProjectBtn().click();
     
         return this;
     }

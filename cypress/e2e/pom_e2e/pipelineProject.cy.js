@@ -10,7 +10,7 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
     beforeEach("createPipelineProject", () => {
     homePage.clickNewItemLink()
             .fillInputNameField(pipelineProjectData.projectName)
-            .clickPipelineBtn()
+            .clickPipelineTypeOfProjectBtn()
             .clickOKButtonPipelineProject()
     });
    
