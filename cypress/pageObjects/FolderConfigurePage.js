@@ -12,14 +12,6 @@ class FolderConfigurePage {
   getInputDescription = () => cy.get("textarea.jenkins-input");
   getSideMenu = () => cy.get("div.task");
 
-  checkSideMenuContentList() {
-    return this.getSideMenu().then(($els) => {
-      expect(
-        Cypress.$.makeArray($els).map(($el) => $el.innerText)
-      ).to.deep.equal(folderConfigureData.sidePanelFolderConfig);
-    });
-  }
-
   clickSaveBtn() {
     this.getSaveBtn().click();
 

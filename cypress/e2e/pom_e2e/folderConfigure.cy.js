@@ -15,12 +15,12 @@ describe("folderConfigure", () => {
       .fillInputNameField(folderConfigureData.folderName)
       .clickFolderBtn()
       .clickOKButtonFolder()
-      .clickSaveBtn();
+      .clickSaveBtn()
+      .clickConfigureLink();
   });
 
   it('TC_07.03.001 | Folder > Configure > Verify link "Configure" on the folder page', () => {
-    folderPage
-      .clickConfigureLink()
+    folderConfigurePage
       .checkFolderConfigurePageUrl()
       .getConfigureBreadcrumbsItem()
       .should("be.visible")
@@ -28,8 +28,7 @@ describe("folderConfigure", () => {
   });
 
   it('TC_07.03.002 | Folder > Configure > The "Display Name" and "Description" fields in the General section are text input fields', () => {
-    folderPage
-      .clickConfigureLink()
+    folderConfigurePage
       .fillInputDisplayName(folderConfigureData.inputDisplayName)
       .fillInputDescription(folderConfigureData.inputDescription)
       .clickSaveBtn();
@@ -45,40 +44,26 @@ describe("folderConfigure", () => {
       .and("have.text", folderConfigureData.inputDescription);
   });
 
-  it('TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable', () => {
-    folderPage
-      .clickConfigureLink()
-      .getSaveBtn()
-      .should('be.visible');
+  it("TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable", () => {
+    folderConfigurePage.getSaveBtn().should("be.visible");
 
     folderConfigurePage
       .clickSaveBtn()
       .getFolderPageUrl()
-      .should('include', folderConfigureData.folderName);
-    
+      .should("include", folderConfigureData.folderName);
+
     folderPage
       .getDisplayFolderName()
-      .should('contain', folderConfigureData.folderName);
+      .should("contain", folderConfigureData.folderName);
   });
 
-  it.only("TC_07.03.003 | Folder > Configure > Left menu content check", () => {
-    folderPage.clickConfigureLink().getSideMenu().should("be.visible")
-
-    folderConfigurePage.checkSideMenuContentList()
-    // expect(folderConfigurePage.getSideMenuContentList()).to.deep.equal(
-    //     folderConfigureData.sidePanelFolderConfig
-    //   );
-
-      // .then(($els) => {
-      //   expect(Cypress.$.makeArray($els).map(
-      //     ($el) => $el.innerText
-      //   )).to.deep.equal(
-      //     folderConfigureData.sidePanelFolderConfig
-      //   );
-      });
-
-    // cy.log(folderConfigureData.sidePanelFolderConfig);
-    // cy.log(folderConfigurePage.getSideMenuContentList());
-    // cy.log(folderConfigurePage.getSideMenuContentList().length)
+  it("TC_07.03.003 | Folder > Configure > Left menu content check", () => {
+    folderConfigurePage
+      .getSideMenu()
+      .should("be.visible")
+      .then(($els) => {
+        return Cypress.$.makeArray($els).map(($el) => $el.innerText);
+      })
+      .should("deep.equal", folderConfigureData.sidePanelFolderConfig);
   });
-
+});
