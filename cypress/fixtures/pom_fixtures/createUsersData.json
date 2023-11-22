@@ -9,5 +9,12 @@
   "errorUsername": "is prohibited as a username for security reasons.",
   "errorUsernameSC": "User name must only contain alphanumeric characters, underscore and dash",
   "errorPasword": "Password didn't match",
-  "errorEmail": "Invalid e-mail address"
+  "errorEmail": "Invalid e-mail address",
+  "errorMessagesEmptyFieldsExpected": [
+    "\"\" is prohibited as a username for security reasons.",
+    "Password is required",
+    "Password is required",
+    "\"\" is prohibited as a full name for security reasons.",
+    "Invalid e-mail address"
+  ]
 }

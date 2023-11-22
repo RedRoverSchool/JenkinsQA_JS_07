@@ -31,4 +31,8 @@ describe('freestyleProjectConfigure', () => {
                                         expect($el.text()).to.be.eql(radioButtonNames[index])
                                      });    
     });
+
+    it('TC_04.02.003 | Freestyle > Source Code Management > “None” option is selected by default', () => {
+        freestyleProjectConfigurePage.getSrcCodeMngmntNoneOption().should('be.checked')
+    });
 });

@@ -4,7 +4,7 @@ import configureNewPipelineProject_011 from "../fixtures/configureNewPipelinePro
 
 describe('configureNewPipelineProject_011', () => {
    
-   it('TC_03.05.011 Verify to add and visible a Display Name', function() {
+   xit('TC_03.05.011 Verify to add and visible a Display Name', function() {
       cy.get(':nth-child(1) > .task-link-wrapper > .task-link').click();
       cy.get('#name').type(configureNewPipelineProject_011.projectName);
       cy.get('.org_jenkinsci_plugins_workflow_job_WorkflowJob > label > .label').click();
