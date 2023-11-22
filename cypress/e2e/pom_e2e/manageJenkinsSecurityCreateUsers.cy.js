@@ -32,4 +32,16 @@ describe('ManageJenkinsSecurityCreateUsers.cy', () => {
       expect(nameofUsers).to.be.equal(createUsersData.expectedUserId[idx]);
     });
   });
+
+  it("TC_09.14.007 | Manage Jenkins > Security> Create User > Verify error messages are displayed if the fields are not filled", () => {
+    addUserPage.clickButtonCreateUser();
+    addUserPage.getArrayOfEmptyFieldsErrorMessages().then(($els) => {
+      const errorMessages = Cypress.$.makeArray($els).map(
+        ($els) => $els.innerText
+      );
+      expect(errorMessages).to.be.deep.equal(
+        createUsersData.errorMessagesEmptyFieldsExpected
+      );
+    });
+  });
 });
