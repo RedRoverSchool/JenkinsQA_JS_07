@@ -1,5 +1,6 @@
 {
     "previewLinkName": "Preview",
     "saveButtonName" : "Save",
-    "addDescriptionButtonName" : "Add description"
+    "addDescriptionButtonName" : "Add description",
+    "fDText": "There is some text information about curent Folder here."
 }
