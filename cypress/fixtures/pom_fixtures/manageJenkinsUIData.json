@@ -1,0 +1,12 @@
+{
+    "url":"/manage/",
+    "headerName":"Manage Jenkins",
+    "subHeadersMainJenkinsPage": [
+        "System Configuration",
+        "Security",
+        "Status Information",
+        "Troubleshooting",
+        "Tools and Actions"
+      ],
+    "subHeadersMainJenkinsPageQuantity": 5
+}
