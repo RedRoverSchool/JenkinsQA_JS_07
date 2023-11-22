@@ -44,9 +44,17 @@ describe("folderConfigure", () => {
       .and("have.text", folderConfigureData.inputDescription);
   });
 
+  it("TC_07.03.003 | Folder > Configure > Left menu content check", () => {
+    folderConfigurePage
+      .getSideMenu()
+      .should("be.visible")
+      .then(($els) => {
+        return Cypress.$.makeArray($els).map(($el) => $el.innerText);
+      })
+      .should("deep.equal", folderConfigureData.sidePanelFolderConfig);
+  });
+
   it("TC_07.03.006 | Folder > Configure>check side panel has clickable links", () => {
-    folderPage
-      .clickConfigureLink();
     folderPage
       .clickHealthMetricsBtn()
       .clickPropertiesAddBtn()
@@ -71,14 +79,5 @@ describe("folderConfigure", () => {
       .getDisplayFolderName()
       .should("contain", folderConfigureData.folderName);
   });
-
-  it("TC_07.03.003 | Folder > Configure > Left menu content check", () => {
-    folderConfigurePage
-      .getSideMenu()
-      .should("be.visible")
-      .then(($els) => {
-        return Cypress.$.makeArray($els).map(($el) => $el.innerText);
-      })
-      .should("deep.equal", folderConfigureData.sidePanelFolderConfig);
-  });
 });
+
