@@ -1,6 +1,8 @@
 import MultiConfigProjectConfigurePage from "../pageObjects/MultiConfigProjectConfigurePage";
 import FreestyleProjectConfigurePage from "../pageObjects/FreestyleProjectConfigurePage";
 import FolderConfigurePage from "../pageObjects/FolderConfigurePage"
+import PipelineConfigurePage from "../pageObjects/PipelineConfigurePage"
+
 class NewJobPage {
     getInputNameField = () => cy.get('input#name');
     getMultiConfigTypeOfProjectBtn = () => cy.get('li.hudson_matrix_MatrixProject');
@@ -9,6 +11,7 @@ class NewJobPage {
     getTypeOfProjectLabels = () => cy.get(".label");
     getFolderBtn = () => cy.get(".com_cloudbees_hudson_plugins_folder_Folder");
     getPipelineProjectNameLink = () => cy.get('.label');
+    getPipelineTypeOfProjectBtn = () => cy.get('li.org_jenkinsci_plugins_workflow_job_WorkflowJob');
     
     fillInputNameField(nameProject) {
         this.getInputNameField().should('be.visible').type(nameProject);
@@ -63,6 +66,18 @@ class NewJobPage {
         
         return this
       }
+
+    clickPipelineTypeOfProjectBtn() {
+        this.getPipelineTypeOfProjectBtn().click();
+    
+        return this;
+    }
+    
+    clickOKButtonPipeline() {
+        this.getOKButton().click();
+    
+        return new PipelineConfigurePage();
+    }
  
 }
 export default NewJobPage;
