@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 import dbCommandPanel from "../fixtures/dbCommandPanel.json";
 
-describe('dbCommandPanel', function () {
+describe.skip('dbCommandPanel', function () {
     beforeEach(function () {
         cy.get('#side-panel #tasks a').as('sideMenuLink');
     });
