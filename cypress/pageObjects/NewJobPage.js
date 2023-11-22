@@ -6,8 +6,13 @@ const HOST = Cypress.env('local.host');
 const PORT = Cypress.env('local.port');
 class NewJobPage {
     getInputNameField = () => cy.get('input#name');
+    getFreestyleProjectBtn = () => cy.get('li.hudson_model_FreeStyleProject');
+    getPipelineBtn = () => cy.get('li.org_jenkinsci_plugins_workflow_job_WorkflowJob');
     getMultiConfigTypeOfProjectBtn = () => cy.get('li.hudson_matrix_MatrixProject');
     getOKButton = () => cy.get('#ok-button');
+    getFolderBtn =() => cy.get('li.com_cloudbees_hudson_plugins_folder_Folder')
+    getMultibranchPipelineBtn = () => cy.get('li.org_jenkinsci_plugins_workflow_multibranch_WorkflowMultiBranchProject')
+    getOrganizationFolder = () => cy.get('li.jenkins_branch_OrganizationFolder');
     getFreestyleTypeOfProjectBtn = () => cy.get('.hudson_model_FreeStyleProject');
     getTypeOfProjectLabels = () => cy.get(".label");
     getFolderBtn = () => cy.get(".com_cloudbees_hudson_plugins_folder_Folder");

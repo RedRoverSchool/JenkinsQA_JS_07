@@ -7,7 +7,8 @@ class AddUserPage {
   getFullNameField = () => cy.get('input[name="fullname"]');
   getEmailAddressField = () => cy.get('input[name="email"]');
   getButtonCreateUser = () => cy.get('button[name="Submit"]');
-
+  getArrayOfEmptyFieldsErrorMessages = () => cy.get("div.error");
+ 
   fillUserNameField(username) {
     this.getUserNameField().should('be.visible').type(username);
     return this;
