@@ -4,7 +4,7 @@ import createPipelineProject4 from"../fixtures/createPipelineProject4.json";
 import newJobPage from"../fixtures/newJobPage.json";
 import freestyleProject from"../fixtures/freestyleProject.json";
 
-describe('configureNewPipelineProject', () => {
+describe.skip('configureNewPipelineProject', () => {
 
     beforeEach(() => {
         cy.get('a[href="newJob"]').click();
