@@ -3,7 +3,8 @@
     "configure": {
         "sourceCodeManagement": {
             "sectionName": "Source Code Management",
-            "radioButtonNames": ["None", "Git"]
+            "radioButtonNames": ["None", "Git"],
+            "gitToolTipText": "Help for feature: Git"
         }
     }
 }
