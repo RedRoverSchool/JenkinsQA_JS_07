@@ -97,10 +97,19 @@ class HomePage {
   clickWindowConfirm(windowConfirmText) {
     cy.on('window:confirm', (str) => {
         expect(str).to.eq(windowConfirmText)
-        return false
+        
     })
 
     
+}
+
+clickWindowConfirmCancel() {
+  cy.on('window:confirm', () => {
+      
+      return false
+  })
+
+  
 }
 
 clickWindowConfirmOK(windowConfirmText) {

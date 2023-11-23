@@ -1,5 +1,8 @@
 {
-    "previewLinkName": "Preview",
+    "addDescriptionButtonName" : "Add description",
     "saveButtonName" : "Save",
-    "addDescriptionButtonName" : "Add description"
+    "previewLinkName": "Preview",
+    "hidePreviewLinkName": "Hide preview",
+    "fDText": "There is some text information about curent Folder here."
+
 }
