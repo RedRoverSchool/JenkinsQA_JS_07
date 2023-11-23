@@ -60,11 +60,11 @@ describe("folderDescription", () => {
     folderPage
       .typeInputField(folderPageData.fDText)
       .getInputField()
-      .should("have.value", folderPageData.fDText);
+      .should("have.value", folderPageData.fDText)
 
     folderPage
       .clickPreviewLink()
-      .getTextAreaPrewew()
+      .getTextAreaPreview()
       .should("be.visible")
       .and("have.text", folderPageData.fDText);
 
@@ -73,4 +73,21 @@ describe("folderDescription", () => {
   });
 
 
+  it(`TC_07.02.011 |Check ${folderPageData.hidePreviewLinkName} link`, () => {
+
+    folderPage
+      .clickAddDescriptionLink()
+      .typeInputField(folderPageData.fDText)
+      .clickPreviewLink()
+      .clickHidePreviewLink ()
+
+      .getTextAreaPreview()
+      .should('not.be.visible')
+
+      folderPage
+      .getHidePreviewLink()
+      .should('not.be.visible')
+  
 });
+});
+
