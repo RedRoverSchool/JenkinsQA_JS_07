@@ -35,4 +35,11 @@ describe('Delete Pipeline',()=>{
         homePage.getProjectTable().should('not.exist')
 
     })
+
+    it('POM>TC_05.05.005|Pipeline>Cancel Project Deletion in Pop-up Window',()=>{
+        homePage.clickNameProjectArrow()
+                .clickDeletePipelineBtn()
+                .clickWindowConfirmCancel()
+        homePage.getProjectTable().should('exist')
+    })
 })
