@@ -9,6 +9,6 @@ describe('signInToJenkinsValidCredentials', () => {
         cy.get('#j_password').type('e7ff746b4cc745aba0d8d96f617e0517')
         cy.get('.jenkins-button').click()
 
-        cy.get('div h1').contains("Welcome to Jenkins!")
+        cy.get('div h1').should('have.text','Welcome to Jenkins!')
     });
 });
