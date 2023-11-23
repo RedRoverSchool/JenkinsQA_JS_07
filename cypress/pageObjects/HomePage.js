@@ -3,7 +3,8 @@ import BuildHistoryPage from "../pageObjects/BuildHistoryPage";
 import RestApiPage from "../pageObjects/RestApiPage";
 import ManageJenkinsPage from "../pageObjects/ManageJenkinsPage";
 import PeoplePage from "../pageObjects/PeoplePage";
-import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json"
+import ParticipatePage from "../pageObjects/ParticipatePage";
+import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json";
 const dayjs = require("dayjs");
 class HomePage {
   getNewItemLink = () => cy.get('a[href*="/newJob"]');
@@ -20,11 +21,13 @@ class HomePage {
     cy.get("button.jenkins-button--tertiary.jenkins_ver");
   getPopUpMenuJenkinsVersion = () => cy.get(".tippy-content");
   getWelcomedMessageHeader = () => cy.get(".empty-state-block h1");
-  getNameProjectArrow =()=>cy.get('td .jenkins-menu-dropdown-chevron');
-  getDeleteBtn =()=>cy.get('.jenkins-dropdown__item[href$="/doDelete"]')
-  getProjectTable =() =>cy.get('table#projectstatus')
-  getJenkinsStartWorkTitle = () => cy.get('.empty-state-block p');
-  getSideMenuPanel= () => cy.get('#side-panel #tasks a')
+  getNameProjectArrow = () => cy.get("td .jenkins-menu-dropdown-chevron");
+  getDeleteBtn = () => cy.get('.jenkins-dropdown__item[href$="/doDelete"]');
+  getProjectTable = () => cy.get("table#projectstatus");
+  getJenkinsStartWorkTitle = () => cy.get(".empty-state-block p");
+  getSideMenuPanel = () => cy.get("#side-panel #tasks a");
+  getInvolvedLink = () =>
+    cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
 
   clickNewItemLink() {
     this.getNewItemLink().click();
@@ -64,11 +67,13 @@ class HomePage {
 
   clickScheduleBuildBtn() {
     this.getScheduleBuildBtn().click();
+
     return this;
   }
 
   expData1() {
     let expData1;
+
     return (expData1 = dayjs().format("ddd, DD MMM YYYY HH:mm"));
   }
 
@@ -84,52 +89,51 @@ class HomePage {
     return this;
   }
 
-  clickNameProjectArrow(){
-    this.getNameProjectArrow().realHover().click()
-    return this
+  clickNameProjectArrow() {
+    this.getNameProjectArrow().realHover().click();
+
+    return this;
   }
 
-  clickDeletePipelineBtn(){
-    this.getDeleteBtn().click()
-    return this
+  clickDeletePipelineBtn() {
+    this.getDeleteBtn().click();
+
+    return this;
   }
 
   clickWindowConfirm(windowConfirmText) {
-    cy.on('window:confirm', (str) => {
-        expect(str).to.eq(windowConfirmText)
-        
-    })
+    cy.on("window:confirm", (str) => {
+      expect(str).to.eq(windowConfirmText);
+    });
+  }
 
-    
+  clickWindowConfirmCancel() {
+    cy.on("window:confirm", () => {
+      return false;
+    });
+  }
+
+  clickWindowConfirmOK(windowConfirmText) {
+    cy.on("window:confirm", (str) => {
+      expect(str).to.eq(windowConfirmText);
+    });
+  }
+
+  clickSideMenuPanelItem(idx) {
+    this.getSideMenuPanel().eq(idx).click();
+
+    return cy.url();
+  }
+
+  getContainsText(idx) {
+    cy.contains(dbCommandPanelData.pageHeader[idx]);
+  }
+
+  clickGetInvolvedLink() {
+    this.getInvolvedLink().invoke("removeAttr", "target").click();
+
+    return new ParticipatePage();
+  }
 }
 
-clickWindowConfirmCancel() {
-  cy.on('window:confirm', () => {
-      
-      return false
-  })
-
-  
-}
-
-clickWindowConfirmOK(windowConfirmText) {
-  cy.on('window:confirm', (str) => {
-      expect(str).to.eq(windowConfirmText)
-      
-  })
-
-  
-}
-
-clickSideMenuPanelItem(idx) {
-  this.getSideMenuPanel().eq(idx).click()
-  return cy.url()
-  };
-
-getContainsText(idx){
-  cy.contains(dbCommandPanelData.pageHeader[idx])
-  
-  } 
-  
-}
 export default HomePage;
