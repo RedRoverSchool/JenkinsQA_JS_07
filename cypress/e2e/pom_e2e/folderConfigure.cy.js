@@ -83,3 +83,27 @@ describe("folderConfigure", () => {
   });
 });
 
+describe("folderRename ", () => {
+  const homePage = new HomePage(); 
+  const folderPage = new FolderPage(); 
+  const folderConfigurePage = new FolderConfigurePage(); 
+
+  beforeEach("createNewFolder", () => {
+    homePage
+      .clickNewItemLink()
+      .fillInputNameField(folderConfigureData.folderName)
+      .clickFolderBtn()
+      .clickOKButtonFolder()
+      .clickSaveBtn();
+  });
+  it ("TC_07.06.002| Verify the new name folder", () => {
+    folderPage.clickFolderRenameBtn();
+    folderConfigurePage
+      .fillNewNameField(folderConfigureData.folderNewName)
+      .clickBtnConfirmRenameFolder();
+    folderPage
+      .getNewFolderName()
+      .should("be.visible")
+      .and("contain", folderConfigureData.folderNewName);
+  });
+});
