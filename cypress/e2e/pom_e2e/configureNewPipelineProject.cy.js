@@ -33,7 +33,9 @@ describe('configureNewPipelineProject', () => {
     it('TC_03.05.002 | New Item > Create Pipeline Project > Configure new Pipeline project>Verify Enable/Disable the current project', () => {        
         pipelineConfigurePage.clickEnabDisabSwitchToggle()
                              .clickSaveBtn();
-        pipelinePage.getDisabledProgectWarning()
+                             
+        pipelinePage
+                    .getDisabledProgectWarning()
                     .should ('be.visible')
                     .and('include.text',pipelinePageData.disabledProjectMessage);        
     });

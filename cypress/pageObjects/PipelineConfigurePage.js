@@ -11,7 +11,7 @@ class PipelineConfigurePage {
     }
 
     clickSaveBtn(){
-        this.getSaveBtn().click();
+        this.getSaveBtn().wait(1000).click();
 
         return this;
     }
