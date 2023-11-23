@@ -129,6 +129,13 @@ clickSideMenuPanelItem(idx) {
 getContainsText(idx){
   cy.contains(dbCommandPanelData.pageHeader[idx])
   
+  }
+  clickSideMenuItemList(itemName, index){
+    this.getSideMenuPanel().eq(index).as('item')
+    cy.get('@item').contains(itemName)
+    cy.get('@item').click()
+
+    return cy.url()
   } 
   
 }
