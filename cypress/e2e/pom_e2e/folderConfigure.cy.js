@@ -86,7 +86,6 @@ describe("folderConfigure", () => {
 describe("folderRename ", () => {
   const homePage = new HomePage();
   const folderPage = new FolderPage();
-  const folderConfigurePage = new FolderConfigurePage();
 
   beforeEach("createNewFolder", () => {
     homePage
