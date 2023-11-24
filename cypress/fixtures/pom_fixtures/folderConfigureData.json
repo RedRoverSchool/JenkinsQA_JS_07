@@ -2,5 +2,6 @@
   "folderName": "Test",
   "configureBreadcrumbsItem": "Configuration",
   "inputDisplayName": "TestDisplayName",
-  "inputDescription": "TestDescription"
+  "inputDescription": "TestDescription",
+  "sidePanelFolderConfig": ["General", "Health metrics", "Properties"]
 }

@@ -50,4 +50,27 @@ describe("folderDescription", () => {
       .should("have.value", folderPageData.fDText);
   });
 
+  it(`TC_07.02.010 |Check Preview field with text and ${folderPageData.hidePreviewLinkNam} link appear after clicking on ${folderPageData.previewLinkName}`, () => {
+    folderPage
+      .clickAddDescriptionLink()
+      .getInputField()
+      .should("be.visible")
+      .should("have.value", "");
+
+    folderPage
+      .typeInputField(folderPageData.fDText)
+      .getInputField()
+      .should("have.value", folderPageData.fDText);
+
+    folderPage
+      .clickPreviewLink()
+      .getTextAreaPrewew()
+      .should("be.visible")
+      .and("have.text", folderPageData.fDText);
+
+    folderPage
+    .getHidePreviewLink().should("be.visible");
+  });
+
+
 });

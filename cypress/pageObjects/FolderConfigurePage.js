@@ -6,9 +6,11 @@ const PORT = Cypress.env("local.port");
 class FolderConfigurePage {
   getSaveBtn = () => cy.get('button[name="Submit"]');
   getFolderConfigurePageUrl = () => cy.url();
-  getConfigureBreadcrumbsItem = () => cy.get("li[aria-current='page'].jenkins-breadcrumbs__list-item");
-  getInputDisplayName = () => cy.get('input.validated');
-  getInputDescription = () => cy.get('textarea.jenkins-input');
+  getConfigureBreadcrumbsItem = () =>
+    cy.get("li[aria-current='page'].jenkins-breadcrumbs__list-item");
+  getInputDisplayName = () => cy.get("input.validated");
+  getInputDescription = () => cy.get("textarea.jenkins-input");
+  getSideMenu = () => cy.get("div.task");
 
   clickSaveBtn() {
     this.getSaveBtn().click();
@@ -26,13 +28,13 @@ class FolderConfigurePage {
   }
 
   fillInputDisplayName(displayName) {
-    this.getInputDisplayName().should('be.visible').type(displayName);
+    this.getInputDisplayName().should("be.visible").type(displayName);
 
     return this;
   }
 
   fillInputDescription(description) {
-    this.getInputDescription().should('be.visible').type(description);
+    this.getInputDescription().should("be.visible").type(description);
 
     return this;
   }
