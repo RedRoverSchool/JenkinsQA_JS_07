@@ -12,7 +12,7 @@ describe("folderDescription", () => {
 
   beforeEach("createNewFolder", () => {
     cy.createNewFolder(folderConfigureData.folderName);
- });
+tc_07_02_12 });
 
   it(`TC_07.02.006 | Verify ${folderPageData.previewLinkName} link appears when hit on ${folderPageData.addDescriptionButtonName} button`, () => {
     folderPage
