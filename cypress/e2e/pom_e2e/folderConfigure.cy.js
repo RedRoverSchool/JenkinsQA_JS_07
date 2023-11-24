@@ -68,7 +68,9 @@ describe("folderConfigure", () => {
   });
 
   it("TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable", () => {
-    folderConfigurePage.getSaveBtn().should("be.visible");
+    folderConfigurePage
+      .getSaveBtn()
+      .should("be.visible");
 
     folderConfigurePage
       .clickSaveBtn()
