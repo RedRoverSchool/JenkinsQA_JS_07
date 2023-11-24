@@ -1,8 +1,9 @@
 /// <reference types="cypress"/>
 
 import HomePage from "../../pageObjects/HomePage";
-import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderPage from "../../pageObjects/FolderPage";
+
+import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import folderPageData from "../../fixtures/pom_fixtures/folderPageData.json";
 
 describe("folderDescription", () => {
@@ -10,13 +11,8 @@ describe("folderDescription", () => {
   const folderPage = new FolderPage();
 
   beforeEach("createNewFolder", () => {
-    homePage
-      .clickNewItemLink()
-      .fillInputNameField(folderConfigureData.folderName)
-      .clickFolderBtn()
-      .clickOKButtonFolder()
-      .clickSaveBtn();
-  });
+    cy.createNewFolder(folderConfigureData.folderName);
+ });
 
   it(`TC_07.02.006 | Verify ${folderPageData.previewLinkName} link appears when hit on ${folderPageData.addDescriptionButtonName} button`, () => {
     folderPage
@@ -60,11 +56,11 @@ describe("folderDescription", () => {
     folderPage
       .typeInputField(folderPageData.fDText)
       .getInputField()
-      .should("have.value", folderPageData.fDText);
+      .should("have.value", folderPageData.fDText)
 
     folderPage
       .clickPreviewLink()
-      .getTextAreaPrewew()
+      .getTextAreaPreview()
       .should("be.visible")
       .and("have.text", folderPageData.fDText);
 
@@ -73,4 +69,40 @@ describe("folderDescription", () => {
   });
 
 
+  it(`TC_07.02.011 |Check ${folderPageData.hidePreviewLinkName} link`, () => {
+
+    folderPage
+      .clickAddDescriptionLink()
+      .typeInputField(folderPageData.fDText)
+      .clickPreviewLink()
+      .clickHidePreviewLink ()
+
+      .getTextAreaPreview()
+      .should('not.be.visible')
+
+      folderPage
+      .getHidePreviewLink()
+      .should('not.be.visible')
+  
 });
+
+
+it(`TC_07.02.012 |Check saving description text `, () => {
+
+  folderPage
+    .clickAddDescriptionLink()
+    .typeInputField(folderPageData.fDText)
+    .clickSaveButton()
+    .getDescriptionText()
+    .should("be.visible")
+    .and("contain", folderPageData.fDText)
+   
+    folderPage
+    .getAddDescriptionLink()
+    .should("be.visible")
+    .and("contain", folderPageData.editDescriptionBtn)
+
+});
+
+});
+

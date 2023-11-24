@@ -11,7 +11,18 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-//
+
+import HomePage from "../pageObjects/HomePage";
+const homePage = new HomePage();
+
+Cypress.Commands.add('createNewFolder', (folderName) => { 
+    homePage
+    .clickNewItemLink()
+    .fillInputNameField(folderName)
+    .clickFolderBtn()
+    .clickOKButtonFolder()
+    .clickSaveBtn();
+ })
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
