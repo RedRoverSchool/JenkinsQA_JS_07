@@ -49,13 +49,12 @@ clickPropertiesAddBtn() {
     this.getPreviewLink().click();
     return this;
   }
-
- 
-  clickFolderRenameBtn() {
-    this.getRenameLink().click();
-    return new FolderConfigurePage()
+  clickHidePreviewLink () {
+    this. getHidePreviewLink ().click();
+    return this;
   }
 
+ 
 }
 export default FolderPage;
 
