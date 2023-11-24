@@ -1,5 +1,4 @@
 import FolderConfigurePage from "./FolderConfigurePage";
-import ConfirmRenameFolderPage from "./ConFirmRenameFolderPage";
 
 class FolderPage {
   getConfigureLink = () => cy.get("a[href*='configure']");
@@ -16,6 +15,7 @@ class FolderPage {
   getPropertiesAddBtn = () => cy.get('button[class="jenkins-button repeatable-add"]');
   getSidePanelLinks = () => cy.get('div.task>.task-link-wrapper>.task-link');
   getRenameLink = () => cy.get(".task").contains("Rename");
+  getNewFolderName = () => cy.get("#main-panel h1")
   
  
   clickConfigureLink() {
@@ -55,7 +55,7 @@ clickPropertiesAddBtn() {
 
   clickFolderRenameBtn() {
     this.getRenameLink().click();
-    return new ConfirmRenameFolderPage()
+    return new FolderConfigurePage()
   }
 
 }

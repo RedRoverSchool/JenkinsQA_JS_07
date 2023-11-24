@@ -5,7 +5,7 @@ class ConfirmRenameFolderPage {
     getNewNameField = () => cy.get('input[checkdependson="newName"]');
   
     fillNewNameField(newName) {
-      this.getNewNameField().should("be.visible").clear().type(newName);
+      this.getNewNameField().clear().type(newName);
       return this;
     }
     clickBtnConfirmRenameFolder() {

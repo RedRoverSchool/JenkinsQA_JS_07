@@ -11,6 +11,9 @@ class FolderConfigurePage {
   getInputDisplayName = () => cy.get("input.validated");
   getInputDescription = () => cy.get("textarea.jenkins-input");
   getSideMenu = () => cy.get("div.task");
+  getBtnConfirmRenameFolder = () => cy.get('button[name="Submit"]');
+  getNewNameField = () => cy.get('input[checkdependson="newName"]');
+
 
   clickSaveBtn() {
     this.getSaveBtn().click();
@@ -38,6 +41,16 @@ class FolderConfigurePage {
 
     return this;
   }
+
+  fillNewNameField(newName) {
+    this.getNewNameField().should("be.visible").clear().type(newName);
+    return this;
+  }
+  clickBtnConfirmRenameFolder() {
+    this.getBtnConfirmRenameFolder().click();
+    return new FolderPage()
+  }
+  
 }
 
 export default FolderConfigurePage;
