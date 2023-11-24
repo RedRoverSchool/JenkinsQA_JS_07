@@ -68,9 +68,7 @@ describe("folderConfigure", () => {
   });
 
   it("TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable", () => {
-    folderConfigurePage
-      .getSaveBtn()
-      .should("be.visible");
+    folderConfigurePage.getSaveBtn().should("be.visible");
 
     folderConfigurePage
       .clickSaveBtn()
@@ -84,9 +82,9 @@ describe("folderConfigure", () => {
 });
 
 describe("folderRename ", () => {
-  const homePage = new HomePage(); 
-  const folderPage = new FolderPage(); 
-  const folderConfigurePage = new FolderConfigurePage(); 
+  const homePage = new HomePage();
+  const folderPage = new FolderPage();
+  const folderConfigurePage = new FolderConfigurePage();
 
   beforeEach("createNewFolder", () => {
     homePage
@@ -96,12 +94,11 @@ describe("folderRename ", () => {
       .clickOKButtonFolder()
       .clickSaveBtn();
   });
-  it ("TC_07.06.002| Verify the new name folder", () => {
-    folderPage.clickFolderRenameBtn();
-    folderConfigurePage
-      .fillNewNameField(folderConfigureData.folderNewName)
-      .clickBtnConfirmRenameFolder();
+  it("TC_07.06.002| Verify the new name folder", () => {
     folderPage
+      .clickFolderRenameBtn()
+      .fillNewNameField(folderConfigureData.folderNewName)
+      .clickBtnConfirmRenameFolder()
       .getNewFolderName()
       .should("be.visible")
       .and("contain", folderConfigureData.folderNewName);
