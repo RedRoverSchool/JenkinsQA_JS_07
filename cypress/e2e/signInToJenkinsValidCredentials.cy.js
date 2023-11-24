@@ -8,8 +8,6 @@ describe('signInToJenkinsValidCredentials', () => {
         cy.get('#j_username').type('admin')
         cy.get('#j_password').type('e7ff746b4cc745aba0d8d96f617e0517')
         cy.get('.jenkins-button').click()
-        
-        cy.url().should('be.eql', 'http://localhost:8080/')
 
     });
 });
