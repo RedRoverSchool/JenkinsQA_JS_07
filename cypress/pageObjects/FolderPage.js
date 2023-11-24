@@ -14,6 +14,8 @@ class FolderPage {
   getHealthMetricsBtn = () => cy.get('button.advancedButton');
   getPropertiesAddBtn = () => cy.get('button[class="jenkins-button repeatable-add"]');
   getSidePanelLinks = () => cy.get('div.task>.task-link-wrapper>.task-link');
+  getRenameLink = () => cy.get(".task").contains("Rename");
+  getNewFolderName = () => cy.get("#main-panel h1")
   
  
   clickConfigureLink() {
@@ -51,7 +53,11 @@ clickPropertiesAddBtn() {
     return this;
   }
 
- 
+  clickFolderRenameBtn() {
+    this.getRenameLink().click();
+    return new FolderConfigurePage()
+  }
+
 }
 export default FolderPage;
 
