@@ -4,7 +4,7 @@ class FolderPage {
   getConfigureLink = () => cy.get("a[href*='configure']");
   getAddDescriptionLink = () => cy.get("#description-link");
   getPreviewLink = () => cy.get('a.textarea-show-preview');
-  getTextAreaPrewew = () => cy.get('div.textarea-preview');
+  getTextAreaPreview = () => cy.get('div.textarea-preview');
   getHidePreviewLink = () => cy.get('a.textarea-hide-preview');
   getDisplayFolderName = () => cy.get('h1');
   getDiscriptionFolderMessage = () => cy.get('#view-message');
