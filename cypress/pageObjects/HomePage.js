@@ -3,6 +3,7 @@ import BuildHistoryPage from "../pageObjects/BuildHistoryPage";
 import RestApiPage from "../pageObjects/RestApiPage";
 import ManageJenkinsPage from "../pageObjects/ManageJenkinsPage";
 import PeoplePage from "../pageObjects/PeoplePage";
+import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json"
 const dayjs = require("dayjs");
 class HomePage {
   getNewItemLink = () => cy.get('a[href*="/newJob"]');
@@ -23,7 +24,8 @@ class HomePage {
   getNameProjectArrow =()=>cy.get('td .jenkins-menu-dropdown-chevron');
   getDeleteBtn =()=>cy.get('.jenkins-dropdown__item[href$="/doDelete"]')
   getProjectTable =() =>cy.get('table#projectstatus')
-  getJenkinsStartWorkTitle = () => cy.get('.empty-state-block p')
+  getJenkinsStartWorkTitle = () => cy.get('.empty-state-block p');
+  getSideMenuPanel= () => cy.get('#side-panel #tasks a')
 
   clickNewItem() {
     this.getNewItem().click()
@@ -100,10 +102,19 @@ class HomePage {
   clickWindowConfirm(windowConfirmText) {
     cy.on('window:confirm', (str) => {
         expect(str).to.eq(windowConfirmText)
-        return false
+        
     })
 
     
+}
+
+clickWindowConfirmCancel() {
+  cy.on('window:confirm', () => {
+      
+      return false
+  })
+
+  
 }
 
 clickWindowConfirmOK(windowConfirmText) {
@@ -115,6 +126,15 @@ clickWindowConfirmOK(windowConfirmText) {
   
 }
 
+clickSideMenuPanelItem(idx) {
+  this.getSideMenuPanel().eq(idx).click()
+  return cy.url()
+  };
 
+getContainsText(idx){
+  cy.contains(dbCommandPanelData.pageHeader[idx])
+  
+  } 
+  
 }
 export default HomePage;
