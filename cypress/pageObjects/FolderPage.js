@@ -52,7 +52,11 @@ clickPropertiesAddBtn() {
     return this;
   }
 
- 
+  clickFolderRenameBtn() {
+    this.getRenameLink().click();
+    return new FolderConfigurePage()
+  }
+
 }
 export default FolderPage;
 
