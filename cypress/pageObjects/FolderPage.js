@@ -49,7 +49,12 @@ clickPropertiesAddBtn() {
     this.getPreviewLink().click();
     return this;
   }
+  clickHidePreviewLink () {
+    this. getHidePreviewLink ().click();
+    return this;
+  }
 
+ 
   clickFolderRenameBtn() {
     this.getRenameLink().click();
     return new FolderConfigurePage()
