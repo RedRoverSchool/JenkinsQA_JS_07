@@ -37,7 +37,7 @@ describe('freestyleProjectConfigure', () => {
         freestyleProjectConfigurePage.getSrcCodeMngmntNoneOption().should('be.checked')
     });
 
-    it.only('TC_04.02.004 | Freestyle > Source Code Management > Git option has a tooltip', () => {
+    it('TC_04.02.004 | Freestyle > Source Code Management > Git option has a tooltip', () => {
         triggerElement(freestyleProjectConfigurePage.getGitOptionTooltip(), 'focus');
         freestyleProjectConfigurePage.getGitOptionTooltipContent()
                                      .should('be.visible')
