@@ -9,7 +9,7 @@ describe ('Verify Types Of Project', () => {
           homePage.clickNewItemLink()
           newJobPage.getFreestyleProjectBtn()
                     .should('be.visible')
-          newJobPage.getPipelineBtn()
+          newJobPage.getPipelineTypeOfProjectBtn()
                     .should('be.visible')
           newJobPage.getMultiConfigTypeOfProjectBtn()
                     .should('be.visible')
