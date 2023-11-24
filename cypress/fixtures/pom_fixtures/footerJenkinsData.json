@@ -1,3 +1,14 @@
 {
-    "popUpMenu" : ["About Jenkins", "Get involved", "Website"]    
-}    
+    "jenkinsVersion": "Jenkins 2.414.2",
+    "popUpMenu": [
+        "About Jenkins",
+        "Get involved",
+        "Website"
+    ],
+    "menuItemGetInvolved": "Get involved",
+    "participatePage": "https://www.jenkins.io/participate/",
+    "participatePageHeader": "Participate and Contribute",
+    "menuItemWebsite": "Website",
+    "websitePage": "https://www.jenkins.io/",
+    "websitePageHeader": "Jenkins"
+}
