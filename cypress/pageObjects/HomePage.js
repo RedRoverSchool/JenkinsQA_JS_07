@@ -28,6 +28,7 @@ class HomePage {
   getSideMenuPanel = () => cy.get("#side-panel #tasks a");
   getInvolvedLink = () =>
     cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
+  getNewFolderName = () => cy.get("#main-panel h1");
 
   clickNewItemLink() {
     this.getNewItemLink().click();
