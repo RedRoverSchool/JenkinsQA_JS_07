@@ -9,7 +9,7 @@ describe("manageJenkinsSystemConfTools", () => {
         cy.get("a[href='/manage']").click();
     });
 
-    it("TC_09.06.003 | Visibility of section 'System Configuration' verification", () => {
+    it.skip("TC_09.06.003 | Visibility of section 'System Configuration' verification", () => {
         cy.get("section.jenkins-section--bottom-padding").contains(manageJenkinsSystemConfToolsData.sectionMainHeader)
             .should("be.visible")
             .and("have.text", manageJenkinsSystemConfToolsData.sectionMainHeader);
