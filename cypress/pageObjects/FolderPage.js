@@ -16,19 +16,18 @@ class FolderPage {
   getSidePanelLinks = () => cy.get('div.task>.task-link-wrapper>.task-link');
   getRenameLink = () => cy.get(".task").contains("Rename");
   getNewFolderName = () => cy.get("#main-panel h1")
+  getDescriptionText = ()=> cy.get('#description :first-child')
   
- 
+
+
+
+
   clickConfigureLink() {
     this.getConfigureLink().click();
 
     return new FolderConfigurePage();
   }
 
-  clickAddDescriptionLink() {
-    this.getAddDescriptionLink().click();
-
-    return this;
-  }
   clickHealthMetricsBtn() {
     this.getHealthMetricsBtn().click();
     return this;
@@ -38,7 +37,11 @@ clickPropertiesAddBtn() {
   this.getPropertiesAddBtn().click();
   return this;
 }
+  clickAddDescriptionLink() {
+    this.getAddDescriptionLink().click();
 
+    return this;
+  }
   typeInputField(text){
     this.getInputField().type(text);
     return this;
@@ -48,6 +51,7 @@ clickPropertiesAddBtn() {
     this.getPreviewLink().click();
     return this;
   }
+
   clickHidePreviewLink () {
     this. getHidePreviewLink ().click();
     return this;
@@ -57,7 +61,10 @@ clickPropertiesAddBtn() {
     this.getRenameLink().click();
     return new FolderConfigurePage()
   }
-
+ clickSaveButton () {
+    this.getSaveButton ().click();
+    return this;
+  }
 }
 export default FolderPage;
 
