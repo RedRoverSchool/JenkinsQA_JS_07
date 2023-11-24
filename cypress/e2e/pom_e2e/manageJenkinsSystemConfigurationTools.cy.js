@@ -2,7 +2,7 @@
 
 import HomePage from "../../pageObjects/HomePage";
 import ManageJenkinsPage from "../../pageObjects/ManageJenkinsPage";
-import { systemConfigurationSectionHeader } from "../../fixtures/pom_fixtures/manageJenkinsUIData.json";
+import { systemConfigurationSectionHeader, systemConfigurationTitlesSectionItems } from "../../fixtures/pom_fixtures/manageJenkinsUIData.json";
 
 describe("manageJenkinsSystemConfigurationTools", () => {
     const homePage = new HomePage();
@@ -16,5 +16,16 @@ describe("manageJenkinsSystemConfigurationTools", () => {
         manageJenkinsPage.getSystemConfigurationSection()
             .should("be.visible")
             .and("have.text", systemConfigurationSectionHeader);
+    });
+
+    it("TC_09.06.005 | Visibility of title and icon 'Tools' section item verification", () => {
+        manageJenkinsPage.getToolsTitleSectionItem()
+            .should("be.visible")
+            .then(($el) => {
+                expect(systemConfigurationTitlesSectionItems).to.include($el.text());
+            });
+
+        manageJenkinsPage.getToolsIconSectionItem()
+            .should("be.visible");
     });
 });

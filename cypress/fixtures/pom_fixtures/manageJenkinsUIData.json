@@ -9,5 +9,13 @@
         "Tools and Actions"
       ],
     "subHeadersMainJenkinsPageQuantity": 5,
-    "systemConfigurationSectionHeader" : "System Configuration"
+    "systemConfigurationSectionHeader" : "System Configuration",
+    "systemConfigurationTitlesSectionItems": [
+      "System",
+      "Tools",
+      "Plugins",
+      "Nodes",
+      "Install as Windows Service",
+      "Clouds"
+  ]
 }
