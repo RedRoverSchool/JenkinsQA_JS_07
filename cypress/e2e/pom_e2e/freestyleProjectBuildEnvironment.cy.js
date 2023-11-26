@@ -17,7 +17,7 @@ describe('freestyleProjectBuildEnvironment', () => {
    
     it('POM > TC_04.04.001 | Freestyle project > Visibility of the Build Environment options', () => {
         freestyleProjectConfigurePage.clickBuildEnvironmentSectionMenuItem()
-                                     .getSourceCodeManagementSection()
+                                     .getBuildEnvironmentSection()
                                      .should('be.visible')
         freestyleProjectConfigurePage.getBuildEnvironmentSectionOptions()
                                      .should('have.length', 6)
