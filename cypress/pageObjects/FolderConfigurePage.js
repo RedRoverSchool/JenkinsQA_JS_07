@@ -11,7 +11,7 @@ class FolderConfigurePage {
   getBtnConfirmRenameFolder = () => cy.get('button[name="Submit"]');
   getNewNameField = () => cy.get('input[checkdependson="newName"]');
   getApplyBtn = () => cy.get(".jenkins-button.apply-button");
-  getNotificationBar = () => cy.get("#notification-bar");  getErrorMessage = () => cy.get('a#skip2content+h1')
+  getNotificationBar = () => cy.get("#notification-bar");
   getErrorMessage = () => cy.get('a#skip2content+h1')
 
 
