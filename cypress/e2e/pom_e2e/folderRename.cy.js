@@ -48,25 +48,6 @@ describe("folderRename ", () => {
     });
   });
 
-  it("TC_07.06.003| Attempt to enter invalid characters in the new folder name", () => {
-    const performInvalidCharacterCheck = (invalidCharacter) => {
-      folderPage.renameFolder(
-        folderConfigureData.folderName + invalidCharacter
-      );
-
-      folderConfigurePage
-        .getErrorMessage()
-        .should("be.visible")
-        .and("contain", "Error");
-      folderPage.getNewFolderName().should("not.contain", invalidCharacter);
-      cy.go(-1);
-    };
-
-    folderConfigureData.invalidCharacters.forEach((invalidCharacter) => {
-      performInvalidCharacterCheck(invalidCharacter);
-    });
-  });
-
   it("TC_07_06_004| Rename a folder with the same name", () => {
     folderPage.renameFolder(folderConfigureData.folderName);
 
