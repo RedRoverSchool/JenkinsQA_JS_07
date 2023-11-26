@@ -18,10 +18,6 @@ class FolderPage {
   getNewFolderName = () => cy.get("#main-panel h1")
   getDescriptionText = ()=> cy.get('#description :first-child')
   
-
-
-
-
   clickConfigureLink() {
     this.getConfigureLink().click();
 
