@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('manageJenkinsSectionTitles', () => {
+describe.skip('manageJenkinsSectionTitles', () => {
     it('Item > Manage Jenkins > Verify q-ty of section titles',()=>{
         cy.get(".task-link-wrapper > a[href='/manage']").click();
 

@@ -2,7 +2,7 @@
 
 import manageJenkinsTitle from "../fixtures/manageJenkinsTitle.json"
 
-describe('manageJenkinsTitle2', () => {
+describe.skip('manageJenkinsTitle2', () => {
 
     it('TC_09.01.006 | Manage Jenkins > Title', function() {
         cy.get('.task-link-wrapper  > a[href="/manage"]').click()

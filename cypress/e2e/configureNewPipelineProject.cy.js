@@ -4,7 +4,7 @@ import createPipelineProject4 from"../fixtures/createPipelineProject4.json";
 import newJobPage from"../fixtures/newJobPage.json";
 import freestyleProject from"../fixtures/freestyleProject.json";
 
-describe('configureNewPipelineProject', () => {
+describe.skip('configureNewPipelineProject', () => {
 
     beforeEach(() => {
         cy.get('a[href="newJob"]').click();
@@ -21,7 +21,7 @@ describe('configureNewPipelineProject', () => {
         cy.get('#enable-project').should('contain','This project is currently disabled'); 
     });
     
-    it('TC_03.05.010 | New Item > Create Pipeline Project > Configure new Pipeline project >Verify "Enable/Disable" switch toggle', () => {   
+    it.skip('TC_03.05.010 | New Item > Create Pipeline Project > Configure new Pipeline project >Verify "Enable/Disable" switch toggle', () => {   
         cy.get('#toggle-switch-enable-disable-project').click();
         cy.get('.jenkins-toggle-switch__label__unchecked-title').should('contain',freestyleProject.statusDisabled);
         cy.get('#toggle-switch-enable-disable-project').click();

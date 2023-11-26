@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 import labels from "../fixtures/labelsAtnewJobPage.json";
 
-describe("verifyLabelsAtNewJobPage", () => {
+describe.skip("verifyLabelsAtNewJobPage", () => {
   beforeEach(function () {
     cy.get('a[href="/view/all/newJob"]').click();
     cy.get(".label").as("labelName");

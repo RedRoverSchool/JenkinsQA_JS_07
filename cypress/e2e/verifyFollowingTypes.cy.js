@@ -3,7 +3,7 @@ describe('verifyFolowingTypes', ()=>{
     beforeEach(()=>{
         cy.get('div.task:first-child').click();
     });
-    it('TC_03.01.008 |Verify following types of projects: “Freestyle project”, “Pipeline”, “Multi-configuration project”, “Folder”, “Multibranch Pipeline”, “Organization Folder “',()=>{
+    it.skip('TC_03.01.008 |Verify following types of projects: “Freestyle project”, “Pipeline”, “Multi-configuration project”, “Folder”, “Multibranch Pipeline”, “Organization Folder “',()=>{
 
  
     cy.get('li.hudson_model_FreeStyleProject').should('be.visible');

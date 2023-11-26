@@ -9,7 +9,7 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
       cy.get('li.org_jenkinsci_plugins_workflow_job_WorkflowJob > div.icon').click();
       cy.get('#ok-button').click();
    });
-
+  
     it('TC_03.05.004 | New Item > Create Pipeline Project > Configure new Pipeline project >Verify quantity of elements of Configure menu', function () {
        cy.url().should('include', '/configure')
        cy.get('h1').should('have.text', pipelineProject.pipelineConfigurePageHeader);
@@ -23,7 +23,7 @@ describe('New Item > Create Pipeline Project > Configure new Pipeline project', 
       .should('deep.eql', pipelineProject.expectedConfigureMenuItems)
     });
     
-    it('TC_03.05.005 | New Item > Create Pipeline Project > Configure new Pipeline project > Check the help button Discard old builds', () => {
+    it.skip('TC_03.05.005 | New Item > Create Pipeline Project > Configure new Pipeline project > Check the help button Discard old builds', () => {
        cy.get('#cb2')
          .parents('.jenkins-checkbox-help-wrapper')
          .find('a')

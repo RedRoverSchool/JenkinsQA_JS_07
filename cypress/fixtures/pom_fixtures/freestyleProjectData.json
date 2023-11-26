@@ -1,3 +1,20 @@
 {
-    "projectName": "Project1"
+    "projectName": "Project1",
+    "configure": {
+        "sourceCodeManagement": {
+            "sectionName": "Source Code Management",
+            "radioButtonNames": ["None", "Git"],
+            "gitToolTipText": "Help for feature: Git"
+        }
+    },
+    "buildEnvironment": {   
+        "buildEnvironmentOptions": [
+            "Delete workspace before build starts", 
+            "Use secret text(s) or file(s)?",
+            "Add timestamps to the Console Output",
+            "Inspect build log for published build scans",
+            "Terminate a build if it's stuck",
+            "With Ant?"
+        ]    
+    }
 }
