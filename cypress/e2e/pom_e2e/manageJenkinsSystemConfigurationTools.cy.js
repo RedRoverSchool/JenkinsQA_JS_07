@@ -13,7 +13,7 @@ describe("manageJenkinsSystemConfigurationTools", () => {
     });
 
     it("TC_09.06.003 | Visibility of section 'System Configuration' verification", () => {
-        manageJenkinsPage.getSystemConfigurationSection()
+        manageJenkinsPage.getSystemConfigurationSection(systemConfigurationSectionHeader)
             .should("be.visible")
             .and("have.text", systemConfigurationSectionHeader);
     });
