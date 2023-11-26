@@ -1,7 +1,4 @@
 import FolderPage from "./FolderPage";
-import folderConfigureData from "../fixtures/pom_fixtures/folderConfigureData.json";
-const HOST = Cypress.env("local.host");
-const PORT = Cypress.env("local.port");
 
 class FolderConfigurePage {
   getSaveBtn = () => cy.get('button[name="Submit"]');
@@ -14,20 +11,10 @@ class FolderConfigurePage {
   getBtnConfirmRenameFolder = () => cy.get('button[name="Submit"]');
   getNewNameField = () => cy.get('input[checkdependson="newName"]');
 
-
   clickSaveBtn() {
     this.getSaveBtn().click();
 
     return new FolderPage();
-  }
-
-  checkFolderConfigurePageUrl() {
-    this.getFolderConfigurePageUrl().should(
-      "equal",
-      `http://${HOST}:${PORT}/job/${folderConfigureData.folderName}/configure`
-    );
-
-    return this;
   }
 
   fillInputDisplayName(displayName) {

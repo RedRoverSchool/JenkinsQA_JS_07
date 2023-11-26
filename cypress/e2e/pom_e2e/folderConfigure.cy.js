@@ -3,6 +3,8 @@ import HomePage from "../../pageObjects/HomePage";
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderPage from "../../pageObjects/FolderPage";
 import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
+const HOST = Cypress.env("local.host");
+const PORT = Cypress.env("local.port");
 
 describe("folderConfigure", () => {
   const homePage = new HomePage();
@@ -15,13 +17,18 @@ describe("folderConfigure", () => {
       .fillInputNameField(folderConfigureData.folderName)
       .clickFolderBtn()
       .clickOKButtonFolder()
-      .clickSaveBtn()
-      .clickConfigureLink();
   });
 
   it('TC_07.03.001 | Folder > Configure > Verify link "Configure" on the folder page', () => {
     folderConfigurePage
-      .checkFolderConfigurePageUrl()
+      .clickSaveBtn()
+      .clickConfigureLink()
+      .getFolderConfigurePageUrl().should(
+        "equal",
+        `http://${HOST}:${PORT}/job/${folderConfigureData.folderName}/configure`
+      );
+
+      folderConfigurePage
       .getConfigureBreadcrumbsItem()
       .should("be.visible")
       .and("have.text", folderConfigureData.configureBreadcrumbsItem);
