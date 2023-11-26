@@ -4,5 +4,6 @@
   "configureBreadcrumbsItem": "Configuration",
   "inputDisplayName": "TestDisplayName",
   "inputDescription": "TestDescription",
-  "sidePanelFolderConfig": ["General", "Health metrics", "Properties"]
+  "sidePanelFolderConfig": ["General", "Health metrics", "Properties"],
+  "applyButtonNotification": "Saved"
 }

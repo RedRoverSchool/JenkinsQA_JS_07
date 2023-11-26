@@ -16,19 +16,20 @@ describe("folderConfigure", () => {
       .clickNewItemLink()
       .fillInputNameField(folderConfigureData.folderName)
       .clickFolderBtn()
-      .clickOKButtonFolder()
+      .clickOKButtonFolder();
   });
 
   it('TC_07.03.001 | Folder > Configure > Verify link "Configure" on the folder page', () => {
     folderConfigurePage
       .clickSaveBtn()
       .clickConfigureLink()
-      .getFolderConfigurePageUrl().should(
+      .getFolderConfigurePageUrl()
+      .should(
         "equal",
         `http://${HOST}:${PORT}/job/${folderConfigureData.folderName}/configure`
       );
 
-      folderConfigurePage
+    folderConfigurePage
       .getConfigureBreadcrumbsItem()
       .should("be.visible")
       .and("have.text", folderConfigureData.configureBreadcrumbsItem);
@@ -88,5 +89,19 @@ describe("folderConfigure", () => {
       .getDisplayFolderName()
       .should("contain", folderConfigureData.folderName);
   });
-});
 
+  it("TC_07.03.005 | Folder > Configure > Verify 'Apply' button functionality and confirmation message", () => {
+    folderConfigurePage
+      .clickApplyBtn()
+      .getFolderConfigurePageUrl()
+      .should(
+        "equal",
+        `http://${HOST}:${PORT}/job/${folderConfigureData.folderName}/configure`
+      );
+
+    folderConfigurePage
+      .getNotificationBar()
+      .should("be.visible")
+      .and("have.text", folderConfigureData.applyButtonNotification);
+  });
+});
