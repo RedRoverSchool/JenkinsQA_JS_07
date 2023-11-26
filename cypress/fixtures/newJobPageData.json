@@ -1,0 +1,14 @@
+{
+   "title": "Enter an item name",
+   "ProjectType": [
+       "Freestyle project",
+       "Pipeline",
+       "Multi-configuration project",
+       "Folder",
+       "Multibranch Pipeline",
+       "Organization Folder"
+   ],
+   "NameItem": "Project",
+   "url": "http://localhost:8080/newJob",
+   "errorMessage": "» This field cannot be empty, please enter a valid name"
+}
