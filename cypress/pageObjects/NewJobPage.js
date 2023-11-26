@@ -96,5 +96,73 @@ class NewJobPage {
         this.getNewJobPageUrl().should('be.eql',`http://${HOST}:${PORT}/view/all/newJob`)
       }
     
+      verifyTitleText(title)
+      {
+          this.getTitlePage().should('be.visible').and('have.text',title)
+          return this
+      }
+  
+      verifyTextField()
+      {
+          this.getInputNameField().should('be.visible')
+          return this
+      }
+  
+      verifyErrorMessage(message)
+      {
+          this.getTitlePage().click()
+          this.getErrorMessage().should('have.text',message)
+          return this
+      }
+  
+      verifyListOfTypeProgect(list)
+      {
+          this.getTypeOfProject().each(($el,i) => {
+              cy.wrap($el).should('have.text', list[i])
+          })
+      }
+      
+      verifyTextFieldEmpty()
+      {
+          this.getTitlePage().click()
+          this.getErrorMessage().should('be.visible')
+          return this
+      }
+  
+      notSelectTypesInactiveButton()
+      {
+          this.getTypeProject().each(($el,i) => {
+              cy.wrap($el)
+              this.getTypeProject().eq(i).invoke('attr','aria-checked').should('eql','false')
+              this.getOKButton().should('be.disabled')
+          })
+          return this
+      }
+  
+      selectTypesInactiveButton()
+  {
+      this.getTypeProject().each(($el,i) => {
+          cy.wrap($el).click()
+          this.getTypeProject().eq(i).invoke('attr','aria-checked').should('eql','true')
+          this.getOKButton().should('be.disabled')
+      })
+      return this
+  }
+  
+  selectTypesActiveButton()
+  {
+      this.getTypeProject().each(($el,i) => {
+          cy.wrap($el).click()
+          this.getTypeProject().eq(i).invoke('attr','aria-checked').should('eql','true')
+          this.getOKButton().should('be.enabled')
+      })
+      return this
+  }
+  
+      typeTextField()
+      {
+          this.getInputNameField().type('cdcdc')
+          return this
+      }
 }
 export default NewJobPage;
