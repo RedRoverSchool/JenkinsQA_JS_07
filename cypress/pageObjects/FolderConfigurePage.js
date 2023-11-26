@@ -13,6 +13,8 @@ class FolderConfigurePage {
   getSideMenu = () => cy.get("div.task");
   getBtnConfirmRenameFolder = () => cy.get('button[name="Submit"]');
   getNewNameField = () => cy.get('input[checkdependson="newName"]');
+  getErrorMessage = () => cy.get('a#skip2content+h1')
+
 
 
   clickSaveBtn() {
