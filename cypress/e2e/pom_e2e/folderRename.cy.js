@@ -8,7 +8,7 @@ import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
 describe("folderRename ", () => {
   const homePage = new HomePage();
   const folderPage = new FolderPage();
-  const folderConfigurePage = new FolderConfigurePage
+  const folderConfigurePage = new FolderConfigurePage();
 
   beforeEach("createNewFolder", () => {
     homePage
@@ -27,21 +27,21 @@ describe("folderRename ", () => {
       .should("be.visible")
       .and("contain", folderConfigureData.folderNewName);
   });
-  const performInvalidCharacterCheck = (invalidCharacter) => {
-    folderPage
-      .clickFolderRenameBtn()
-      .fillNewNameField(folderConfigureData.folderName + invalidCharacter)
-      .clickBtnConfirmRenameFolder();
-
-    folderConfigurePage
-      .getErrorMessage()
-      .should("be.visible")
-      .and("contain", "Error");
-    folderPage.getNewFolderName().should("not.contain", invalidCharacter);
-    cy.go(-1);
-  };
 
   it("TC_07.06.003| Attempt to enter invalid characters in new folder name", () => {
+    const performInvalidCharacterCheck = (invalidCharacter) => {
+      folderPage
+        .clickFolderRenameBtn()
+        .fillNewNameField(folderConfigureData.folderName + invalidCharacter)
+        .clickBtnConfirmRenameFolder();
+
+      folderConfigurePage
+        .getErrorMessage()
+        .should("be.visible")
+        .and("contain", "Error");
+      folderPage.getNewFolderName().should("not.contain", invalidCharacter);
+      cy.go(-1);
+    };
     folderConfigureData.invalidCharacters.forEach((invalidCharacter) => {
       performInvalidCharacterCheck(invalidCharacter);
     });
