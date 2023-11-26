@@ -10,12 +10,80 @@ class NewJobPage {
     getMultiConfigTypeOfProjectBtn = () => cy.get('li.hudson_matrix_MatrixProject');
     getOKButton = () => cy.get('#ok-button');
     getFreestyleTypeOfProjectBtn = () => cy.get('.hudson_model_FreeStyleProject');
-    
 
+    verifyTitleText(title)
+    {
+      this.getTitlePage().should('be.visible').and('have.text',title)
+      return this
+    }
+
+    verifyTextField()
+    {
+      this.getInputNameField().should('be.visible')
+      return this
+    }
+
+    verifyTextFieldEmpty()
+    {
+        this.getTitlePage().click()
+        this.getErrorMessage().should('be.visible')
+        return this
+    }
+
+    typeTextField()
+    {
+        this.getInputNameField().type('cdcdc')
+        return this
+    }
+
+    verifyErrorMessage(message)
+    {
+        this.getTypeProject().each(($el,i) => {
+            cy.wrap($el).click()
+            this.getErrorMessage().should('have.text',message)
+        })
+      return this
+    }
+
+    verifyListOfTypeProgect(list)
+    {
+        this.getTypeOfProject().each(($el, i) => {
+            cy.wrap($el).should('have.text', list[i]).and('be.visible')
+        })
+    }
+
+notSelectTypesInactiveButton()
+{
+    this.getTypeProject().each(($el,i) => {
+        cy.wrap($el)
+        this.getTypeProject().eq(i).invoke('attr','aria-checked').should('eql','false')
+        this.getOKButton().should('be.disabled')
+    })
+    return this
+}
+
+    selectTypesActiveButton()
+    {
+        this.getTypeProject().each(($el,i) => {
+            cy.wrap($el).click()
+            this.getTypeProject().eq(i).invoke('attr','aria-checked').should('eql','true')
+            this.getOKButton().should('be.enabled')
+        })
+        return this
+    }
+
+selectTypesInactiveButton()
+{
+    this.getTypeProject().each(($el,i) => {
+        cy.wrap($el).click()
+        this.getTypeProject().eq(i).invoke('attr','aria-checked').should('eql','true')
+        this.getOKButton().should('be.disabled')
+    })
+    return this
+}
 
     fillInputNameField(nameProject) {
         this.getInputNameField().should('be.visible').type(nameProject);
-
         return this;
     }
 
@@ -26,7 +94,7 @@ class NewJobPage {
     }
 
     clickOKButton() {
-        this.getOKButton().сlick();
+        this.getOKButton().click();
 
         return new MultiConfigProjectConfigurePage();
     }
