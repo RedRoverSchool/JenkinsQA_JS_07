@@ -18,22 +18,21 @@ describe("folderRename ", () => {
       .clickOKButtonFolder()
       .clickSaveBtn();
   });
+
   it("TC_07.06.002| Verify the new name folder", () => {
+    folderPage.renameFolder(folderConfigureData.folderNewName);
+
     folderPage
-      .clickFolderRenameBtn()
-      .fillNewNameField(folderConfigureData.folderNewName)
-      .clickBtnConfirmRenameFolder()
       .getNewFolderName()
       .should("be.visible")
       .and("contain", folderConfigureData.folderNewName);
   });
 
-  it("TC_07.06.003| Attempt to enter invalid characters in new folder name", () => {
+  it("TC_07.06.003| Attempt to enter invalid characters in the new folder name", () => {
     const performInvalidCharacterCheck = (invalidCharacter) => {
-      folderPage
-        .clickFolderRenameBtn()
-        .fillNewNameField(folderConfigureData.folderName + invalidCharacter)
-        .clickBtnConfirmRenameFolder();
+      folderPage.renameFolder(
+        folderConfigureData.folderName + invalidCharacter
+      );
 
       folderConfigurePage
         .getErrorMessage()
@@ -42,8 +41,19 @@ describe("folderRename ", () => {
       folderPage.getNewFolderName().should("not.contain", invalidCharacter);
       cy.go(-1);
     };
+
     folderConfigureData.invalidCharacters.forEach((invalidCharacter) => {
       performInvalidCharacterCheck(invalidCharacter);
     });
   });
+
+  it("TC_07_06_004| Rename a folder with the same name", () => {
+    folderPage.renameFolder(folderConfigureData.folderName);
+
+    folderConfigurePage
+      .getErrorMessageText()
+      .should("be.visible")
+      .and("contain.text", "new name is the same as the current name.");
+  });
+  
 });
