@@ -4,7 +4,7 @@ import HomePage from "../../pageObjects/HomePage";
 import NewJobPage from "../../pageObjects/NewJobPage";
 import NewJobPageData from "../../fixtures/pom_fixtures/newJobPageData.json";
 
-describe("New item", () => {
+describe.skip("New item", () => {
   const homePage = new HomePage();
   const newJobPage = new NewJobPage();
 

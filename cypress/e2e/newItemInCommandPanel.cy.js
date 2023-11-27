@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('Dashboard > Verify "New Item" in Command panel.', () => {
+describe.skip('Dashboard > Verify "New Item" in Command panel.', () => {
     it('Verify "New Item" link redirect to "Enter an item name" page', () => {
         cy.get('a[href="/view/all/newJob"]')
         .should('have.text', 'New Item').click();

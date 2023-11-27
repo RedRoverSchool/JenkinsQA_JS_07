@@ -136,12 +136,6 @@ class HomePage {
 
     return new ParticipatePage();
   }
-
-  clickProjectNameLink() {
-    this.getProjectNameLink().click()
-
-    return new PipelineConfigurePage()
-  }
 }
 
 export default HomePage;
