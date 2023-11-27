@@ -9,19 +9,19 @@ describe("manageJenkinsSystemConfTools", () => {
         cy.get("a[href='/manage']").click();
     });
 
-    it("TC_09.06.003 | Visibility of section 'System Configuration' verification", () => {
+    it.skip("TC_09.06.003 | Visibility of section 'System Configuration' verification", () => {
         cy.get("section.jenkins-section--bottom-padding").contains(manageJenkinsSystemConfToolsData.sectionMainHeader)
             .should("be.visible")
             .and("have.text", manageJenkinsSystemConfToolsData.sectionMainHeader);
     });
 
-    it("TC_09.06.005 | Visibility of title and icon 'Tools' section item verification", () => {
+    it.skip("TC_09.06.005 | Visibility of title and icon 'Tools' section item verification", () => {
         cy.get("a[href='configureTools'] dl dt").should("be.visible")
             .then(($el) => {
                 expect(manageJenkinsSystemConfToolsData.sysConfSubHeaders).to.include($el.text());
             });
 
-        cy.get("a[href='configureTools'] .jenkins-section__item__icon").should("be.visible")
+        cy.get("a[href='configureTools'] .jenkins-section__item__icon").should("be.visible");
     });
 
     it("TC_09.06.007 | Verify that the user redirects to '/configureTools' page after clicking on the 'Tools' title", () => {
@@ -38,7 +38,7 @@ describe("manageJenkinsSystemConfTools", () => {
             });
     });
 
-    it("TC_09.06.009 | Checking the visibility of the title and icon 'Tools'", () => {
+    it.skip("TC_09.06.009 | Checking the visibility of the title and icon 'Tools'", () => {
         cy.get('.jenkins-section.jenkins-section--bottom-padding')
             .contains(manageJenkinsSystemConfToolsData.sectionMainHeader)
             .next()

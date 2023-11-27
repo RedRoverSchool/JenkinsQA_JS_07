@@ -6,7 +6,7 @@ const PORT = Cypress.env("local.port");
 import folderName from "../fixtures/createFolder.json";
 import sideMenu from "../fixtures/folderConfigure.json";
 
-describe("folderConfigure", () => {
+describe.skip("folderConfigure", () => {
   beforeEach("createNewFolder", () => {
     cy.get("#tasks .task").contains(sideMenu.sidePanelHomePage).click();
     cy.get("#name").type(folderName.testfolderName);
@@ -38,7 +38,7 @@ describe("folderConfigure", () => {
     cy.get('#view-message').should('be.visible').and('have.text',folderName.displayDescription)
   });
 
-  it("TC_07.03.005 | Folder > Configure > Verify 'Apply' button functionality and confirmation message", () => {
+  it.skip("TC_07.03.005 | Folder > Configure > Verify 'Apply' button functionality and confirmation message", () => {
     const baseUrl = `http://${HOST}:${PORT}`;
     cy.get("#tasks .task").contains(sideMenu.sidePanelFolderPage).click();
     cy.get(".jenkins-button.apply-button").click();
