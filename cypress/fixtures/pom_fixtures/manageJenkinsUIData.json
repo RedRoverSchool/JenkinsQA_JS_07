@@ -1,5 +1,5 @@
 {
-  "url": "/manage/",
+  "manageJenkinsPageEndpoint": "/manage/",
   "headerName": "Manage Jenkins",
   "subHeadersMainJenkinsPage": [
     "System Configuration",

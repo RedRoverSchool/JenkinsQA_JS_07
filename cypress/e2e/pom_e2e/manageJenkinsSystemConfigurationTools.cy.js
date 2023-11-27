@@ -2,11 +2,14 @@
 
 import HomePage from "../../pageObjects/HomePage";
 import ManageJenkinsPage from "../../pageObjects/ManageJenkinsPage";
-import { systemConfigurationSectionHeader, systemConfigurationTitlesSectionItems } from "../../fixtures/pom_fixtures/manageJenkinsUIData.json";
+import ConfigureToolsPage from "../../pageObjects/ConfigureToolsPage";
+import { systemConfigurationSectionHeader, systemConfigurationTitlesSectionItems, manageJenkinsPageEndpoint } from "../../fixtures/pom_fixtures/manageJenkinsUIData.json";
+import { configureToolsPageEndpoint, configureToolsMainHeader } from "../../fixtures/pom_fixtures/configureToolsPageData.json"
 
 describe("manageJenkinsSystemConfigurationTools", () => {
     const homePage = new HomePage();
     const manageJenkinsPage = new ManageJenkinsPage();
+    const configureToolsPage = new ConfigureToolsPage();
 
     beforeEach(() => {
         homePage.clickManageJenkinsLink();
@@ -27,5 +30,17 @@ describe("manageJenkinsSystemConfigurationTools", () => {
 
         manageJenkinsPage.getToolsIconSectionItem()
             .should("be.visible");
+    });
+
+    it("TC_09.06.007 | Verify that the user redirects to '/configureTools' page after clicking on the 'Tools' title", () => {
+        cy.createBaseURL().then(baseURL => {
+            manageJenkinsPage.clickConfigureToolsLink()
+                .getConfigureToolsURL()
+                .should("be.eql", configureToolsPage.createConfigureURL(baseURL, manageJenkinsPageEndpoint, configureToolsPageEndpoint));
+        });
+
+        configureToolsPage.getConfigureToolsMainHeader()
+            .should("be.visible")
+            .and("have.text", configureToolsMainHeader);
     });
 });
