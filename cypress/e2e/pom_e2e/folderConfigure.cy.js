@@ -75,6 +75,12 @@ describe("folderConfigure", () => {
       });
   });
 
+  it.only('TC_07.03.008| Folder > Configure > The link “General” is active by default', () => {
+    folderConfigurePage
+    .getGeneralLink()
+    .should("have.class", "task-link--active");
+});
+
   it("TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable", () => {
     folderConfigurePage
       .getSaveBtn()
