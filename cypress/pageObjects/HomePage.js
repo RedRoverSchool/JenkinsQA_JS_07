@@ -5,6 +5,7 @@ import ManageJenkinsPage from "../pageObjects/ManageJenkinsPage";
 import PeoplePage from "../pageObjects/PeoplePage";
 import ParticipatePage from "../pageObjects/ParticipatePage";
 import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json";
+import PipelineConfigurePage from "./PipelineConfigurePage";
 const dayjs = require("dayjs");
 class HomePage {
   getNewItemLink = () => cy.get('a[href*="/newJob"]');
@@ -134,6 +135,12 @@ class HomePage {
     this.getInvolvedLink().invoke("removeAttr", "target").click();
 
     return new ParticipatePage();
+  }
+
+  clickProjectNameLink() {
+    this.getProjectNameLink().click()
+
+    return new PipelineConfigurePage()
   }
 }
 
