@@ -4,7 +4,7 @@ import HomePage from "../../pageObjects/HomePage";
 import FolderPage from "../../pageObjects/FolderPage";
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
-import folderPageData from "../../fixtures/pom_fixtures/folderPageData.json"
+import folderPageData from "../../fixtures/pom_fixtures/folderPageData.json";
 
 describe("folderRename ", () => {
   const homePage = new HomePage();
@@ -22,9 +22,9 @@ describe("folderRename ", () => {
 
   it("TC_07.06.002| Verify the new name folder", () => {
     folderPage
-      .clickFolderRenameBtn()
-      .fillNewNameField(folderConfigureData.folderNewName)
-      .clickBtnConfirmRenameFolder()
+      .renameFolder(folderConfigureData.folderNewName)
+      
+    folderPage
       .getNewFolderName()
       .should("be.visible")
       .and("contain", folderConfigureData.folderNewName);
@@ -32,15 +32,14 @@ describe("folderRename ", () => {
 
   it("TC_07.06.003| Attempt to enter invalid characters in new folder name", () => {
     const performInvalidCharacterCheck = (invalidCharacter) => {
-      folderPage
-        .clickFolderRenameBtn()
-        .fillNewNameField(folderConfigureData.folderName + invalidCharacter)
-        .clickBtnConfirmRenameFolder();
+      folderPage.renameFolder(
+        folderConfigureData.folderName + invalidCharacter
+      );
 
       folderConfigurePage
         .getErrorMessage()
         .should("be.visible")
-        .and("contain", "Error");
+        .and("contain", folderPageData.errorMessage);
       folderPage.getNewFolderName().should("not.contain", invalidCharacter);
       cy.go(-1);
     };
