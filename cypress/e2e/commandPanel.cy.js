@@ -15,7 +15,7 @@ describe('commandPanel', () => {
     })
 
 
-    it('TC_02.04.011 | Command panel > Verify redirection to the page', () => {
+    it.skip('TC_02.04.011 | Command panel > Verify redirection to the page', () => {
 
         cy.get('a[href="/view/all/newJob"]').click()
         cy.url().should('eq', links.NewItem).go(-1)

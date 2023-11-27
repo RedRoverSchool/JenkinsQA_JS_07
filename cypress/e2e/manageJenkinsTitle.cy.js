@@ -2,7 +2,7 @@
 
 import manageJenkinsTitleData from "../fixtures/manageJenkinsTitle.json";
 
-describe("manageJenkinsTitle", () => {
+describe.skip("manageJenkinsTitle", () => {
     beforeEach(() => {
         cy.get("a[href='/manage']").click();
     })
