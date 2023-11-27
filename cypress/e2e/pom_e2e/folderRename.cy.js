@@ -4,6 +4,7 @@ import HomePage from "../../pageObjects/HomePage";
 import FolderPage from "../../pageObjects/FolderPage";
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
+import folderPageData from "../../fixtures/pom_fixtures/folderPageData.json"
 
 describe("folderRename ", () => {
   const homePage = new HomePage();
@@ -54,6 +55,6 @@ describe("folderRename ", () => {
     folderConfigurePage
       .getErrorMessageText()
       .should("be.visible")
-      .and("contain.text", "new name is the same as the current name.");
+      .and("contain.text", folderPageData.textErrorMessage);
   });
 });
