@@ -75,7 +75,7 @@ describe("folderConfigure", () => {
       });
   });
 
-  it.only('TC_07.03.008| Folder > Configure > The link “General” is active by default', () => {
+  it('TC_07.03.008| Folder > Configure > The link “General” is active by default', () => {
     folderConfigurePage
     .getGeneralLink()
     .should("have.class", "task-link--active");
