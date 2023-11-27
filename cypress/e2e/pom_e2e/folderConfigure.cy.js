@@ -63,7 +63,7 @@ describe("folderConfigure", () => {
   });
 
   it("TC_07.03.006 | Folder > Configure>check side panel has clickable links", () => {
-    folderPage
+    folderConfigurePage
       .clickHealthMetricsBtn()
       .clickPropertiesAddBtn()
       .getSidePanelLinks()
