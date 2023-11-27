@@ -7,9 +7,10 @@ describe('homePageTest', () => {
 
     sideMenu.sidePanelName.forEach((item, index) => {
         it(`Verify side menu link ${item} functionality`, function () {
+            
             homePage.clickSideMenuItemList(item, index)
-                .should('contain', sideMenu.sidePanelLink[index])
-
+                    .should('contain', sideMenu.sidePanelLink[index])
+                   
             cy.contains(sideMenu.pageHeaderName[index])
         })
     })
