@@ -12,7 +12,8 @@ class FolderConfigurePage {
   getNewNameField = () => cy.get('input[checkdependson="newName"]');
   getApplyBtn = () => cy.get(".jenkins-button.apply-button");
   getNotificationBar = () => cy.get("#notification-bar");
-  getErrorMessage = () => cy.get('a#skip2content+h1')
+  getErrorMessage = () => cy.get('a#skip2content+h1');
+  getErrorMessageText = () => cy.get('h1+p');
 
 
   clickSaveBtn() {
