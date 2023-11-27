@@ -9,6 +9,7 @@ class FolderConfigurePage {
   getInputDescription = () => cy.get("textarea.jenkins-input");
   getSideMenu = () => cy.get("div.task");
   getSidePanelLinks = () => cy.get('div.task>.task-link-wrapper>.task-link');
+  getGeneralLink = () => cy.get('button[data-section-id= "general"')
   getBtnConfirmRenameFolder = () => cy.get('button[name="Submit"]');
   getNewNameField = () => cy.get('input[checkdependson="newName"]');
   getApplyBtn = () => cy.get(".jenkins-button.apply-button");
