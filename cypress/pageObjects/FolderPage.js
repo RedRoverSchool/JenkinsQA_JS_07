@@ -44,9 +44,16 @@ class FolderPage {
     this.getRenameLink().click();
     return new FolderConfigurePage()
   }
+
  clickSaveButton () {
     this.getSaveButton ().click();
     return this;
+  }
+  
+  renameFolder(newName) {
+    return this.clickFolderRenameBtn()
+      .fillNewNameField(newName)
+      .clickBtnConfirmRenameFolder();
   }
 }
 export default FolderPage;

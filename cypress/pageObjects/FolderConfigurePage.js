@@ -14,6 +14,7 @@ class FolderConfigurePage {
   getApplyBtn = () => cy.get(".jenkins-button.apply-button");
   getNotificationBar = () => cy.get("#notification-bar");
   getErrorMessage = () => cy.get('a#skip2content+h1');
+  getErrorMessageText = () => cy.get('h1+p');;
   getHealthMetricsBtn = () => cy.get('button.advancedButton');
   getPropertiesAddBtn = () => cy.get('button[class="jenkins-button repeatable-add"]');
 
