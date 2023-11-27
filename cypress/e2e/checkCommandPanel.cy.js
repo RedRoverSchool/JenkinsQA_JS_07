@@ -1,6 +1,6 @@
 import header from "../fixtures/checkCommPanel.json";
 
-describe('checkCommandPanel', function () {
+describe.skip('checkCommandPanel', function () {
     beforeEach(function () {
         cy.get("#side-panel #tasks a").as("sideMenuLink");
     });

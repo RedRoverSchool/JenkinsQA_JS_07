@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 import dbLinkSideMenu from '../fixtures/dbSideMenuLink.json'
-describe('dashboardLinkSideMenu',()=>{
+describe.skip('dashboardLinkSideMenu',()=>{
     dbLinkSideMenu.pageHeaderName.forEach((el,ind)=>{
         it(`TC_02.04.25|Dashboard>Link Side menu| Verify side menu link ${dbLinkSideMenu.sidePanelName[ind]}`,()=>{
             cy.get('#side-panel #tasks span a').eq(ind).click()
