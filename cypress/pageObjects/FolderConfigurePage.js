@@ -8,11 +8,14 @@ class FolderConfigurePage {
   getInputDisplayName = () => cy.get("input.validated");
   getInputDescription = () => cy.get("textarea.jenkins-input");
   getSideMenu = () => cy.get("div.task");
+  getSidePanelLinks = () => cy.get('div.task>.task-link-wrapper>.task-link');
   getBtnConfirmRenameFolder = () => cy.get('button[name="Submit"]');
   getNewNameField = () => cy.get('input[checkdependson="newName"]');
   getApplyBtn = () => cy.get(".jenkins-button.apply-button");
   getNotificationBar = () => cy.get("#notification-bar");
-  getErrorMessage = () => cy.get('a#skip2content+h1')
+  getErrorMessage = () => cy.get('a#skip2content+h1');
+  getHealthMetricsBtn = () => cy.get('button.advancedButton');
+  getPropertiesAddBtn = () => cy.get('button[class="jenkins-button repeatable-add"]');
 
 
   clickSaveBtn() {
@@ -50,6 +53,15 @@ class FolderConfigurePage {
 
     return this;
   }
+  clickHealthMetricsBtn() {
+    this.getHealthMetricsBtn().click();
+    return this;
+  }
+
+clickPropertiesAddBtn() {
+  this.getPropertiesAddBtn().click();
+  return this;
+}
 }
 
 export default FolderConfigurePage;
