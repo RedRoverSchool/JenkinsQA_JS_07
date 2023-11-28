@@ -33,11 +33,13 @@ describe("manageJenkinsSystemConfigurationTools", () => {
     });
 
     it("TC_09.06.007 | Verify that the user redirects to '/configureTools' page after clicking on the 'Tools' title", () => {
-        //const configureToolsURL = 
         cy.createBaseURL().then(baseURL => {
+            const configureToolsURL = configureToolsPage.createConfigureToolsURL(baseURL, manageJenkinsPageEndpoint,
+                configureToolsPageEndpoint);
+
             manageJenkinsPage.clickConfigureToolsSectionItem()
                 .getConfigureToolsURL()
-                .should("be.eql", configureToolsPage.createConfigureToolsURL(baseURL, manageJenkinsPageEndpoint, configureToolsPageEndpoint));
+                .should("be.eql", configureToolsURL);
         });
 
         configureToolsPage.getConfigureToolsMainHeader()
