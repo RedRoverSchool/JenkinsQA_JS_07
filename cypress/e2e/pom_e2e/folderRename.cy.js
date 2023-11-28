@@ -4,6 +4,7 @@ import HomePage from "../../pageObjects/HomePage";
 import FolderPage from "../../pageObjects/FolderPage";
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
+import folderPageData from "../../fixtures/pom_fixtures/folderPageData.json"
 
 describe("folderRename ", () => {
   const homePage = new HomePage();
@@ -18,6 +19,7 @@ describe("folderRename ", () => {
       .clickOKButtonFolder()
       .clickSaveBtn();
   });
+
   it("TC_07.06.002| Verify the new name folder", () => {
     folderPage
       .clickFolderRenameBtn()
@@ -45,5 +47,14 @@ describe("folderRename ", () => {
     folderConfigureData.invalidCharacters.forEach((invalidCharacter) => {
       performInvalidCharacterCheck(invalidCharacter);
     });
+  });
+
+  it("TC_07_06_004| Rename a folder with the same name", () => {
+    folderPage.renameFolder(folderConfigureData.folderName);
+
+    folderConfigurePage
+      .getErrorMessageText()
+      .should("be.visible")
+      .and("contain.text", folderPageData.textErrorMessage);
   });
 });

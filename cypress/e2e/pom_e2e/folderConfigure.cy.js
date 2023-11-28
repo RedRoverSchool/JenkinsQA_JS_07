@@ -63,7 +63,7 @@ describe("folderConfigure", () => {
   });
 
   it("TC_07.03.006 | Folder > Configure>check side panel has clickable links", () => {
-    folderPage
+    folderConfigurePage
       .clickHealthMetricsBtn()
       .clickPropertiesAddBtn()
       .getSidePanelLinks()
@@ -74,6 +74,12 @@ describe("folderConfigure", () => {
           .and("have.class", "task-link--active");
       });
   });
+
+  it('TC_07.03.008| Folder > Configure > The link “General” is active by default', () => {
+    folderConfigurePage
+    .getGeneralLink()
+    .should("have.class", "task-link--active");
+});
 
   it("TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable", () => {
     folderConfigurePage
