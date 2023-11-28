@@ -7,5 +7,6 @@
   "inputDescription": "TestDescription",
   "sidePanelFolderConfig": ["General", "Health metrics", "Properties"],
   "applyButtonNotification": "Saved",
-  "healthMetricsSpoiler": "Add metric"
+  "healthMetricsSpoiler": "Add metric",
+  "healthMetricsSpoilerAttribute": "data-expanded"
 }
