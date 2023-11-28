@@ -9,6 +9,7 @@ class FreestyleProjectConfigurePage {
     getSourceCodeManagementSectionLbls = () => cy.get('#source-code-management').parent().find('label[for^=radio-block-]');
     getGitOptionTooltip = () => cy.get('a[tooltip="Help for feature: Git"]');
     getGitOptionTooltipContent = () => cy.get('div.tippy-box');
+    getGitOptionTooltipHelpArea = () => cy.get('[ref="radio-block-1"] + div.help-area > div.help');
     getBuildEnvironmentSectionMenuItem = () => cy.get('button[data-section-id="build-environment"]');
     getBuildEnvironmentSection = () => cy.get('#build-environment');
     getBuildEnvironmentSectionOptions = () => cy.get(' #build-environment~.optionalBlock-container');
@@ -22,6 +23,11 @@ class FreestyleProjectConfigurePage {
         this.getSourceCodeManagementSection().click();
         return this;
     };
+
+    clickGitOptionTooltip() {
+        this.getGitOptionTooltip().click();
+        return this;
+    }
 
     clickBuildEnvironmentSectionMenuItem() {
         this.getBuildEnvironmentSectionMenuItem().click();
