@@ -28,8 +28,9 @@ class HomePage {
   getSideMenuPanel = () => cy.get("#side-panel #tasks a");
   getInvolvedLink = () =>
     cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
+  getTitleCreateJob = () => cy.get('.h4').contains('Start');
+  getLinkCreateJob = () => cy.get('a[href="newJob"]');
   
-
   clickNewItemLink() {
     this.getNewItemLink().click();
 
@@ -134,6 +135,27 @@ class HomePage {
     this.getInvolvedLink().invoke("removeAttr", "target").click();
 
     return new ParticipatePage();
+  }
+
+  verifyWelcomeMessage(message)
+  {
+    this.getWelcomedMessageHeader().should('have.text',message)
+    return this
+  }
+  clickDropdownMenu()
+  {
+    this.getDashboardBreadcrumbsLink().realHover().should('have.text','New Item')
+    return this
+  }
+  verifyLinkCreateJob(text)
+  {
+    this.getTitleCreateJob().should('have.text',text)
+    return this
+  }
+  clickCreateJob()
+  {
+    this.getLinkCreateJob().click();
+    return new NewJobPage();
   }
 }
 

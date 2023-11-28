@@ -1,4 +1,6 @@
 {
    "mainMessage": "Welcome to Jenkins!",
-   "helpMessage": "This page is where your Jenkins jobs will be displayed. To get started, you can set up distributed builds or start building a software project."
+   "helpMessage": "This page is where your Jenkins jobs will be displayed. To get started, you can set up distributed builds or start building a software project.",
+   "titleMessage":"Start building your software project",
+   "dropdownMenu": ["New Item", "People", "Build History", "Manage Jenkins", "My Views"]
 }

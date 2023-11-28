@@ -91,6 +91,11 @@ class NewJobPage {
     checkNewJobPageUrl() {
         this.getNewJobPageUrl().should('be.eql',`http://${HOST}:${PORT}/view/all/newJob`)
       }
-    
+
+    verifyURL(url)
+    {
+        this.getNewJobPageUrl().should('include',url)
+        return this
+    }
 }
 export default NewJobPage;
