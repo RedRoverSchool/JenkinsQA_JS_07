@@ -3,7 +3,7 @@ import PipelineConfigurePage from "./PipelineConfigurePage";
 class PipelinePage {
 
     getDisabledProgectWarning = () => cy.get('.warning');
-    getConfigureBtn = () => cy.get('a[href="/job/Project1/configure"]')
+    getConfigureBtn = () => cy.get('#side-panel .task').contains('Configure')
     getPipelineNameHeader = () => cy.get('.job-index-headline')
  
     clickConfigureBtn(){
