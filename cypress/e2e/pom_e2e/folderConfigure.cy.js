@@ -110,4 +110,15 @@ describe("folderConfigure", () => {
       .should("be.visible")
       .and("have.text", folderConfigureData.applyButtonNotification);
   });
+
+  it('TC_07.03.009 | Folder > Configure > Verify that the section “Health metrics” contains a spoiler “Health metrics”', () => {
+    folderConfigurePage
+      .clickHealthMetricsBtn()
+      .getHealthMetricsBtn()
+      .should("have.attr", "data-expanded", "true");
+    folderConfigurePage
+      .getAddMetricBtn()
+      .should("be.visible")
+      .and("have.text", folderConfigureData.healthMetricsSpoiler);
+  });
 });
