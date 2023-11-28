@@ -12,12 +12,7 @@ describe("folderRename ", () => {
   const folderConfigurePage = new FolderConfigurePage();
 
   beforeEach("createNewFolder", () => {
-    homePage
-      .clickNewItemLink()
-      .fillInputNameField(folderName)
-      .clickFolderBtn()
-      .clickOKButtonFolder()
-      .clickSaveBtn();
+    cy.createNewFolder(folderName)
   });
 
   it("TC_07.06.002| Verify the new name folder", () => {

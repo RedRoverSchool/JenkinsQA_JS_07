@@ -1,6 +1,11 @@
 {
     "projectName": "Project1",
     "configure": {
+        "general": {
+            "sectionName": "General",
+            "statusDisabled" : "Disabled",
+            "statusEnabled" : "Enabled"
+        },
         "sourceCodeManagement": {
             "sectionName": "Source Code Management",
             "radioButtonNames": ["None", "Git"],
