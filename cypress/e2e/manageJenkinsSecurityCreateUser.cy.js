@@ -69,7 +69,7 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
       });
   });
 
-  it('TC_09.14.004 |Manage Jenkins > Security> Create User > Verify Auto-Fill "Full Name" field with Username If the user leaves "Full name" field empty', function () {
+  it.skip('TC_09.14.004 |Manage Jenkins > Security> Create User > Verify Auto-Fill "Full Name" field with Username If the user leaves "Full name" field empty', function () {
     cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
     cy.get('input[name="password1"]').type(
       manageJenkinsSecurityCreateUser.password

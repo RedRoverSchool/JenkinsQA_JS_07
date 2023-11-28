@@ -60,4 +60,15 @@ describe('ManageJenkinsSecurityCreateUsers.cy', () => {
       );
     });
   });
+
+  it('TC_09.14.004 |Manage Jenkins > Security> Create User > Verify Auto-Fill "Full Name" field with Username If the user leaves "Full name" field empty', function () {
+    addUserPage
+      .fillUserNameField(createUsersData.username)
+      .fillPasswordField(createUsersData.password)
+      .fillCofirmPasswordField(createUsersData.password)
+      .fillEmailAddressField(createUsersData.email)
+      .clickButtonCreateUser();
+
+    userPage.getCreatedName().should('have.text', createUsersData.username);
+  });
 });
