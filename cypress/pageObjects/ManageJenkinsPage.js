@@ -16,7 +16,7 @@ class ManageJenkinsPage {
     return new UserPage();
   }
 
-  clickConfigureToolsLink() {
+  clickConfigureToolsSectionItem() {
     this.getToolsTitleSectionItem().should("be.visible").click();
 
     return new ConfigureToolsPage();
