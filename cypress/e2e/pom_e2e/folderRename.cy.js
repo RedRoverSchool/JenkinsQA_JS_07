@@ -20,11 +20,9 @@ describe("folderRename ", () => {
       .clickSaveBtn();
   });
 
-  it("TC_07.06.002| Verify the new name folder", () => {
+  it.only("TC_07.06.002| Verify the new name folder", () => {
     folderPage
       .renameFolder(folderConfigureData.folderNewName)
-      
-    folderPage
       .getNewFolderName()
       .should("be.visible")
       .and("contain", folderConfigureData.folderNewName);
