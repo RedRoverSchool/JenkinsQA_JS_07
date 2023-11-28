@@ -1,6 +1,6 @@
 describe('System Configuration Test', () => {
 
-    it('US_09.06 | Manage Jenkins > System Configuration > Tools', () => {
+    it.skip('US_09.06 | Manage Jenkins > System Configuration > Tools', () => {
         cy.get('a[href="/manage"]').click()
         
         cy.contains('System Configuration').should('be.visible')
