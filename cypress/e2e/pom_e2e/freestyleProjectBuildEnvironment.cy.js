@@ -26,5 +26,14 @@ describe('freestyleProjectBuildEnvironment', () => {
                                     })
                                      .should('deep.equal', freestyleProjectData.buildEnvironment.buildEnvironmentOptions);     
     });  
+
+
+    it('POM > TC_04.04.002 | Freestyle project > Build Environment > Checking visibility of tooltip message on hover the hint icon of the Use secret text(s) or file(s)', () => {
+        freestyleProjectConfigurePage.clickBuildEnvironmentSectionMenuItem();                               
+        freestyleProjectConfigurePage.hoverBuildEnvironmentOptionTooltip()
+        freestyleProjectConfigurePage.getOptionTooltipContent()
+                                     .should('be.visible')
+                                     .and('have.text', freestyleProjectData.buildEnvironment.buildEnvironmentToolTipText)     
+    });  
 });
 

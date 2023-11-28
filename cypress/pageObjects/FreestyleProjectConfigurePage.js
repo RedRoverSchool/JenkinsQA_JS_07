@@ -8,11 +8,12 @@ class FreestyleProjectConfigurePage {
     getSourceCodeManagementSectionBtns = () => cy.get('#source-code-management').parent().find('[id^=radio-block-]');
     getSourceCodeManagementSectionLbls = () => cy.get('#source-code-management').parent().find('label[for^=radio-block-]');
     getGitOptionTooltip = () => cy.get('a[tooltip="Help for feature: Git"]');
-    getGitOptionTooltipContent = () => cy.get('div.tippy-box');
+    getOptionTooltipContent = () => cy.get('div.tippy-box');
     getBuildEnvironmentSectionMenuItem = () => cy.get('button[data-section-id="build-environment"]');
     getBuildEnvironmentSection = () => cy.get('#build-environment');
     getBuildEnvironmentSectionOptions = () => cy.get(' #build-environment~.optionalBlock-container');
-
+    getBuildEnvironmentOptionTooltip = () => cy.get('a[helpurl="/descriptor/org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper/help"]');
+        
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
         return this;
@@ -27,5 +28,10 @@ class FreestyleProjectConfigurePage {
         this.getBuildEnvironmentSectionMenuItem().click();
         return this;
     };
+
+    hoverBuildEnvironmentOptionTooltip() {
+        this.getBuildEnvironmentOptionTooltip().realHover();    
+        return this;
+      }
 }
 export default FreestyleProjectConfigurePage;
