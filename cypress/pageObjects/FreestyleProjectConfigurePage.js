@@ -12,7 +12,7 @@ class FreestyleProjectConfigurePage {
     getBuildEnvironmentSectionMenuItem = () => cy.get('button[data-section-id="build-environment"]');
     getBuildEnvironmentSection = () => cy.get('#build-environment');
     getBuildEnvironmentSectionOptions = () => cy.get(' #build-environment~.optionalBlock-container');
-    getBuildEnvironmentOptionTooltip = () => cy.get('a[helpurl="/descriptor/org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper/help"]');
+    getUseSecretTextOptionTooltip = () => cy.get('a[helpurl="/descriptor/org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper/help"]');
         
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
@@ -29,8 +29,8 @@ class FreestyleProjectConfigurePage {
         return this;
     };
 
-    hoverBuildEnvironmentOptionTooltip() {
-        this.getBuildEnvironmentOptionTooltip().realHover();    
+    hoverUseSecretTextOptionTooltip() {
+        this.getUseSecretTextOptionTooltip().realHover();    
         return this;
       }
 }
