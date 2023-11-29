@@ -1,5 +1,6 @@
 import UserPage from '../pageObjects/UserPage';
 import ToolsPage from './ToolsPage';
+import ConfigureToolsPage from "../pageObjects/ConfigureToolsPage";
 
 class ManageJenkinsPage {
   getUsersLink = () => cy.get('a[href="securityRealm/"]');
@@ -13,6 +14,7 @@ class ManageJenkinsPage {
 
   clickUsersLink() {
     this.getUsersLink().click();
+
     return new UserPage();
   }
 
@@ -21,5 +23,11 @@ class ManageJenkinsPage {
     return new ToolsPage()
   }
 
+
+  clickConfigureToolsSectionItem() {
+    this.getToolsTitleSectionItem().should("be.visible").click();
+
+    return new ConfigureToolsPage();
+  }
 }
 export default ManageJenkinsPage;

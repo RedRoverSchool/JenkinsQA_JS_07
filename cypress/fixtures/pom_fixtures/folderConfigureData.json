@@ -6,5 +6,8 @@
   "inputDisplayName": "TestDisplayName",
   "inputDescription": "TestDescription",
   "sidePanelFolderConfig": ["General", "Health metrics", "Properties"],
-  "applyButtonNotification": "Saved"
+  "applyButtonNotification": "Saved",
+  "healthMetricsSpoiler": "Add metric",
+  "healthMetricsSpoilerAttribute": "data-expanded",
+  "pipelineLibrariesText": "Pipeline Libraries"
 }

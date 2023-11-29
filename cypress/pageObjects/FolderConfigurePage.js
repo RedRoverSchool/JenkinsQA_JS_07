@@ -18,6 +18,8 @@ class FolderConfigurePage {
   getErrorMessageText = () => cy.get('h1+p');;
   getHealthMetricsBtn = () => cy.get('button.advancedButton');
   getPropertiesAddBtn = () => cy.get('button[class="jenkins-button repeatable-add"]');
+  getAddMetricBtn = () => cy.get("#yui-gen1-button");
+  getPipelineLibrariesText = () => cy.get("section > section > div.jenkins-section__title");
 
 
   clickSaveBtn() {

@@ -5,6 +5,7 @@
     "previewLinkName": "Preview",
     "hidePreviewLinkName": "Hide preview",
     "fDText": "There is some text information about current Folder here.",
+    "errorMessage": "Error",
     "textErrorMessage": "new name is the same as the current name."
 
 }

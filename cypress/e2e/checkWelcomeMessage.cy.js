@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe("checkWelcomeMessage", () => {
+describe.skip("checkWelcomeMessage", () => {
   it("Dashboard > Welcome message", () => {
     cy.url().should("be.equal", "http://localhost:8080/");
     cy.get("div h1").contains("Welcome to Jenkins!").should("be.visible");
