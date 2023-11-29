@@ -27,6 +27,15 @@ Cypress.Commands.add('createNewFolder', (folderName) => {
 Cypress.Commands.add("createBaseURL", () => {
     return `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`;
 });
+
+
+Cypress.Commands.add('createPipelineProject', (pipelineProjectfolderName)=> {
+    homePage.clickNewItemLink()
+            .fillInputNameField(pipelineProjectfolderName)
+            .clickPipelineTypeOfProjectBtn()
+            .clickOKButtonPipelineProject()
+    });
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
