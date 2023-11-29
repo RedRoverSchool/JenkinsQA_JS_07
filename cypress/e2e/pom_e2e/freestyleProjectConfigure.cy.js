@@ -39,7 +39,7 @@ describe('freestyleProjectConfigure', () => {
 
     it('TC_04.02.004 | Freestyle > Source Code Management > Git option has a tooltip', () => {
         triggerElement(freestyleProjectConfigurePage.getGitOptionTooltip(), 'focus');
-        freestyleProjectConfigurePage.getGitOptionTooltipContent()
+        freestyleProjectConfigurePage.getOptionTooltipContent()
                                      .should('be.visible')
                                      .and('have.text', gitToolTipText)
     });
