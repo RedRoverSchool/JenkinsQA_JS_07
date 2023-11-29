@@ -26,6 +26,8 @@ class HomePage {
   getJenkinsStartWorkTitle = () => cy.get(".empty-state-block p");
   getSideMenuPanel = () => cy.get("#side-panel #tasks a");
   getInvolvedLink = () => cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
+  getButtonIconSizeSmall = () => cy.get('li a[tooltip="Small"]')
+  getBuildStatusIcon= ()=> cy.get('td[data="12"].jenkins-table__icon')
   
   clickProjectNameLink() {
     this.getProjectNameLink().click()
@@ -146,6 +148,10 @@ class HomePage {
 
     return cy.url()
 
+  }
+
+  clickButtonIconSizeSmall(){
+    this.getButtonIconSizeSmall().click()
   }
 }
 
