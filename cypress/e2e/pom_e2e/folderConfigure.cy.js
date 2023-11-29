@@ -122,4 +122,15 @@ describe("folderConfigure", () => {
       .should("be.visible")
       .and("have.text", folderConfigureData.healthMetricsSpoiler);
   });
+
+  it("TC_07.03.010 | Folder > Configure > Verify that section “Properties” has text “Pipeline Libraries”.", () => {
+    folderConfigurePage
+      .getPipelineLibrariesText()
+      .should("be.visible")
+      .then(($element) => {
+        expect($element.text().replace(/\n/g, "").trim()).to.equal(
+          folderConfigureData.pipelineLibrariesText
+        );
+      });
+  });
 });
