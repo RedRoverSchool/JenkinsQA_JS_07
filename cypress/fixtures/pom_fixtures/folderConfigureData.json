@@ -8,5 +8,6 @@
   "sidePanelFolderConfig": ["General", "Health metrics", "Properties"],
   "applyButtonNotification": "Saved",
   "healthMetricsSpoiler": "Add metric",
-  "healthMetricsSpoilerAttribute": "data-expanded"
+  "healthMetricsSpoilerAttribute": "data-expanded",
+  "pipelineLibrariesText": "Pipeline Libraries"
 }
