@@ -42,13 +42,13 @@ class FolderConfigurePage {
 
   fillNewNameField(newName) {
     this.getNewNameField().clear().type(newName);
-   
+
     return this;
   }
 
   clickBtnConfirmRenameFolder() {
     this.getBtnConfirmRenameFolder().click();
-    
+
     return new FolderPage();
   }
 
@@ -62,10 +62,19 @@ class FolderConfigurePage {
     return this;
   }
 
-clickPropertiesAddBtn() {
-  this.getPropertiesAddBtn().click();
-  return this;
-}
+  clickPropertiesAddBtn() {
+    this.getPropertiesAddBtn().click();
+    return this;
+  }
+
+  createFolderConfigurePageUrl(
+    baseUrl,
+    jobJenkinsPageEndpoint,
+    folderName,
+    folderConfigurePageEndpoint
+  ) {
+    return `${baseUrl}/${jobJenkinsPageEndpoint}/${folderName}/${folderConfigurePageEndpoint}`;
+  }
 }
 
 export default FolderConfigurePage;
