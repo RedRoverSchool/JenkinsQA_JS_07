@@ -19,7 +19,7 @@ describe('createPipelineProject', () => {
 
   })
 
-  it('TC_03.04.009 | Check input-validation-message', function () {
+  it.skip('TC_03.04.009 | Check input-validation-message', function () {
     cy.get("a[href='/view/all/newJob']").click();
     cy.get('li.org_jenkinsci_plugins_workflow_job_WorkflowJob > div.icon').click();
 

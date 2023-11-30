@@ -20,6 +20,7 @@ class NewJobPage {
     getPipelineProjectNameLink = () => cy.get('.label');
     getNewJobPageUrl = () => cy.url();
     getNewJobPageTitle = () => cy.get('label[for="name"]');
+    getInputValidationMessage = () => cy.get("div[class='input-validation-message']");
 
 
     fillInputNameField(nameProject) {
