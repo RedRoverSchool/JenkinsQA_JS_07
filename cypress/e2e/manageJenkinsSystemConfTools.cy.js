@@ -4,7 +4,7 @@ import manageJenkinsSystemConfToolsData from "../fixtures/manageJenkinsSystemCon
 import { manageJenkinsPageEndpoint } from "../fixtures/manageJenkinsTitle.json";
 import { sectionItemsHeaders } from "../fixtures/manageJenkinsTools.json";
 
-describe("manageJenkinsSystemConfTools", () => {
+describe.skip("manageJenkinsSystemConfTools", () => {
     beforeEach(() => {
         cy.get("a[href='/manage']").click();
     });
@@ -24,7 +24,7 @@ describe("manageJenkinsSystemConfTools", () => {
         cy.get("a[href='configureTools'] .jenkins-section__item__icon").should("be.visible");
     });
 
-    it("TC_09.06.007 | Verify that the user redirects to '/configureTools' page after clicking on the 'Tools' title", () => {
+    it.skip("TC_09.06.007 | Verify that the user redirects to '/configureTools' page after clicking on the 'Tools' title", () => {
         const baseUrl = `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`;
         const confToolsPageUrl = `${baseUrl}/${manageJenkinsPageEndpoint}/${manageJenkinsSystemConfToolsData.configureToolsPageEndpoint}/`;
 

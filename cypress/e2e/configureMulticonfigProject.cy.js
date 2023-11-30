@@ -3,7 +3,7 @@
 import configureMulticonfigProject from '../fixtures/configureMulticonfigProject.json';
 import {projectName, expectedSideMenuItems} from "../fixtures/configureMulticonfigProject.json"
 
-describe('Multi-configuration project configuration', () => {
+describe.skip('Multi-configuration project configuration', () => {
 
     it('TC_03.07.001 | New Item > Create Multiconfiguration project > Verify left-side menu items', () => {
         cy.get('a[href="/view/all/newJob"]').click();

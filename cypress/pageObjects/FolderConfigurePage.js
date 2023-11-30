@@ -18,6 +18,8 @@ class FolderConfigurePage {
   getErrorMessageText = () => cy.get('h1+p');;
   getHealthMetricsBtn = () => cy.get('button.advancedButton');
   getPropertiesAddBtn = () => cy.get('button[class="jenkins-button repeatable-add"]');
+  getAddMetricBtn = () => cy.get("#yui-gen1-button");
+  getPipelineLibrariesText = () => cy.get("section > section > div.jenkins-section__title");
 
 
   clickSaveBtn() {
@@ -40,13 +42,13 @@ class FolderConfigurePage {
 
   fillNewNameField(newName) {
     this.getNewNameField().clear().type(newName);
-   
+
     return this;
   }
 
   clickBtnConfirmRenameFolder() {
     this.getBtnConfirmRenameFolder().click();
-    
+
     return new FolderPage();
   }
 
@@ -60,10 +62,19 @@ class FolderConfigurePage {
     return this;
   }
 
-clickPropertiesAddBtn() {
-  this.getPropertiesAddBtn().click();
-  return this;
-}
+  clickPropertiesAddBtn() {
+    this.getPropertiesAddBtn().click();
+    return this;
+  }
+
+  createFolderConfigurePageUrl(
+    baseUrl,
+    jobJenkinsPageEndpoint,
+    folderName,
+    folderConfigurePageEndpoint
+  ) {
+    return `${baseUrl}/${jobJenkinsPageEndpoint}/${folderName}/${folderConfigurePageEndpoint}`;
+  }
 }
 
 export default FolderConfigurePage;

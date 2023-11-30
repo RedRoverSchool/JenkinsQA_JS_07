@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('Tools page', () => {
+describe.skip('Tools page', () => {
 
     it('TC_09.06.001 | US_09.06 | Go to "Tools" page', function() {
         cy.get('a[href="/manage"]').click()

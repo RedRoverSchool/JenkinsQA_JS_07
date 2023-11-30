@@ -15,14 +15,33 @@
 import HomePage from "../pageObjects/HomePage";
 const homePage = new HomePage();
 
-Cypress.Commands.add('createNewFolder', (folderName) => { 
+Cypress.Commands.add('createNewFolder', (folderName) => {
     homePage
-    .clickNewItemLink()
-    .fillInputNameField(folderName)
-    .clickFolderBtn()
-    .clickOKButtonFolder()
-    .clickSaveBtn();
- })
+        .clickNewItemLink()
+        .fillInputNameField(folderName)
+        .clickFolderBtn()
+        .clickOKButtonFolder()
+        .clickSaveBtn();
+})
+
+Cypress.Commands.add("createBaseURL", () => {
+    return `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`;
+});
+
+
+Cypress.Commands.add('createPipelineProject', (pipelineProjectfolderName)=> {
+    homePage.clickNewItemLink()
+            .fillInputNameField(pipelineProjectfolderName)
+            .clickPipelineTypeOfProjectBtn()
+            .clickOKButtonPipelineProject()
+    });
+
+Cypress.Commands.add('createMultiConfigProject', (multiconfigProjectName)=> {
+    homePage.clickNewItemLink()
+            .fillInputNameField(multiconfigProjectName)
+            .clickMultiConfigTypeOfProjectBtn()
+            .clickOKButton()
+    });
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
