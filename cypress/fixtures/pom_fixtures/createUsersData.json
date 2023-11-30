@@ -1,4 +1,28 @@
 {
+  "userData": {
+    "testCaseNumber": [
+      "TC_09.14.002",
+      "TC_09.14.003",
+      "TC_09.14.005",
+      "TC_09.14.010"
+    ],
+    "testName": [
+      "creating user without username",
+      "user entered passwords that did not match",
+      "user did not enter the email",
+      "user enter invalid Username by using special characters"
+    ],
+    "username": [" ", "User1", "User2", "@"],
+    "confirmPassword": ["password", "pas", "password", "password"],
+    "email": ["1@gmail.com", "2@gmail.com", " ", "4@gmail.com"],
+    "error": [
+      "\" \" is prohibited as a username for security reasons.",
+      "Password didn't match",
+      "Invalid e-mail address",
+      "User name must only contain alphanumeric characters, underscore and dash"
+    ]
+  },
+
   "username": "JohnKennedy",
   "invalidUsername": "@",
   "password": "password",
@@ -9,5 +33,12 @@
   "errorUsername": "is prohibited as a username for security reasons.",
   "errorUsernameSC": "User name must only contain alphanumeric characters, underscore and dash",
   "errorPasword": "Password didn't match",
-  "errorEmail": "Invalid e-mail address"
+  "errorEmail": "Invalid e-mail address",
+  "errorMessagesEmptyFieldsExpected": [
+    "\"\" is prohibited as a username for security reasons.",
+    "Password is required",
+    "Password is required",
+    "\"\" is prohibited as a full name for security reasons.",
+    "Invalid e-mail address"
+  ]
 }

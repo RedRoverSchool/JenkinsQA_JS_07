@@ -1,6 +1,16 @@
 {
   "folderName": "Test",
+  "folderNewName": "TestNew",
+  "invalidCharacters": ["@", "#", "&", "<", ">", ":", "/", "\\", "|", "?", "*"],
   "configureBreadcrumbsItem": "Configuration",
   "inputDisplayName": "TestDisplayName",
-  "inputDescription": "TestDescription"
+  "inputDescription": "TestDescription",
+  "sidePanelFolderConfig": ["General", "Health metrics", "Properties"],
+  "applyButtonNotification": "Saved",
+  "healthMetricsSpoiler": "Add metric",
+  "healthMetricsSpoilerAttribute": "data-expanded",
+  "pipelineLibrariesText": "Pipeline Libraries",
+  "applyButtonText": "Apply",
+  "jobJenkinsPageEndpoint": "job",
+  "folderConfigurePageEndpoint": "configure"
 }
