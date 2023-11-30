@@ -1,4 +1,16 @@
 {
     "projectName": "Project1",
-    "happyPathProjectName": "Project name 1047"
+    "happyPathProjectName": "Project name 1047",
+    "expectedSideMenuItems": 
+    [
+        "General",
+        "Advanced Project Options",
+        "Source Code Management",
+        "Build Triggers",
+        "Configuration Matrix",
+        "Build Environment",
+        "Build Steps",
+        "Post-build Actions"
+    ],
+    "expectedSideMenuItemsLength": 8
 }

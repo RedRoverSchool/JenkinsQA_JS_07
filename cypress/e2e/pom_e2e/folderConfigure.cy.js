@@ -3,13 +3,14 @@ import HomePage from "../../pageObjects/HomePage";
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderPage from "../../pageObjects/FolderPage";
 import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
-const HOST = Cypress.env("local.host");
-const PORT = Cypress.env("local.port");
+
 
 describe("folderConfigure", () => {
   const homePage = new HomePage();
   const folderPage = new FolderPage();
   const folderConfigurePage = new FolderConfigurePage();
+  let baseURL;
+  let folderConfigurePageUrl;
 
   beforeEach("createNewFolder", () => {
     homePage
@@ -19,15 +20,24 @@ describe("folderConfigure", () => {
       .clickOKButtonFolder();
   });
 
+  before(() => {
+    cy.createBaseURL().then((result) => {
+      baseURL = result;
+      folderConfigurePageUrl = folderConfigurePage.createFolderConfigurePageUrl(
+        baseURL,
+        folderConfigureData.jobJenkinsPageEndpoint,
+        folderConfigureData.folderName,
+        folderConfigureData.folderConfigurePageEndpoint
+      );
+    });
+  });
+
   it('TC_07.03.001 | Folder > Configure > Verify link "Configure" on the folder page', () => {
     folderConfigurePage
       .clickSaveBtn()
       .clickConfigureLink()
       .getFolderConfigurePageUrl()
-      .should(
-        "equal",
-        `http://${HOST}:${PORT}/job/${folderConfigureData.folderName}/configure`
-      );
+      .should("equal", folderConfigurePageUrl);
 
     folderConfigurePage
       .getConfigureBreadcrumbsItem()
@@ -63,7 +73,7 @@ describe("folderConfigure", () => {
   });
 
   it("TC_07.03.006 | Folder > Configure>check side panel has clickable links", () => {
-    folderPage
+    folderConfigurePage
       .clickHealthMetricsBtn()
       .clickPropertiesAddBtn()
       .getSidePanelLinks()
@@ -74,6 +84,12 @@ describe("folderConfigure", () => {
           .and("have.class", "task-link--active");
       });
   });
+
+  it('TC_07.03.008| Folder > Configure > The link “General” is active by default', () => {
+    folderConfigurePage
+    .getGeneralLink()
+    .should("have.class", "task-link--active");
+});
 
   it("TC_07.03.007| Folder > Configure > The button “Save” is visible and clickable", () => {
     folderConfigurePage
@@ -92,16 +108,41 @@ describe("folderConfigure", () => {
 
   it("TC_07.03.005 | Folder > Configure > Verify 'Apply' button functionality and confirmation message", () => {
     folderConfigurePage
+      .getApplyBtn()
+      .should("be.visible")
+      .and("have.text", folderConfigureData.applyButtonText);
+
+    folderConfigurePage
       .clickApplyBtn()
       .getFolderConfigurePageUrl()
-      .should(
-        "equal",
-        `http://${HOST}:${PORT}/job/${folderConfigureData.folderName}/configure`
-      );
+      .should("equal", folderConfigurePageUrl);
 
     folderConfigurePage
       .getNotificationBar()
       .should("be.visible")
       .and("have.text", folderConfigureData.applyButtonNotification);
+  });
+
+  it('TC_07.03.009 | Folder > Configure > Verify that the section “Health metrics” contains a spoiler “Health metrics”', () => {
+    folderConfigurePage
+      .clickHealthMetricsBtn()
+      .getHealthMetricsBtn()
+      .should("have.attr", folderConfigureData.healthMetricsSpoilerAttribute,"true");
+
+    folderConfigurePage
+      .getAddMetricBtn()
+      .should("be.visible")
+      .and("have.text", folderConfigureData.healthMetricsSpoiler);
+  });
+
+  it("TC_07.03.010 | Folder > Configure > Verify that section “Properties” has text “Pipeline Libraries”.", () => {
+    folderConfigurePage
+      .getPipelineLibrariesText()
+      .should("be.visible")
+      .then(($element) => {
+        expect($element.text().replace(/\n/g, "").trim()).to.equal(
+          folderConfigureData.pipelineLibrariesText
+        );
+      });
   });
 });

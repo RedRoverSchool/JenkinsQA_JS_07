@@ -2,8 +2,9 @@
 
 import HomePage from "../../pageObjects/HomePage";
 import FolderPage from "../../pageObjects/FolderPage";
-import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
+import {folderName, folderNewName, invalidCharacters} from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
+import {textErrorMessage, errorMessage} from "../../fixtures/pom_fixtures/folderPageData.json";
 
 describe("folderRename ", () => {
   const homePage = new HomePage();
@@ -11,39 +12,34 @@ describe("folderRename ", () => {
   const folderConfigurePage = new FolderConfigurePage();
 
   beforeEach("createNewFolder", () => {
-    homePage
-      .clickNewItemLink()
-      .fillInputNameField(folderConfigureData.folderName)
-      .clickFolderBtn()
-      .clickOKButtonFolder()
-      .clickSaveBtn();
-  });
-  it("TC_07.06.002| Verify the new name folder", () => {
-    folderPage
-      .clickFolderRenameBtn()
-      .fillNewNameField(folderConfigureData.folderNewName)
-      .clickBtnConfirmRenameFolder()
-      .getNewFolderName()
-      .should("be.visible")
-      .and("contain", folderConfigureData.folderNewName);
+    cy.createNewFolder(folderName)
   });
 
-  it("TC_07.06.003| Attempt to enter invalid characters in new folder name", () => {
-    const performInvalidCharacterCheck = (invalidCharacter) => {
-      folderPage
-        .clickFolderRenameBtn()
-        .fillNewNameField(folderConfigureData.folderName + invalidCharacter)
-        .clickBtnConfirmRenameFolder();
+  it("TC_07.06.002| Verify the new name folder", () => {
+    folderPage
+      .renameFolder(folderNewName)
+      .getNewFolderName()
+      .should("be.visible")
+      .and("contain", folderNewName);
+  });
+
+  invalidCharacters.forEach((char) => {
+    it(`AT_07.06.003 | Creating a new folder using special characters ${char}`, () => {
+      folderPage.renameFolder(folderName + char);
 
       folderConfigurePage
         .getErrorMessage()
         .should("be.visible")
-        .and("contain", "Error");
-      folderPage.getNewFolderName().should("not.contain", invalidCharacter);
-      cy.go(-1);
-    };
-    folderConfigureData.invalidCharacters.forEach((invalidCharacter) => {
-      performInvalidCharacterCheck(invalidCharacter);
+        .and("contain", errorMessage);
     });
+  });
+
+  it("TC_07_06_004| Rename a folder with the same name", () => {
+    folderPage.renameFolder(folderName);
+
+    folderConfigurePage
+      .getErrorMessageText()
+      .should("be.visible")
+      .and("contain.text", textErrorMessage);
   });
 });

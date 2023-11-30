@@ -18,7 +18,7 @@ describe('Manage Jenkins > Title', () => {
             .and('have.text', manageJenkinsUIData.headerName)
             .and('have.prop', 'tagName', 'H1');
 
-        manageJenkinsPage.getManageJenkinsURL().should('include', manageJenkinsUIData.url);
+        manageJenkinsPage.getManageJenkinsURL().should('include', manageJenkinsUIData.manageJenkinsPageEndpoint);
     })
 
     it("TC_09.01.002 | Manage Jenkins > Title > 5 section-headers displays verification", () => {
