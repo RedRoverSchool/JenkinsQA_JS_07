@@ -14,7 +14,9 @@ class FreestyleProjectConfigurePage {
     getBuildEnvironmentSection = () => cy.get('#build-environment');
     getBuildEnvironmentSectionOptions = () => cy.get(' #build-environment~.optionalBlock-container');
     getUseSecretTextOptionTooltip = () => cy.get('a[helpurl="/descriptor/org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper/help"]');
-        
+    getListOfBuildTriggerOptions = () => cy.get("#build-triggers").parent().find('.optionalBlock-container');
+    getOneItemOfListBuildTriggerOption = (item) => item.find('.optional-block-start label.attach-previous');
+    
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
         return this;
@@ -39,5 +41,6 @@ class FreestyleProjectConfigurePage {
         this.getUseSecretTextOptionTooltip().realHover();    
         return this;
       }
+  
 }
 export default FreestyleProjectConfigurePage;
