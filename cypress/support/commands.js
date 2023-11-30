@@ -36,6 +36,12 @@ Cypress.Commands.add('createPipelineProject', (pipelineProjectfolderName)=> {
             .clickOKButtonPipelineProject()
     });
 
+Cypress.Commands.add('createMultiConfigProject', (multiconfigProjectName)=> {
+    homePage.clickNewItemLink()
+            .fillInputNameField(multiconfigProjectName)
+            .clickMultiConfigTypeOfProjectBtn()
+            .clickOKButton()
+    });
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
