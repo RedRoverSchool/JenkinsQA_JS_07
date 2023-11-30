@@ -9,5 +9,8 @@
   "applyButtonNotification": "Saved",
   "healthMetricsSpoiler": "Add metric",
   "healthMetricsSpoilerAttribute": "data-expanded",
-  "pipelineLibrariesText": "Pipeline Libraries"
+  "pipelineLibrariesText": "Pipeline Libraries",
+  "applyButtonText": "Apply",
+  "jobJenkinsPageEndpoint": "job",
+  "folderConfigurePageEndpoint": "configure"
 }
