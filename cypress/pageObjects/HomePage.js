@@ -28,6 +28,7 @@ class HomePage {
   getInvolvedLink = () => cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
   getButtonIconSizeSmall = () => cy.get('li a[tooltip="Small"]')
   getBuildStatusIcon= ()=> cy.get('td[data="12"].jenkins-table__icon')
+  getProjectStatus =() =>cy.get('#projectstatus')
   
   clickProjectNameLink() {
     this.getProjectNameLink().click()
