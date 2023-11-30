@@ -16,6 +16,8 @@ class FreestyleProjectConfigurePage {
     getUseSecretTextOptionTooltip = () => cy.get('a[helpurl="/descriptor/org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper/help"]');
     getListOfBuildTriggerOptions = () => cy.get("#build-triggers").parent().find('.optionalBlock-container');
     getOneItemOfListBuildTriggerOption = (item) => item.find('.optional-block-start label.attach-previous');
+    getOneHintIconFromBuildTriggerList = (item) => item.find(".jenkins-checkbox-help-wrapper a ");
+    getHintIconTip = () => cy.get('div[id*="tippy"]')
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
@@ -41,6 +43,11 @@ class FreestyleProjectConfigurePage {
         this.getUseSecretTextOptionTooltip().realHover();    
         return this;
       }
+    
+    hoverOneOfHintIconFromBuildTriggersList(item) {
+        this.getOneHintIconFromBuildTriggerList(item).realHover();
+        return this; 
+    }
   
 }
 export default FreestyleProjectConfigurePage;

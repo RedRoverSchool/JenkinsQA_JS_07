@@ -18,9 +18,16 @@ describe('freestyleProjectConfigBuildTriggers', () => {
 
     freestyleProjectData.triggerOptions.forEach((option, ind) => {
     const buildTriggesOptionName = Object.keys(option)[0]
+    const buildTriggerHintIconText = Object.values(option)[0]
 
         it(`POM > TC_04.03.001 | Freestyle | Build Triggers config > Verify list of options is displayed `, function () {
             freestyleProjectConfigurePage.getOneItemOfListBuildTriggerOption(cy.wrap(this.list[ind])).should('have.text', buildTriggesOptionName)
+        });
+        it ("POM > TC_04.03.002 | Freestyle | Build Triggers config > Verify hint icons text", function () {
+            freestyleProjectConfigurePage.hoverOneOfHintIconFromBuildTriggersList(cy.wrap(this.list[ind]))
+            freestyleProjectConfigurePage.getHintIconTip()
+                                        .should('be.visible')
+                                        .should('have.text', buildTriggerHintIconText)
         });
     });
 });
