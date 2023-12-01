@@ -21,5 +21,6 @@ describe('Verify "Copy from" field', () => {
                 .fillCopyFromField(newProject.type)
                 .clickOKButton()
         createItemErrorPage.getMessage()
+                           .should('have.text', newProject.message)
     })
 })
