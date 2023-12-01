@@ -2,12 +2,13 @@
 
 import HomePage from "../../pageObjects/HomePage";
 import FreestyleProjectConfigurePage from "../../pageObjects/FreestyleProjectConfigurePage";
-import data from "../../fixtures/pom_fixtures/freestyleProjectData.json"
+import { triggerElement } from "../../support/utils.js";
+import data from "../../fixtures/pom_fixtures/freestyleProjectData.json";
 
 describe('freestyleProjectConfigure', () => {
     const homePage = new HomePage();
     const freestyleProjectConfigurePage = new FreestyleProjectConfigurePage();
-    const { sectionName, radioButtonNames } = data.configure.sourceCodeManagement;
+    const { sectionName, radioButtonNames, gitToolTipText, peaceOfHelpText } = data.configure.sourceCodeManagement;
     
     beforeEach(() => {
         homePage.clickNewItemLink()
@@ -34,5 +35,19 @@ describe('freestyleProjectConfigure', () => {
 
     it('TC_04.02.003 | Freestyle > Source Code Management > “None” option is selected by default', () => {
         freestyleProjectConfigurePage.getSrcCodeMngmntNoneOption().should('be.checked')
+    });
+
+    it('TC_04.02.004 | Freestyle > Source Code Management > Git option has a tooltip', () => {
+        triggerElement(freestyleProjectConfigurePage.getGitOptionTooltip(), 'focus');
+        freestyleProjectConfigurePage.getOptionTooltipContent()
+                                     .should('be.visible')
+                                     .and('have.text', gitToolTipText)
+    });
+
+    it('TC_04.02.005 | Freestyle > Source Code Management > Displaying a help area', () => {
+        freestyleProjectConfigurePage.clickGitOptionTooltip()
+                                     .getGitOptionTooltipHelpArea()
+                                     .should('be.visible')
+                                     .and('contain', peaceOfHelpText);
     });
 });

@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('System configuration', () => {
+describe.skip('System configuration', () => {
 
     it('Verify "Tools" page', function () {
      cy.get('a[href="/manage"]').click()

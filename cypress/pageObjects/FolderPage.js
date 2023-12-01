@@ -11,32 +11,15 @@ class FolderPage {
   getInputField  =() => cy.get('.jenkins-input');
   getSaveButton = () =>cy.get('button.jenkins-button.jenkins-button--primary ');
   getFolderPageUrl = () => cy.url();;
-  getHealthMetricsBtn = () => cy.get('button.advancedButton');
-  getPropertiesAddBtn = () => cy.get('button[class="jenkins-button repeatable-add"]');
-  getSidePanelLinks = () => cy.get('div.task>.task-link-wrapper>.task-link');
   getRenameLink = () => cy.get(".task").contains("Rename");
   getNewFolderName = () => cy.get("#main-panel h1")
   getDescriptionText = ()=> cy.get('#description :first-child')
   
-
-
-
-
   clickConfigureLink() {
     this.getConfigureLink().click();
 
     return new FolderConfigurePage();
   }
-
-  clickHealthMetricsBtn() {
-    this.getHealthMetricsBtn().click();
-    return this;
-  }
-
-clickPropertiesAddBtn() {
-  this.getPropertiesAddBtn().click();
-  return this;
-}
   clickAddDescriptionLink() {
     this.getAddDescriptionLink().click();
 
@@ -61,9 +44,16 @@ clickPropertiesAddBtn() {
     this.getRenameLink().click();
     return new FolderConfigurePage()
   }
+
  clickSaveButton () {
     this.getSaveButton ().click();
     return this;
+  }
+  
+  renameFolder(newName) {
+    return this.clickFolderRenameBtn()
+      .fillNewNameField(newName)
+      .clickBtnConfirmRenameFolder();
   }
 }
 export default FolderPage;
