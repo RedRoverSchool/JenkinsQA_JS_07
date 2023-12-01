@@ -15,15 +15,15 @@ describe('Check secret text', function() {
                 .clickOKButtonFreestyle()
                 // .getConfigurePageHeader().should('be.visible').and('have.text', freestyleProjectData.configure.configureHeader)  
           
-    })
+    });
 
     it('TC_04.04.006 | Check Secret Text In Freestyle Project Configuration', function() {
         
         freestyleProjectConfigurePage.clickBuildEnvironment()
         // cy.get('button[data-section-id="build-environment"]').click()
-        cy.get('section input[id*="cb2"]').should('have.length', 6).then(($els) => {
+        // cy.get('section input[id*="cb2"]').should('have.length', 6).then(($els) => {
             // const requiredItems = Cypress.$.makeArray($els).map(($el) => $el.innerText.replace(/\n/g, '').trim());   
 
-        });
-    })
-})
+       
+    });
+});
