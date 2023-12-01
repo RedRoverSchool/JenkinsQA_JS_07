@@ -157,7 +157,7 @@ class HomePage {
     this.getButtonIconSizeSmall().click()
   }
 
-  createNewItemkDashboardLinkDropdown() {
+  clickNewItemDashboardLinkDropdown() {
     this.getDashboardLinkDropdown().click()
     this.getNewItemLinkFromBreadcrumbs().click()
 
