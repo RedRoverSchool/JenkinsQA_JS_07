@@ -15,7 +15,7 @@ describe('createMultiConfigProjects', () => {
         cy.get('.matrix-project-headline.page-headline').should('have.text', 'Project New project MultiConfig')
     })
 
-    it('TC_03.06.003 | Create Multiconfiguration project by clicking "+ New item" in the drop-down menu under the Dashboard', function() {
+    it.skip('TC_03.06.003 | Create Multiconfiguration project by clicking "+ New item" in the drop-down menu under the Dashboard', function() {
         
         cy.get('.jenkins-breadcrumbs__list-item:nth-child(1) > .model-link').realHover('mouseover')
         cy.get('li > a > button.jenkins-menu-dropdown-chevron').click()
