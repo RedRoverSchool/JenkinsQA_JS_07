@@ -33,7 +33,7 @@ class FreestyleProjectConfigurePage {
     clickSourceCodeManagementMenuItem() {
         this.getSourceCodeManagementSection().click();
         return this;
-    };
+            };
 
     clickGitOptionTooltip() {
         this.getGitOptionTooltip().click();
