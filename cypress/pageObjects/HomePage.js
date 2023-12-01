@@ -30,6 +30,12 @@ class HomePage {
   getButtonIconSizeSmall = () => cy.get('li a[tooltip="Small"]')
   getBuildStatusIcon= ()=> cy.get('td[data="12"].jenkins-table__icon')
   getProjectStatus =() =>cy.get('#projectstatus')
+  getDashboardLinkDropdown = () => cy.get('li > a > button.jenkins-menu-dropdown-chevron')
+  getNewItemLinkFromBreadcrumbs = () => cy.get('.jenkins-dropdown__item:nth-child(1)')
+  getContentBlockItem= () => cy.get(".empty-state-section:last-child ul li");
+  getContentBlockItemIcon = () => cy.get(".empty-state-section:last-child ul li svg");
+  getContentBlockItemPath = () => cy.get(".empty-state-section:last-child ul li path");
+
   
   clickProjectNameLink() {
     this.getProjectNameLink().click()
@@ -152,12 +158,19 @@ class HomePage {
     cy.get('@item').contains(itemName)
     cy.get('@item').click()
 
-    return cy.url()
+    return cy.url();
 
   }
 
   clickButtonIconSizeSmall(){
     this.getButtonIconSizeSmall().click()
+  }
+
+  clickNewItemDashboardLinkDropdown() {
+    this.getDashboardLinkDropdown().click()
+    this.getNewItemLinkFromBreadcrumbs().click()
+
+    return new NewJobPage();
   }
 }
 
