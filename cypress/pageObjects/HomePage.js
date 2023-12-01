@@ -31,6 +31,10 @@ class HomePage {
   getProjectStatus =() =>cy.get('#projectstatus')
   getDashboardLinkDropdown = () => cy.get('li > a > button.jenkins-menu-dropdown-chevron')
   getNewItemLinkFromBreadcrumbs = () => cy.get('.jenkins-dropdown__item:nth-child(1)')
+  getContentBlockItem= () => cy.get(".empty-state-section:last-child ul li");
+  getContentBlockItemIcon = () => cy.get(".empty-state-section:last-child ul li svg");
+  getContentBlockItemPath = () => cy.get(".empty-state-section:last-child ul li path");
+
   
   clickProjectNameLink() {
     this.getProjectNameLink().click()
