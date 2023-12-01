@@ -1,24 +1,17 @@
 {
     "projectName": "Project1",
     "configure": {
-<<<<<<< HEAD
-        "configureHeader": "Configure",
-=======
         "general": {
             "sectionName": "General",
             "statusDisabled" : "Disabled",
             "statusEnabled" : "Enabled"
         },
->>>>>>> 64bc9be11ad8c4238945a95169fa9ace0dfecdbe
         "sourceCodeManagement": {
             "sectionName": "Source Code Management",
             "radioButtonNames": ["None", "Git"],
             "gitToolTipText": "Help for feature: Git",
             "peaceOfHelpText": "It can poll, fetch, checkout, and merge contents of git repositories."
         }
-<<<<<<< HEAD
-    }    
-=======
     },
     "buildEnvironment": {   
         "buildEnvironmentOptions": [

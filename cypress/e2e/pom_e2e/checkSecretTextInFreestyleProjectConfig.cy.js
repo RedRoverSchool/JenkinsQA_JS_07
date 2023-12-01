@@ -20,7 +20,7 @@ describe('Check secret text', function() {
     it('TC_04.04.006 | Check Secret Text In Freestyle Project Configuration', function() {
         
         freestyleProjectConfigurePage.clickBuildEnvironment()
-        // cy.get('button[data-section-id="build-environment"]').click()
+        cy.get('button[data-section-id="build-environment"]').click()
         // cy.get('section input[id*="cb2"]').should('have.length', 6).then(($els) => {
             // const requiredItems = Cypress.$.makeArray($els).map(($el) => $el.innerText.replace(/\n/g, '').trim());   
 
