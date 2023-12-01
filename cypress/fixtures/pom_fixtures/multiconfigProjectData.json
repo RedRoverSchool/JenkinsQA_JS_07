@@ -12,5 +12,6 @@
         "Build Steps",
         "Post-build Actions"
     ],
-    "expectedSideMenuItemsLength": 8
+    "expectedSideMenuItemsLength": 8,
+    "descriptionText": "This is the configuration of a Multi-configuration project"
 }
