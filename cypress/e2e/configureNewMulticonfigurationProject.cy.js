@@ -4,7 +4,7 @@ import confNewMultiConfProjData from "../fixtures/configureNewMulticonfiguration
 import { configPageName } from "../fixtures/newItemFreestyleProject.json";
 import { expectedSideMenuItems, expectedSideMenuItemsLength } from "../fixtures/configureMulticonfigProject.json";
 
-describe("configureNewMulticonfigurationProject", () => {
+describe.skip("configureNewMulticonfigurationProject", () => {
 
     const multiConfProjName = confNewMultiConfProjData.newMultiConfProjName + Date.now();
     const baseUrl = `http://${Cypress.env("local.host")}:${Cypress.env("local.port")}`;

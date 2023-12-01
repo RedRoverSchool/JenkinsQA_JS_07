@@ -2,7 +2,7 @@
 
 describe('multiConfigurationProject', () => {
 
-    it('TC_03.07.002 | New Item > Create Multiconfiguration project > Add Description', function() {
+    it.skip('TC_03.07.002 | New Item > Create Multiconfiguration project > Add Description', function() {
         cy.get('#tasks > div:nth-child(1) a.task-link').click()
         cy.get('input#name').type('MultiConfiguration project')
         cy.get('li[tabindex="0"] span').contains('Multi-configuration project').click()

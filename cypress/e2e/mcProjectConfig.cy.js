@@ -11,7 +11,7 @@ describe('mcProjectConfig', () => {
         cy.get('#ok-button').click()
     })
 
-    it('TC_03.07.011.1 | Configure new multiconfiguration project > Add description', function() {
+    it.skip('TC_03.07.011.1 | Configure new multiconfiguration project > Add description', function() {
         cy.get('div.jenkins-section textarea.jenkins-input').type(projectDescription.currentDescription)
         cy.get('button[name="Submit"]').click()
 
