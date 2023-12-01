@@ -1,10 +1,16 @@
 {
     "projectName": "Project1",
     "configure": {
+        "general": {
+            "sectionName": "General",
+            "statusDisabled" : "Disabled",
+            "statusEnabled" : "Enabled"
+        },
         "sourceCodeManagement": {
             "sectionName": "Source Code Management",
             "radioButtonNames": ["None", "Git"],
-            "gitToolTipText": "Help for feature: Git"
+            "gitToolTipText": "Help for feature: Git",
+            "peaceOfHelpText": "It can poll, fetch, checkout, and merge contents of git repositories."
         }
     },
     "buildEnvironment": {   
@@ -15,6 +21,13 @@
             "Inspect build log for published build scans",
             "Terminate a build if it's stuck",
             "With Ant?"
-        ]    
-    }
+        ],
+        "buildEnvironmentToolTipText": "Help for feature: Use secret text(s) or file(s)"    
+    },
+    "triggerOptions": [
+        {"Trigger builds remotely (e.g., from scripts)": "Help for feature: Trigger builds remotely (e.g., from scripts)"},
+        {"Build after other projects are built":"Help for feature: Build after other projects are built"},
+        {"Build periodically": "Help for feature: Build periodically"},
+        {"GitHub hook trigger for GITScm polling": "Help for feature: GitHub hook trigger for GITScm polling"},
+        {"Poll SCM": "Help for feature: Poll SCM" }]
 }

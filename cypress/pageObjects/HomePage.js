@@ -5,6 +5,7 @@ import ManageJenkinsPage from "../pageObjects/ManageJenkinsPage";
 import PeoplePage from "../pageObjects/PeoplePage";
 import ParticipatePage from "../pageObjects/ParticipatePage";
 import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json";
+import PipelinePage from "./PipelinePage";
 const dayjs = require("dayjs");
 class HomePage {
   getNewItemLink = () => cy.get('a[href*="/newJob"]');
@@ -25,8 +26,17 @@ class HomePage {
   getJenkinsStartWorkTitle = () => cy.get(".empty-state-block p");
   getSideMenuPanel = () => cy.get("#side-panel #tasks a");
   getInvolvedLink = () => cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
+  getButtonIconSizeSmall = () => cy.get('li a[tooltip="Small"]')
+  getBuildStatusIcon= ()=> cy.get('td[data="12"].jenkins-table__icon')
+  getProjectStatus =() =>cy.get('#projectstatus')
   getDashboardLinkDropdown = () => cy.get('li > a > button.jenkins-menu-dropdown-chevron')
   getNewItemLinkFromBreadcrumbs = () => cy.get('.jenkins-dropdown__item:nth-child(1)')
+  
+  clickProjectNameLink() {
+    this.getProjectNameLink().click()
+
+    return new PipelinePage()
+  }
 
   clickNewItemLink() {
     this.getNewItemLink().click();
@@ -141,6 +151,10 @@ class HomePage {
 
     return cy.url();
 
+  }
+
+  clickButtonIconSizeSmall(){
+    this.getButtonIconSizeSmall().click()
   }
 
   createNewItemkDashboardLinkDropdown() {

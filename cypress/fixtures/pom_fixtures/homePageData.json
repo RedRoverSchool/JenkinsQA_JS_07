@@ -21,5 +21,14 @@
             "Manage Jenkins",
             "This folder is empty"
         ]
-    }
+    },
+    "sizeValue":{ "checkForTablePadding" : "--table-padding",
+    "RemSize" : ["0.2rem", "0.4rem", "0.55rem"],
+    "sizes": [
+        "S",
+        "M",
+        "L"
+    ]
+
+    }    
 }

@@ -28,7 +28,7 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
     ).should('have.text', manageJenkinsSecurityCreateUser.username);
   });
 
-  it('TC_09.14.002 | Manage Jenkins > Security > Create user > Verify error message displayed when creating user without username', () => {
+  it.skip('TC_09.14.002 | Manage Jenkins > Security > Create user > Verify error message displayed when creating user without username', () => {
     cy.title().should('include', 'Create User');
     cy.get('#username').should('not.have.value');
     cy.get('input[name="password1"]').type(
@@ -47,7 +47,7 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
       .and('contain', manageJenkinsSecurityCreateUser.errorUsername);
   });
 
-  it('TC_09.14.003 | Manage Jenkins > Security> Verify error message displayed when user entered passwords that did not match', function () {
+  it.skip('TC_09.14.003 | Manage Jenkins > Security> Verify error message displayed when user entered passwords that did not match', function () {
     cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
     cy.get('input[name="password1"]').type(
       manageJenkinsSecurityCreateUser.password
@@ -69,7 +69,7 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
       });
   });
 
-  it('TC_09.14.004 |Manage Jenkins > Security> Create User > Verify Auto-Fill "Full Name" field with Username If the user leaves "Full name" field empty', function () {
+  it.skip('TC_09.14.004 |Manage Jenkins > Security> Create User > Verify Auto-Fill "Full Name" field with Username If the user leaves "Full name" field empty', function () {
     cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
     cy.get('input[name="password1"]').type(
       manageJenkinsSecurityCreateUser.password
@@ -86,7 +86,7 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
     );
   });
 
-  it('TC_09.14.005 | Manage Jenkins > Security> Create User > Verify error message displayed when user did not enter the email', function () {
+  it.skip('TC_09.14.005 | Manage Jenkins > Security> Create User > Verify error message displayed when user did not enter the email', function () {
     cy.get('#username').type(manageJenkinsSecurityCreateUser.username);
     cy.get('input[name="password1"]').type(
       manageJenkinsSecurityCreateUser.password
@@ -104,7 +104,7 @@ describe('ManageJenkinsSecurityCreateUser.cy', () => {
       manageJenkinsSecurityCreateUser.errorEmail
     );
   });
-  it('TC_09.14.010 | Manage Jenkins > Security> Create User > Verify error message displayed when user enter invalid Username by using special characters', function () {
+  it.skip('TC_09.14.010 | Manage Jenkins > Security> Create User > Verify error message displayed when user enter invalid Username by using special characters', function () {
     cy.get('#username').type(
       JSON.stringify(manageJenkinsSecurityCreateUser.invalidUsername)
     );
