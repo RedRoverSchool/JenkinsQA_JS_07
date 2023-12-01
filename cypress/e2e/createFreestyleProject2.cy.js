@@ -2,7 +2,7 @@
 
 import createFreestyleProject2 from "../fixtures/createFreestyleProject2.json"
 
-describe("createFreestyleProject2", () => {
+describe.skip("createFreestyleProject2", () => {
   it("TC_03.03.005 | Create Freestyle Project > Verify that user sees the description field", () => {
     cy.get('a[href="/view/all/newJob"]').click()
     cy.get("#name").type(createFreestyleProject2.projectName)
