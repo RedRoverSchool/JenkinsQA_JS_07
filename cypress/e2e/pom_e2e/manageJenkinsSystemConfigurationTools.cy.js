@@ -23,7 +23,7 @@ describe("manageJenkinsSystemConfigurationTools", () => {
 
     it("TC_09.06.005 | Visibility of header and icon 'Tools' section item verification", () => {
         manageJenkinsPage.retrieveToolsSectionHeader()
-            .should("have.text", toolsItemHeader)
+            .should("have.text", toolsItemHeader);
 
         manageJenkinsPage.getToolsIconSectionItem()
             .should("be.visible");
