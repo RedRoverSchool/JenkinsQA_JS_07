@@ -21,5 +21,12 @@ class ManageJenkinsPage {
 
     return new ConfigureToolsPage();
   }
+
+  makeArrayOfSubHeadersManageJenkinsPage() {
+    return this.getSubHeadersManageJenkins().should("be.visible")
+      .then(($els) => {
+        return Cypress.$.makeArray($els).map($el => $el.innerText);
+      });
+  }
 }
 export default ManageJenkinsPage;
