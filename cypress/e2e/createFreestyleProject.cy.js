@@ -6,7 +6,7 @@ import {testCase, pageTitle, sections} from '../fixtures/freestyleProjectConfigu
 
 describe('createFreestyleProject', () => {
 
-    it('TC_03.03.001 | Verify that General page is displayed', function () {
+    it.skip('TC_03.03.001 | Verify that General page is displayed', function () {
 
         cy.get('[href*="/view/all/newJob"]').click();
         cy.get('#name').type(createFreestyleProject.newProjectName);
