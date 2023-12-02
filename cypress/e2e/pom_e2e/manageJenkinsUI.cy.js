@@ -1,15 +1,13 @@
 /// <reference types="cypress"/>
 
-import HomePage from "../../pageObjects/HomePage";
 import ManageJenkinsPage from "../../pageObjects/ManageJenkinsPage";
 import manageJenkinsUIData from "../../fixtures/pom_fixtures/manageJenkinsUIData.json";
 
 describe('Manage Jenkins > Title', () => {
-    const homePage = new HomePage();
     const manageJenkinsPage = new ManageJenkinsPage();
 
     beforeEach(() => {
-        homePage.clickManageJenkinsLink();
+        cy.redirectToManageJenkinsPage();
     })
 
     it('TC_09.01.005 | Manage Jenkins > UI Verification of Header', () => {
