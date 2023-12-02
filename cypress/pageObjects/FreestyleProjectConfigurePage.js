@@ -17,7 +17,9 @@ class FreestyleProjectConfigurePage {
     getListOfBuildTriggerOptions = () => cy.get("#build-triggers").parent().find('.optionalBlock-container');
     getOneItemOfListBuildTriggerOption = (item) => item.find('.optional-block-start label.attach-previous');
     getOneHintIconFromBuildTriggerList = (item) => item.find(".jenkins-checkbox-help-wrapper a ");
-    getHintIconTip = () => cy.get('div[id*="tippy"]')
+    getHintIconTip = () => cy.get('div[id*="tippy"]');
+    getMainPannel = () => cy.get('#main-panel')
+    getDescriptionField = () => cy.get('textarea[name="description"]')
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();

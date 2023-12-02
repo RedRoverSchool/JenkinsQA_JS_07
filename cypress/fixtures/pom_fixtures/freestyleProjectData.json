@@ -6,6 +6,9 @@
             "statusDisabled" : "Disabled",
             "statusEnabled" : "Enabled"
         },
+        "description": {
+            "sectionName": "Description"
+        },
         "sourceCodeManagement": {
             "sectionName": "Source Code Management",
             "radioButtonNames": ["None", "Git"],
