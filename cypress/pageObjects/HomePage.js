@@ -7,7 +7,9 @@ import ParticipatePage from "../pageObjects/ParticipatePage";
 import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json";
 import PipelinePage from "./PipelinePage";
 const dayjs = require("dayjs");
+
 class HomePage {
+
   getNewItemLink = () => cy.get('a[href*="/newJob"]');
   getDashboardBreadcrumbsLink = () => cy.get('li.jenkins-breadcrumbs__list-item a[href="/"]');
   getProjectNameLink = () => cy.get('td a[href*="job"].jenkins-table__link');
@@ -26,20 +28,22 @@ class HomePage {
   getJenkinsStartWorkTitle = () => cy.get(".empty-state-block p");
   getSideMenuPanel = () => cy.get("#side-panel #tasks a");
   getInvolvedLink = () => cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
-  getButtonIconSizeSmall = () => cy.get('li a[tooltip="Small"]')
-  getBuildStatusIcon= ()=> cy.get('td[data="12"].jenkins-table__icon')
-  getProjectStatus =() =>cy.get('#projectstatus')
-  getDashboardLinkDropdown = () => cy.get('li > a > button.jenkins-menu-dropdown-chevron')
-  getNewItemLinkFromBreadcrumbs = () => cy.get('.jenkins-dropdown__item:nth-child(1)')
-  getContentBlockItem= () => cy.get(".empty-state-section:last-child ul li");
+  getButtonIconSizeSmall = () => cy.get('li a[tooltip="Small"]');
+  getBuildStatusIcon = () => cy.get('td[data="12"].jenkins-table__icon');
+  getProjectStatus = () => cy.get("#projectstatus");
+  getDashboardLinkDropdown = () => cy.get("li > a > button.jenkins-menu-dropdown-chevron");
+  getNewItemLinkFromBreadcrumbs = () => cy.get(".jenkins-dropdown__item:nth-child(1)");
+  getContentBlockItem = () => cy.get(".empty-state-section:last-child ul li");
   getContentBlockItemIcon = () => cy.get(".empty-state-section:last-child ul li svg");
   getContentBlockItemPath = () => cy.get(".empty-state-section:last-child ul li path");
+  getBuildQueueBlock = () => cy.get("div#buildQueue");
+  getBuildQueueBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=buildQueue"]');
+  getBuildQueueBlockContent = () => cy.get("div#buildQueue .pane-content");
 
-  
   clickProjectNameLink() {
-    this.getProjectNameLink().click()
+    this.getProjectNameLink().click();
 
-    return new PipelinePage()
+    return new PipelinePage();
   }
 
   clickNewItemLink() {
@@ -148,24 +152,33 @@ class HomePage {
     return new ParticipatePage();
   }
 
-  clickSideMenuItemList(itemName, index){
-    this.getSideMenuPanel().eq(index).as('item')
-    cy.get('@item').contains(itemName)
-    cy.get('@item').click()
+  clickSideMenuItemList(itemName, index) {
+    this.getSideMenuPanel().eq(index).as("item");
+    cy.get("@item").contains(itemName);
+    cy.get("@item").click();
 
     return cy.url();
-
   }
 
-  clickButtonIconSizeSmall(){
-    this.getButtonIconSizeSmall().click()
+  clickButtonIconSizeSmall() {
+    this.getButtonIconSizeSmall().click();
   }
 
   clickNewItemDashboardLinkDropdown() {
-    this.getDashboardLinkDropdown().click()
-    this.getNewItemLinkFromBreadcrumbs().click()
+    this.getDashboardLinkDropdown().click();
+    this.getNewItemLinkFromBreadcrumbs().click();
 
     return new NewJobPage();
+  }
+
+  clickBuildQueueBlockArrow() {
+    this.getBuildQueueBlockArrow().click();
+
+    return this;
+  }
+
+  takeBuildQueueBlockState() {
+    return this.getBuildQueueBlockArrow().invoke("attr", "title")  
   }
 }
 
