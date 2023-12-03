@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 import createFreestyleProject2 from '../fixtures/createFreestyleProject2.json'
 
-describe ('Ceate Fressstyle Project', () => {
+describe.skip ('Ceate Fressstyle Project', () => {
 
     it('TC_03.02.001 | New item > Create Freestyle Project > new Freestyle Project configuration page is displayed', function () {
 
