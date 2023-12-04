@@ -183,6 +183,16 @@ class HomePage {
 
     return new NewJobPage();
   }
+
+clickBuildQueueBlockArrow() {
+  this.getBuildQueueBlockArrow().click();
+
+  return this;
 }
 
+takeBuildQueueBlockState() {
+  
+  return this.getBuildQueueBlockArrow().invoke("attr", "title")  
+}
+}
 export default HomePage;
