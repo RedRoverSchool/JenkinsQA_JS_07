@@ -30,4 +30,11 @@ describe("dashboardInformationAboutUsersBuilds", () => {
       }
     });
   });
+
+  it("TC_02.05.003 | Dashboard > Information about User's builds > Check 'Build Executor Status' block visibility", () => {
+    homePage
+      .getBuildExecutorStatusBlock()
+      .should("contain", buildsInformation.buildExecStatusBlockTitle)
+      .and("be.visible");
+  });
 });

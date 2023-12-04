@@ -41,7 +41,7 @@ class HomePage {
   getBuildQueueBlock = () => cy.get("div#buildQueue");
   getBuildQueueBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=buildQueue"]');
   getBuildQueueBlockContent = () => cy.get("div#buildQueue .pane-content");
-
+  getBuildExecutorStatusBlock = () => cy.get('div#executors');
 
   clickProjectNameLink() {
     this.getProjectNameLink().click();
@@ -53,6 +53,7 @@ class HomePage {
     this.getNewItem().click()
     return new NewJobPage;
   }
+
   clickNewItemLink() {
     this.getNewItemLink().click();
 
@@ -148,6 +149,7 @@ class HomePage {
 
     return cy.url();
   }
+  
   clickSizeButton(index){
     this.getSizeButton().eq(index).click()
     return this

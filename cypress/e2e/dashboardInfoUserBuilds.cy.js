@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe("Information about Users builds", function () {
+describe.skip("Information about Users builds", function () {
   it("TC_02.05.002 | Dashboard -> Information about Users builds > verify “Build Queue” with no builds", () => {
     cy.get("#executors").should("be.visible");
     cy.get("#buildQueue").then(($buildQueue) => {
