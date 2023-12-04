@@ -45,6 +45,7 @@ class HomePage {
   getBuildExecutorStatusBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=executors"]');
   getBuildExecutorStatusBlockContent = () => cy.get('div#executors .pane-content');
 
+
   clickProjectNameLink() {
     this.getProjectNameLink().click();
 
