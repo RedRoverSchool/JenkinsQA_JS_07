@@ -17,6 +17,7 @@ class HomePage {
   getRestApilink = () => cy.get(".rest-api");
   getManageJenkinsLink = () => cy.get('a[href="/manage"]');
   getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
+  getNewItem = () => cy.get("a[href='/view/all/newJob']")
   getScheduleBuildBtn = () => cy.get("td:last-child [tooltip]");
   getCreateHistoryBuild = () => cy.get('a[href="/view/all/builds"]');
   getJenkinsVersionBtn = () => cy.get("button.jenkins-button--tertiary.jenkins_ver");
@@ -36,9 +37,11 @@ class HomePage {
   getContentBlockItem = () => cy.get(".empty-state-section:last-child ul li");
   getContentBlockItemIcon = () => cy.get(".empty-state-section:last-child ul li svg");
   getContentBlockItemPath = () => cy.get(".empty-state-section:last-child ul li path");
+  getSizeButton = ()=> cy.get('.jenkins-icon-size__items.jenkins-buttons-row ol li');
   getBuildQueueBlock = () => cy.get("div#buildQueue");
   getBuildQueueBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=buildQueue"]');
   getBuildQueueBlockContent = () => cy.get("div#buildQueue .pane-content");
+
 
   clickProjectNameLink() {
     this.getProjectNameLink().click();
@@ -46,6 +49,10 @@ class HomePage {
     return new PipelinePage();
   }
 
+  clickNewItem() {
+    this.getNewItem().click()
+    return new NewJobPage;
+  }
   clickNewItemLink() {
     this.getNewItemLink().click();
 
@@ -141,6 +148,10 @@ class HomePage {
 
     return cy.url();
   }
+  clickSizeButton(index){
+    this.getSizeButton().eq(index).click()
+    return this
+  }
 
   getContainsText(idx) {
     cy.contains(dbCommandPanelData.pageHeader[idx]);
@@ -160,8 +171,10 @@ class HomePage {
     return cy.url();
   }
 
-  clickButtonIconSizeSmall() {
-    this.getButtonIconSizeSmall().click();
+  clickButtonIconSizeSmall(){
+    this.getButtonIconSizeSmall().click()
+   
+    return this;
   }
 
   clickNewItemDashboardLinkDropdown() {

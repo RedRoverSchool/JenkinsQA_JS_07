@@ -10,13 +10,22 @@ describe("configureNewFreestyleProject", function () {
   const newjobpage = new NewJobPage();
   const freestyleprojectconfigurepage = new FreestyleProjectConfigurePage();
 
-  it("RF | POM | TC_03.03.005 | Create Freestyle Project > Configure new Freestyle project > Verify that user sees the description field", function () {
+  beforeEach(() => {
     homepage
       .clickNewItemLink()
       .fillInputNameField(freestyleProjectData.projectName)
       .clickFreestyleTypeOfProjectBtn()
       .clickOKButton();
+  });
 
+  it("RF | POM | TC_03.03.001 | Create Freestyle Project > Configure new Freestyle project> Verify that General page is displayed", function () {
+    freestyleprojectconfigurepage
+      .getGeneralSection()
+      .should("be.visible")
+      .and("have.text", freestyleProjectData.configure.general.sectionName);
+  });
+
+  it("RF | POM | TC_03.03.005 | Create Freestyle Project > Configure new Freestyle project > Verify that user sees the description field", function () {
     freestyleprojectconfigurepage
       .getMainPannel()
       .contains(freestyleProjectData.configure.description.sectionName)

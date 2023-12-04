@@ -1,6 +1,6 @@
 import MultiConfigProjectConfigurePage from "../pageObjects/MultiConfigProjectConfigurePage";
 import FreestyleProjectConfigurePage from "../pageObjects/FreestyleProjectConfigurePage";
-import FolderConfigurePage from "../pageObjects/FolderConfigurePage"
+import FolderConfigurePage from "../pageObjects/FolderConfigurePage";
 import PipelineConfigurePage from "../pageObjects/PipelineConfigurePage";
 const HOST = Cypress.env('local.host');
 const PORT = Cypress.env('local.port');
@@ -16,6 +16,9 @@ class NewJobPage {
     getOrganizationFolder = () => cy.get('li.jenkins_branch_OrganizationFolder');
     getFreestyleTypeOfProjectBtn = () => cy.get('.hudson_model_FreeStyleProject');
     getTypeOfProjectLabels = () => cy.get(".label");
+    getCopyField =() => cy.get('div.item-copy');
+    getCopyFieldInput =() => cy.get('#from.jenkins-input.auto-complete');
+    getCopyFieldOKButton =() => cy.get('.jenkins-button--primary');
     getFolderBtn = () => cy.get(".com_cloudbees_hudson_plugins_folder_Folder");
     getPipelineProjectNameLink = () => cy.get('.label');
     getNewJobPageUrl = () => cy.url();
@@ -92,6 +95,23 @@ class NewJobPage {
     checkNewJobPageUrl() {
         this.getNewJobPageUrl().should('be.eql',`http://${HOST}:${PORT}/view/all/newJob`)
       }
-    
+   
+    clickCopyField(){
+        this.getCopyField().click()
+
+        return this;
+    }
+
+    fillCopyFromField(name){
+        this.getCopyFieldInput().type(name);
+
+        return this;
+    }
+
+    clickOKButton() {
+        this.getOKButton().click();
+
+        return this;
+    }
 }
 export default NewJobPage;
