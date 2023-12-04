@@ -2,8 +2,9 @@
     "buildQueueBlockTitle": "Build Queue",
     "buildExecStatusBlockTitle": "Build Executor Status",
     "buildQueueAbsenceMsg": "No builds in the queue.",
-    "buildExecStatusDefaultMsg": "Idle",
-    "buildQueueBlockState": {
+    "buildExecStatusExpandedMsg": "1Idle2Idle",
+    "buildExecStatusCollapsedMsg": "built-in node (0 of 2 executors busy)",
+    "buildsBlockState": {
         "collapsed": "collapse",
         "expanded": "expand"
     }

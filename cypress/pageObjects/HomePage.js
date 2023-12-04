@@ -42,6 +42,8 @@ class HomePage {
   getBuildQueueBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=buildQueue"]');
   getBuildQueueBlockContent = () => cy.get("div#buildQueue .pane-content");
   getBuildExecutorStatusBlock = () => cy.get('div#executors');
+  getBuildExecutorStatusBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=executors"]');
+  getBuildExecutorStatusBlockContent = () => cy.get('div#executors .pane-content');
 
   clickProjectNameLink() {
     this.getProjectNameLink().click();
@@ -149,10 +151,10 @@ class HomePage {
 
     return cy.url();
   }
-  
+
   clickSizeButton(index){
-    this.getSizeButton().eq(index).click()
-    return this
+    this.getSizeButton().eq(index).click();
+    return this;
   }
 
   getContainsText(idx) {
@@ -194,7 +196,19 @@ clickBuildQueueBlockArrow() {
 
 takeBuildQueueBlockState() {
   
-  return this.getBuildQueueBlockArrow().invoke("attr", "title")  
+  return this.getBuildQueueBlockArrow().invoke("attr", "title");
+}
+
+clickBuildExecutorStatusBlockArrow() {
+  this.getBuildExecutorStatusBlockArrow().click();
+
+  return this;
+}
+
+takeBuildExecutorStatusBlockState() {
+  
+  return this.getBuildExecutorStatusBlockArrow().invoke("attr", "title");
 }
 }
+
 export default HomePage;
