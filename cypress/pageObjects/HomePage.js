@@ -35,6 +35,7 @@ class HomePage {
   getContentBlockItem= () => cy.get(".empty-state-section:last-child ul li");
   getContentBlockItemIcon = () => cy.get(".empty-state-section:last-child ul li svg");
   getContentBlockItemPath = () => cy.get(".empty-state-section:last-child ul li path");
+  getSizeButton = ()=> cy.get('.jenkins-icon-size__items.jenkins-buttons-row ol li')
 
   
   clickProjectNameLink() {
@@ -142,6 +143,10 @@ class HomePage {
 
     return cy.url();
   }
+  clickSizeButton(index){
+    this.getSizeButton().eq(index).click()
+    return this
+  }
 
   getContainsText(idx) {
     cy.contains(dbCommandPanelData.pageHeader[idx]);
@@ -164,6 +169,7 @@ class HomePage {
 
   clickButtonIconSizeSmall(){
     this.getButtonIconSizeSmall().click()
+    return this
   }
 
   clickNewItemDashboardLinkDropdown() {
