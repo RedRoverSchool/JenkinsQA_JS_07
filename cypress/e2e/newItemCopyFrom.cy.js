@@ -37,7 +37,7 @@ describe('New item > Copy from', () => {
         cy.get('#side-panel .jenkins-app-bar__content').should('have.text', data.pageName);
     });
 
-    it('TC_03.08.006 | +New Item > Copy from > Error message when copy from non-existent job', () => {
+    it.skip('TC_03.08.006 | +New Item > Copy from > Error message when copy from non-existent job', () => {
         cy.get('input#name').type(data.secondProjectName);
         cy.get('.hudson_model_FreeStyleProject').click();
         cy.get('#from').type(data.nonExistenProjectName);

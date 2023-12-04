@@ -15,6 +15,7 @@ class HomePage {
   getRestApilink = () => cy.get(".rest-api");
   getManageJenkinsLink = () => cy.get('a[href="/manage"]');
   getPeopleLink = () => cy.get('a[href="/asynchPeople/"]');
+  getNewItem = () => cy.get("a[href='/view/all/newJob']")
   getScheduleBuildBtn = () => cy.get("td:last-child [tooltip]");
   getCreateHistoryBuild = () => cy.get('a[href="/view/all/builds"]');
   getJenkinsVersionBtn = () => cy.get("button.jenkins-button--tertiary.jenkins_ver");
@@ -42,6 +43,10 @@ class HomePage {
     return new PipelinePage()
   }
 
+  clickNewItem() {
+    this.getNewItem().click()
+    return new NewJobPage;
+  }
   clickNewItemLink() {
     this.getNewItemLink().click();
 
