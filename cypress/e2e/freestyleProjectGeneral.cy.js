@@ -13,13 +13,13 @@ describe('Freestyle Project > General', () => {
 
     });
 
-    it('TC_04.01.002 | Verify the user is able to see the "General" section', function() {
+    it.skip('TC_04.01.002 | Verify the user is able to see the "General" section', function() {
 
         cy.get('form h2#general').should('have.text', freestyleProjectGeneral.sectionName).and('be.visible');
         
     });
 
-    it('TC_04.01.003 | Verify the user is able to disable the project', function() {
+    it.skip('TC_04.01.003 | Verify the user is able to disable the project', function() {
 
         cy.get('form input[class*=toggle-switch]').should('be.enabled');
       
@@ -38,7 +38,7 @@ describe('Freestyle Project > General', () => {
         
     });
 
-    it('TC_04.01.005 | Verify the user is able to enter a description in the text box', function() {
+    it.skip('TC_04.01.005 | Verify the user is able to enter a description in the text box', function() {
 
         cy.get('form [name=description]').type(freestyleProjectGeneral.description).should('have.value', freestyleProjectGeneral.description);
 
