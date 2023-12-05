@@ -15,13 +15,13 @@ describe("dashboardInformationAboutUsersBuilds", () => {
   it("TC_02.05.002 | Dashboard > Information about User's builds > Check that 'Build queue' block is able to expand/collapse", () => {
     homePage.takeBuildQueueBlockState().then((blockState) => {
       switch (blockState) {
-        case buildsInformation.buildQueueBlockState.collapsed:
+        case buildsInformation.buildsBlockState.collapsed:
           homePage
             .clickBuildQueueBlockArrow()
             .getBuildQueueBlockContent()
             .should("not.have.text", buildsInformation.buildQueueAbsenceMsg);
           break;
-        case buildsInformation.buildQueueBlockState.expanded:
+        case buildsInformation.buildsBlockState.expanded:
           homePage
             .clickBuildQueueBlockArrow()
             .getBuildQueueBlockContent()
@@ -36,5 +36,24 @@ describe("dashboardInformationAboutUsersBuilds", () => {
       .getBuildExecutorStatusBlock()
       .should("contain", buildsInformation.buildExecStatusBlockTitle)
       .and("be.visible");
+  });
+
+  it("TC_02.05.004 | Dashboard > Information about User's builds > Check that 'Build Executor Status' block is able to expand/collapse", () => {
+    homePage.takeBuildExecutorStatusBlockState().then((blockState) => {
+      switch (blockState) {
+        case buildsInformation.buildsBlockState.collapsed:
+          homePage
+            .clickBuildExecutorStatusBlockArrow()
+            .getBuildExecutorStatusBlockContent()
+            .should("have.text", buildsInformation.buildExecStatusCollapsedMsg);
+          break;
+        case buildsInformation.buildsBlockState.expanded:
+          homePage
+            .clickBuildExecutorStatusBlockArrow()
+            .getBuildExecutorStatusBlockContent()
+            .should("have.text", buildsInformation.buildExecStatusExpandedMsg);
+          break;
+      }
+    });
   });
 });
