@@ -8,7 +8,7 @@ class MultiConfigProjectConfigurePage {
     getSaveButton = () => cy.get("button[name='Submit']");
     getEnabledProjectLabel = () => cy.get("span.jenkins-toggle-switch__label__checked-title");
     getDisabledProjectLabel = () => cy.get("span.jenkins-toggle-switch__label__unchecked-title");
-    getToggleSwitchButton = () => cy.get("label.jenkins-toggle-switch__label ");
+    getToggleSwitchButton = () => cy.get("label.jenkins-toggle-switch__label");
 
     typeValueToTheDescrioinTextArea(value) {
         this.getDescriptionTextArea().type(value);
