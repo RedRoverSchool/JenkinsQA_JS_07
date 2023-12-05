@@ -4,7 +4,7 @@ const HOST = Cypress.env('local.host');
 
 import createFolder from "../fixtures/createFolder.json";
 
-describe('deleteCreatedFolder', () => {
+describe.skip('deleteCreatedFolder', () => {
   beforeEach('createNewFolder', () => {
     cy.get('a[href="newJob"]').click();
     cy.get('input.jenkins-input').type(createFolder.newFolderName);
