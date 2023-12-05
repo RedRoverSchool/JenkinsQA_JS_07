@@ -33,4 +33,14 @@ describe("configureNewFreestyleProject", function () {
 
     freestyleprojectconfigurepage.getDescriptionField().should("be.visible");
   });
+
+  it("POM | TC_03.03.006 | Create Freestyle Project > Configure new Freestyle project> Verify that the list of sections: Source Code Management, Build Triggers, Build Environment, Build Steps, Post-build Actions are displayed", function () {
+    freestyleprojectconfigurepage
+    .getSectionsNames()
+    .each(($els, index) => {
+      cy.wrap($els)
+        .should("be.visible")
+        .and("contain.text", freestyleProjectData.configure.sections[index]);
+    });
+  });
 });

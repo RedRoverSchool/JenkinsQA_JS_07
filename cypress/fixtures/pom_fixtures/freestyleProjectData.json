@@ -9,6 +9,7 @@
         "description": {
             "sectionName": "Description"
         },
+        "sections": ["Source Code Management", "Build Triggers", "Build Environment", "Build Steps", "Post-build Actions"],
         "sourceCodeManagement": {
             "sectionName": "Source Code Management",
             "radioButtonNames": ["None", "Git"],
