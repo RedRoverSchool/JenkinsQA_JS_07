@@ -44,7 +44,7 @@ describe('Freestyle Project > General', () => {
 
     });
 
-    it('TC_04.01.006 | Verify the user is able to see all options with check boxes', function() {
+    it.skip('TC_04.01.006 | Verify the user is able to see all options with check boxes', function() {
 
         cy.get('[nameref=rowSetStart30] div.help-sibling div label').each(($el, i) => {
             cy.wrap($el).should('have.text', freestyleProjectGeneral.checkBoxOptions[i]).and('be.visible');

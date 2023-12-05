@@ -4,7 +4,14 @@
         "general": {
             "sectionName": "General",
             "statusDisabled" : "Disabled",
-            "statusEnabled" : "Enabled"
+            "statusEnabled" : "Enabled",
+            "options": [
+                "Discard old builds",
+                "GitHub project",
+                "This project is parameterized",
+                "Throttle builds"
+            ],
+            "option": "Execute concurrent builds if necessary"
         },
         "description": {
             "sectionName": "Description"
