@@ -60,4 +60,15 @@ describe ('freestyleProjectGeneralSection', () => {
                                      .and('be.visible');
 
     });
+
+    it('TC_04.01.007 | Verify the user is able to check all the check boxes', function() {
+
+        freestyleProjectConfigurePage.checkGeneralSectionCheckBoxes()
+                                     .getGeneralSectionCheckBoxes()
+                                     .should('be.checked');
+        freestyleProjectConfigurePage.checkGeneralSectionLastCheckBox()
+                                     .getGeneralSectionLastCheckBox()
+                                     .should('be.checked');
+
+    });
 });
