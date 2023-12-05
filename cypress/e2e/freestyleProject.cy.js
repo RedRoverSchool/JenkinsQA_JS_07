@@ -19,7 +19,7 @@ describe('freestyleProject', () => {
           .and('be.visible')
     })
 
-    it('TC_04.01.10 | Freestyle project > General > Verify the following options with check boxes are displayed', () => {
+    it.skip('TC_04.01.10 | Freestyle project > General > Verify the following options with check boxes are displayed', () => {
 
         cy.get('[nameref="rowSetStart30"] .jenkins-checkbox')
           .should('have.length', freestyleProject.generalCheckboxes.length)

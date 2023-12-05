@@ -49,4 +49,15 @@ describe ('freestyleProjectGeneralSection', () => {
                                      .should('have.value', data.configure.description.sectionName);
 
     });
+
+    it('TC_04.01.006 | Verify the user is able to see all options with check boxes', function() {
+
+        freestyleProjectConfigurePage.getGeneralSectionOptions().each(($el, i) => {
+            cy.wrap($el).should('have.text', data.configure.general.options[i]).and('be.visible');
+        });
+        freestyleProjectConfigurePage.getGeneralSectionLastOption()
+                                     .should('have.text', data.configure.general.option)
+                                     .and('be.visible');
+
+    });
 });

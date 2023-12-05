@@ -24,6 +24,8 @@ class FreestyleProjectConfigurePage {
     getMainPannel = () => cy.get('#main-panel');
     getDescriptionField = () => cy.get('textarea[name="description"]');
     getSectionsNames = () => cy.get('.jenkins-section__title[id]');
+    getGeneralSectionOptions = () => cy.get('[nameref=rowSetStart30] div.help-sibling div label');
+    getGeneralSectionLastOption = () => cy.get('.config-table > :nth-child(6) label');
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
