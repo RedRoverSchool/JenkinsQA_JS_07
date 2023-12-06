@@ -85,4 +85,14 @@ describe ('freestyleProjectGeneralSection', () => {
                                      .should('not.be.checked');
 
     });
+
+    it('TC_04.01.009 | Verify the user is able to extend more options by clicking on the “Advanced” button', function() {
+
+        freestyleProjectConfigurePage.clickGeneralSectionAdvancedBtn();
+
+        freestyleProjectConfigurePage.getGeneralSectionAdvancedOptions()
+                                     .should('have.attr', 'style', 'display: block;')
+                                     .and('be.visible');
+
+    });
 });
