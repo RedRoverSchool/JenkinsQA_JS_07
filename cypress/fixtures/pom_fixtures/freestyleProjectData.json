@@ -1,5 +1,6 @@
 {
     "projectName": "Project1",
+    "projectPageUrl": "/job/Project1",
     "configure": {
         "general": {
             "sectionName": "General",
