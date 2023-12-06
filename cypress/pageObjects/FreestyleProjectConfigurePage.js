@@ -26,6 +26,8 @@ class FreestyleProjectConfigurePage {
     getSectionsNames = () => cy.get('.jenkins-section__title[id]');
     getGeneralSectionOptions = () => cy.get('[nameref=rowSetStart30] div.help-sibling div label');
     getGeneralSectionLastOption = () => cy.get('.config-table > :nth-child(6) label');
+    getGeneralSectionCheckBoxes = () => cy.get('[nameref=rowSetStart30] div.help-sibling div input[type=checkbox]');
+    getGeneralSectionLastCheckBox = () => cy.get('.config-table > :nth-child(6) input[type=checkbox]');
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
@@ -61,6 +63,18 @@ class FreestyleProjectConfigurePage {
         this.getOneHintIconFromBuildTriggerList(item).realHover();
         return this; 
     }
+
+    checkGeneralSectionCheckBoxes() {
+        this.getGeneralSectionCheckBoxes().check({ force: true });
+
+        return this;
+    };
+
+    checkGeneralSectionLastCheckBox() {
+        this.getGeneralSectionLastCheckBox().check({ force: true });
+
+        return this;
+    };
   
 }
 export default FreestyleProjectConfigurePage;
