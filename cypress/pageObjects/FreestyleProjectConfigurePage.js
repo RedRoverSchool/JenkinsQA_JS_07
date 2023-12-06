@@ -82,6 +82,18 @@ class FreestyleProjectConfigurePage {
 
         return this;
     };
+
+    uncheckGeneralSectionCheckBoxes() {
+        this.getGeneralSectionCheckBoxes().uncheck({ force: true });
+
+        return this;
+    };
+
+    uncheckGeneralSectionLastCheckBox() {
+        this.getGeneralSectionLastCheckBox().uncheck({ force: true });
+
+        return this;
+    };
   
 }
 export default FreestyleProjectConfigurePage;

@@ -71,4 +71,18 @@ describe ('freestyleProjectGeneralSection', () => {
                                      .should('be.checked');
 
     });
+
+    it('TC_04.01.008 | Verify the user is able to uncheck all the check boxes', function() {
+
+        freestyleProjectConfigurePage.checkGeneralSectionCheckBoxes()
+                                     .checkGeneralSectionLastCheckBox();
+
+        freestyleProjectConfigurePage.uncheckGeneralSectionCheckBoxes()
+                                     .getGeneralSectionCheckBoxes()
+                                     .should('not.be.checked');
+        freestyleProjectConfigurePage.uncheckGeneralSectionLastCheckBox()
+                                     .getGeneralSectionLastCheckBox()
+                                     .should('not.be.checked');
+
+    });
 });
