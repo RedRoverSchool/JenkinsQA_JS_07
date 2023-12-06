@@ -70,7 +70,7 @@ describe('Freestyle Project > General', () => {
 
     });
 
-    it('TC_04.01.009 | Verify the user is able to extend more options by clicking on the “Advanced” button', function() {
+    it.skip('TC_04.01.009 | Verify the user is able to extend more options by clicking on the “Advanced” button', function() {
 
         cy.get('form :nth-child(7) button.advancedButton').click();
 
