@@ -2,11 +2,13 @@
 
 import HomePage from "../../pageObjects/HomePage";
 import MultiConfigProjectConfigurePage from "../../pageObjects/MultiConfigProjectConfigurePage";
+import MultiConfigProjectPage from "../../pageObjects/MultiConfigProjectPage";
 import multiconfigProjectData from "../../fixtures/pom_fixtures/multiconfigProjectData.json"
 
 describe('multiconfigProject', () => {
     const homePage = new HomePage();
     const multiConfigProjectConfigurePage = new MultiConfigProjectConfigurePage();
+    const multiConfigProjectPage = new MultiConfigProjectPage();
 
     beforeEach('createMultiConfigProject', () => {
         cy.createMultiConfigProject(multiconfigProjectData.projectName)
@@ -39,8 +41,20 @@ describe('multiconfigProject', () => {
     it("TC_03.07.002 | New Item > Create Multiconfiguration project > Add Description", () => {
         multiConfigProjectConfigurePage.typeValueToTheDescrioinTextArea(multiconfigProjectData.descriptionText)
             .clickSaveButton()
-            .getCreatedDescription(multiconfigProjectData.descriptionText)
+            .getCreatedDescription()
             .should("be.visible")
             .and("have.text", multiconfigProjectData.descriptionText);
+    });
+
+    it("TC_03.07.003 | New Item > Create Multiconfiguration project > Disable project", () => {
+        multiConfigProjectConfigurePage.disableMultiConfigProject(multiconfigProjectData.enabledProjectLabel,
+            multiconfigProjectData.disabledProjectLabel)
+            .clickSaveButton()
+            .getWarningDisabledProjectMessage()
+            .should("be.visible")
+            .and("include.text", multiconfigProjectData.warningDisabledProjectMessage);
+
+        multiConfigProjectPage.getEnableProjectButton()
+            .should("be.visible");
     });
 })
