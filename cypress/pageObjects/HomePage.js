@@ -6,6 +6,7 @@ import PeoplePage from "../pageObjects/PeoplePage";
 import ParticipatePage from "../pageObjects/ParticipatePage";
 import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json";
 import PipelinePage from "./PipelinePage";
+import FolderPage from "./FolderPage";
 const dayjs = require("dayjs");
 
 class HomePage {
@@ -209,6 +210,12 @@ clickBuildExecutorStatusBlockArrow() {
 takeBuildExecutorStatusBlockState() {
   
   return this.getBuildExecutorStatusBlockArrow().invoke("attr", "title");
+}
+
+clickFoldertNameLink(folderName) {
+  this.getProjectNameLink().contains(folderName).click();
+
+  return new FolderPage();
 }
 }
 
