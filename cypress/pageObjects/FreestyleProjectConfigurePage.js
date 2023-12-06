@@ -28,6 +28,7 @@ class FreestyleProjectConfigurePage {
     getGeneralSectionLastOption = () => cy.get('.config-table > :nth-child(6) label');
     getGeneralSectionCheckBoxes = () => cy.get('[nameref=rowSetStart30] div.help-sibling div input[type=checkbox]');
     getGeneralSectionLastCheckBox = () => cy.get('.config-table > :nth-child(6) input[type=checkbox]');
+    getSaveBtn = () => cy.get('button.jenkins-button--primary');
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
@@ -72,6 +73,12 @@ class FreestyleProjectConfigurePage {
 
     checkGeneralSectionLastCheckBox() {
         this.getGeneralSectionLastCheckBox().check({ force: true });
+
+        return this;
+    };
+
+    clickSaveBtn() {
+        this.getSaveBtn().click();
 
         return this;
     };

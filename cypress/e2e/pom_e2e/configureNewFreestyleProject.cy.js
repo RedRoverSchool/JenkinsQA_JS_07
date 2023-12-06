@@ -4,11 +4,13 @@ import HomePage from "../../pageObjects/HomePage";
 import NewJobPage from "../../pageObjects/NewJobPage";
 import FreestyleProjectConfigurePage from "../../pageObjects/FreestyleProjectConfigurePage";
 import freestyleProjectData from "../../fixtures/pom_fixtures/freestyleProjectData.json";
+import FreestyleProjectPage from "../../pageObjects/FreestyleProjectPage";
 
 describe("configureNewFreestyleProject", function () {
   const homepage = new HomePage();
   const newjobpage = new NewJobPage();
   const freestyleprojectconfigurepage = new FreestyleProjectConfigurePage();
+  const freestyleprojectpage = new FreestyleProjectPage();
 
   beforeEach(() => {
     homepage
@@ -35,12 +37,26 @@ describe("configureNewFreestyleProject", function () {
   });
 
   it("POM | TC_03.03.006 | Create Freestyle Project > Configure new Freestyle project> Verify that the list of sections: Source Code Management, Build Triggers, Build Environment, Build Steps, Post-build Actions are displayed", function () {
-    freestyleprojectconfigurepage
-    .getSectionsNames()
-    .each(($els, index) => {
+    freestyleprojectconfigurepage.getSectionsNames().each(($els, index) => {
       cy.wrap($els)
         .should("be.visible")
         .and("contain.text", freestyleProjectData.configure.sections[index]);
     });
+  });
+
+  it("POM | TC_03.03.007 | Create Freestyle Project > Configure new Freestyle project > Verify that user is able to save the project", function () {
+    freestyleprojectconfigurepage
+    .getSaveBtn()
+    .should("be.visible")
+    .click();
+
+    freestyleprojectpage
+      .getFreestyleNameHeader()
+      .should("be.visible")
+      .and("contain", freestyleProjectData.projectName);
+
+    freestyleprojectpage
+      .getFreestyleProjectPageUrl()
+      .should("contain", freestyleProjectData.projectPageUrl);
   });
 });
