@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 import HomePage from "../../pageObjects/HomePage";
-import deleteFolderByUsingDropdownData from "../../fixtures/pom_fixtures/deleteFolderByUsingDropdownData.json";
+import folderNewItemRedirectToNewJobPageData from "../../fixtures/pom_fixtures/folderNewItemRedirectToNewJobPageData.json";
 import dashboardWelcomeMessageData from "../../fixtures/pom_fixtures/dashboardWelcomedMessageData.json";
 
 describe('Delete Folder by using Dropdown menu', function () {
@@ -9,7 +9,7 @@ describe('Delete Folder by using Dropdown menu', function () {
 
     beforeEach('Create Folder', function () {
         homePage.clickNewItemLink()
-                .fillInputNameField(deleteFolderByUsingDropdownData.folderName)
+                .fillInputNameField(folderNewItemRedirectToNewJobPageData.folderName)
                 .clickFolderBtn()
                 .clickOKButtonFolder();
 
@@ -20,7 +20,7 @@ describe('Delete Folder by using Dropdown menu', function () {
         homePage
             .clickNameProjectArrow()
             .clickDeleteProjectByDropdownBtn()
-            .clickWindowConfirmOK(deleteFolderByUsingDropdownData.windowConfirm)
+            .clickWindowConfirmOK(folderNewItemRedirectToNewJobPageData.windowConfirm)
         homePage
             .getWelcomedMessageHeader()
             .should('be.visible')
