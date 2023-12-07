@@ -217,6 +217,12 @@ clickFoldertNameLink(folderName) {
 
   return new FolderPage();
 }
+
+clickDeleteProjectByDropdownBtn() {
+  this.getDeleteBtn().click();
+
+  return this;
+}
 }
 
 export default HomePage;
