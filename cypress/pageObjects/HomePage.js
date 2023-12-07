@@ -219,7 +219,7 @@ clickFoldertNameLink(folderName) {
 }
 
 clickDeleteProjectByDropdownBtn() {
-  this.getDeleteBtn().click();
+  this.getDeleteBtn().should('be.visible').click();
 
   return this;
 }
