@@ -17,22 +17,25 @@ class FreestyleProjectConfigurePage {
     getListOfBuildTriggerOptions = () => cy.get("#build-triggers").parent().find('.optionalBlock-container');
     getOneItemOfListBuildTriggerOption = (item) => item.find('.optional-block-start label.attach-previous');
     getOneHintIconFromBuildTriggerList = (item) => item.find(".jenkins-checkbox-help-wrapper a ");
-    getHintIconTip = () => cy.get('div[id*="tippy"]')
+    getHintIconTip = () => cy.get('div[id*="tippy"]');
+    getHintIconUseSecretText = () => cy.get('a[helpurl*="SecretBuild"]');
+    getHintTextFromUseSecretText = () => cy.get('a[aria-describedby="tippy-53"]')
+    // getHintWithAntTextMessage = () => cy.get('a[helpurl*="Ant"]');
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
         return this;
-    } 
+    }; 
     
     clickSourceCodeManagementMenuItem() {
         this.getSourceCodeManagementSection().click();
         return this;
-            };
+    };
 
     clickGitOptionTooltip() {
         this.getGitOptionTooltip().click();
         return this;
-    }
+    };
 
     clickBuildEnvironmentSectionMenuItem() {
         this.getBuildEnvironmentSectionMenuItem().click();
@@ -42,12 +45,22 @@ class FreestyleProjectConfigurePage {
     hoverUseSecretTextOptionTooltip() {
         this.getUseSecretTextOptionTooltip().realHover();    
         return this;
-      }
+    };
     
     hoverOneOfHintIconFromBuildTriggersList(item) {
         this.getOneHintIconFromBuildTriggerList(item).realHover();
         return this; 
-    }
-  
-}
+    };
+
+    hoverViewHintUseSecretText() {
+        this.getHintIconUseSecretText().realHover();
+        return this;
+    };  
+
+    // hoverViewHintWithAntTextMessage() {
+    //     this.getHintWithAntTextMessage().realHover('mouseover');
+    //     return this;
+    // };  
+}  
+
 export default FreestyleProjectConfigurePage;
