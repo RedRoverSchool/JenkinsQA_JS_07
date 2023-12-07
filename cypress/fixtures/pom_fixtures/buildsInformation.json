@@ -1,0 +1,11 @@
+{
+    "buildQueueBlockTitle": "Build Queue",
+    "buildExecStatusBlockTitle": "Build Executor Status",
+    "buildQueueAbsenceMsg": "No builds in the queue.",
+    "buildExecStatusExpandedMsg": "1Idle2Idle",
+    "buildExecStatusCollapsedMsg": "built-in node (0 of 2 executors busy)",
+    "buildsBlockState": {
+        "collapsed": "collapse",
+        "expanded": "expand"
+    }
+}

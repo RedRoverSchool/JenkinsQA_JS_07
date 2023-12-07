@@ -8,7 +8,7 @@ import data from "../../fixtures/pom_fixtures/freestyleProjectData.json";
 describe('freestyleProjectConfigure', () => {
     const homePage = new HomePage();
     const freestyleProjectConfigurePage = new FreestyleProjectConfigurePage();
-    const { sectionName, radioButtonNames, gitToolTipText, peaceOfHelpText } = data.configure.sourceCodeManagement;
+    const { sectionName, radioButtonNames, gitToolTipText, peaceOfHelpText, titles } = data.configure.sourceCodeManagement;
     
     beforeEach(() => {
         homePage.clickNewItemLink()
@@ -49,5 +49,15 @@ describe('freestyleProjectConfigure', () => {
                                      .getGitOptionTooltipHelpArea()
                                      .should('be.visible')
                                      .and('contain', peaceOfHelpText);
+    });
+
+    it('TC_04.02.006 | Freestyle > Source Code Management > Displaying additional options for Git', () => {
+        freestyleProjectConfigurePage.clickSourceCodeManagementGitOption()
+                                     .getFormContainer()
+                                     .should('be.visible');
+        freestyleProjectConfigurePage.getFormContainerLabels().should('have.length', 4);
+        freestyleProjectConfigurePage.getFormContainerLabels().each(($el, ind) => {
+            expect($el.text()).include(titles[ind]);
+        })
     });
 });

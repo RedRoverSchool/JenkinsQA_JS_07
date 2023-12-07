@@ -13,13 +13,13 @@ describe ('Freestyle Project', () => {
 
     })
 
-    it('TC_04.01.011 | Freestyle project > Verify that General section is displayed on Configuration page', function(){
+    it.skip('TC_04.01.011 | Freestyle project > Verify that General section is displayed on Configuration page', function(){
 
         cy.get('[data-section-id="general"]').should('have.class', 'task-link--active')
         cy.get('#general').should('be.visible');
     })
 
-    it('TC_04.01.012 | Freestyle project > Verify that user is able to disable the project', function(){
+    it.skip('TC_04.01.012 | Freestyle project > Verify that user is able to disable the project', function(){
 
         cy.get('.jenkins-toggle-switch__label__checked-title').should('have.text', freestyleProject.statusEnabled).and('be.visible');
         cy.get('#toggle-switch-enable-disable-project').click();

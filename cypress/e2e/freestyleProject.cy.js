@@ -11,7 +11,7 @@ describe('freestyleProject', () => {
         cy.get('#ok-button').click()  
     })
 
-    it('TC_04.01.01 | Freestyle project > General > Verify user is able to disable the project', function() {
+    it.skip('TC_04.01.01 | Freestyle project > General > Verify user is able to disable the project', function() {
         
         cy.get('.jenkins-toggle-switch__label').click()
         cy.get('.jenkins-toggle-switch__label__unchecked-title')
@@ -19,7 +19,7 @@ describe('freestyleProject', () => {
           .and('be.visible')
     })
 
-    it('TC_04.01.10 | Freestyle project > General > Verify the following options with check boxes are displayed', () => {
+    it.skip('TC_04.01.10 | Freestyle project > General > Verify the following options with check boxes are displayed', () => {
 
         cy.get('[nameref="rowSetStart30"] .jenkins-checkbox')
           .should('have.length', freestyleProject.generalCheckboxes.length)

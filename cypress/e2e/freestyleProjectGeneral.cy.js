@@ -13,13 +13,13 @@ describe('Freestyle Project > General', () => {
 
     });
 
-    it('TC_04.01.002 | Verify the user is able to see the "General" section', function() {
+    it.skip('TC_04.01.002 | Verify the user is able to see the "General" section', function() {
 
         cy.get('form h2#general').should('have.text', freestyleProjectGeneral.sectionName).and('be.visible');
         
     });
 
-    it('TC_04.01.003 | Verify the user is able to disable the project', function() {
+    it.skip('TC_04.01.003 | Verify the user is able to disable the project', function() {
 
         cy.get('form input[class*=toggle-switch]').should('be.enabled');
       
@@ -38,13 +38,13 @@ describe('Freestyle Project > General', () => {
         
     });
 
-    it('TC_04.01.005 | Verify the user is able to enter a description in the text box', function() {
+    it.skip('TC_04.01.005 | Verify the user is able to enter a description in the text box', function() {
 
         cy.get('form [name=description]').type(freestyleProjectGeneral.description).should('have.value', freestyleProjectGeneral.description);
 
     });
 
-    it('TC_04.01.006 | Verify the user is able to see all options with check boxes', function() {
+    it.skip('TC_04.01.006 | Verify the user is able to see all options with check boxes', function() {
 
         cy.get('[nameref=rowSetStart30] div.help-sibling div label').each(($el, i) => {
             cy.wrap($el).should('have.text', freestyleProjectGeneral.checkBoxOptions[i]).and('be.visible');
@@ -53,14 +53,14 @@ describe('Freestyle Project > General', () => {
 
     });
 
-    it('TC_04.01.007 | Verify the user is able to check all the check boxes', function() {
+    it.skip('TC_04.01.007 | Verify the user is able to check all the check boxes', function() {
 
         cy.get('[nameref=rowSetStart30] div.help-sibling div input[type=checkbox]').check({ force: true }).should('be.checked');
         cy.get('.config-table > :nth-child(6) input[type=checkbox]').check({ force: true }).should('be.checked');
 
     });
 
-    it('TC_04.01.008 | Verify the user is able to uncheck all the check boxes', function() {
+    it.skip('TC_04.01.008 | Verify the user is able to uncheck all the check boxes', function() {
 
         cy.get('[nameref=rowSetStart30] div.help-sibling div input[type=checkbox]').check({ force: true }).should('be.checked');
         cy.get('.config-table > :nth-child(6) input[type=checkbox]').check({ force: true }).should('be.checked');
@@ -70,7 +70,7 @@ describe('Freestyle Project > General', () => {
 
     });
 
-    it('TC_04.01.009 | Verify the user is able to extend more options by clicking on the “Advanced” button', function() {
+    it.skip('TC_04.01.009 | Verify the user is able to extend more options by clicking on the “Advanced” button', function() {
 
         cy.get('form :nth-child(7) button.advancedButton').click();
 

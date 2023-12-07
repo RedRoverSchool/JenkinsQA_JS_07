@@ -5,8 +5,11 @@ class FreestyleProjectConfigurePage {
     getGeneralSectionToggleBtn = () => cy.get('#toggle-switch-enable-disable-project');
     getSourceCodeManagementSection = () => cy.get('#source-code-management');
     getSrcCodeMngmntNoneOption = () => cy.get('#radio-block-0');
+    getSrcCodeMngmntGitOption = () => cy.get('#radio-block-1');
     getSourceCodeManagementSectionBtns = () => cy.get('#source-code-management').parent().find('[id^=radio-block-]');
     getSourceCodeManagementSectionLbls = () => cy.get('#source-code-management').parent().find('label[for^=radio-block-]');
+    getFormContainer = () => cy.get('[ref="radio-block-1"] + div.help-area + div.form-container');
+    getFormContainerLabels = () => cy.get('[ref="radio-block-1"] + div.help-area + div.form-container > .jenkins-form-item > .jenkins-form-label');
     getGitOptionTooltip = () => cy.get('a[tooltip="Help for feature: Git"]');
     getOptionTooltipContent = () => cy.get('div.tippy-box');
     getGitOptionTooltipHelpArea = () => cy.get('[ref="radio-block-1"] + div.help-area > div.help');
@@ -18,9 +21,22 @@ class FreestyleProjectConfigurePage {
     getOneItemOfListBuildTriggerOption = (item) => item.find('.optional-block-start label.attach-previous');
     getOneHintIconFromBuildTriggerList = (item) => item.find(".jenkins-checkbox-help-wrapper a ");
     getHintIconTip = () => cy.get('div[id*="tippy"]');
+<<<<<<< HEAD
     getHintIconUseSecretText = () => cy.get('a[helpurl*="SecretBuild"]');
     getHintTextFromUseSecretText = () => cy.get('a[aria-describedby="tippy-53"]')
     // getHintWithAntTextMessage = () => cy.get('a[helpurl*="Ant"]');
+=======
+    getMainPannel = () => cy.get('#main-panel');
+    getDescriptionField = () => cy.get('textarea[name="description"]');
+    getSectionsNames = () => cy.get('.jenkins-section__title[id]');
+    getGeneralSectionOptions = () => cy.get('[nameref=rowSetStart30] div.help-sibling div label');
+    getGeneralSectionLastOption = () => cy.get('.config-table > :nth-child(6) label');
+    getGeneralSectionCheckBoxes = () => cy.get('[nameref=rowSetStart30] div.help-sibling div input[type=checkbox]');
+    getGeneralSectionLastCheckBox = () => cy.get('.config-table > :nth-child(6) input[type=checkbox]');
+    getSaveBtn = () => cy.get('button.jenkins-button--primary');
+    getGeneralSectionAdvancedBtn = () => cy.get('form :nth-child(7) button.advancedButton');
+    getGeneralSectionAdvancedOptions = () => cy.get('form > div > :nth-child(8)');
+>>>>>>> f95cb8d7831dc954bd57e3bc8a6227582f85bd98
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
@@ -37,6 +53,11 @@ class FreestyleProjectConfigurePage {
         return this;
     };
 
+    clickSourceCodeManagementGitOption() {
+        this.getSrcCodeMngmntGitOption().click({force: true});
+        return this;
+    }
+
     clickBuildEnvironmentSectionMenuItem() {
         this.getBuildEnvironmentSectionMenuItem().click();
         return this;
@@ -50,6 +71,7 @@ class FreestyleProjectConfigurePage {
     hoverOneOfHintIconFromBuildTriggersList(item) {
         this.getOneHintIconFromBuildTriggerList(item).realHover();
         return this; 
+<<<<<<< HEAD
     };
 
     hoverViewHintUseSecretText() {
@@ -63,4 +85,45 @@ class FreestyleProjectConfigurePage {
     // };  
 }  
 
+=======
+    }
+
+    checkGeneralSectionCheckBoxes() {
+        this.getGeneralSectionCheckBoxes().check({ force: true });
+
+        return this;
+    };
+
+    checkGeneralSectionLastCheckBox() {
+        this.getGeneralSectionLastCheckBox().check({ force: true });
+
+        return this;
+    };
+
+    clickSaveBtn() {
+        this.getSaveBtn().click();
+
+        return this;
+    };
+
+    uncheckGeneralSectionCheckBoxes() {
+        this.getGeneralSectionCheckBoxes().uncheck({ force: true });
+
+        return this;
+    };
+
+    uncheckGeneralSectionLastCheckBox() {
+        this.getGeneralSectionLastCheckBox().uncheck({ force: true });
+
+        return this;
+    };
+
+    clickGeneralSectionAdvancedBtn() {
+        this.getGeneralSectionAdvancedBtn().click();
+
+        return this;
+    };
+  
+}
+>>>>>>> f95cb8d7831dc954bd57e3bc8a6227582f85bd98
 export default FreestyleProjectConfigurePage;

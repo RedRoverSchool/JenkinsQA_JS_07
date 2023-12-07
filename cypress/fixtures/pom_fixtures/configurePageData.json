@@ -1,4 +1,5 @@
 {
     "statusDisabled": "Disabled",
-    "statusEnabled": "Enabled"
+    "statusEnabled": "Enabled",
+    "tooltipHelpOfDiscardOldBuilds":"Help for feature: Discard old builds"
 }
