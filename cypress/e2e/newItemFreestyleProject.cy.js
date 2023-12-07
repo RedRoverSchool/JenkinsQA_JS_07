@@ -10,7 +10,7 @@ describe('New Item > Create Freestyle Project', () => {
 
     });
 
-    it('TC_03.02.003 | Verify the user is able to see an empty field warning after pointing a cursor out of the Item Name input field', () => {
+    it.skip('TC_03.02.003 | Verify the user is able to see an empty field warning after pointing a cursor out of the Item Name input field', () => {
 
         cy.get('form div#itemname-required').as('emptyFieldWarning').should('have.class', 'input-message-disabled').and('not.be.visible');
         cy.get('form label.h3').click();

@@ -25,6 +25,7 @@ class NewJobPage {
     getNewJobPageTitle = () => cy.get('label[for="name"]');
     getInputValidationMessage = () => cy.get("div[class='input-validation-message']");
     getHeaderNewJobPageText = () => cy.get('.h3');
+    getEmptyFieldWarning = () => cy.get('form div#itemname-required');
 
 
     fillInputNameField(nameProject) {
@@ -114,5 +115,11 @@ class NewJobPage {
 
         return this;
     }
+
+    clickHeader() {
+        this.getHeaderNewJobPageText().click();
+
+        return this;
+    };
 }
 export default NewJobPage;
