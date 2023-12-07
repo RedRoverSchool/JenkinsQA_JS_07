@@ -1,5 +1,6 @@
 import FolderConfigurePage from "./FolderConfigurePage";
 import DeleteFolderPage from "./DeleteFolderPage";
+import NewJobPage from "./NewJobPage";
 
 class FolderPage {
   getConfigureLink = () => cy.get("a[href*='configure']");
@@ -16,6 +17,7 @@ class FolderPage {
   getNewFolderName = () => cy.get("#main-panel h1");
   getDescriptionText = () => cy.get('#description :first-child');
   getDeleteFolderIcon = () => cy.get('a .icon-edit-delete');
+  getNewItemOnFolderPage = () => cy.get('a[href*="/newJob"]');
   
   clickConfigureLink() {
     this.getConfigureLink().click();
@@ -61,6 +63,12 @@ class FolderPage {
     return this.clickFolderRenameBtn()
       .fillNewNameField(newName)
       .clickBtnConfirmRenameFolder();
+  }
+
+  clickNewItemOnFolderPage(){
+    this.getNewItemOnFolderPage().click();
+
+    return new NewJobPage();
   }
 }
 export default FolderPage;
