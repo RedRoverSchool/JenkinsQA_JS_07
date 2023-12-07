@@ -21,7 +21,23 @@ describe('newJobPage', () => {
         newJobPage.getEmptyFieldWarning()
                   .should('have.class', 'input-message-disabled')
                   .and('not.be.visible');
+
         newJobPage.clickHeader();
+
+        newJobPage.getEmptyFieldWarning()
+                  .should('not.have.class', 'input-message-disabled')
+                  .and('have.text', data.emptyFieldWarning)
+                  .and('be.visible');
+
+    });
+
+    it('TC_03.02.004 | Verify the user is able to see an empty field warning after choosing the "Freestyle Project" from the option list', () => {
+
+        newJobPage.getEmptyFieldWarning()
+                  .should('have.class', 'input-message-disabled')
+                  .and('not.be.visible');
+        
+        newJobPage.clickFreestyleTypeOfProjectBtn();
 
         newJobPage.getEmptyFieldWarning()
                   .should('not.have.class', 'input-message-disabled')
