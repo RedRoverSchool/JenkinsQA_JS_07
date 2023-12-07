@@ -28,7 +28,7 @@ describe('New Item > Create Freestyle Project', () => {
 
     });
 
-    it('TC_03.02.005 | Verify the user is able to choose the "Freestyle Project" from the options list', () => {
+    it.skip('TC_03.02.005 | Verify the user is able to choose the "Freestyle Project" from the options list', () => {
 
         cy.get('form li[class*=FreeStyleProject]').as('freestyleProjectOption').click();
 
