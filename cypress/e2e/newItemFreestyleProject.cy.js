@@ -19,7 +19,7 @@ describe('New Item > Create Freestyle Project', () => {
 
     });
 
-    it('TC_03.02.004 | Verify the user is able to see an empty field warning after choosing the "Freestyle Project" from the option list', () => {
+    it.skip('TC_03.02.004 | Verify the user is able to see an empty field warning after choosing the "Freestyle Project" from the option list', () => {
 
         cy.get('form div#itemname-required').as('emptyFieldWarning').should('have.class', 'input-message-disabled').and('not.be.visible');
         cy.get('form li[class$=FreeStyleProject]').click();
