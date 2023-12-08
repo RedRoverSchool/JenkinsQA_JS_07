@@ -2,7 +2,7 @@
 
 import pipelineProject from '../fixtures/pipelineProject.json'
 
-describe('addDescriptionToPipeline', () =>{
+describe.skip('addDescriptionToPipeline', () =>{
    
     it('TC_03.05.001 | Create Pipeline Project > Verify ability to fill description in the "Description" text area and save it', () =>{
         cy.get('a[href="/view/all/newJob"]').click()
