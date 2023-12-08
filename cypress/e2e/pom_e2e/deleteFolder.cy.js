@@ -27,7 +27,7 @@ describe('deleteFolder', ()=> {
             .should('be.visible')
     })
 
-    it.only('TC_07.05.003| Folder > Delete Folder > Delete Folder by using Dropdown menu', function () {
+    it('TC_07.05.003| Folder > Delete Folder > Delete Folder by using Dropdown menu', function () {
         homePage
             .clickDashboardBreadcrumbsLink()
             .clickNameProjectArrow()
