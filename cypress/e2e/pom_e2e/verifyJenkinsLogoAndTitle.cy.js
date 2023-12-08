@@ -12,5 +12,12 @@ describe('verifyJenkinsLogoAndLTitle', () => {
                 .getWelcomedMessageHeader()
                 .contains(dashboardWelcomedMessageData.welcomedMessageHeader)
     });
+
+    it('TC_02.02.014 | Header > Verify Jenkins Title is visible and clickable', () => {
+        homePage.clickPeopleLink()
+                .clickJenkinsTitle()
+                .getWelcomedMessageHeader()
+                .contains(dashboardWelcomedMessageData.welcomedMessageHeader)
+    });
 });
 
