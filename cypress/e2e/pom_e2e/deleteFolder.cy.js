@@ -5,9 +5,11 @@ const HOST = Cypress.env('local.host');
 
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json"
 import FolderPage from "../../pageObjects/FolderPage";
+import HomePage from "../../pageObjects/HomePage";
 
 describe('deleteFolder', ()=> {
     const folderPage = new FolderPage();
+    const homePage = new HomePage();
 
     beforeEach(() => {
         cy.createNewFolder(folderConfigureData.folderName)
