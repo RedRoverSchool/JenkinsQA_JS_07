@@ -23,4 +23,15 @@ describe('deleteFolder', ()=> {
             .getJenkinsStartWorkTitle()
             .should('be.visible')
     })
+
+    it('TC_07.05.003| Folder > Delete Folder > Delete Folder by using Dropdown menu', function () {
+        folderPage
+            .clickDeleteFolderIcon()
+            .clickSubmitDeleteBtn();
+            
+        homePage
+            .getWelcomedMessageHeader()
+            .should('be.visible')
+            .and('contain', dashboardWelcomeMessageData.welcomedMessageHeader);
+    });
 })

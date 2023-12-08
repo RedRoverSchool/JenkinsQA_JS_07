@@ -44,8 +44,7 @@ class HomePage {
   getBuildQueueBlockContent = () => cy.get("div#buildQueue .pane-content");
   getBuildExecutorStatusBlock = () => cy.get('div#executors');
   getBuildExecutorStatusBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=executors"]');
-  getBuildExecutorStatusBlockContent = () => cy.get('div#executors .pane-content');
-  getFolderDeleteBtn = () => cy.get('.jenkins-dropdown__item[href$="/delete"]');
+  getBuildExecutorStatusBlockContent = () => cy.get('div#executors .pane-content');  
 
   clickProjectNameLink() {
     this.getProjectNameLink().click();
@@ -216,12 +215,6 @@ clickFoldertNameLink(folderName) {
   this.getProjectNameLink().contains(folderName).click();
 
   return new FolderPage();
-}
-
-clickDeleteProjectByDropdownBtn() {
-  this.getFolderDeleteBtn().should('be.visible').click();
-
-  return this;
 }
 }
 
