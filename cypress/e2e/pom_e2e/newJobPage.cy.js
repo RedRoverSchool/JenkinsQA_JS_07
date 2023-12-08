@@ -46,4 +46,13 @@ describe('newJobPage', () => {
 
     });
 
+    it('TC_03.02.005 | Verify the user is able to choose the "Freestyle Project" from the options list', () => {
+
+        newJobPage.clickFreestyleTypeOfProjectBtn()
+                  .getFreestyleProjectBtn()
+                  .should('have.class', 'active')
+                  .and('have.attr', 'aria-checked', 'true');
+
+    });
+
 });
