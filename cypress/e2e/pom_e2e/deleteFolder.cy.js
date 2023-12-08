@@ -6,6 +6,7 @@ const HOST = Cypress.env('local.host');
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json"
 import FolderPage from "../../pageObjects/FolderPage";
 import HomePage from "../../pageObjects/HomePage";
+import dashboardWelcomeMessageData from "../../fixtures/pom_fixtures/dashboardWelcomedMessageData.json";
 
 describe('deleteFolder', ()=> {
     const folderPage = new FolderPage();
