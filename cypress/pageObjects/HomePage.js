@@ -7,6 +7,7 @@ import ParticipatePage from "../pageObjects/ParticipatePage";
 import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json";
 import PipelinePage from "./PipelinePage";
 import FolderPage from "./FolderPage";
+import DeleteFolderPage from "./DeleteFolderPage";
 const dayjs = require("dayjs");
 
 class HomePage {
