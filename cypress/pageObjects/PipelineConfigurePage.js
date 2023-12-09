@@ -8,7 +8,14 @@ class PipelineConfigurePage {
     getDiscardOldBuildsHelpText = () => cy.get('div[ref="cb2"]~.help-area>.help');
     getAdvancedProjectOptionsBtn = () => cy.get(':nth-child(8) > :nth-child(2) > .advancedLink > .jenkins-button')
     getDisplayNameField = () => cy.get('input[name="_.displayNameOrNull"]') 
-    getTooltipDiscardOldBuildsHelp = ()=> cy.get('div[id="tippy-8"]')    
+    getTooltipDiscardOldBuildsHelp = ()=> cy.get('div[id="tippy-8"]')
+    getDecriptionField = () => cy.get('textarea[name="description"]')    
+
+    fillDescriptionField(Description){
+        this.getDecriptionField().should('be.visible').type(Description)
+
+        return this;
+    }
 
     clickEnabDisabSwitchToggle(){
         this.getEnabDisabSwitchToggle().click();
