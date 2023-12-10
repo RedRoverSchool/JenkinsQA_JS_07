@@ -1,26 +1,15 @@
 /// <reference types="cypress"/>
-import HomePage from "../../pageObjects/HomePage";
 import folderConfigureData from "../../fixtures/pom_fixtures/folderConfigureData.json";
 import FolderPage from "../../pageObjects/FolderPage";
 import FolderConfigurePage from "../../pageObjects/FolderConfigurePage";
 
-
 describe("folderConfigure", () => {
-  const homePage = new HomePage();
   const folderPage = new FolderPage();
   const folderConfigurePage = new FolderConfigurePage();
   let baseURL;
   let folderConfigurePageUrl;
 
   beforeEach("createNewFolder", () => {
-    homePage
-      .clickNewItemLink()
-      .fillInputNameField(folderConfigureData.folderName)
-      .clickFolderBtn()
-      .clickOKButtonFolder();
-  });
-
-  before(() => {
     cy.createBaseURL().then((result) => {
       baseURL = result;
       folderConfigurePageUrl = folderConfigurePage.createFolderConfigurePageUrl(
@@ -29,6 +18,8 @@ describe("folderConfigure", () => {
         folderConfigureData.folderName,
         folderConfigureData.folderConfigurePageEndpoint
       );
+      cy.createNewFolder(folderConfigureData.folderName);
+      folderPage.clickConfigureLink();
     });
   });
 
@@ -135,14 +126,11 @@ describe("folderConfigure", () => {
       .and("have.text", folderConfigureData.healthMetricsSpoiler);
   });
 
-  it("TC_07.03.010 | Folder > Configure > Verify that section “Properties” has text “Pipeline Libraries”.", () => {
+  it("TC_07.03.010 | Folder > Configure > Verify that section 'Properties' has text 'Pipeline Libraries'.", () => {
     folderConfigurePage
-      .getPipelineLibrariesText()
-      .should("be.visible")
-      .then(($element) => {
-        expect($element.text().replace(/\n/g, "").trim()).to.equal(
-          folderConfigureData.pipelineLibrariesText
-        );
-      });
+    .replaceAndTrimPipelineLibrariesText()
+    .then((trimmedText) => {
+        expect(trimmedText).to.eq(folderConfigureData.pipelineLibrariesText);
+    });
   });
 });
