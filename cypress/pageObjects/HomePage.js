@@ -7,6 +7,7 @@ import ParticipatePage from "../pageObjects/ParticipatePage";
 import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json";
 import PipelinePage from "./PipelinePage";
 import FolderPage from "./FolderPage";
+import DeleteFolderPage from "./DeleteFolderPage";
 const dayjs = require("dayjs");
 
 class HomePage {
@@ -45,7 +46,7 @@ class HomePage {
   getBuildExecutorStatusBlock = () => cy.get('div#executors');
   getBuildExecutorStatusBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=executors"]');
   getBuildExecutorStatusBlockContent = () => cy.get('div#executors .pane-content');
-
+  getFolderDeleteBtn = () => cy.get('.icon-edit-delete');  
 
   clickProjectNameLink() {
     this.getProjectNameLink().click();
@@ -216,6 +217,12 @@ clickFoldertNameLink(folderName) {
   this.getProjectNameLink().contains(folderName).click();
 
   return new FolderPage();
+}
+
+clickDeleteProjectByDropdownBtn() {
+  this.getFolderDeleteBtn().should('be.visible').click();
+
+  return new DeleteFolderPage();
 }
 }
 
