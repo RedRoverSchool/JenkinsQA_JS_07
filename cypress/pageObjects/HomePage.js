@@ -8,6 +8,7 @@ import dbCommandPanelData from "../fixtures/pom_fixtures/dbCommandPanelData.json
 import PipelinePage from "./PipelinePage";
 import FolderPage from "./FolderPage";
 import DeleteFolderPage from "./DeleteFolderPage";
+import ConfirmRenameFolderPage from "./ConFirmRenameFolderPage";
 const dayjs = require("dayjs");
 
 class HomePage {
@@ -46,7 +47,8 @@ class HomePage {
   getBuildExecutorStatusBlock = () => cy.get('div#executors');
   getBuildExecutorStatusBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=executors"]');
   getBuildExecutorStatusBlockContent = () => cy.get('div#executors .pane-content');
-  getFolderDeleteBtn = () => cy.get('.icon-edit-delete');  
+  getFolderDeleteBtn = () => cy.get('.icon-edit-delete');
+  getFolderRenameLink = () => cy.get('a.jenkins-dropdown__item[href$="/confirm-rename"]'); 
 
   clickProjectNameLink() {
     this.getProjectNameLink().click();
@@ -223,6 +225,12 @@ clickDeleteProjectByDropdownBtn() {
   this.getFolderDeleteBtn().should('be.visible').click();
 
   return new DeleteFolderPage();
+}
+
+clickFolderRenameLink(){
+  this.getFolderRenameLink().click();
+
+  return new ConfirmRenameFolderPage();
 }
 }
 

@@ -1,3 +1,4 @@
+import FolderPage from "./FolderPage";
 import HomePage from "./HomePage";
 
 class ConfirmRenameFolderPage {
@@ -11,6 +12,12 @@ class ConfirmRenameFolderPage {
     clickBtnConfirmRenameFolder() {
       this.getBtnConfirmRenameFolder().click();
       return new HomePage();
+    }
+
+    clickRenameBtn(){
+      this.getBtnConfirmRenameFolder().click();
+
+      return new FolderPage();
     }
   }
   export default ConfirmRenameFolderPage;
