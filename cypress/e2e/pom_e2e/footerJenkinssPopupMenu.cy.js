@@ -15,5 +15,12 @@ describe("Footer > Jenkins's pop-up menu", () => {
               expect(elText).to.deep.equal(footerJenkinsData.popUpMenu);
             });          
     });
-    
+   
+  it("TC_15.03.001 | Footer> Verify Jenkins version in Footer and color", () => {
+    homePage
+      .getJenkinsVersionBtn()
+      .should("be.visible")
+      .and("contain", footerJenkinsData.jenkinsVersion)
+      .and("have.css", "color", footerJenkinsData.buttonJenkinsVersionColor);
+  });  
 });
