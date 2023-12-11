@@ -29,21 +29,20 @@ class HomePage {
   getButtonIconSizeSmall = () => cy.get('li a[tooltip="Small"]')
   getBuildStatusIcon= ()=> cy.get('td[data="12"].jenkins-table__icon')
   getProjectStatus =() =>cy.get('#projectstatus')
-  
+  getHelpMessageOne = () => cy.get('.h4').eq(0);
+  getLinkCreateJob = () => cy.get('a[href="newJob"]');
+  getInvolvedLink = () => cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
+  getDashboardArrow = () => cy.get("li .jenkins-menu-dropdown-chevron");
+  getListDashboard = () => cy.get('.jenkins-dropdown__item');
+
   clickProjectNameLink() {
     this.getProjectNameLink().click()
 
     return new PipelinePage()
   }
-
-  getInvolvedLink = () =>
-    cy.get(".tippy-box .jenkins-dropdown__item:nth-of-type(2)");
-  getTitleCreateJob = () => cy.get('.h4').contains('Start');
-  getLinkCreateJob = () => cy.get('a[href="newJob"]');
   
   clickNewItemLink() {
     this.getNewItemLink().click();
-
     return new NewJobPage();
   }
 
@@ -154,6 +153,46 @@ class HomePage {
 
     return cy.url()
 
+  }
+
+  verifyHelpmessageOne(message)
+  {
+    this.getHelpMessageOne().should('have.text', message).and('be.visible');
+    return this
+  }
+
+  verifyLinkCreateJob()
+  {
+    this.getLinkCreateJob().should('have.attr', 'href').and('be.visible');
+    return this
+  }
+
+  clickCreateJob()
+  {
+    this.getLinkCreateJob().click()
+    return new NewJobPage()
+  }
+
+  clickDropdownMenu()
+  {
+    this.getDashboardArrow().realHover().click();
+    return this
+  }
+
+  verifyListDashboard(list)
+  {
+    this.getListDashboard().each(($el,i) => {
+      cy.wrap($el).should('contain',list[i])
+    })
+    return this
+  }
+
+  clickItemDashboard(item)
+  {
+    this.getListDashboard().each(($el) => {
+      cy.wrap($el).should('contain', item).click()
+    })
+    return new NewJobPage()
   }
 }
 

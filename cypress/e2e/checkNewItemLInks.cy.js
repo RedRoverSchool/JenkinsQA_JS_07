@@ -13,14 +13,17 @@ describe('checkNewItemLinks', () => {
     .clickNewItemLink()
     .verifyURL(newJobPageData.URL)
    });
-   it.only('TC_03.01.013-2| + New Item > Check New Item links on top bar',()=>{
+   it('TC_03.01.013-2| + New Item > Check New Item links on top bar',()=>{
       homePage
       .clickDropdownMenu()
+      .verifyListDashboard(HomePageData.dropdownMenu)
+      .clickItemDashboard(HomePageData.dropdownMenu[0])
       // .verifyURL(newJobPageData.url)
      });
      it('TC_03.01.013-3| + New Item > Check New Item links in the center of Page',()=>{
       homePage
-      .verifyLinkCreateJob(HomePageData.titleMessage)
+      .verifyHelpmessageOne(HomePageData.titleMessage)
+      .verifyLinkCreateJob()
       .clickCreateJob()
       .verifyURL(newJobPageData.URL)
      });

@@ -10,6 +10,7 @@ const baseUrl = `http://${host}:${port}`
 let wrongUserName = Math.random().toString(36).substring(7)
 let wrongPassword = Math.random().toString(36).substring(7)
 
+
 describe('Log in to Jenkins',() => {
     beforeEach(() => {
         cy.visit(`${baseUrl}/login`)

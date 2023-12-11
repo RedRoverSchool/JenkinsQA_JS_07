@@ -9,5 +9,6 @@
         "Organization Folder"
     ],
     "itemNameFieldValue": "",
-    "url": "view/all/newJob"
+    "url": "view/all/newJob",
+    "URL": "/newJob"
 }
