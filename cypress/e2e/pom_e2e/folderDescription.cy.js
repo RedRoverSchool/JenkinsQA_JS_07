@@ -33,6 +33,29 @@ describe("folderDescription", () => {
 
   });
 
+  it("TC_07.02.008 |Saving empty Description", () => {
+    folderPage
+      .clickAddDescriptionLink()
+      .clickSaveButton()
+
+      .getSaveButton()
+      .should("not.exist");
+
+    folderPage
+      .getPreviewLink()
+      .should("not.exist");
+
+    folderPage
+      .getAddDescriptionLink()
+      .should("be.visible");
+
+    folderPage
+      .getInputField()
+      .should("not.exist");
+  });
+
+
+
   it("TC_07.02.009 | Verify text input field appears when hit on “Add description” button", () => {
     folderPage
       .clickAddDescriptionLink()
