@@ -16,11 +16,21 @@ describe("Footer > Jenkins's pop-up menu", () => {
             });          
     });
    
-  it("TC_15.03.001 | Footer> Verify Jenkins version in Footer and color", () => {
+  it("TC_15.03.001 | Footer > Verify Jenkins version in Footer and color", () => {
     homePage
       .getJenkinsVersionBtn()
       .should("be.visible")
       .and("contain", footerJenkinsData.jenkinsVersion)
       .and("have.css", "color", footerJenkinsData.buttonJenkinsVersionColor);
-  });  
+  }); 
+  
+  it("TC_15.03.007 | Footer > Verify icons near each of menu item", () => {
+    homePage
+      .clickJenkinsVersionBtn()
+      .getPopUpMenuIcon()
+      .should("be.visible")
+      .each((menuIcon) => {
+        cy.wrap(menuIcon).find("svg").should("exist");
+      });
+  });
 });
