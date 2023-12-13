@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
 import HomePage from "../../pageObjects/HomePage";
 import footerJenkinsData from "../../fixtures/pom_fixtures/footerJenkinsData.json";
-
+import JenkinsWebsitePage from "../../pageObjects/JenkinsWebsitePage";
 
 describe("Footer > Jenkins's pop-up menu", () => { 
     const homePage = new HomePage();
+    const jenkinsWebsitePage = new JenkinsWebsitePage()
 
   it("TC_15.03.005 | Footer > Verify pop-up menu “Jenkins <version nr>”", () => {
     homePage.clickJenkinsVersionBtn()
@@ -32,5 +33,17 @@ describe("Footer > Jenkins's pop-up menu", () => {
       .each((menuIcon) => {
         cy.wrap(menuIcon).find("svg").should("exist");
       });
+  });
+
+  it('TC_15.03.002| Footer > Jenkins pop-up menu > option "Website" redirection', () => {
+    homePage
+      .clickJenkinsVersionBtn()
+      .clickJenkinsWebsiteLink()
+      .getJenkinsWebsiteHeader()
+      .should("be.visible")
+      .and("contain", footerJenkinsData.websitePageHeader);
+    jenkinsWebsitePage
+      .getJenkinsWebsiteUrl()
+      .should("equal", footerJenkinsData.websitePage);
   });
 });
