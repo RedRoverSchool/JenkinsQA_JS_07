@@ -48,7 +48,8 @@ class HomePage {
   getBuildExecutorStatusBlockArrow = () => cy.get('[href="/toggleCollapse?paneId=executors"]');
   getBuildExecutorStatusBlockContent = () => cy.get('div#executors .pane-content');
   getFolderDeleteBtn = () => cy.get('.icon-edit-delete');
-  getFolderRenameLink = () => cy.get('a.jenkins-dropdown__item[href$="/confirm-rename"]'); 
+  getFolderRenameLink = () => cy.get('a.jenkins-dropdown__item[href$="/confirm-rename"]');
+  getPopUpMenuIcon = () => cy.get(".jenkins-dropdown__item__icon"); 
 
   clickProjectNameLink() {
     this.getProjectNameLink().click();
