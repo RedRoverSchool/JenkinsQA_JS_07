@@ -11,6 +11,7 @@ import DeleteFolderPage from "./DeleteFolderPage";
 import ConfirmRenameFolderPage from "./ConFirmRenameFolderPage";
 const dayjs = require("dayjs");
 import JenkinsWebsitePage from "../pageObjects/JenkinsWebsitePage";
+import AboutJenkinsPage from "../pageObjects/AboutJenkinsPage";
 
 class HomePage {
 
@@ -51,7 +52,8 @@ class HomePage {
   getFolderDeleteBtn = () => cy.get('.icon-edit-delete');
   getFolderRenameLink = () => cy.get('a.jenkins-dropdown__item[href$="/confirm-rename"]');
   getPopUpMenuIcon = () => cy.get(".jenkins-dropdown__item__icon");
-  getJenkinsWebsiteLink = () => cy.get("a[href='https://www.jenkins.io/']"); 
+  getJenkinsWebsiteLink = () => cy.get("a[href='https://www.jenkins.io/']");
+  getAboutJenkinsLink = () => cy.get("a[href='/manage/about']"); 
 
   clickProjectNameLink() {
     this.getProjectNameLink().click();
@@ -240,6 +242,12 @@ clickJenkinsWebsiteLink(){
   this.getJenkinsWebsiteLink().invoke("removeAttr", "target").click();
 
   return new JenkinsWebsitePage();
+}
+
+clickAboutJenkinsLink(){
+  this.getAboutJenkinsLink().click()
+
+  return new AboutJenkinsPage()
 }
 }
 
