@@ -42,5 +42,6 @@
         {"Build after other projects are built":"Help for feature: Build after other projects are built"},
         {"Build periodically": "Help for feature: Build periodically"},
         {"GitHub hook trigger for GITScm polling": "Help for feature: GitHub hook trigger for GITScm polling"},
-        {"Poll SCM": "Help for feature: Poll SCM" }]
+        {"Poll SCM": "Help for feature: Poll SCM" }],
+    "buildStepsSectionHeader": "Build Steps"
 }
