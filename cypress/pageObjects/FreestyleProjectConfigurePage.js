@@ -31,6 +31,8 @@ class FreestyleProjectConfigurePage {
     getSaveBtn = () => cy.get('button.jenkins-button--primary');
     getGeneralSectionAdvancedBtn = () => cy.get('form :nth-child(7) button.advancedButton');
     getGeneralSectionAdvancedOptions = () => cy.get('form > div > :nth-child(8)');
+    getBuildStepsOptions = () => cy.get("button[data-section-id='build-steps']");
+    getBuildStepsSection = () => cy.get("#build-steps");
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
@@ -102,6 +104,12 @@ class FreestyleProjectConfigurePage {
 
         return this;
     };
+
+    clickBuildStepsOptions() {
+        this.getBuildStepsOptions().click();
+
+        return this;
+    }
   
 }
 export default FreestyleProjectConfigurePage;
