@@ -33,6 +33,9 @@ class FreestyleProjectConfigurePage {
     getGeneralSectionAdvancedOptions = () => cy.get('form > div > :nth-child(8)');
     getBuildStepsOptions = () => cy.get("button[data-section-id='build-steps']");
     getBuildStepsSection = () => cy.get("#build-steps");
+    getAddBuildStepBtn = () => cy.get(".yui-menu-button").contains("Add build step");
+    getDropDownFilter = () => cy.get("span.yui-menu-button-active ~ div");
+    getDropDownOptions = () => cy.get("span.yui-menu-button-active ~ div div.bd ul li");
     
     clickGeneralSectionToggleBtn() {
         this.getGeneralSectionToggleBtn().click();
@@ -109,6 +112,19 @@ class FreestyleProjectConfigurePage {
         this.getBuildStepsOptions().click();
 
         return this;
+    }
+
+    clickAddBuildStepBtn (){
+        this.getAddBuildStepBtn().click();
+
+        return this
+    }
+
+    makeArrayOfAddBuildStepDropDownOptions(){
+        return this.getDropDownOptions().should("be.visible")
+        .then(($els) => {
+          return Cypress.$.makeArray($els).map($el => $el.innerText);
+        });
     }
   
 }

@@ -7,13 +7,25 @@ describe("freestyleProjectBuildSteps", () => {
 
   beforeEach("createFreestyleProject", () => {
     cy.createFreestyleProject(freestyleProjectData.projectName);
+    freestyleProjectConfigurePage.clickBuildStepsOptions()
   });
 
   it("TC_04.05.001 | Freestyle project > Build Steps > Verify 'Build Steps' section is displayed", () => {
     freestyleProjectConfigurePage
-      .clickBuildStepsOptions()
       .getBuildStepsSection()
       .should("be.visible")
       .and("contain", freestyleProjectData.buildStepsSectionHeader);
+  });
+
+  it("TC_04.05.002 | Freestyle project > Build Steps > Verify the functionality of the 'Add build step' button", () => {
+    freestyleProjectConfigurePage
+      .getAddBuildStepBtn()
+      .should("be.visible")
+      .and("have.text", freestyleProjectData.addBuildStepBtnText)
+      .and("have.prop", "tagName", "BUTTON");
+    freestyleProjectConfigurePage
+      .clickAddBuildStepBtn()
+      .getDropDownFilter()
+      .should("be.visible");
   });
 });
