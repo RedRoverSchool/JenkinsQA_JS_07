@@ -43,5 +43,15 @@
         {"Build periodically": "Help for feature: Build periodically"},
         {"GitHub hook trigger for GITScm polling": "Help for feature: GitHub hook trigger for GITScm polling"},
         {"Poll SCM": "Help for feature: Poll SCM" }],
-    "buildStepsSectionHeader": "Build Steps"
+    "buildStepsSectionHeader": "Build Steps",
+    "addBuildStepBtnText": "Add build step",
+    "addBuildStepDropDownOptions": [
+        "Execute Windows batch command", 
+        "Execute shell",
+        "Invoke Ant",
+        "Invoke Gradle script",
+        "Invoke top-level Maven targets",
+        "Run with timeout",
+        "Set build status to \"pending\" on GitHub commit"],
+    "addBuildStepDropDownOptionsQuantity": 7
 }
