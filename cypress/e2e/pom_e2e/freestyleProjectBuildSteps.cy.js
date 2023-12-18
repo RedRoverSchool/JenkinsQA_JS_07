@@ -28,4 +28,15 @@ describe("freestyleProjectBuildSteps", () => {
       .getDropDownFilter()
       .should("be.visible");
   });
+
+  it("TC_04.05.003 | Freestyle project > Build Steps > Verify options in drop down menu", () => {
+    freestyleProjectConfigurePage
+      .clickAddBuildStepBtn()
+      .makeArrayOfAddBuildStepDropDownOptions()
+      .should(
+        "have.length",
+        freestyleProjectData.addBuildStepDropDownOptionsQuantity
+      )
+      .and("deep.equal", freestyleProjectData.addBuildStepDropDownOptions);
+  });
 });
