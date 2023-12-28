@@ -10,5 +10,6 @@
     "participatePageHeader": "Participate and Contribute",
     "menuItemWebsite": "Website",
     "websitePage": "https://www.jenkins.io/",
-    "websitePageHeader": "Jenkins"
+    "websitePageHeader": "Jenkins",
+    "buttonJenkinsVersionColor": "rgb(20, 20, 31)"
 }

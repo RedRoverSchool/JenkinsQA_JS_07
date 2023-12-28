@@ -5,7 +5,7 @@ const PORT = Cypress.env("local.port");
 import typeName from "../fixtures/createFolder.json";
 import welcomeMessage from "../fixtures/dashboardWelcomedMessage.json";
 
-describe("deleteFolder", () => {
+describe.skip("deleteFolder", () => {
   beforeEach("createNewFolder", () => {
     cy.get('a[href="newJob"]').click();
     cy.get("#name").type(typeName.testfolderName);

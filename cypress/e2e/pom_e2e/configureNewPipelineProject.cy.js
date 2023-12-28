@@ -13,10 +13,9 @@ describe('configureNewPipelineProject', () => {
     const pipelinePage = new PipelinePage();
 
     beforeEach(() => {
-       homePage.clickNewItemLink()
-               .fillInputNameField(pipelineProjectData.projectName)
-               .clickPipelineTypeOfProjectBtn()
-               .clickOKButton();
+    
+    cy.createPipelineProject(pipelineProjectData.projectName)
+
     });
     
     it('TC_03.05.010 Configure new Pipeline project >Verify "Enable/Disable" switch toggle', () => {   
@@ -39,5 +38,13 @@ describe('configureNewPipelineProject', () => {
                     .should ('be.visible')
                     .and('include.text',pipelinePageData.disabledProjectMessage);        
     });
-
-});
+    it('RF|POM|TC_03.05.014 Configure new Pipeline project>Verify that proper information is displayed after clicking the "?" button',()=>{
+                              
+       
+        pipelineConfigurePage.realHoverDiscardOldBuildsHelpBtn()       
+                             .getTooltipDiscardOldBuildsHelp()
+                             .should('have.text',configurePageData.tooltipHelpOfDiscardOldBuilds)
+  
+        })
+        
+     })

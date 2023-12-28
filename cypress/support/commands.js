@@ -42,6 +42,18 @@ Cypress.Commands.add('createMultiConfigProject', (multiconfigProjectName)=> {
             .clickMultiConfigTypeOfProjectBtn()
             .clickOKButton()
     });
+
+Cypress.Commands.add("redirectToManageJenkinsPage", () => {
+    homePage.clickManageJenkinsLink();
+}); 
+
+Cypress.Commands.add("createFreestyleProject", (freestyleProjectName) => {
+  homePage
+    .clickNewItemLink()
+    .fillInputNameField(freestyleProjectName)
+    .clickFreestyleTypeOfProjectBtn()
+    .clickOKButton();
+});
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })

@@ -42,4 +42,16 @@ describe("folderRename ", () => {
       .should("be.visible")
       .and("contain.text", textErrorMessage);
   });
+
+  it("TC_07.06.005 | Folder > Rename by using Folder Dropdown", () => {
+
+    homePage.clickDashboardBreadcrumbsLink()
+            .clickNameProjectArrow()
+            .clickFolderRenameLink()
+            .fillNewNameField(folderNewName)
+            .clickRenameBtn()
+            .getDisplayFolderName()
+            .should('be.visible')
+            .and("contain", folderNewName);     
+  })
 });

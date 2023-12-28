@@ -1,18 +1,16 @@
 /// <reference types="cypress"/>
 
-import HomePage from "../../pageObjects/HomePage";
 import ManageJenkinsPage from "../../pageObjects/ManageJenkinsPage";
 import ConfigureToolsPage from "../../pageObjects/ConfigureToolsPage";
-import { systemConfigurationSectionHeader, systemConfigurationTitlesSectionItems, manageJenkinsPageEndpoint } from "../../fixtures/pom_fixtures/manageJenkinsUIData.json";
+import { systemConfigurationSectionHeader, manageJenkinsPageEndpoint, toolsItemHeader } from "../../fixtures/pom_fixtures/manageJenkinsUIData.json";
 import { configureToolsPageEndpoint, configureToolsMainHeader } from "../../fixtures/pom_fixtures/configureToolsPageData.json"
 
 describe("manageJenkinsSystemConfigurationTools", () => {
-    const homePage = new HomePage();
     const manageJenkinsPage = new ManageJenkinsPage();
     const configureToolsPage = new ConfigureToolsPage();
 
     beforeEach(() => {
-        homePage.clickManageJenkinsLink();
+        cy.redirectToManageJenkinsPage();
     });
 
     it("TC_09.06.003 | Visibility of section 'System Configuration' verification", () => {
@@ -21,12 +19,9 @@ describe("manageJenkinsSystemConfigurationTools", () => {
             .and("have.text", systemConfigurationSectionHeader);
     });
 
-    it("TC_09.06.005 | Visibility of title and icon 'Tools' section item verification", () => {
-        manageJenkinsPage.getToolsTitleSectionItem()
-            .should("be.visible")
-            .then(($el) => {
-                expect(systemConfigurationTitlesSectionItems).to.include($el.text());
-            });
+    it("TC_09.06.005 | Visibility of header and icon 'Tools' section item verification", () => {
+        manageJenkinsPage.retrieveToolsSectionHeader()
+            .should("have.text", toolsItemHeader);
 
         manageJenkinsPage.getToolsIconSectionItem()
             .should("be.visible");

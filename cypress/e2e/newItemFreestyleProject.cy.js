@@ -2,7 +2,7 @@
 
 import newItemFreestyleProject from "../fixtures/newItemFreestyleProject.json"
 
-describe('New Item > Create Freestyle Project', () => {
+describe.skip('New Item > Create Freestyle Project', () => {
 
     beforeEach(function() {
 

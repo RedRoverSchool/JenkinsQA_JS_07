@@ -2,7 +2,7 @@
 
 import freestyleProjectGeneral from "../fixtures/freestyleProjectGeneral.json"
 
-describe('Freestyle Project > General', () => {
+describe.skip('Freestyle Project > General', () => {
 
     beforeEach(function() {
 

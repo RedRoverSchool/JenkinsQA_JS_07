@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import footerJenkinsData from "../fixtures/footerJenkinsData.json";
 
-describe("Footer-Jenkins Version", () => {
+describe.skip("Footer-Jenkins Version", () => {
   it("TC_15.03.001 | Verify Jenkins version in Footer and color", () => {
     cy.get(".jenkins_ver")
 

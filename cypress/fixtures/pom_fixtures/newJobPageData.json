@@ -1,5 +1,13 @@
 {
-    "typeOfProjectLabelNames": ["Freestyle project", "Pipeline", "Multi-configuration project", "Folder", "Multibranch Pipeline", "Organization Folder"],
+    "typeOfProjectLabelNames": [
+        "Freestyle project",
+        "Pipeline",
+        "Multi-configuration project",
+        "Folder",
+        "Multibranch Pipeline",
+        "Organization Folder"
+    ],
     "url": "/newJob",
-    "title": "Enter an item name"
+    "title": "Enter an item name",
+    "emptyFieldWarning": "» This field cannot be empty, please enter a valid name"
 }

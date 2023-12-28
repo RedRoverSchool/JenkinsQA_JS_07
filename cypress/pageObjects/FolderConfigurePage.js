@@ -75,6 +75,14 @@ class FolderConfigurePage {
   ) {
     return `${baseUrl}/${jobJenkinsPageEndpoint}/${folderName}/${folderConfigurePageEndpoint}`;
   }
+
+  replaceAndTrimPipelineLibrariesText() {
+    return this.getPipelineLibrariesText()
+      .should("be.visible")
+      .then(($element) => {
+        return $element.text().replace(/\n/g, "").trim();
+      })
+  }
 }
 
 export default FolderConfigurePage;

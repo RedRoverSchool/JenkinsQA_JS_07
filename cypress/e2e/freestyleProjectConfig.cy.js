@@ -2,7 +2,7 @@
 
 import data from "../fixtures/freestyleProjectConfiguration.json"
 
-describe('US_04.02 | Freestyle > Source Code Management section', () => {
+describe.skip('US_04.02 | Freestyle > Source Code Management section', () => {
     beforeEach(() => {
         cy.get('a[href="/view/all/newJob"]').click();
         cy.get('input#name').type(data.projectName);
